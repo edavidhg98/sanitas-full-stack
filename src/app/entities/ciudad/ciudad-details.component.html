@@ -1,0 +1,35 @@
+<div *ngIf="ciudad" class="container-fluid">
+  <h3 class="m-top-and-bottom-2">Ciudad</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ ciudad._id }}</dd>
+
+  
+    <dt>Id Departamento</dt>
+    <dd>{{ ciudad.idDepartamento }}</dd>
+
+    <dt>Nombre Ciudad</dt>
+    <dd>{{ ciudad.nombreCiudad }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ ciudad.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ ciudad.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ ciudad.observaciones }}</dd>
+
+    <dt>Codigo</dt>
+    <dd>{{ ciudad.codigo }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+  <app-localidad-list [localidads]="ciudad.localidads"></app-localidad-list>
+  <app-prestador-list [prestadors]="ciudad.prestadors"></app-prestador-list>
+  <app-sucursal-list [sucursals]="ciudad.sucursals"></app-sucursal-list>
+  <app-entidad-list [entidads]="ciudad.entidads"></app-entidad-list>
+  <app-login-list [logins]="ciudad.logins"></app-login-list>
+</div>

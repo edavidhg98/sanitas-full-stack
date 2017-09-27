@@ -1,0 +1,38 @@
+<div *ngIf="citaRetraso" class="container">
+  <h3 class="m-top-and-bottom-2">Cita Retraso</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ citaRetraso._id }}</dd>
+
+  
+    <dt>Id Especialidad</dt>
+    <dd>{{ citaRetraso.idEspecialidad }}</dd>
+
+    <dt>Excepcion Retraso</dt>
+    <dd>{{ citaRetraso.excepcionRetraso }}</dd>
+
+    <dt>Min Penalizacion Retraso</dt>
+    <dd>{{ citaRetraso.minPenalizacionRetraso }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ citaRetraso.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ citaRetraso.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ citaRetraso.observaciones }}</dd>
+
+    <dt>Entidad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'entidad', citaRetraso.entidad._id]">{{ citaRetraso.entidad._id }}</a>
+    </dd>
+    <dt>Sucursal</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursal', citaRetraso.sucursal._id]">{{ citaRetraso.sucursal._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

@@ -1,0 +1,91 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Tipo Plan</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="tipoPlan && tipoPlan._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="tipoPlan" type="text" class="form-control" name="id" [(ngModel)]="tipoPlan._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_tipPlan">Tip Plan</label>
+  <input type="text" id="field_tipPlan" *ngIf="tipoPlan" class="form-control" name="tipPlan" [(ngModel)]="tipoPlan.tipPlan"  />
+  <input type="text" id="field_tipPlan" *ngIf="!tipoPlan" class="form-control" name="tipPlan" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_descripcion">Descripcion</label>
+  <input type="text" id="field_descripcion" *ngIf="tipoPlan" class="form-control" name="descripcion" [(ngModel)]="tipoPlan.descripcion"  />
+  <input type="text" id="field_descripcion" *ngIf="!tipoPlan" class="form-control" name="descripcion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_valModerado">Val Moderado</label>
+  <input type="number" id="field_valModerado" *ngIf="tipoPlan" class="form-control" name="valModerado" [(ngModel)]="tipoPlan.valModerado"  />
+  <input type="number" id="field_valModerado" *ngIf="!tipoPlan" class="form-control" name="valModerado" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_valCopago">Val Copago</label>
+  <input type="number" id="field_valCopago" *ngIf="tipoPlan" class="form-control" name="valCopago" [(ngModel)]="tipoPlan.valCopago"  />
+  <input type="number" id="field_valCopago" *ngIf="!tipoPlan" class="form-control" name="valCopago" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="tipoPlan" class="form-control" name="fechaRegistro" [(ngModel)]="tipoPlan.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!tipoPlan" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="tipoPlan" class="form-control" name="loginRegistro" [(ngModel)]="tipoPlan.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!tipoPlan" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="tipoPlan" class="form-control" name="observaciones" [(ngModel)]="tipoPlan.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!tipoPlan" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="entidads">
+              <label for="field_entidad">Entidad</label>
+
+              <select *ngIf="!tipoPlan" class="form-control" name="idEntidad" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+
+              <select *ngIf="tipoPlan && tipoPlan.idEntidad" class="form-control" name="idEntidad" [(ngModel)]="tipoPlan.idEntidad">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div *ngIf="estadoSalidaPaciente" class="container">
+  <h3 class="m-top-and-bottom-2">Estado Salida Paciente</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ estadoSalidaPaciente._id }}</dd>
+
+  
+    <dt>Id Admision</dt>
+    <dd>{{ estadoSalidaPaciente.idAdmision }}</dd>
+
+    <dt>Item Lista Estado Salida Paciente</dt>
+    <dd>{{ estadoSalidaPaciente.itemListaEstadoSalidaPaciente }}</dd>
+
+    <dt>Item Lista Tipo Hc Registra</dt>
+    <dd>{{ estadoSalidaPaciente.itemListaTipoHcRegistra }}</dd>
+
+    <dt>Obs Salida</dt>
+    <dd>{{ estadoSalidaPaciente.obsSalida }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ estadoSalidaPaciente.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ estadoSalidaPaciente.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ estadoSalidaPaciente.observaciones }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

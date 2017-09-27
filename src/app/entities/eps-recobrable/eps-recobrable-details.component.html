@@ -1,0 +1,28 @@
+<div *ngIf="epsRecobrable" class="container">
+  <h3 class="m-top-and-bottom-2">Eps Recobrable</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ epsRecobrable._id }}</dd>
+
+  
+    <dt>Eps Recobrable</dt>
+    <dd>{{ epsRecobrable.epsRecobrable }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ epsRecobrable.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ epsRecobrable.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ epsRecobrable.observaciones }}</dd>
+
+    <dt>Entidad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'entidad', epsRecobrable.entidad._id]">{{ epsRecobrable.entidad._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

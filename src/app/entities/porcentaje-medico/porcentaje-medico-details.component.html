@@ -1,0 +1,42 @@
+<div *ngIf="porcentajeMedico" class="container">
+  <h3 class="m-top-and-bottom-2">Porcentaje Medico</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ porcentajeMedico._id }}</dd>
+
+  
+    <dt>Codigo Porcentaje</dt>
+    <dd>{{ porcentajeMedico.codigoPorcentaje }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ porcentajeMedico.descripcion }}</dd>
+
+    <dt>Porcentaje</dt>
+    <dd>{{ porcentajeMedico.porcentaje }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ porcentajeMedico.observaciones }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ porcentajeMedico.loginRegistro }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ porcentajeMedico.fechaRegistro }}</dd>
+
+    <dt>Login Modificacion</dt>
+    <dd>{{ porcentajeMedico.loginModificacion }}</dd>
+
+    <dt>Fecha Modificacion</dt>
+    <dd>{{ porcentajeMedico.fechaModificacion }}</dd>
+
+    <dt>Item Lista Estado Porcentaje Medico</dt>
+    <dd>{{ porcentajeMedico.itemListaEstadoPorcentajeMedico }}</dd>
+
+    <dt>Id Prestador</dt>
+    <dd>{{ porcentajeMedico.idPrestador }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

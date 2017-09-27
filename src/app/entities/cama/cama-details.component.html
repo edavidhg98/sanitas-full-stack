@@ -1,0 +1,74 @@
+<div *ngIf="cama" class="container-fluid">
+  <h3 class="m-top-and-bottom-2">Cama</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ cama._id }}</dd>
+
+  
+    <dt>Cama</dt>
+    <dd>{{ cama.cama }}</dd>
+
+    <dt>Fec Pos Egr</dt>
+    <dd>{{ cama.fecPosEgr }}</dd>
+
+    <dt>Item Lista Estado Cama</dt>
+    <dd>{{ cama.itemListaEstadoCama }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ cama.descripcion }}</dd>
+
+    <dt>Num Ext</dt>
+    <dd>{{ cama.numExt }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ cama.observaciones }}</dd>
+
+    <dt>Hor Pos Egr</dt>
+    <dd>{{ cama.horPosEgr }}</dd>
+
+    <dt>Min Pos Egr</dt>
+    <dd>{{ cama.minPosEgr }}</dd>
+
+    <dt>Car Hab</dt>
+    <dd>{{ cama.carHab }}</dd>
+
+    <dt>Fec Registro</dt>
+    <dd>{{ cama.fecRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ cama.loginRegistro }}</dd>
+
+    <dt>FotoEstadoCama</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'fotoEstadoCama', cama.fotoEstadoCama._id]">{{ cama.fotoEstadoCama._id }}</a>
+    </dd>
+    <dt>Sucursal</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursal', cama.sucursal._id]">{{ cama.sucursal._id }}</a>
+    </dd>
+    <dt>Procedimiento</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'procedimiento', cama.procedimiento._id]">{{ cama.procedimiento._id }}</a>
+    </dd>
+    <dt>Procedimiento</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'procedimiento', cama.procedimiento._id]">{{ cama.procedimiento._id }}</a>
+    </dd>
+    <dt>Seccion</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'seccion', cama.seccion._id]">{{ cama.seccion._id }}</a>
+    </dd>
+    <dt>TipoCama</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'tipoCama', cama.tipoCama._id]">{{ cama.tipoCama._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+  <app-admision-observaciones-list [admisionObservacioness]="cama.admisionObservacioness"></app-admision-observaciones-list>
+  <app-censo-historico-list [censoHistoricos]="cama.censoHistoricos"></app-censo-historico-list>
+  <app-censo-traslado-list [censoTraslados]="cama.censoTraslados"></app-censo-traslado-list>
+  <app-censo-traslado-list [censoTraslados]="cama.censoTraslados"></app-censo-traslado-list>
+  <app-cama-plan-list [camaPlans]="cama.camaPlans"></app-cama-plan-list>
+</div>

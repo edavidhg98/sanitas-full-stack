@@ -1,0 +1,270 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Triage</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="triage && triage._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="triage" type="text" class="form-control" name="id" [(ngModel)]="triage._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_idPaciente">Id Paciente</label>
+  <input type="number" id="field_idPaciente" *ngIf="triage" class="form-control" name="idPaciente" [(ngModel)]="triage.idPaciente"  />
+  <input type="number" id="field_idPaciente" *ngIf="!triage" class="form-control" name="idPaciente" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_estadoAlarma">Estado Alarma</label>
+  <input type="text" id="field_estadoAlarma" *ngIf="triage" class="form-control" name="estadoAlarma" [(ngModel)]="triage.estadoAlarma"  />
+  <input type="text" id="field_estadoAlarma" *ngIf="!triage" class="form-control" name="estadoAlarma" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_abortos">Abortos</label>
+  <input type="number" id="field_abortos" *ngIf="triage" class="form-control" name="abortos" [(ngModel)]="triage.abortos"  />
+  <input type="number" id="field_abortos" *ngIf="!triage" class="form-control" name="abortos" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaEstadoTriage">Item Lista Estado Triage</label>
+  <input type="number" id="field_itemListaEstadoTriage" *ngIf="triage" class="form-control" name="itemListaEstadoTriage" [(ngModel)]="triage.itemListaEstadoTriage"  />
+  <input type="number" id="field_itemListaEstadoTriage" *ngIf="!triage" class="form-control" name="itemListaEstadoTriage" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_descripcionMotivoConsulta">Descripcion Motivo Consulta</label>
+  <input type="text" id="field_descripcionMotivoConsulta" *ngIf="triage" class="form-control" name="descripcionMotivoConsulta" [(ngModel)]="triage.descripcionMotivoConsulta"  />
+  <input type="text" id="field_descripcionMotivoConsulta" *ngIf="!triage" class="form-control" name="descripcionMotivoConsulta" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="triage" class="form-control" name="fechaRegistro" [(ngModel)]="triage.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!triage" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_horaIngreso">Hora Ingreso</label>
+  <input type="number" id="field_horaIngreso" *ngIf="triage" class="form-control" name="horaIngreso" [(ngModel)]="triage.horaIngreso"  />
+  <input type="number" id="field_horaIngreso" *ngIf="!triage" class="form-control" name="horaIngreso" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_tiempoaprox">Tiempoaprox</label>
+  <input type="number" id="field_tiempoaprox" *ngIf="triage" class="form-control" name="tiempoaprox" [(ngModel)]="triage.tiempoaprox"  />
+  <input type="number" id="field_tiempoaprox" *ngIf="!triage" class="form-control" name="tiempoaprox" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_vivos">Vivos</label>
+  <input type="number" id="field_vivos" *ngIf="triage" class="form-control" name="vivos" [(ngModel)]="triage.vivos"  />
+  <input type="number" id="field_vivos" *ngIf="!triage" class="form-control" name="vivos" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_gestacion">Gestacion</label>
+  <input type="text" id="field_gestacion" *ngIf="triage" class="form-control" name="gestacion" [(ngModel)]="triage.gestacion"  />
+  <input type="text" id="field_gestacion" *ngIf="!triage" class="form-control" name="gestacion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_encabezadoCuestionario">Encabezado Cuestionario</label>
+  <input type="number" id="field_encabezadoCuestionario" *ngIf="triage" class="form-control" name="encabezadoCuestionario" [(ngModel)]="triage.encabezadoCuestionario"  />
+  <input type="number" id="field_encabezadoCuestionario" *ngIf="!triage" class="form-control" name="encabezadoCuestionario" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fur">Fur</label>
+  <input type="date" id="field_fur" *ngIf="triage" class="form-control" name="fur" [(ngModel)]="triage.fur"  />
+  <input type="date" id="field_fur" *ngIf="!triage" class="form-control" name="fur" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaIngreso">Fecha Ingreso</label>
+  <input type="date" id="field_fechaIngreso" *ngIf="triage" class="form-control" name="fechaIngreso" [(ngModel)]="triage.fechaIngreso"  />
+  <input type="date" id="field_fechaIngreso" *ngIf="!triage" class="form-control" name="fechaIngreso" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_cesarias">Cesarias</label>
+  <input type="number" id="field_cesarias" *ngIf="triage" class="form-control" name="cesarias" [(ngModel)]="triage.cesarias"  />
+  <input type="number" id="field_cesarias" *ngIf="!triage" class="form-control" name="cesarias" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_clasificacionCalculada">Clasificacion Calculada</label>
+  <input type="text" id="field_clasificacionCalculada" *ngIf="triage" class="form-control" name="clasificacionCalculada" [(ngModel)]="triage.clasificacionCalculada"  />
+  <input type="text" id="field_clasificacionCalculada" *ngIf="!triage" class="form-control" name="clasificacionCalculada" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_partos">Partos</label>
+  <input type="number" id="field_partos" *ngIf="triage" class="form-control" name="partos" [(ngModel)]="triage.partos"  />
+  <input type="number" id="field_partos" *ngIf="!triage" class="form-control" name="partos" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fup">Fup</label>
+  <input type="date" id="field_fup" *ngIf="triage" class="form-control" name="fup" [(ngModel)]="triage.fup"  />
+  <input type="date" id="field_fup" *ngIf="!triage" class="form-control" name="fup" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_especialidad">Especialidad</label>
+  <input type="text" id="field_especialidad" *ngIf="triage" class="form-control" name="especialidad" [(ngModel)]="triage.especialidad"  />
+  <input type="text" id="field_especialidad" *ngIf="!triage" class="form-control" name="especialidad" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="triage" class="form-control" name="loginRegistro" [(ngModel)]="triage.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!triage" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_remitidoa">Remitidoa</label>
+  <input type="text" id="field_remitidoa" *ngIf="triage" class="form-control" name="remitidoa" [(ngModel)]="triage.remitidoa"  />
+  <input type="text" id="field_remitidoa" *ngIf="!triage" class="form-control" name="remitidoa" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_clasificacionManual">Clasificacion Manual</label>
+  <input type="text" id="field_clasificacionManual" *ngIf="triage" class="form-control" name="clasificacionManual" [(ngModel)]="triage.clasificacionManual"  />
+  <input type="text" id="field_clasificacionManual" *ngIf="!triage" class="form-control" name="clasificacionManual" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="triage" class="form-control" name="observaciones" [(ngModel)]="triage.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!triage" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_minutoIngreso">Minuto Ingreso</label>
+  <input type="number" id="field_minutoIngreso" *ngIf="triage" class="form-control" name="minutoIngreso" [(ngModel)]="triage.minutoIngreso"  />
+  <input type="number" id="field_minutoIngreso" *ngIf="!triage" class="form-control" name="minutoIngreso" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_escDolor">Esc Dolor</label>
+  <input type="text" id="field_escDolor" *ngIf="triage" class="form-control" name="escDolor" [(ngModel)]="triage.escDolor"  />
+  <input type="text" id="field_escDolor" *ngIf="!triage" class="form-control" name="escDolor" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idAdmision">Id Admision</label>
+  <input type="number" id="field_idAdmision" *ngIf="triage" class="form-control" name="idAdmision" [(ngModel)]="triage.idAdmision"  />
+  <input type="number" id="field_idAdmision" *ngIf="!triage" class="form-control" name="idAdmision" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_muertos">Muertos</label>
+  <input type="number" id="field_muertos" *ngIf="triage" class="form-control" name="muertos" [(ngModel)]="triage.muertos"  />
+  <input type="number" id="field_muertos" *ngIf="!triage" class="form-control" name="muertos" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_alerta">Alerta</label>
+  <input type="text" id="field_alerta" *ngIf="triage" class="form-control" name="alerta" [(ngModel)]="triage.alerta"  />
+  <input type="text" id="field_alerta" *ngIf="!triage" class="form-control" name="alerta" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="consultorios">
+              <label for="field_consultorio">Consultorio</label>
+
+              <select *ngIf="!triage" class="form-control" name="idConsultorio" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="consultorio._id" *ngFor="let consultorio of consultorios">{{ consultorio._id }}</option>
+              </select>
+
+              <select *ngIf="triage && triage.idConsultorio" class="form-control" name="idConsultorio" [(ngModel)]="triage.idConsultorio">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="consultorio._id" *ngFor="let consultorio of consultorios">{{ consultorio._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="entidads">
+              <label for="field_entidad">Entidad</label>
+
+              <select *ngIf="!triage" class="form-control" name="idEntidad" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+
+              <select *ngIf="triage && triage.idEntidad" class="form-control" name="idEntidad" [(ngModel)]="triage.idEntidad">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="motivos">
+              <label for="field_motivo">Motivo</label>
+
+              <select *ngIf="!triage" class="form-control" name="idMotivo" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="motivo._id" *ngFor="let motivo of motivos">{{ motivo._id }}</option>
+              </select>
+
+              <select *ngIf="triage && triage.idMotivo" class="form-control" name="idMotivo" [(ngModel)]="triage.idMotivo">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="motivo._id" *ngFor="let motivo of motivos">{{ motivo._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="sucursals">
+              <label for="field_sucursal">Sucursal</label>
+
+              <select *ngIf="!triage" class="form-control" name="idSucursal" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+
+              <select *ngIf="triage && triage.idSucursal" class="form-control" name="idSucursal" [(ngModel)]="triage.idSucursal">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

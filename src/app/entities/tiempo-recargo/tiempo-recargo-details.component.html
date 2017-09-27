@@ -1,0 +1,46 @@
+<div *ngIf="tiempoRecargo" class="container">
+  <h3 class="m-top-and-bottom-2">Tiempo Recargo</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ tiempoRecargo._id }}</dd>
+
+  
+    <dt>Codigo</dt>
+    <dd>{{ tiempoRecargo.codigo }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ tiempoRecargo.descripcion }}</dd>
+
+    <dt>Hora Desde</dt>
+    <dd>{{ tiempoRecargo.horaDesde }}</dd>
+
+    <dt>Minuto Desde</dt>
+    <dd>{{ tiempoRecargo.minutoDesde }}</dd>
+
+    <dt>Hora Final</dt>
+    <dd>{{ tiempoRecargo.horaFinal }}</dd>
+
+    <dt>Minuto Final</dt>
+    <dd>{{ tiempoRecargo.minutoFinal }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ tiempoRecargo.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ tiempoRecargo.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ tiempoRecargo.observaciones }}</dd>
+
+    <dt>Item Lista Estado Mtto Rec Auto</dt>
+    <dd>{{ tiempoRecargo.itemListaEstadoMttoRecAuto }}</dd>
+
+    <dt>SucursalEntidad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursalEntidad', tiempoRecargo.sucursalEntidad._id]">{{ tiempoRecargo.sucursalEntidad._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

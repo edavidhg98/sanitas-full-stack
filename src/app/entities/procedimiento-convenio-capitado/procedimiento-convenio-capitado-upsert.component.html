@@ -1,0 +1,138 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Procedimiento Convenio Capitado</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="procedimientoConvenioCapitado && procedimientoConvenioCapitado._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="procedimientoConvenioCapitado" type="text" class="form-control" name="id" [(ngModel)]="procedimientoConvenioCapitado._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaInicial">Fecha Inicial</label>
+  <input type="date" id="field_fechaInicial" *ngIf="procedimientoConvenioCapitado" class="form-control" name="fechaInicial" [(ngModel)]="procedimientoConvenioCapitado.fechaInicial"  />
+  <input type="date" id="field_fechaInicial" *ngIf="!procedimientoConvenioCapitado" class="form-control" name="fechaInicial" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaFinal">Fecha Final</label>
+  <input type="date" id="field_fechaFinal" *ngIf="procedimientoConvenioCapitado" class="form-control" name="fechaFinal" [(ngModel)]="procedimientoConvenioCapitado.fechaFinal"  />
+  <input type="date" id="field_fechaFinal" *ngIf="!procedimientoConvenioCapitado" class="form-control" name="fechaFinal" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaTipoCargo">Item Lista Tipo Cargo</label>
+  <input type="number" id="field_itemListaTipoCargo" *ngIf="procedimientoConvenioCapitado" class="form-control" name="itemListaTipoCargo" [(ngModel)]="procedimientoConvenioCapitado.itemListaTipoCargo"  />
+  <input type="number" id="field_itemListaTipoCargo" *ngIf="!procedimientoConvenioCapitado" class="form-control" name="itemListaTipoCargo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_descripcion">Descripcion</label>
+  <input type="text" id="field_descripcion" *ngIf="procedimientoConvenioCapitado" class="form-control" name="descripcion" [(ngModel)]="procedimientoConvenioCapitado.descripcion"  />
+  <input type="text" id="field_descripcion" *ngIf="!procedimientoConvenioCapitado" class="form-control" name="descripcion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_valor">Valor</label>
+  <input type="number" id="field_valor" *ngIf="procedimientoConvenioCapitado" class="form-control" name="valor" [(ngModel)]="procedimientoConvenioCapitado.valor"  />
+  <input type="number" id="field_valor" *ngIf="!procedimientoConvenioCapitado" class="form-control" name="valor" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_alias">Alias</label>
+  <input type="text" id="field_alias" *ngIf="procedimientoConvenioCapitado" class="form-control" name="alias" [(ngModel)]="procedimientoConvenioCapitado.alias"  />
+  <input type="text" id="field_alias" *ngIf="!procedimientoConvenioCapitado" class="form-control" name="alias" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_excedente">Excedente</label>
+  <input type="text" id="field_excedente" *ngIf="procedimientoConvenioCapitado" class="form-control" name="excedente" [(ngModel)]="procedimientoConvenioCapitado.excedente"  />
+  <input type="text" id="field_excedente" *ngIf="!procedimientoConvenioCapitado" class="form-control" name="excedente" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="procedimientoConvenioCapitado" class="form-control" name="fechaRegistro" [(ngModel)]="procedimientoConvenioCapitado.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!procedimientoConvenioCapitado" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="procedimientoConvenioCapitado" class="form-control" name="loginRegistro" [(ngModel)]="procedimientoConvenioCapitado.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!procedimientoConvenioCapitado" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="procedimientoConvenioCapitado" class="form-control" name="observaciones" [(ngModel)]="procedimientoConvenioCapitado.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!procedimientoConvenioCapitado" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="sucursalEntidads">
+              <label for="field_sucursalEntidad">Sucursal Entidad</label>
+
+              <select *ngIf="!procedimientoConvenioCapitado" class="form-control" name="idSucursalEntidad" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursalEntidad._id" *ngFor="let sucursalEntidad of sucursalEntidads">{{ sucursalEntidad._id }}</option>
+              </select>
+
+              <select *ngIf="procedimientoConvenioCapitado && procedimientoConvenioCapitado.idSucursalEntidad" class="form-control" name="idSucursalEntidad" [(ngModel)]="procedimientoConvenioCapitado.idSucursalEntidad">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursalEntidad._id" *ngFor="let sucursalEntidad of sucursalEntidads">{{ sucursalEntidad._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="tipoAdmisions">
+              <label for="field_tipoAdmision">Tipo Admision</label>
+
+              <select *ngIf="!procedimientoConvenioCapitado" class="form-control" name="idTipoAdmision" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tipoAdmision._id" *ngFor="let tipoAdmision of tipoAdmisions">{{ tipoAdmision._id }}</option>
+              </select>
+
+              <select *ngIf="procedimientoConvenioCapitado && procedimientoConvenioCapitado.idTipoAdmision" class="form-control" name="idTipoAdmision" [(ngModel)]="procedimientoConvenioCapitado.idTipoAdmision">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tipoAdmision._id" *ngFor="let tipoAdmision of tipoAdmisions">{{ tipoAdmision._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="procedimientos">
+              <label for="field_procedimiento">Procedimiento</label>
+
+              <select *ngIf="!procedimientoConvenioCapitado" class="form-control" name="idProcedimiento" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="procedimiento._id" *ngFor="let procedimiento of procedimientos">{{ procedimiento._id }}</option>
+              </select>
+
+              <select *ngIf="procedimientoConvenioCapitado && procedimientoConvenioCapitado.idProcedimiento" class="form-control" name="idProcedimiento" [(ngModel)]="procedimientoConvenioCapitado.idProcedimiento">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="procedimiento._id" *ngFor="let procedimiento of procedimientos">{{ procedimiento._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

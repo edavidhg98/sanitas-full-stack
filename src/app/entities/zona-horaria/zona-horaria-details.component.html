@@ -1,0 +1,28 @@
+<div *ngIf="zonaHoraria" class="container">
+  <h3 class="m-top-and-bottom-2">Zona Horaria</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ zonaHoraria._id }}</dd>
+
+  
+    <dt>Utc</dt>
+    <dd>{{ zonaHoraria.utc }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ zonaHoraria.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ zonaHoraria.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ zonaHoraria.observaciones }}</dd>
+
+    <dt>Sucursal</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursal', zonaHoraria.sucursal._id]">{{ zonaHoraria.sucursal._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

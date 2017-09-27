@@ -1,0 +1,25 @@
+<div *ngIf="fotoEstadoCama" class="container-fluid">
+  <h3 class="m-top-and-bottom-2">Foto Estado Cama</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ fotoEstadoCama._id }}</dd>
+
+  
+    <dt>Idfoto</dt>
+    <dd>{{ fotoEstadoCama.idfoto }}</dd>
+
+    <dt>Item Lista Estado Cama</dt>
+    <dd>{{ fotoEstadoCama.itemListaEstadoCama }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ fotoEstadoCama.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ fotoEstadoCama.loginRegistro }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+  <app-cama-list [camas]="fotoEstadoCama.camas"></app-cama-list>
+</div>

@@ -1,0 +1,92 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="m-top-and-bottom-2">
+            <span>Porcentaje Medico</span>
+            <a class="btn btn-primary float-right" [routerLink]="[ absolutePath, 'create']" data-dismiss="modal">
+              <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
+              Crear Nuevo Porcentaje Medico
+            </a>
+          </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped table-responsive" *ngIf="porcentajeMedicos">
+          <thead>
+            <tr>
+              <th class="cursor-pointer" (click)="sort('codigoPorcentaje')">
+                Codigo Porcentaje
+                <i class="fa" [ngClass]="{'fa-sort': column != 'codigoPorcentaje', 'fa-sort-asc': (column == 'codigoPorcentaje' && isDesc), 'fa-sort-desc': (column == 'codigoPorcentaje' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('descripcion')">
+                Descripcion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'descripcion', 'fa-sort-asc': (column == 'descripcion' && isDesc), 'fa-sort-desc': (column == 'descripcion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('porcentaje')">
+                Porcentaje
+                <i class="fa" [ngClass]="{'fa-sort': column != 'porcentaje', 'fa-sort-asc': (column == 'porcentaje' && isDesc), 'fa-sort-desc': (column == 'porcentaje' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('observaciones')">
+                Observaciones
+                <i class="fa" [ngClass]="{'fa-sort': column != 'observaciones', 'fa-sort-asc': (column == 'observaciones' && isDesc), 'fa-sort-desc': (column == 'observaciones' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('loginRegistro')">
+                Login Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'loginRegistro', 'fa-sort-asc': (column == 'loginRegistro' && isDesc), 'fa-sort-desc': (column == 'loginRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaRegistro')">
+                Fecha Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaRegistro', 'fa-sort-asc': (column == 'fechaRegistro' && isDesc), 'fa-sort-desc': (column == 'fechaRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('loginModificacion')">
+                Login Modificacion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'loginModificacion', 'fa-sort-asc': (column == 'loginModificacion' && isDesc), 'fa-sort-desc': (column == 'loginModificacion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaModificacion')">
+                Fecha Modificacion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaModificacion', 'fa-sort-asc': (column == 'fechaModificacion' && isDesc), 'fa-sort-desc': (column == 'fechaModificacion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaEstadoPorcentajeMedico')">
+                Item Lista Estado Porcentaje Medico
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaEstadoPorcentajeMedico', 'fa-sort-asc': (column == 'itemListaEstadoPorcentajeMedico' && isDesc), 'fa-sort-desc': (column == 'itemListaEstadoPorcentajeMedico' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('idPrestador')">
+                Id Prestador
+                <i class="fa" [ngClass]="{'fa-sort': column != 'idPrestador', 'fa-sort-asc': (column == 'idPrestador' && isDesc), 'fa-sort-desc': (column == 'idPrestador' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let porcentajeMedico of porcentajeMedicos | orderBy: { property: column, direction: direction }">
+              <td>{{ porcentajeMedico.codigoPorcentaje }}</td>
+              <td>{{ porcentajeMedico.descripcion }}</td>
+              <td>{{ porcentajeMedico.porcentaje }}</td>
+              <td>{{ porcentajeMedico.observaciones }}</td>
+              <td>{{ porcentajeMedico.loginRegistro }}</td>
+              <td>{{ porcentajeMedico.fechaRegistro }}</td>
+              <td>{{ porcentajeMedico.loginModificacion }}</td>
+              <td>{{ porcentajeMedico.fechaModificacion }}</td>
+              <td>{{ porcentajeMedico.itemListaEstadoPorcentajeMedico }}</td>
+              <td>{{ porcentajeMedico.idPrestador }}</td>
+              <td>
+                <a class="btn btn-info btn-sm" [routerLink]="[ absolutePath, porcentajeMedico._id]"><span class="fa fa-eye fa-fw"></span>Ver</a>
+                <a class="btn btn-primary btn-sm" [routerLink]="[ absolutePath, porcentajeMedico._id, 'update']"><span class="fa fa-pencil fa-fw"></span>Editar</a>
+                <a class="btn btn-danger btn-sm text-white cursor-pointer" (click)="openDeleteModal(content, porcentajeMedico._id)"><span class="fa fa-trash fa-fw"></span>Eliminar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h5 class="modal-title"><i class="fa fa-exclamation-triangle fa-lg fa-fw" aria-hidden="true"></i>¿Esta seguro de eliminar?</h5>
+    <button type="button" class="close cursor-pointer" aria-label="Close" (click)="d(deleteModalOpts.cancel)">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary cursor-pointer" (click)="c(deleteModalOpts.ok)"><i class="fa fa-check fa-fw"></i>Aceptar</button>
+    <button type="button" class="btn btn-secondary cursor-pointer" (click)="c(deleteModalOpts.cancel)"><i class="fa fa-ban fa-fw"></i>Cancelar</button>
+  </div>
+</ng-template>

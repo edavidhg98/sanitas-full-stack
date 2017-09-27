@@ -1,0 +1,392 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="m-top-and-bottom-2">
+            <span>Sucursal</span>
+            <a class="btn btn-primary float-right" [routerLink]="[ absolutePath, 'create']" data-dismiss="modal">
+              <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
+              Crear Nuevo Sucursal
+            </a>
+          </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped table-responsive" *ngIf="sucursals">
+          <thead>
+            <tr>
+              <th class="cursor-pointer" (click)="sort('codSucur')">
+                Cod Sucur
+                <i class="fa" [ngClass]="{'fa-sort': column != 'codSucur', 'fa-sort-asc': (column == 'codSucur' && isDesc), 'fa-sort-desc': (column == 'codSucur' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('incPedIntefaceAct')">
+                Inc Ped Inteface Act
+                <i class="fa" [ngClass]="{'fa-sort': column != 'incPedIntefaceAct', 'fa-sort-asc': (column == 'incPedIntefaceAct' && isDesc), 'fa-sort-desc': (column == 'incPedIntefaceAct' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('salMinLeg')">
+                Sal Min Leg
+                <i class="fa" [ngClass]="{'fa-sort': column != 'salMinLeg', 'fa-sort-asc': (column == 'salMinLeg' && isDesc), 'fa-sort-desc': (column == 'salMinLeg' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manTriage')">
+                Man Triage
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manTriage', 'fa-sort-asc': (column == 'manTriage' && isDesc), 'fa-sort-desc': (column == 'manTriage' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manRedondeo')">
+                Man Redondeo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manRedondeo', 'fa-sort-asc': (column == 'manRedondeo' && isDesc), 'fa-sort-desc': (column == 'manRedondeo' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('codInterno')">
+                Cod Interno
+                <i class="fa" [ngClass]="{'fa-sort': column != 'codInterno', 'fa-sort-asc': (column == 'codInterno' && isDesc), 'fa-sort-desc': (column == 'codInterno' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('agfa')">
+                Agfa
+                <i class="fa" [ngClass]="{'fa-sort': column != 'agfa', 'fa-sort-asc': (column == 'agfa' && isDesc), 'fa-sort-desc': (column == 'agfa' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manInventario')">
+                Man Inventario
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manInventario', 'fa-sort-asc': (column == 'manInventario' && isDesc), 'fa-sort-desc': (column == 'manInventario' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('sucursalOsi')">
+                Sucursal Osi
+                <i class="fa" [ngClass]="{'fa-sort': column != 'sucursalOsi', 'fa-sort-asc': (column == 'sucursalOsi' && isDesc), 'fa-sort-desc': (column == 'sucursalOsi' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manRecAut')">
+                Man Rec Aut
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manRecAut', 'fa-sort-asc': (column == 'manRecAut' && isDesc), 'fa-sort-desc': (column == 'manRecAut' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('email')">
+                Email
+                <i class="fa" [ngClass]="{'fa-sort': column != 'email', 'fa-sort-asc': (column == 'email' && isDesc), 'fa-sort-desc': (column == 'email' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manConvemed')">
+                Man Convemed
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manConvemed', 'fa-sort-asc': (column == 'manConvemed' && isDesc), 'fa-sort-desc': (column == 'manConvemed' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('pideCtc')">
+                Pide Ctc
+                <i class="fa" [ngClass]="{'fa-sort': column != 'pideCtc', 'fa-sort-asc': (column == 'pideCtc' && isDesc), 'fa-sort-desc': (column == 'pideCtc' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('agfaMerge')">
+                Agfa Merge
+                <i class="fa" [ngClass]="{'fa-sort': column != 'agfaMerge', 'fa-sort-asc': (column == 'agfaMerge' && isDesc), 'fa-sort-desc': (column == 'agfaMerge' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('conCtacobro')">
+                Con Ctacobro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'conCtacobro', 'fa-sort-asc': (column == 'conCtacobro' && isDesc), 'fa-sort-desc': (column == 'conCtacobro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fax')">
+                Fax
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fax', 'fa-sort-asc': (column == 'fax' && isDesc), 'fa-sort-desc': (column == 'fax' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('telefono')">
+                Telefono
+                <i class="fa" [ngClass]="{'fa-sort': column != 'telefono', 'fa-sort-asc': (column == 'telefono' && isDesc), 'fa-sort-desc': (column == 'telefono' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaRegistro')">
+                Fecha Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaRegistro', 'fa-sort-asc': (column == 'fechaRegistro' && isDesc), 'fa-sort-desc': (column == 'fechaRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('codigorips')">
+                Codigorips
+                <i class="fa" [ngClass]="{'fa-sort': column != 'codigorips', 'fa-sort-asc': (column == 'codigorips' && isDesc), 'fa-sort-desc': (column == 'codigorips' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manCitaesp')">
+                Man Citaesp
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manCitaesp', 'fa-sort-asc': (column == 'manCitaesp' && isDesc), 'fa-sort-desc': (column == 'manCitaesp' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('conCita')">
+                Con Cita
+                <i class="fa" [ngClass]="{'fa-sort': column != 'conCita', 'fa-sort-asc': (column == 'conCita' && isDesc), 'fa-sort-desc': (column == 'conCita' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manCarAutCe')">
+                Man Car Aut Ce
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manCarAutCe', 'fa-sort-asc': (column == 'manCarAutCe' && isDesc), 'fa-sort-desc': (column == 'manCarAutCe' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaTipoDocumento')">
+                Item Lista Tipo Documento
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaTipoDocumento', 'fa-sort-asc': (column == 'itemListaTipoDocumento' && isDesc), 'fa-sort-desc': (column == 'itemListaTipoDocumento' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('tieEspOb')">
+                Tie Esp Ob
+                <i class="fa" [ngClass]="{'fa-sort': column != 'tieEspOb', 'fa-sort-asc': (column == 'tieEspOb' && isDesc), 'fa-sort-desc': (column == 'tieEspOb' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('devIntefaceAct')">
+                Dev Inteface Act
+                <i class="fa" [ngClass]="{'fa-sort': column != 'devIntefaceAct', 'fa-sort-asc': (column == 'devIntefaceAct' && isDesc), 'fa-sort-desc': (column == 'devIntefaceAct' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manEstadoPac')">
+                Man Estado Pac
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manEstadoPac', 'fa-sort-asc': (column == 'manEstadoPac' && isDesc), 'fa-sort-desc': (column == 'manEstadoPac' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manProtocolos')">
+                Man Protocolos
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manProtocolos', 'fa-sort-asc': (column == 'manProtocolos' && isDesc), 'fa-sort-desc': (column == 'manProtocolos' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('conProgciru')">
+                Con Progciru
+                <i class="fa" [ngClass]="{'fa-sort': column != 'conProgciru', 'fa-sort-asc': (column == 'conProgciru' && isDesc), 'fa-sort-desc': (column == 'conProgciru' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('numConsult')">
+                Num Consult
+                <i class="fa" [ngClass]="{'fa-sort': column != 'numConsult', 'fa-sort-asc': (column == 'numConsult' && isDesc), 'fa-sort-desc': (column == 'numConsult' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('director')">
+                Director
+                <i class="fa" [ngClass]="{'fa-sort': column != 'director', 'fa-sort-asc': (column == 'director' && isDesc), 'fa-sort-desc': (column == 'director' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('observaciones')">
+                Observaciones
+                <i class="fa" [ngClass]="{'fa-sort': column != 'observaciones', 'fa-sort-asc': (column == 'observaciones' && isDesc), 'fa-sort-desc': (column == 'observaciones' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('pedidoManual')">
+                Pedido Manual
+                <i class="fa" [ngClass]="{'fa-sort': column != 'pedidoManual', 'fa-sort-asc': (column == 'pedidoManual' && isDesc), 'fa-sort-desc': (column == 'pedidoManual' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('bloqPedidos')">
+                Bloq Pedidos
+                <i class="fa" [ngClass]="{'fa-sort': column != 'bloqPedidos', 'fa-sort-asc': (column == 'bloqPedidos' && isDesc), 'fa-sort-desc': (column == 'bloqPedidos' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('conRips')">
+                Con Rips
+                <i class="fa" [ngClass]="{'fa-sort': column != 'conRips', 'fa-sort-asc': (column == 'conRips' && isDesc), 'fa-sort-desc': (column == 'conRips' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('anulSinvalidar')">
+                Anul Sinvalidar
+                <i class="fa" [ngClass]="{'fa-sort': column != 'anulSinvalidar', 'fa-sort-asc': (column == 'anulSinvalidar' && isDesc), 'fa-sort-desc': (column == 'anulSinvalidar' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('numDoc')">
+                Num Doc
+                <i class="fa" [ngClass]="{'fa-sort': column != 'numDoc', 'fa-sort-asc': (column == 'numDoc' && isDesc), 'fa-sort-desc': (column == 'numDoc' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('emailCtc')">
+                Email Ctc
+                <i class="fa" [ngClass]="{'fa-sort': column != 'emailCtc', 'fa-sort-asc': (column == 'emailCtc' && isDesc), 'fa-sort-desc': (column == 'emailCtc' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('difhorservidor')">
+                Difhorservidor
+                <i class="fa" [ngClass]="{'fa-sort': column != 'difhorservidor', 'fa-sort-asc': (column == 'difhorservidor' && isDesc), 'fa-sort-desc': (column == 'difhorservidor' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('flagCenso')">
+                Flag Censo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'flagCenso', 'fa-sort-asc': (column == 'flagCenso' && isDesc), 'fa-sort-desc': (column == 'flagCenso' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('conAutoriza')">
+                Con Autoriza
+                <i class="fa" [ngClass]="{'fa-sort': column != 'conAutoriza', 'fa-sort-asc': (column == 'conAutoriza' && isDesc), 'fa-sort-desc': (column == 'conAutoriza' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('anulPedIntefaceAct')">
+                Anul Ped Inteface Act
+                <i class="fa" [ngClass]="{'fa-sort': column != 'anulPedIntefaceAct', 'fa-sort-asc': (column == 'anulPedIntefaceAct' && isDesc), 'fa-sort-desc': (column == 'anulPedIntefaceAct' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('descripcion')">
+                Descripcion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'descripcion', 'fa-sort-asc': (column == 'descripcion' && isDesc), 'fa-sort-desc': (column == 'descripcion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('modFecAdm')">
+                Mod Fec Adm
+                <i class="fa" [ngClass]="{'fa-sort': column != 'modFecAdm', 'fa-sort-asc': (column == 'modFecAdm' && isDesc), 'fa-sort-desc': (column == 'modFecAdm' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('conCertifihos')">
+                Con Certifihos
+                <i class="fa" [ngClass]="{'fa-sort': column != 'conCertifihos', 'fa-sort-asc': (column == 'conCertifihos' && isDesc), 'fa-sort-desc': (column == 'conCertifihos' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('nivInstituc')">
+                Niv Instituc
+                <i class="fa" [ngClass]="{'fa-sort': column != 'nivInstituc', 'fa-sort-asc': (column == 'nivInstituc' && isDesc), 'fa-sort-desc': (column == 'nivInstituc' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('agfaMediweb')">
+                Agfa Mediweb
+                <i class="fa" [ngClass]="{'fa-sort': column != 'agfaMediweb', 'fa-sort-asc': (column == 'agfaMediweb' && isDesc), 'fa-sort-desc': (column == 'agfaMediweb' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('loginRegistro')">
+                Login Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'loginRegistro', 'fa-sort-asc': (column == 'loginRegistro' && isDesc), 'fa-sort-desc': (column == 'loginRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('consecutivoMenorEdad')">
+                Consecutivo Menor Edad
+                <i class="fa" [ngClass]="{'fa-sort': column != 'consecutivoMenorEdad', 'fa-sort-asc': (column == 'consecutivoMenorEdad' && isDesc), 'fa-sort-desc': (column == 'consecutivoMenorEdad' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manEnfermeria')">
+                Man Enfermeria
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manEnfermeria', 'fa-sort-asc': (column == 'manEnfermeria' && isDesc), 'fa-sort-desc': (column == 'manEnfermeria' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('conDietas')">
+                Con Dietas
+                <i class="fa" [ngClass]="{'fa-sort': column != 'conDietas', 'fa-sort-asc': (column == 'conDietas' && isDesc), 'fa-sort-desc': (column == 'conDietas' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manPrecargos')">
+                Man Precargos
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manPrecargos', 'fa-sort-asc': (column == 'manPrecargos' && isDesc), 'fa-sort-desc': (column == 'manPrecargos' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manCamPla')">
+                Man Cam Pla
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manCamPla', 'fa-sort-asc': (column == 'manCamPla' && isDesc), 'fa-sort-desc': (column == 'manCamPla' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('phd')">
+                Phd
+                <i class="fa" [ngClass]="{'fa-sort': column != 'phd', 'fa-sort-asc': (column == 'phd' && isDesc), 'fa-sort-desc': (column == 'phd' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manWscitas')">
+                Man Wscitas
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manWscitas', 'fa-sort-asc': (column == 'manWscitas' && isDesc), 'fa-sort-desc': (column == 'manWscitas' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('vlrRedondeo')">
+                Vlr Redondeo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'vlrRedondeo', 'fa-sort-asc': (column == 'vlrRedondeo' && isDesc), 'fa-sort-desc': (column == 'vlrRedondeo' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('consecutivoNn')">
+                Consecutivo Nn
+                <i class="fa" [ngClass]="{'fa-sort': column != 'consecutivoNn', 'fa-sort-asc': (column == 'consecutivoNn' && isDesc), 'fa-sort-desc': (column == 'consecutivoNn' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('pedIntefaceAct')">
+                Ped Inteface Act
+                <i class="fa" [ngClass]="{'fa-sort': column != 'pedIntefaceAct', 'fa-sort-asc': (column == 'pedIntefaceAct' && isDesc), 'fa-sort-desc': (column == 'pedIntefaceAct' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('horMedioDia')">
+                Hor Medio Dia
+                <i class="fa" [ngClass]="{'fa-sort': column != 'horMedioDia', 'fa-sort-asc': (column == 'horMedioDia' && isDesc), 'fa-sort-desc': (column == 'horMedioDia' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manCarAutUrg')">
+                Man Car Aut Urg
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manCarAutUrg', 'fa-sort-asc': (column == 'manCarAutUrg' && isDesc), 'fa-sort-desc': (column == 'manCarAutUrg' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manDigiturno')">
+                Man Digiturno
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manDigiturno', 'fa-sort-asc': (column == 'manDigiturno' && isDesc), 'fa-sort-desc': (column == 'manDigiturno' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('direccion')">
+                Direccion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'direccion', 'fa-sort-asc': (column == 'direccion' && isDesc), 'fa-sort-desc': (column == 'direccion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('conAutRem')">
+                Con Aut Rem
+                <i class="fa" [ngClass]="{'fa-sort': column != 'conAutRem', 'fa-sort-asc': (column == 'conAutRem' && isDesc), 'fa-sort-desc': (column == 'conAutRem' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manConsAut')">
+                Man Cons Aut
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manConsAut', 'fa-sort-asc': (column == 'manConsAut' && isDesc), 'fa-sort-desc': (column == 'manConsAut' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('ordenarGenerico')">
+                Ordenar Generico
+                <i class="fa" [ngClass]="{'fa-sort': column != 'ordenarGenerico', 'fa-sort-asc': (column == 'ordenarGenerico' && isDesc), 'fa-sort-desc': (column == 'ordenarGenerico' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('conFormulacion')">
+                Con Formulacion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'conFormulacion', 'fa-sort-asc': (column == 'conFormulacion' && isDesc), 'fa-sort-desc': (column == 'conFormulacion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('conCertifisoat')">
+                Con Certifisoat
+                <i class="fa" [ngClass]="{'fa-sort': column != 'conCertifisoat', 'fa-sort-asc': (column == 'conCertifisoat' && isDesc), 'fa-sort-desc': (column == 'conCertifisoat' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('conForProc')">
+                Con For Proc
+                <i class="fa" [ngClass]="{'fa-sort': column != 'conForProc', 'fa-sort-asc': (column == 'conForProc' && isDesc), 'fa-sort-desc': (column == 'conForProc' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaUnidadMedidaTiempoObservacion')">
+                Item Lista Unidad Medida Tiempo Observacion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaUnidadMedidaTiempoObservacion', 'fa-sort-asc': (column == 'itemListaUnidadMedidaTiempoObservacion' && isDesc), 'fa-sort-desc': (column == 'itemListaUnidadMedidaTiempoObservacion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('codGrabacionCt')">
+                Cod Grabacion Ct
+                <i class="fa" [ngClass]="{'fa-sort': column != 'codGrabacionCt', 'fa-sort-asc': (column == 'codGrabacionCt' && isDesc), 'fa-sort-desc': (column == 'codGrabacionCt' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manUniAtePri')">
+                Man Uni Ate Pri
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manUniAtePri', 'fa-sort-asc': (column == 'manUniAtePri' && isDesc), 'fa-sort-desc': (column == 'manUniAtePri' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let sucursal of sucursals | orderBy: { property: column, direction: direction }">
+              <td>{{ sucursal.codSucur }}</td>
+              <td>{{ sucursal.incPedIntefaceAct }}</td>
+              <td>{{ sucursal.salMinLeg }}</td>
+              <td>{{ sucursal.manTriage }}</td>
+              <td>{{ sucursal.manRedondeo }}</td>
+              <td>{{ sucursal.codInterno }}</td>
+              <td>{{ sucursal.agfa }}</td>
+              <td>{{ sucursal.manInventario }}</td>
+              <td>{{ sucursal.sucursalOsi }}</td>
+              <td>{{ sucursal.manRecAut }}</td>
+              <td>{{ sucursal.email }}</td>
+              <td>{{ sucursal.manConvemed }}</td>
+              <td>{{ sucursal.pideCtc }}</td>
+              <td>{{ sucursal.agfaMerge }}</td>
+              <td>{{ sucursal.conCtacobro }}</td>
+              <td>{{ sucursal.fax }}</td>
+              <td>{{ sucursal.telefono }}</td>
+              <td>{{ sucursal.fechaRegistro }}</td>
+              <td>{{ sucursal.codigorips }}</td>
+              <td>{{ sucursal.manCitaesp }}</td>
+              <td>{{ sucursal.conCita }}</td>
+              <td>{{ sucursal.manCarAutCe }}</td>
+              <td>{{ sucursal.itemListaTipoDocumento }}</td>
+              <td>{{ sucursal.tieEspOb }}</td>
+              <td>{{ sucursal.devIntefaceAct }}</td>
+              <td>{{ sucursal.manEstadoPac }}</td>
+              <td>{{ sucursal.manProtocolos }}</td>
+              <td>{{ sucursal.conProgciru }}</td>
+              <td>{{ sucursal.numConsult }}</td>
+              <td>{{ sucursal.director }}</td>
+              <td>{{ sucursal.observaciones }}</td>
+              <td>{{ sucursal.pedidoManual }}</td>
+              <td>{{ sucursal.bloqPedidos }}</td>
+              <td>{{ sucursal.conRips }}</td>
+              <td>{{ sucursal.anulSinvalidar }}</td>
+              <td>{{ sucursal.numDoc }}</td>
+              <td>{{ sucursal.emailCtc }}</td>
+              <td>{{ sucursal.difhorservidor }}</td>
+              <td>{{ sucursal.flagCenso }}</td>
+              <td>{{ sucursal.conAutoriza }}</td>
+              <td>{{ sucursal.anulPedIntefaceAct }}</td>
+              <td>{{ sucursal.descripcion }}</td>
+              <td>{{ sucursal.modFecAdm }}</td>
+              <td>{{ sucursal.conCertifihos }}</td>
+              <td>{{ sucursal.nivInstituc }}</td>
+              <td>{{ sucursal.agfaMediweb }}</td>
+              <td>{{ sucursal.loginRegistro }}</td>
+              <td>{{ sucursal.consecutivoMenorEdad }}</td>
+              <td>{{ sucursal.manEnfermeria }}</td>
+              <td>{{ sucursal.conDietas }}</td>
+              <td>{{ sucursal.manPrecargos }}</td>
+              <td>{{ sucursal.manCamPla }}</td>
+              <td>{{ sucursal.phd }}</td>
+              <td>{{ sucursal.manWscitas }}</td>
+              <td>{{ sucursal.vlrRedondeo }}</td>
+              <td>{{ sucursal.consecutivoNn }}</td>
+              <td>{{ sucursal.pedIntefaceAct }}</td>
+              <td>{{ sucursal.horMedioDia }}</td>
+              <td>{{ sucursal.manCarAutUrg }}</td>
+              <td>{{ sucursal.manDigiturno }}</td>
+              <td>{{ sucursal.direccion }}</td>
+              <td>{{ sucursal.conAutRem }}</td>
+              <td>{{ sucursal.manConsAut }}</td>
+              <td>{{ sucursal.ordenarGenerico }}</td>
+              <td>{{ sucursal.conFormulacion }}</td>
+              <td>{{ sucursal.conCertifisoat }}</td>
+              <td>{{ sucursal.conForProc }}</td>
+              <td>{{ sucursal.itemListaUnidadMedidaTiempoObservacion }}</td>
+              <td>{{ sucursal.codGrabacionCt }}</td>
+              <td>{{ sucursal.manUniAtePri }}</td>
+              <td>
+                <a class="btn btn-info btn-sm" [routerLink]="[ absolutePath, sucursal._id]"><span class="fa fa-eye fa-fw"></span>Ver</a>
+                <a class="btn btn-primary btn-sm" [routerLink]="[ absolutePath, sucursal._id, 'update']"><span class="fa fa-pencil fa-fw"></span>Editar</a>
+                <a class="btn btn-danger btn-sm text-white cursor-pointer" (click)="openDeleteModal(content, sucursal._id)"><span class="fa fa-trash fa-fw"></span>Eliminar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h5 class="modal-title"><i class="fa fa-exclamation-triangle fa-lg fa-fw" aria-hidden="true"></i>¿Esta seguro de eliminar?</h5>
+    <button type="button" class="close cursor-pointer" aria-label="Close" (click)="d(deleteModalOpts.cancel)">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary cursor-pointer" (click)="c(deleteModalOpts.ok)"><i class="fa fa-check fa-fw"></i>Aceptar</button>
+    <button type="button" class="btn btn-secondary cursor-pointer" (click)="c(deleteModalOpts.cancel)"><i class="fa fa-ban fa-fw"></i>Cancelar</button>
+  </div>
+</ng-template>

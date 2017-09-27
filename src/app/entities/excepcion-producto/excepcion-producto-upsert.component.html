@@ -1,0 +1,103 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Excepcion Producto</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="excepcionProducto && excepcionProducto._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="excepcionProducto" type="text" class="form-control" name="id" [(ngModel)]="excepcionProducto._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaEstadoExcepcionProducto">Item Lista Estado Excepcion Producto</label>
+  <input type="number" id="field_itemListaEstadoExcepcionProducto" *ngIf="excepcionProducto" class="form-control" name="itemListaEstadoExcepcionProducto" [(ngModel)]="excepcionProducto.itemListaEstadoExcepcionProducto"  />
+  <input type="number" id="field_itemListaEstadoExcepcionProducto" *ngIf="!excepcionProducto" class="form-control" name="itemListaEstadoExcepcionProducto" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_particular">Particular</label>
+  <input type="text" id="field_particular" *ngIf="excepcionProducto" class="form-control" name="particular" [(ngModel)]="excepcionProducto.particular"  />
+  <input type="text" id="field_particular" *ngIf="!excepcionProducto" class="form-control" name="particular" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="excepcionProducto" class="form-control" name="observaciones" [(ngModel)]="excepcionProducto.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!excepcionProducto" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="excepcionProducto" class="form-control" name="loginRegistro" [(ngModel)]="excepcionProducto.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!excepcionProducto" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="excepcionProducto" class="form-control" name="fechaRegistro" [(ngModel)]="excepcionProducto.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!excepcionProducto" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="entidads">
+              <label for="field_entidad">Entidad</label>
+
+              <select *ngIf="!excepcionProducto" class="form-control" name="idEntidad" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+
+              <select *ngIf="excepcionProducto && excepcionProducto.idEntidad" class="form-control" name="idEntidad" [(ngModel)]="excepcionProducto.idEntidad">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="prestadors">
+              <label for="field_prestador">Prestador</label>
+
+              <select *ngIf="!excepcionProducto" class="form-control" name="idPrestador" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="prestador._id" *ngFor="let prestador of prestadors">{{ prestador._id }}</option>
+              </select>
+
+              <select *ngIf="excepcionProducto && excepcionProducto.idPrestador" class="form-control" name="idPrestador" [(ngModel)]="excepcionProducto.idPrestador">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="prestador._id" *ngFor="let prestador of prestadors">{{ prestador._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="productos">
+              <label for="field_producto">Producto</label>
+
+              <select *ngIf="!excepcionProducto" class="form-control" name="idProducto" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="producto._id" *ngFor="let producto of productos">{{ producto._id }}</option>
+              </select>
+
+              <select *ngIf="excepcionProducto && excepcionProducto.idProducto" class="form-control" name="idProducto" [(ngModel)]="excepcionProducto.idProducto">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="producto._id" *ngFor="let producto of productos">{{ producto._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

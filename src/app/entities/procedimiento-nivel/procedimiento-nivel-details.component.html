@@ -1,0 +1,45 @@
+<div *ngIf="procedimientoNivel" class="container">
+  <h3 class="m-top-and-bottom-2">Procedimiento Nivel</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ procedimientoNivel._id }}</dd>
+
+  
+    <dt>Fecha Inicial</dt>
+    <dd>{{ procedimientoNivel.fechaInicial }}</dd>
+
+    <dt>Fecha Final</dt>
+    <dd>{{ procedimientoNivel.fechaFinal }}</dd>
+
+    <dt>Nivel</dt>
+    <dd>{{ procedimientoNivel.nivel }}</dd>
+
+    <dt>Id Centro Costo</dt>
+    <dd>{{ procedimientoNivel.idCentroCosto }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ procedimientoNivel.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ procedimientoNivel.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ procedimientoNivel.observaciones }}</dd>
+
+    <dt>Procedimiento</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'procedimiento', procedimientoNivel.procedimiento._id]">{{ procedimientoNivel.procedimiento._id }}</a>
+    </dd>
+    <dt>Procedimiento</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'procedimiento', procedimientoNivel.procedimiento._id]">{{ procedimientoNivel.procedimiento._id }}</a>
+    </dd>
+    <dt>Sucursal</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursal', procedimientoNivel.sucursal._id]">{{ procedimientoNivel.sucursal._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

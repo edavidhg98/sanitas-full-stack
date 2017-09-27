@@ -1,0 +1,397 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="m-top-and-bottom-2">
+            <span>Entidad</span>
+            <a class="btn btn-primary float-right" [routerLink]="[ absolutePath, 'create']" data-dismiss="modal">
+              <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
+              Crear Nuevo Entidad
+            </a>
+          </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped table-responsive" *ngIf="entidads">
+          <thead>
+            <tr>
+              <th class="cursor-pointer" (click)="sort('entidad')">
+                Entidad
+                <i class="fa" [ngClass]="{'fa-sort': column != 'entidad', 'fa-sort-asc': (column == 'entidad' && isDesc), 'fa-sort-desc': (column == 'entidad' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaUnidadMedidaExterna')">
+                Item Lista Unidad Medida Externa
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaUnidadMedidaExterna', 'fa-sort-asc': (column == 'itemListaUnidadMedidaExterna' && isDesc), 'fa-sort-desc': (column == 'itemListaUnidadMedidaExterna' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manejaRecaudo')">
+                Maneja Recaudo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manejaRecaudo', 'fa-sort-asc': (column == 'manejaRecaudo' && isDesc), 'fa-sort-desc': (column == 'manejaRecaudo' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('valorMinimoLiquidacion')">
+                Valor Minimo Liquidacion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'valorMinimoLiquidacion', 'fa-sort-asc': (column == 'valorMinimoLiquidacion' && isDesc), 'fa-sort-desc': (column == 'valorMinimoLiquidacion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaTipoDocumento')">
+                Item Lista Tipo Documento
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaTipoDocumento', 'fa-sort-asc': (column == 'itemListaTipoDocumento' && isDesc), 'fa-sort-desc': (column == 'itemListaTipoDocumento' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('caduForProcedqx')">
+                Cadu For Procedqx
+                <i class="fa" [ngClass]="{'fa-sort': column != 'caduForProcedqx', 'fa-sort-asc': (column == 'caduForProcedqx' && isDesc), 'fa-sort-desc': (column == 'caduForProcedqx' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manCapitacionodo')">
+                Man Capitacionodo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manCapitacionodo', 'fa-sort-asc': (column == 'manCapitacionodo' && isDesc), 'fa-sort-desc': (column == 'manCapitacionodo' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('maxentregasformulacronicos')">
+                Maxentregasformulacronicos
+                <i class="fa" [ngClass]="{'fa-sort': column != 'maxentregasformulacronicos', 'fa-sort-asc': (column == 'maxentregasformulacronicos' && isDesc), 'fa-sort-desc': (column == 'maxentregasformulacronicos' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('planobh')">
+                Planobh
+                <i class="fa" [ngClass]="{'fa-sort': column != 'planobh', 'fa-sort-asc': (column == 'planobh' && isDesc), 'fa-sort-desc': (column == 'planobh' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manejaProteccionDatos')">
+                Maneja Proteccion Datos
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manejaProteccionDatos', 'fa-sort-asc': (column == 'manejaProteccionDatos' && isDesc), 'fa-sort-desc': (column == 'manejaProteccionDatos' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('responsable')">
+                Responsable
+                <i class="fa" [ngClass]="{'fa-sort': column != 'responsable', 'fa-sort-asc': (column == 'responsable' && isDesc), 'fa-sort-desc': (column == 'responsable' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manejaCopago')">
+                Maneja Copago
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manejaCopago', 'fa-sort-asc': (column == 'manejaCopago' && isDesc), 'fa-sort-desc': (column == 'manejaCopago' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('tiempoObserva')">
+                Tiempo Observa
+                <i class="fa" [ngClass]="{'fa-sort': column != 'tiempoObserva', 'fa-sort-asc': (column == 'tiempoObserva' && isDesc), 'fa-sort-desc': (column == 'tiempoObserva' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manTopPor')">
+                Man Top Por
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manTopPor', 'fa-sort-asc': (column == 'manTopPor' && isDesc), 'fa-sort-desc': (column == 'manTopPor' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manejaCapitacion')">
+                Maneja Capitacion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manejaCapitacion', 'fa-sort-asc': (column == 'manejaCapitacion' && isDesc), 'fa-sort-desc': (column == 'manejaCapitacion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('nivValPrimeravez')">
+                Niv Val Primeravez
+                <i class="fa" [ngClass]="{'fa-sort': column != 'nivValPrimeravez', 'fa-sort-asc': (column == 'nivValPrimeravez' && isDesc), 'fa-sort-desc': (column == 'nivValPrimeravez' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('bdEstadoExt')">
+                Bd Estado Ext
+                <i class="fa" [ngClass]="{'fa-sort': column != 'bdEstadoExt', 'fa-sort-asc': (column == 'bdEstadoExt' && isDesc), 'fa-sort-desc': (column == 'bdEstadoExt' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manejaMedFamiliar')">
+                Maneja Med Familiar
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manejaMedFamiliar', 'fa-sort-asc': (column == 'manejaMedFamiliar' && isDesc), 'fa-sort-desc': (column == 'manejaMedFamiliar' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('vlrTopPor')">
+                Vlr Top Por
+                <i class="fa" [ngClass]="{'fa-sort': column != 'vlrTopPor', 'fa-sort-asc': (column == 'vlrTopPor' && isDesc), 'fa-sort-desc': (column == 'vlrTopPor' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('codBarrasCarnet')">
+                Cod Barras Carnet
+                <i class="fa" [ngClass]="{'fa-sort': column != 'codBarrasCarnet', 'fa-sort-asc': (column == 'codBarrasCarnet' && isDesc), 'fa-sort-desc': (column == 'codBarrasCarnet' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('codBarrDigCtrl')">
+                Cod Barr Dig Ctrl
+                <i class="fa" [ngClass]="{'fa-sort': column != 'codBarrDigCtrl', 'fa-sort-asc': (column == 'codBarrDigCtrl' && isDesc), 'fa-sort-desc': (column == 'codBarrDigCtrl' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('numDoc')">
+                Num Doc
+                <i class="fa" [ngClass]="{'fa-sort': column != 'numDoc', 'fa-sort-asc': (column == 'numDoc' && isDesc), 'fa-sort-desc': (column == 'numDoc' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('cargos')">
+                Cargos
+                <i class="fa" [ngClass]="{'fa-sort': column != 'cargos', 'fa-sort-asc': (column == 'cargos' && isDesc), 'fa-sort-desc': (column == 'cargos' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaTipoEntidad')">
+                Item Lista Tipo Entidad
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaTipoEntidad', 'fa-sort-asc': (column == 'itemListaTipoEntidad' && isDesc), 'fa-sort-desc': (column == 'itemListaTipoEntidad' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('convenioInter')">
+                Convenio Inter
+                <i class="fa" [ngClass]="{'fa-sort': column != 'convenioInter', 'fa-sort-asc': (column == 'convenioInter' && isDesc), 'fa-sort-desc': (column == 'convenioInter' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaUnidadMedidaPrimeraVez')">
+                Item Lista Unidad Medida Primera Vez
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaUnidadMedidaPrimeraVez', 'fa-sort-asc': (column == 'itemListaUnidadMedidaPrimeraVez' && isDesc), 'fa-sort-desc': (column == 'itemListaUnidadMedidaPrimeraVez' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manprogcronicos')">
+                Manprogcronicos
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manprogcronicos', 'fa-sort-asc': (column == 'manprogcronicos' && isDesc), 'fa-sort-desc': (column == 'manprogcronicos' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('tiempoCubUrg')">
+                Tiempo Cub Urg
+                <i class="fa" [ngClass]="{'fa-sort': column != 'tiempoCubUrg', 'fa-sort-asc': (column == 'tiempoCubUrg' && isDesc), 'fa-sort-desc': (column == 'tiempoCubUrg' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('observaciones')">
+                Observaciones
+                <i class="fa" [ngClass]="{'fa-sort': column != 'observaciones', 'fa-sort-asc': (column == 'observaciones' && isDesc), 'fa-sort-desc': (column == 'observaciones' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manejaPorcentajeIncremento')">
+                Maneja Porcentaje Incremento
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manejaPorcentajeIncremento', 'fa-sort-asc': (column == 'manejaPorcentajeIncremento' && isDesc), 'fa-sort-desc': (column == 'manejaPorcentajeIncremento' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('caduForMedicame')">
+                Cadu For Medicame
+                <i class="fa" [ngClass]="{'fa-sort': column != 'caduForMedicame', 'fa-sort-asc': (column == 'caduForMedicame' && isDesc), 'fa-sort-desc': (column == 'caduForMedicame' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('numDiascalend')">
+                Num Diascalend
+                <i class="fa" [ngClass]="{'fa-sort': column != 'numDiascalend', 'fa-sort-asc': (column == 'numDiascalend' && isDesc), 'fa-sort-desc': (column == 'numDiascalend' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('nroMedFor')">
+                Nro Med For
+                <i class="fa" [ngClass]="{'fa-sort': column != 'nroMedFor', 'fa-sort-asc': (column == 'nroMedFor' && isDesc), 'fa-sort-desc': (column == 'nroMedFor' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('entidadOsi')">
+                Entidad Osi
+                <i class="fa" [ngClass]="{'fa-sort': column != 'entidadOsi', 'fa-sort-asc': (column == 'entidadOsi' && isDesc), 'fa-sort-desc': (column == 'entidadOsi' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('valorMaximoLiquidacion')">
+                Valor Maximo Liquidacion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'valorMaximoLiquidacion', 'fa-sort-asc': (column == 'valorMaximoLiquidacion' && isDesc), 'fa-sort-desc': (column == 'valorMaximoLiquidacion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('topLiqCirugia')">
+                Top Liq Cirugia
+                <i class="fa" [ngClass]="{'fa-sort': column != 'topLiqCirugia', 'fa-sort-asc': (column == 'topLiqCirugia' && isDesc), 'fa-sort-desc': (column == 'topLiqCirugia' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('direccion')">
+                Direccion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'direccion', 'fa-sort-asc': (column == 'direccion' && isDesc), 'fa-sort-desc': (column == 'direccion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manCita')">
+                Man Cita
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manCita', 'fa-sort-asc': (column == 'manCita' && isDesc), 'fa-sort-desc': (column == 'manCita' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaUnidadMedidaUrgencia')">
+                Item Lista Unidad Medida Urgencia
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaUnidadMedidaUrgencia', 'fa-sort-asc': (column == 'itemListaUnidadMedidaUrgencia' && isDesc), 'fa-sort-desc': (column == 'itemListaUnidadMedidaUrgencia' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manNuevaAfiliacion')">
+                Man Nueva Afiliacion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manNuevaAfiliacion', 'fa-sort-asc': (column == 'manNuevaAfiliacion' && isDesc), 'fa-sort-desc': (column == 'manNuevaAfiliacion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaTipoUsuario')">
+                Item Lista Tipo Usuario
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaTipoUsuario', 'fa-sort-asc': (column == 'itemListaTipoUsuario' && isDesc), 'fa-sort-desc': (column == 'itemListaTipoUsuario' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('dirIpEntidad')">
+                Dir Ip Entidad
+                <i class="fa" [ngClass]="{'fa-sort': column != 'dirIpEntidad', 'fa-sort-asc': (column == 'dirIpEntidad' && isDesc), 'fa-sort-desc': (column == 'dirIpEntidad' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('telefono')">
+                Telefono
+                <i class="fa" [ngClass]="{'fa-sort': column != 'telefono', 'fa-sort-asc': (column == 'telefono' && isDesc), 'fa-sort-desc': (column == 'telefono' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('tiempoCubExt')">
+                Tiempo Cub Ext
+                <i class="fa" [ngClass]="{'fa-sort': column != 'tiempoCubExt', 'fa-sort-asc': (column == 'tiempoCubExt' && isDesc), 'fa-sort-desc': (column == 'tiempoCubExt' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('pedAutoriza')">
+                Ped Autoriza
+                <i class="fa" [ngClass]="{'fa-sort': column != 'pedAutoriza', 'fa-sort-asc': (column == 'pedAutoriza' && isDesc), 'fa-sort-desc': (column == 'pedAutoriza' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaUnidadMedidaObservacion')">
+                Item Lista Unidad Medida Observacion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaUnidadMedidaObservacion', 'fa-sort-asc': (column == 'itemListaUnidadMedidaObservacion' && isDesc), 'fa-sort-desc': (column == 'itemListaUnidadMedidaObservacion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manejaCorteAnual')">
+                Maneja Corte Anual
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manejaCorteAnual', 'fa-sort-asc': (column == 'manejaCorteAnual' && isDesc), 'fa-sort-desc': (column == 'manejaCorteAnual' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('numCortesMes')">
+                Num Cortes Mes
+                <i class="fa" [ngClass]="{'fa-sort': column != 'numCortesMes', 'fa-sort-asc': (column == 'numCortesMes' && isDesc), 'fa-sort-desc': (column == 'numCortesMes' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manConvMed')">
+                Man Conv Med
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manConvMed', 'fa-sort-asc': (column == 'manConvMed' && isDesc), 'fa-sort-desc': (column == 'manConvMed' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('montoxproce')">
+                Montoxproce
+                <i class="fa" [ngClass]="{'fa-sort': column != 'montoxproce', 'fa-sort-asc': (column == 'montoxproce' && isDesc), 'fa-sort-desc': (column == 'montoxproce' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaRegistro')">
+                Fecha Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaRegistro', 'fa-sort-asc': (column == 'fechaRegistro' && isDesc), 'fa-sort-desc': (column == 'fechaRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('codInterno')">
+                Cod Interno
+                <i class="fa" [ngClass]="{'fa-sort': column != 'codInterno', 'fa-sort-asc': (column == 'codInterno' && isDesc), 'fa-sort-desc': (column == 'codInterno' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('tiempoCubOdontologico')">
+                Tiempo Cub Odontologico
+                <i class="fa" [ngClass]="{'fa-sort': column != 'tiempoCubOdontologico', 'fa-sort-asc': (column == 'tiempoCubOdontologico' && isDesc), 'fa-sort-desc': (column == 'tiempoCubOdontologico' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('email')">
+                Email
+                <i class="fa" [ngClass]="{'fa-sort': column != 'email', 'fa-sort-asc': (column == 'email' && isDesc), 'fa-sort-desc': (column == 'email' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manPaqNoQuirur')">
+                Man Paq No Quirur
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manPaqNoQuirur', 'fa-sort-asc': (column == 'manPaqNoQuirur' && isDesc), 'fa-sort-desc': (column == 'manPaqNoQuirur' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('verEstadoPac')">
+                Ver Estado Pac
+                <i class="fa" [ngClass]="{'fa-sort': column != 'verEstadoPac', 'fa-sort-asc': (column == 'verEstadoPac' && isDesc), 'fa-sort-desc': (column == 'verEstadoPac' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('loginRegistro')">
+                Login Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'loginRegistro', 'fa-sort-asc': (column == 'loginRegistro' && isDesc), 'fa-sort-desc': (column == 'loginRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaConvenio')">
+                Fecha Convenio
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaConvenio', 'fa-sort-asc': (column == 'fechaConvenio' && isDesc), 'fa-sort-desc': (column == 'fechaConvenio' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('pedAutMedicame')">
+                Ped Aut Medicame
+                <i class="fa" [ngClass]="{'fa-sort': column != 'pedAutMedicame', 'fa-sort-asc': (column == 'pedAutMedicame' && isDesc), 'fa-sort-desc': (column == 'pedAutMedicame' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('tiempoCubVez')">
+                Tiempo Cub Vez
+                <i class="fa" [ngClass]="{'fa-sort': column != 'tiempoCubVez', 'fa-sort-asc': (column == 'tiempoCubVez' && isDesc), 'fa-sort-desc': (column == 'tiempoCubVez' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fax')">
+                Fax
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fax', 'fa-sort-asc': (column == 'fax' && isDesc), 'fa-sort-desc': (column == 'fax' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('descripcion')">
+                Descripcion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'descripcion', 'fa-sort-asc': (column == 'descripcion' && isDesc), 'fa-sort-desc': (column == 'descripcion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('noCargos')">
+                No Cargos
+                <i class="fa" [ngClass]="{'fa-sort': column != 'noCargos', 'fa-sort-asc': (column == 'noCargos' && isDesc), 'fa-sort-desc': (column == 'noCargos' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('codBarrasDoc')">
+                Cod Barras Doc
+                <i class="fa" [ngClass]="{'fa-sort': column != 'codBarrasDoc', 'fa-sort-asc': (column == 'codBarrasDoc' && isDesc), 'fa-sort-desc': (column == 'codBarrasDoc' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('conSinConv')">
+                Con Sin Conv
+                <i class="fa" [ngClass]="{'fa-sort': column != 'conSinConv', 'fa-sort-asc': (column == 'conSinConv' && isDesc), 'fa-sort-desc': (column == 'conSinConv' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manTopes')">
+                Man Topes
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manTopes', 'fa-sort-asc': (column == 'manTopes' && isDesc), 'fa-sort-desc': (column == 'manTopes' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('caduForProced')">
+                Cadu For Proced
+                <i class="fa" [ngClass]="{'fa-sort': column != 'caduForProced', 'fa-sort-asc': (column == 'caduForProced' && isDesc), 'fa-sort-desc': (column == 'caduForProced' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manWebNuevo')">
+                Man Web Nuevo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manWebNuevo', 'fa-sort-asc': (column == 'manWebNuevo' && isDesc), 'fa-sort-desc': (column == 'manWebNuevo' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaUnidadMedidaOdontologia')">
+                Item Lista Unidad Medida Odontologia
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaUnidadMedidaOdontologia', 'fa-sort-asc': (column == 'itemListaUnidadMedidaOdontologia' && isDesc), 'fa-sort-desc': (column == 'itemListaUnidadMedidaOdontologia' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('confirmacionManual')">
+                Confirmacion Manual
+                <i class="fa" [ngClass]="{'fa-sort': column != 'confirmacionManual', 'fa-sort-asc': (column == 'confirmacionManual' && isDesc), 'fa-sort-desc': (column == 'confirmacionManual' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manejaCorte')">
+                Maneja Corte
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manejaCorte', 'fa-sort-asc': (column == 'manejaCorte' && isDesc), 'fa-sort-desc': (column == 'manejaCorte' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let entidad of entidads | orderBy: { property: column, direction: direction }">
+              <td>{{ entidad.entidad }}</td>
+              <td>{{ entidad.itemListaUnidadMedidaExterna }}</td>
+              <td>{{ entidad.manejaRecaudo }}</td>
+              <td>{{ entidad.valorMinimoLiquidacion }}</td>
+              <td>{{ entidad.itemListaTipoDocumento }}</td>
+              <td>{{ entidad.caduForProcedqx }}</td>
+              <td>{{ entidad.manCapitacionodo }}</td>
+              <td>{{ entidad.maxentregasformulacronicos }}</td>
+              <td>{{ entidad.planobh }}</td>
+              <td>{{ entidad.manejaProteccionDatos }}</td>
+              <td>{{ entidad.responsable }}</td>
+              <td>{{ entidad.manejaCopago }}</td>
+              <td>{{ entidad.tiempoObserva }}</td>
+              <td>{{ entidad.manTopPor }}</td>
+              <td>{{ entidad.manejaCapitacion }}</td>
+              <td>{{ entidad.nivValPrimeravez }}</td>
+              <td>{{ entidad.bdEstadoExt }}</td>
+              <td>{{ entidad.manejaMedFamiliar }}</td>
+              <td>{{ entidad.vlrTopPor }}</td>
+              <td>{{ entidad.codBarrasCarnet }}</td>
+              <td>{{ entidad.codBarrDigCtrl }}</td>
+              <td>{{ entidad.numDoc }}</td>
+              <td>{{ entidad.cargos }}</td>
+              <td>{{ entidad.itemListaTipoEntidad }}</td>
+              <td>{{ entidad.convenioInter }}</td>
+              <td>{{ entidad.itemListaUnidadMedidaPrimeraVez }}</td>
+              <td>{{ entidad.manprogcronicos }}</td>
+              <td>{{ entidad.tiempoCubUrg }}</td>
+              <td>{{ entidad.observaciones }}</td>
+              <td>{{ entidad.manejaPorcentajeIncremento }}</td>
+              <td>{{ entidad.caduForMedicame }}</td>
+              <td>{{ entidad.numDiascalend }}</td>
+              <td>{{ entidad.nroMedFor }}</td>
+              <td>{{ entidad.entidadOsi }}</td>
+              <td>{{ entidad.valorMaximoLiquidacion }}</td>
+              <td>{{ entidad.topLiqCirugia }}</td>
+              <td>{{ entidad.direccion }}</td>
+              <td>{{ entidad.manCita }}</td>
+              <td>{{ entidad.itemListaUnidadMedidaUrgencia }}</td>
+              <td>{{ entidad.manNuevaAfiliacion }}</td>
+              <td>{{ entidad.itemListaTipoUsuario }}</td>
+              <td>{{ entidad.dirIpEntidad }}</td>
+              <td>{{ entidad.telefono }}</td>
+              <td>{{ entidad.tiempoCubExt }}</td>
+              <td>{{ entidad.pedAutoriza }}</td>
+              <td>{{ entidad.itemListaUnidadMedidaObservacion }}</td>
+              <td>{{ entidad.manejaCorteAnual }}</td>
+              <td>{{ entidad.numCortesMes }}</td>
+              <td>{{ entidad.manConvMed }}</td>
+              <td>{{ entidad.montoxproce }}</td>
+              <td>{{ entidad.fechaRegistro }}</td>
+              <td>{{ entidad.codInterno }}</td>
+              <td>{{ entidad.tiempoCubOdontologico }}</td>
+              <td>{{ entidad.email }}</td>
+              <td>{{ entidad.manPaqNoQuirur }}</td>
+              <td>{{ entidad.verEstadoPac }}</td>
+              <td>{{ entidad.loginRegistro }}</td>
+              <td>{{ entidad.fechaConvenio }}</td>
+              <td>{{ entidad.pedAutMedicame }}</td>
+              <td>{{ entidad.tiempoCubVez }}</td>
+              <td>{{ entidad.fax }}</td>
+              <td>{{ entidad.descripcion }}</td>
+              <td>{{ entidad.noCargos }}</td>
+              <td>{{ entidad.codBarrasDoc }}</td>
+              <td>{{ entidad.conSinConv }}</td>
+              <td>{{ entidad.manTopes }}</td>
+              <td>{{ entidad.caduForProced }}</td>
+              <td>{{ entidad.manWebNuevo }}</td>
+              <td>{{ entidad.itemListaUnidadMedidaOdontologia }}</td>
+              <td>{{ entidad.confirmacionManual }}</td>
+              <td>{{ entidad.manejaCorte }}</td>
+              <td>
+                <a class="btn btn-info btn-sm" [routerLink]="[ absolutePath, entidad._id]"><span class="fa fa-eye fa-fw"></span>Ver</a>
+                <a class="btn btn-primary btn-sm" [routerLink]="[ absolutePath, entidad._id, 'update']"><span class="fa fa-pencil fa-fw"></span>Editar</a>
+                <a class="btn btn-danger btn-sm text-white cursor-pointer" (click)="openDeleteModal(content, entidad._id)"><span class="fa fa-trash fa-fw"></span>Eliminar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h5 class="modal-title"><i class="fa fa-exclamation-triangle fa-lg fa-fw" aria-hidden="true"></i>¿Esta seguro de eliminar?</h5>
+    <button type="button" class="close cursor-pointer" aria-label="Close" (click)="d(deleteModalOpts.cancel)">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary cursor-pointer" (click)="c(deleteModalOpts.ok)"><i class="fa fa-check fa-fw"></i>Aceptar</button>
+    <button type="button" class="btn btn-secondary cursor-pointer" (click)="c(deleteModalOpts.cancel)"><i class="fa fa-ban fa-fw"></i>Cancelar</button>
+  </div>
+</ng-template>

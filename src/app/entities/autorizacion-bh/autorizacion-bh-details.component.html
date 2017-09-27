@@ -1,0 +1,49 @@
+<div *ngIf="autorizacionBh" class="container">
+  <h3 class="m-top-and-bottom-2">Autorizacion Bh</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ autorizacionBh._id }}</dd>
+
+  
+    <dt>Id Admision</dt>
+    <dd>{{ autorizacionBh.idAdmision }}</dd>
+
+    <dt>Codigo Contrato</dt>
+    <dd>{{ autorizacionBh.codigoContrato }}</dd>
+
+    <dt>Numero Autorizacion</dt>
+    <dd>{{ autorizacionBh.numeroAutorizacion }}</dd>
+
+    <dt>Codigo Interno Entidad</dt>
+    <dd>{{ autorizacionBh.codigoInternoEntidad }}</dd>
+
+    <dt>Codigo Plan</dt>
+    <dd>{{ autorizacionBh.codigoPlan }}</dd>
+
+    <dt>Procedimiento Servicio</dt>
+    <dd>{{ autorizacionBh.procedimientoServicio }}</dd>
+
+    <dt>Codigo Familia</dt>
+    <dd>{{ autorizacionBh.codigoFamilia }}</dd>
+
+    <dt>Codigo Usuario</dt>
+    <dd>{{ autorizacionBh.codigoUsuario }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ autorizacionBh.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ autorizacionBh.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ autorizacionBh.observaciones }}</dd>
+
+    <dt>Procedimiento</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'procedimiento', autorizacionBh.procedimiento._id]">{{ autorizacionBh.procedimiento._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

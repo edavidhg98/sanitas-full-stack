@@ -1,0 +1,195 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Login</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="login && login._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="login" type="text" class="form-control" name="id" [(ngModel)]="login._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_login">Login</label>
+  <input type="text" id="field_login" *ngIf="login" class="form-control" name="login" [(ngModel)]="login.login"  />
+  <input type="text" id="field_login" *ngIf="!login" class="form-control" name="login" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_claveAgfa">Clave Agfa</label>
+  <input type="text" id="field_claveAgfa" *ngIf="login" class="form-control" name="claveAgfa" [(ngModel)]="login.claveAgfa"  />
+  <input type="text" id="field_claveAgfa" *ngIf="!login" class="form-control" name="claveAgfa" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="login" class="form-control" name="observaciones" [(ngModel)]="login.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!login" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idCentroCosto">Id Centro Costo</label>
+  <input type="number" id="field_idCentroCosto" *ngIf="login" class="form-control" name="idCentroCosto" [(ngModel)]="login.idCentroCosto"  />
+  <input type="number" id="field_idCentroCosto" *ngIf="!login" class="form-control" name="idCentroCosto" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_numeroDocumento">Numero Documento</label>
+  <input type="text" id="field_numeroDocumento" *ngIf="login" class="form-control" name="numeroDocumento" [(ngModel)]="login.numeroDocumento"  />
+  <input type="text" id="field_numeroDocumento" *ngIf="!login" class="form-control" name="numeroDocumento" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="login" class="form-control" name="fechaRegistro" [(ngModel)]="login.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!login" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaTipoUsuarioLogin">Item Lista Tipo Usuario Login</label>
+  <input type="number" id="field_itemListaTipoUsuarioLogin" *ngIf="login" class="form-control" name="itemListaTipoUsuarioLogin" [(ngModel)]="login.itemListaTipoUsuarioLogin"  />
+  <input type="number" id="field_itemListaTipoUsuarioLogin" *ngIf="!login" class="form-control" name="itemListaTipoUsuarioLogin" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaCargo">Item Lista Cargo</label>
+  <input type="number" id="field_itemListaCargo" *ngIf="login" class="form-control" name="itemListaCargo" [(ngModel)]="login.itemListaCargo"  />
+  <input type="number" id="field_itemListaCargo" *ngIf="!login" class="form-control" name="itemListaCargo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_password">Password</label>
+  <input type="text" id="field_password" *ngIf="login" class="form-control" name="password" [(ngModel)]="login.password"  />
+  <input type="text" id="field_password" *ngIf="!login" class="form-control" name="password" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaUltimoCambio">Fecha Ultimo Cambio</label>
+  <input type="date" id="field_fechaUltimoCambio" *ngIf="login" class="form-control" name="fechaUltimoCambio" [(ngModel)]="login.fechaUltimoCambio"  />
+  <input type="date" id="field_fechaUltimoCambio" *ngIf="!login" class="form-control" name="fechaUltimoCambio" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaTipoDocumento">Item Lista Tipo Documento</label>
+  <input type="number" id="field_itemListaTipoDocumento" *ngIf="login" class="form-control" name="itemListaTipoDocumento" [(ngModel)]="login.itemListaTipoDocumento"  />
+  <input type="number" id="field_itemListaTipoDocumento" *ngIf="!login" class="form-control" name="itemListaTipoDocumento" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_callCenter">Call Center</label>
+  <input type="text" id="field_callCenter" *ngIf="login" class="form-control" name="callCenter" [(ngModel)]="login.callCenter"  />
+  <input type="text" id="field_callCenter" *ngIf="!login" class="form-control" name="callCenter" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_usuarioLdap">Usuario Ldap</label>
+  <input type="text" id="field_usuarioLdap" *ngIf="login" class="form-control" name="usuarioLdap" [(ngModel)]="login.usuarioLdap"  />
+  <input type="text" id="field_usuarioLdap" *ngIf="!login" class="form-control" name="usuarioLdap" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaEstadoLogin">Item Lista Estado Login</label>
+  <input type="number" id="field_itemListaEstadoLogin" *ngIf="login" class="form-control" name="itemListaEstadoLogin" [(ngModel)]="login.itemListaEstadoLogin"  />
+  <input type="number" id="field_itemListaEstadoLogin" *ngIf="!login" class="form-control" name="itemListaEstadoLogin" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_nombre">Nombre</label>
+  <input type="text" id="field_nombre" *ngIf="login" class="form-control" name="nombre" [(ngModel)]="login.nombre"  />
+  <input type="text" id="field_nombre" *ngIf="!login" class="form-control" name="nombre" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_apellido">Apellido</label>
+  <input type="text" id="field_apellido" *ngIf="login" class="form-control" name="apellido" [(ngModel)]="login.apellido"  />
+  <input type="text" id="field_apellido" *ngIf="!login" class="form-control" name="apellido" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_consultaHistoria">Consulta Historia</label>
+  <input type="text" id="field_consultaHistoria" *ngIf="login" class="form-control" name="consultaHistoria" [(ngModel)]="login.consultaHistoria"  />
+  <input type="text" id="field_consultaHistoria" *ngIf="!login" class="form-control" name="consultaHistoria" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="login" class="form-control" name="loginRegistro" [(ngModel)]="login.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!login" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaUltimoAcceso">Fecha Ultimo Acceso</label>
+  <input type="date" id="field_fechaUltimoAcceso" *ngIf="login" class="form-control" name="fechaUltimoAcceso" [(ngModel)]="login.fechaUltimoAcceso"  />
+  <input type="date" id="field_fechaUltimoAcceso" *ngIf="!login" class="form-control" name="fechaUltimoAcceso" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_usuarioAgfa">Usuario Agfa</label>
+  <input type="text" id="field_usuarioAgfa" *ngIf="login" class="form-control" name="usuarioAgfa" [(ngModel)]="login.usuarioAgfa"  />
+  <input type="text" id="field_usuarioAgfa" *ngIf="!login" class="form-control" name="usuarioAgfa" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="ciudads">
+              <label for="field_ciudad">Ciudad</label>
+
+              <select *ngIf="!login" class="form-control" name="idCiudad" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="ciudad._id" *ngFor="let ciudad of ciudads">{{ ciudad._id }}</option>
+              </select>
+
+              <select *ngIf="login && login.idCiudad" class="form-control" name="idCiudad" [(ngModel)]="login.idCiudad">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="ciudad._id" *ngFor="let ciudad of ciudads">{{ ciudad._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="sucursals">
+              <label for="field_sucursal">Sucursal</label>
+
+              <select *ngIf="!login" class="form-control" name="idSucursal" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+
+              <select *ngIf="login && login.idSucursal" class="form-control" name="idSucursal" [(ngModel)]="login.idSucursal">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

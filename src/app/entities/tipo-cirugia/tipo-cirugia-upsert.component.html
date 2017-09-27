@@ -1,0 +1,84 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Tipo Cirugia</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="tipoCirugia && tipoCirugia._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="tipoCirugia" type="text" class="form-control" name="id" [(ngModel)]="tipoCirugia._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_tipoCirugia">Tipo Cirugia</label>
+  <input type="text" id="field_tipoCirugia" *ngIf="tipoCirugia" class="form-control" name="tipoCirugia" [(ngModel)]="tipoCirugia.tipoCirugia"  />
+  <input type="text" id="field_tipoCirugia" *ngIf="!tipoCirugia" class="form-control" name="tipoCirugia" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_descripcion">Descripcion</label>
+  <input type="text" id="field_descripcion" *ngIf="tipoCirugia" class="form-control" name="descripcion" [(ngModel)]="tipoCirugia.descripcion"  />
+  <input type="text" id="field_descripcion" *ngIf="!tipoCirugia" class="form-control" name="descripcion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="tipoCirugia" class="form-control" name="fechaRegistro" [(ngModel)]="tipoCirugia.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!tipoCirugia" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="tipoCirugia" class="form-control" name="loginRegistro" [(ngModel)]="tipoCirugia.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!tipoCirugia" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="tipoCirugia" class="form-control" name="observaciones" [(ngModel)]="tipoCirugia.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!tipoCirugia" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaEstadoCirugia">Item Lista Estado Cirugia</label>
+  <input type="number" id="field_itemListaEstadoCirugia" *ngIf="tipoCirugia" class="form-control" name="itemListaEstadoCirugia" [(ngModel)]="tipoCirugia.itemListaEstadoCirugia"  />
+  <input type="number" id="field_itemListaEstadoCirugia" *ngIf="!tipoCirugia" class="form-control" name="itemListaEstadoCirugia" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="entidads">
+              <label for="field_entidad">Entidad</label>
+
+              <select *ngIf="!tipoCirugia" class="form-control" name="idEntidad" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+
+              <select *ngIf="tipoCirugia && tipoCirugia.idEntidad" class="form-control" name="idEntidad" [(ngModel)]="tipoCirugia.idEntidad">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div *ngIf="tipoCama" class="container-fluid">
+  <h3 class="m-top-and-bottom-2">Tipo Cama</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ tipoCama._id }}</dd>
+
+  
+    <dt>Tip Cama</dt>
+    <dd>{{ tipoCama.tipCama }}</dd>
+
+    <dt>Item Lista Tipo Estancia</dt>
+    <dd>{{ tipoCama.itemListaTipoEstancia }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ tipoCama.descripcion }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ tipoCama.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ tipoCama.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ tipoCama.observaciones }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+  <app-cama-list [camas]="tipoCama.camas"></app-cama-list>
+</div>

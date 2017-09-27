@@ -1,0 +1,48 @@
+<div *ngIf="consultorio" class="container-fluid">
+  <h3 class="m-top-and-bottom-2">Consultorio</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ consultorio._id }}</dd>
+
+  
+    <dt>Item Lista Tipo Consultorio</dt>
+    <dd>{{ consultorio.itemListaTipoConsultorio }}</dd>
+
+    <dt>Consultorio</dt>
+    <dd>{{ consultorio.consultorio }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ consultorio.descripcion }}</dd>
+
+    <dt>Turno</dt>
+    <dd>{{ consultorio.turno }}</dd>
+
+    <dt>Dir Ip</dt>
+    <dd>{{ consultorio.dirIp }}</dd>
+
+    <dt>Con Urgencia</dt>
+    <dd>{{ consultorio.conUrgencia }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ consultorio.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ consultorio.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ consultorio.observaciones }}</dd>
+
+    <dt>Item Lista Estado Consultorio</dt>
+    <dd>{{ consultorio.itemListaEstadoConsultorio }}</dd>
+
+    <dt>Sucursal</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursal', consultorio.sucursal._id]">{{ consultorio.sucursal._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+  <app-trazabilidad-admision-list [trazabilidadAdmisions]="consultorio.trazabilidadAdmisions"></app-trazabilidad-admision-list>
+  <app-triage-list [triages]="consultorio.triages"></app-triage-list>
+</div>

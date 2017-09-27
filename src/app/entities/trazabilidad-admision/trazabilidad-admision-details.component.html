@@ -1,0 +1,137 @@
+<div *ngIf="trazabilidadAdmision" class="container-fluid">
+  <h3 class="m-top-and-bottom-2">Trazabilidad Admision</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ trazabilidadAdmision._id }}</dd>
+
+  
+    <dt>Id Admision</dt>
+    <dd>{{ trazabilidadAdmision.idAdmision }}</dd>
+
+    <dt>Minuto Egreso</dt>
+    <dd>{{ trazabilidadAdmision.minutoEgreso }}</dd>
+
+    <dt>Con Pri Vez</dt>
+    <dd>{{ trazabilidadAdmision.conPriVez }}</dd>
+
+    <dt>Consecutivo Atencion</dt>
+    <dd>{{ trazabilidadAdmision.consecutivoAtencion }}</dd>
+
+    <dt>Item Lista Estado Admision</dt>
+    <dd>{{ trazabilidadAdmision.itemListaEstadoAdmision }}</dd>
+
+    <dt>Id Medico Hospitaliza</dt>
+    <dd>{{ trazabilidadAdmision.idMedicoHospitaliza }}</dd>
+
+    <dt>Fecha Egreso</dt>
+    <dd>{{ trazabilidadAdmision.fechaEgreso }}</dd>
+
+    <dt>Id Medico Tratante</dt>
+    <dd>{{ trazabilidadAdmision.idMedicoTratante }}</dd>
+
+    <dt>Hora Egreso</dt>
+    <dd>{{ trazabilidadAdmision.horaEgreso }}</dd>
+
+    <dt>Dias Estancia</dt>
+    <dd>{{ trazabilidadAdmision.diasEstancia }}</dd>
+
+    <dt>Item Lista Destino Final</dt>
+    <dd>{{ trazabilidadAdmision.itemListaDestinoFinal }}</dd>
+
+    <dt>Id Medico Egreso</dt>
+    <dd>{{ trazabilidadAdmision.idMedicoEgreso }}</dd>
+
+    <dt>Fecha Ingreso</dt>
+    <dd>{{ trazabilidadAdmision.fechaIngreso }}</dd>
+
+    <dt>Item Lista Destino Lista Espera</dt>
+    <dd>{{ trazabilidadAdmision.itemListaDestinoListaEspera }}</dd>
+
+    <dt>Hora Ingreso</dt>
+    <dd>{{ trazabilidadAdmision.horaIngreso }}</dd>
+
+    <dt>Num Adm</dt>
+    <dd>{{ trazabilidadAdmision.numAdm }}</dd>
+
+    <dt>Id Especialidad</dt>
+    <dd>{{ trazabilidadAdmision.idEspecialidad }}</dd>
+
+    <dt>Login Egreso</dt>
+    <dd>{{ trazabilidadAdmision.loginEgreso }}</dd>
+
+    <dt>Ingresoconcita</dt>
+    <dd>{{ trazabilidadAdmision.ingresoconcita }}</dd>
+
+    <dt>Item Lista Via Ingreso</dt>
+    <dd>{{ trazabilidadAdmision.itemListaViaIngreso }}</dd>
+
+    <dt>Minuto Ingreso</dt>
+    <dd>{{ trazabilidadAdmision.minutoIngreso }}</dd>
+
+    <dt>Consecutivo Fur</dt>
+    <dd>{{ trazabilidadAdmision.consecutivoFur }}</dd>
+
+    <dt>Login Creacion</dt>
+    <dd>{{ trazabilidadAdmision.loginCreacion }}</dd>
+
+    <dt>Codigo Cita</dt>
+    <dd>{{ trazabilidadAdmision.codigoCita }}</dd>
+
+    <dt>Ley Proteccion Datos</dt>
+    <dd>{{ trazabilidadAdmision.leyProteccionDatos }}</dd>
+
+    <dt>Consulta Programada</dt>
+    <dd>{{ trazabilidadAdmision.consultaProgramada }}</dd>
+
+    <dt>Flag Inconsistencia</dt>
+    <dd>{{ trazabilidadAdmision.flagInconsistencia }}</dd>
+
+    <dt>Ano Adm</dt>
+    <dd>{{ trazabilidadAdmision.anoAdm }}</dd>
+
+    <dt>Login</dt>
+    <dd>{{ trazabilidadAdmision.login }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ trazabilidadAdmision.fechaRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ trazabilidadAdmision.observaciones }}</dd>
+
+    <dt>Item Lista Flag Facturado</dt>
+    <dd>{{ trazabilidadAdmision.itemListaFlagFacturado }}</dd>
+
+    <dt>Ip Registro</dt>
+    <dd>{{ trazabilidadAdmision.ipRegistro }}</dd>
+
+    <dt>Sucursal</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursal', trazabilidadAdmision.sucursal._id]">{{ trazabilidadAdmision.sucursal._id }}</a>
+    </dd>
+    <dt>TipoAdmision</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'tipoAdmision', trazabilidadAdmision.tipoAdmision._id]">{{ trazabilidadAdmision.tipoAdmision._id }}</a>
+    </dd>
+    <dt>Consultorio</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'consultorio', trazabilidadAdmision.consultorio._id]">{{ trazabilidadAdmision.consultorio._id }}</a>
+    </dd>
+    <dt>Motivo</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'motivo', trazabilidadAdmision.motivo._id]">{{ trazabilidadAdmision.motivo._id }}</a>
+    </dd>
+    <dt>Motivo</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'motivo', trazabilidadAdmision.motivo._id]">{{ trazabilidadAdmision.motivo._id }}</a>
+    </dd>
+    <dt>Motivo</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'motivo', trazabilidadAdmision.motivo._id]">{{ trazabilidadAdmision.motivo._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+  <app-trazabilidad-admision-lista-espera-historia-clinica-list [trazabilidadAdmisionListaEsperaHistoriaClinicas]="trazabilidadAdmision.trazabilidadAdmisionListaEsperaHistoriaClinicas"></app-trazabilidad-admision-lista-espera-historia-clinica-list>
+  <app-trazabilidad-admision-cargos-list [trazabilidadAdmisionCargoss]="trazabilidadAdmision.trazabilidadAdmisionCargoss"></app-trazabilidad-admision-cargos-list>
+</div>

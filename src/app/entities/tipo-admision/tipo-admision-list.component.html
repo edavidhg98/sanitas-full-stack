@@ -1,0 +1,82 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="m-top-and-bottom-2">
+            <span>Tipo Admision</span>
+            <a class="btn btn-primary float-right" [routerLink]="[ absolutePath, 'create']" data-dismiss="modal">
+              <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
+              Crear Nuevo Tipo Admision
+            </a>
+          </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped table-responsive" *ngIf="tipoAdmisions">
+          <thead>
+            <tr>
+              <th class="cursor-pointer" (click)="sort('tipAdmision')">
+                Tip Admision
+                <i class="fa" [ngClass]="{'fa-sort': column != 'tipAdmision', 'fa-sort-asc': (column == 'tipAdmision' && isDesc), 'fa-sort-desc': (column == 'tipAdmision' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('descripcion')">
+                Descripcion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'descripcion', 'fa-sort-asc': (column == 'descripcion' && isDesc), 'fa-sort-desc': (column == 'descripcion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manResponsa')">
+                Man Responsa
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manResponsa', 'fa-sort-asc': (column == 'manResponsa' && isDesc), 'fa-sort-desc': (column == 'manResponsa' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manLisespe')">
+                Man Lisespe
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manLisespe', 'fa-sort-asc': (column == 'manLisespe' && isDesc), 'fa-sort-desc': (column == 'manLisespe' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('manCargo')">
+                Man Cargo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'manCargo', 'fa-sort-asc': (column == 'manCargo' && isDesc), 'fa-sort-desc': (column == 'manCargo' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaRegistro')">
+                Fecha Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaRegistro', 'fa-sort-asc': (column == 'fechaRegistro' && isDesc), 'fa-sort-desc': (column == 'fechaRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('loginRegistro')">
+                Login Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'loginRegistro', 'fa-sort-asc': (column == 'loginRegistro' && isDesc), 'fa-sort-desc': (column == 'loginRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('observaciones')">
+                Observaciones
+                <i class="fa" [ngClass]="{'fa-sort': column != 'observaciones', 'fa-sort-asc': (column == 'observaciones' && isDesc), 'fa-sort-desc': (column == 'observaciones' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let tipoAdmision of tipoAdmisions | orderBy: { property: column, direction: direction }">
+              <td>{{ tipoAdmision.tipAdmision }}</td>
+              <td>{{ tipoAdmision.descripcion }}</td>
+              <td>{{ tipoAdmision.manResponsa }}</td>
+              <td>{{ tipoAdmision.manLisespe }}</td>
+              <td>{{ tipoAdmision.manCargo }}</td>
+              <td>{{ tipoAdmision.fechaRegistro }}</td>
+              <td>{{ tipoAdmision.loginRegistro }}</td>
+              <td>{{ tipoAdmision.observaciones }}</td>
+              <td>
+                <a class="btn btn-info btn-sm" [routerLink]="[ absolutePath, tipoAdmision._id]"><span class="fa fa-eye fa-fw"></span>Ver</a>
+                <a class="btn btn-primary btn-sm" [routerLink]="[ absolutePath, tipoAdmision._id, 'update']"><span class="fa fa-pencil fa-fw"></span>Editar</a>
+                <a class="btn btn-danger btn-sm text-white cursor-pointer" (click)="openDeleteModal(content, tipoAdmision._id)"><span class="fa fa-trash fa-fw"></span>Eliminar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h5 class="modal-title"><i class="fa fa-exclamation-triangle fa-lg fa-fw" aria-hidden="true"></i>¿Esta seguro de eliminar?</h5>
+    <button type="button" class="close cursor-pointer" aria-label="Close" (click)="d(deleteModalOpts.cancel)">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary cursor-pointer" (click)="c(deleteModalOpts.ok)"><i class="fa fa-check fa-fw"></i>Aceptar</button>
+    <button type="button" class="btn btn-secondary cursor-pointer" (click)="c(deleteModalOpts.cancel)"><i class="fa fa-ban fa-fw"></i>Cancelar</button>
+  </div>
+</ng-template>

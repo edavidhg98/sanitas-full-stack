@@ -1,0 +1,97 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Subconcepto</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="subconcepto && subconcepto._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="subconcepto" type="text" class="form-control" name="id" [(ngModel)]="subconcepto._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_idConcepto">Id Concepto</label>
+  <input type="number" id="field_idConcepto" *ngIf="subconcepto" class="form-control" name="idConcepto" [(ngModel)]="subconcepto.idConcepto"  />
+  <input type="number" id="field_idConcepto" *ngIf="!subconcepto" class="form-control" name="idConcepto" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idSubConcepto">Id Sub Concepto</label>
+  <input type="number" id="field_idSubConcepto" *ngIf="subconcepto" class="form-control" name="idSubConcepto" [(ngModel)]="subconcepto.idSubConcepto"  />
+  <input type="number" id="field_idSubConcepto" *ngIf="!subconcepto" class="form-control" name="idSubConcepto" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="subconcepto" class="form-control" name="fechaRegistro" [(ngModel)]="subconcepto.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!subconcepto" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="subconcepto" class="form-control" name="loginRegistro" [(ngModel)]="subconcepto.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!subconcepto" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="subconcepto" class="form-control" name="observaciones" [(ngModel)]="subconcepto.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!subconcepto" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idPrestador">Id Prestador</label>
+  <input type="number" id="field_idPrestador" *ngIf="subconcepto" class="form-control" name="idPrestador" [(ngModel)]="subconcepto.idPrestador"  />
+  <input type="number" id="field_idPrestador" *ngIf="!subconcepto" class="form-control" name="idPrestador" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="motivos">
+              <label for="field_motivo">Motivo</label>
+
+              <select *ngIf="!subconcepto" class="form-control" name="idMotivo" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="motivo._id" *ngFor="let motivo of motivos">{{ motivo._id }}</option>
+              </select>
+
+              <select *ngIf="subconcepto && subconcepto.idMotivo" class="form-control" name="idMotivo" [(ngModel)]="subconcepto.idMotivo">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="motivo._id" *ngFor="let motivo of motivos">{{ motivo._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="tipoAdmisions">
+              <label for="field_tipoAdmision">Tipo Admision</label>
+
+              <select *ngIf="!subconcepto" class="form-control" name="idTipoAdmision" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tipoAdmision._id" *ngFor="let tipoAdmision of tipoAdmisions">{{ tipoAdmision._id }}</option>
+              </select>
+
+              <select *ngIf="subconcepto && subconcepto.idTipoAdmision" class="form-control" name="idTipoAdmision" [(ngModel)]="subconcepto.idTipoAdmision">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tipoAdmision._id" *ngFor="let tipoAdmision of tipoAdmisions">{{ tipoAdmision._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,280 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Paciente Inconsistencias</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="pacienteInconsistencias && pacienteInconsistencias._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="pacienteInconsistencias" type="text" class="form-control" name="id" [(ngModel)]="pacienteInconsistencias._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_numDoc">Num Doc</label>
+  <input type="text" id="field_numDoc" *ngIf="pacienteInconsistencias" class="form-control" name="numDoc" [(ngModel)]="pacienteInconsistencias.numDoc"  />
+  <input type="text" id="field_numDoc" *ngIf="!pacienteInconsistencias" class="form-control" name="numDoc" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_apel1Externo">Apel 1 Externo</label>
+  <input type="text" id="field_apel1Externo" *ngIf="pacienteInconsistencias" class="form-control" name="apel1Externo" [(ngModel)]="pacienteInconsistencias.apel1Externo"  />
+  <input type="text" id="field_apel1Externo" *ngIf="!pacienteInconsistencias" class="form-control" name="apel1Externo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="pacienteInconsistencias" class="form-control" name="loginRegistro" [(ngModel)]="pacienteInconsistencias.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!pacienteInconsistencias" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_tipoFecnac">Tipo Fecnac</label>
+  <input type="text" id="field_tipoFecnac" *ngIf="pacienteInconsistencias" class="form-control" name="tipoFecnac" [(ngModel)]="pacienteInconsistencias.tipoFecnac"  />
+  <input type="text" id="field_tipoFecnac" *ngIf="!pacienteInconsistencias" class="form-control" name="tipoFecnac" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_nombre">Nombre</label>
+  <input type="text" id="field_nombre" *ngIf="pacienteInconsistencias" class="form-control" name="nombre" [(ngModel)]="pacienteInconsistencias.nombre"  />
+  <input type="text" id="field_nombre" *ngIf="!pacienteInconsistencias" class="form-control" name="nombre" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_nombreExterno">Nombre Externo</label>
+  <input type="text" id="field_nombreExterno" *ngIf="pacienteInconsistencias" class="form-control" name="nombreExterno" [(ngModel)]="pacienteInconsistencias.nombreExterno"  />
+  <input type="text" id="field_nombreExterno" *ngIf="!pacienteInconsistencias" class="form-control" name="nombreExterno" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_tipoTipdoc">Tipo Tipdoc</label>
+  <input type="text" id="field_tipoTipdoc" *ngIf="pacienteInconsistencias" class="form-control" name="tipoTipdoc" [(ngModel)]="pacienteInconsistencias.tipoTipdoc"  />
+  <input type="text" id="field_tipoTipdoc" *ngIf="!pacienteInconsistencias" class="form-control" name="tipoTipdoc" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_apel2">Apel 2</label>
+  <input type="text" id="field_apel2" *ngIf="pacienteInconsistencias" class="form-control" name="apel2" [(ngModel)]="pacienteInconsistencias.apel2"  />
+  <input type="text" id="field_apel2" *ngIf="!pacienteInconsistencias" class="form-control" name="apel2" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_tipoInconsistencia">Tipo Inconsistencia</label>
+  <input type="text" id="field_tipoInconsistencia" *ngIf="pacienteInconsistencias" class="form-control" name="tipoInconsistencia" [(ngModel)]="pacienteInconsistencias.tipoInconsistencia"  />
+  <input type="text" id="field_tipoInconsistencia" *ngIf="!pacienteInconsistencias" class="form-control" name="tipoInconsistencia" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_sexo">Sexo</label>
+  <input type="text" id="field_sexo" *ngIf="pacienteInconsistencias" class="form-control" name="sexo" [(ngModel)]="pacienteInconsistencias.sexo"  />
+  <input type="text" id="field_sexo" *ngIf="!pacienteInconsistencias" class="form-control" name="sexo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_tipoApel1">Tipo Apel 1</label>
+  <input type="text" id="field_tipoApel1" *ngIf="pacienteInconsistencias" class="form-control" name="tipoApel1" [(ngModel)]="pacienteInconsistencias.tipoApel1"  />
+  <input type="text" id="field_tipoApel1" *ngIf="!pacienteInconsistencias" class="form-control" name="tipoApel1" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_appInterna">App Interna</label>
+  <input type="text" id="field_appInterna" *ngIf="pacienteInconsistencias" class="form-control" name="appInterna" [(ngModel)]="pacienteInconsistencias.appInterna"  />
+  <input type="text" id="field_appInterna" *ngIf="!pacienteInconsistencias" class="form-control" name="appInterna" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_appExterna">App Externa</label>
+  <input type="text" id="field_appExterna" *ngIf="pacienteInconsistencias" class="form-control" name="appExterna" [(ngModel)]="pacienteInconsistencias.appExterna"  />
+  <input type="text" id="field_appExterna" *ngIf="!pacienteInconsistencias" class="form-control" name="appExterna" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_tipoNumdoc">Tipo Numdoc</label>
+  <input type="text" id="field_tipoNumdoc" *ngIf="pacienteInconsistencias" class="form-control" name="tipoNumdoc" [(ngModel)]="pacienteInconsistencias.tipoNumdoc"  />
+  <input type="text" id="field_tipoNumdoc" *ngIf="!pacienteInconsistencias" class="form-control" name="tipoNumdoc" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_numInfo">Num Info</label>
+  <input type="number" id="field_numInfo" *ngIf="pacienteInconsistencias" class="form-control" name="numInfo" [(ngModel)]="pacienteInconsistencias.numInfo"  />
+  <input type="number" id="field_numInfo" *ngIf="!pacienteInconsistencias" class="form-control" name="numInfo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_nom2">Nom 2</label>
+  <input type="text" id="field_nom2" *ngIf="pacienteInconsistencias" class="form-control" name="nom2" [(ngModel)]="pacienteInconsistencias.nom2"  />
+  <input type="text" id="field_nom2" *ngIf="!pacienteInconsistencias" class="form-control" name="nom2" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_nom1">Nom 1</label>
+  <input type="text" id="field_nom1" *ngIf="pacienteInconsistencias" class="form-control" name="nom1" [(ngModel)]="pacienteInconsistencias.nom1"  />
+  <input type="text" id="field_nom1" *ngIf="!pacienteInconsistencias" class="form-control" name="nom1" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_apel1">Apel 1</label>
+  <input type="text" id="field_apel1" *ngIf="pacienteInconsistencias" class="form-control" name="apel1" [(ngModel)]="pacienteInconsistencias.apel1"  />
+  <input type="text" id="field_apel1" *ngIf="!pacienteInconsistencias" class="form-control" name="apel1" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_tipDocExterno">Tip Doc Externo</label>
+  <input type="text" id="field_tipDocExterno" *ngIf="pacienteInconsistencias" class="form-control" name="tipDocExterno" [(ngModel)]="pacienteInconsistencias.tipDocExterno"  />
+  <input type="text" id="field_tipDocExterno" *ngIf="!pacienteInconsistencias" class="form-control" name="tipDocExterno" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fecNacExterno">Fec Nac Externo</label>
+  <input type="date" id="field_fecNacExterno" *ngIf="pacienteInconsistencias" class="form-control" name="fecNacExterno" [(ngModel)]="pacienteInconsistencias.fecNacExterno"  />
+  <input type="date" id="field_fecNacExterno" *ngIf="!pacienteInconsistencias" class="form-control" name="fecNacExterno" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_tipoNom">Tipo Nom</label>
+  <input type="text" id="field_tipoNom" *ngIf="pacienteInconsistencias" class="form-control" name="tipoNom" [(ngModel)]="pacienteInconsistencias.tipoNom"  />
+  <input type="text" id="field_tipoNom" *ngIf="!pacienteInconsistencias" class="form-control" name="tipoNom" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_nom1Externo">Nom 1 Externo</label>
+  <input type="text" id="field_nom1Externo" *ngIf="pacienteInconsistencias" class="form-control" name="nom1Externo" [(ngModel)]="pacienteInconsistencias.nom1Externo"  />
+  <input type="text" id="field_nom1Externo" *ngIf="!pacienteInconsistencias" class="form-control" name="nom1Externo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_numDocExterno">Num Doc Externo</label>
+  <input type="text" id="field_numDocExterno" *ngIf="pacienteInconsistencias" class="form-control" name="numDocExterno" [(ngModel)]="pacienteInconsistencias.numDocExterno"  />
+  <input type="text" id="field_numDocExterno" *ngIf="!pacienteInconsistencias" class="form-control" name="numDocExterno" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_apel2Externo">Apel 2 Externo</label>
+  <input type="text" id="field_apel2Externo" *ngIf="pacienteInconsistencias" class="form-control" name="apel2Externo" [(ngModel)]="pacienteInconsistencias.apel2Externo"  />
+  <input type="text" id="field_apel2Externo" *ngIf="!pacienteInconsistencias" class="form-control" name="apel2Externo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_tipoNom1">Tipo Nom 1</label>
+  <input type="text" id="field_tipoNom1" *ngIf="pacienteInconsistencias" class="form-control" name="tipoNom1" [(ngModel)]="pacienteInconsistencias.tipoNom1"  />
+  <input type="text" id="field_tipoNom1" *ngIf="!pacienteInconsistencias" class="form-control" name="tipoNom1" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idSucursal">Id Sucursal</label>
+  <input type="number" id="field_idSucursal" *ngIf="pacienteInconsistencias" class="form-control" name="idSucursal" [(ngModel)]="pacienteInconsistencias.idSucursal"  />
+  <input type="number" id="field_idSucursal" *ngIf="!pacienteInconsistencias" class="form-control" name="idSucursal" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="pacienteInconsistencias" class="form-control" name="observaciones" [(ngModel)]="pacienteInconsistencias.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!pacienteInconsistencias" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_tipoApel2">Tipo Apel 2</label>
+  <input type="text" id="field_tipoApel2" *ngIf="pacienteInconsistencias" class="form-control" name="tipoApel2" [(ngModel)]="pacienteInconsistencias.tipoApel2"  />
+  <input type="text" id="field_tipoApel2" *ngIf="!pacienteInconsistencias" class="form-control" name="tipoApel2" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="pacienteInconsistencias" class="form-control" name="fechaRegistro" [(ngModel)]="pacienteInconsistencias.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!pacienteInconsistencias" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_tipDoc">Tip Doc</label>
+  <input type="text" id="field_tipDoc" *ngIf="pacienteInconsistencias" class="form-control" name="tipDoc" [(ngModel)]="pacienteInconsistencias.tipDoc"  />
+  <input type="text" id="field_tipDoc" *ngIf="!pacienteInconsistencias" class="form-control" name="tipDoc" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_sexoExterno">Sexo Externo</label>
+  <input type="text" id="field_sexoExterno" *ngIf="pacienteInconsistencias" class="form-control" name="sexoExterno" [(ngModel)]="pacienteInconsistencias.sexoExterno"  />
+  <input type="text" id="field_sexoExterno" *ngIf="!pacienteInconsistencias" class="form-control" name="sexoExterno" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_contrato">Contrato</label>
+  <input type="text" id="field_contrato" *ngIf="pacienteInconsistencias" class="form-control" name="contrato" [(ngModel)]="pacienteInconsistencias.contrato"  />
+  <input type="text" id="field_contrato" *ngIf="!pacienteInconsistencias" class="form-control" name="contrato" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_nom2Externo">Nom 2 Externo</label>
+  <input type="text" id="field_nom2Externo" *ngIf="pacienteInconsistencias" class="form-control" name="nom2Externo" [(ngModel)]="pacienteInconsistencias.nom2Externo"  />
+  <input type="text" id="field_nom2Externo" *ngIf="!pacienteInconsistencias" class="form-control" name="nom2Externo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fecNac">Fec Nac</label>
+  <input type="date" id="field_fecNac" *ngIf="pacienteInconsistencias" class="form-control" name="fecNac" [(ngModel)]="pacienteInconsistencias.fecNac"  />
+  <input type="date" id="field_fecNac" *ngIf="!pacienteInconsistencias" class="form-control" name="fecNac" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="entidads">
+              <label for="field_entidad">Entidad</label>
+
+              <select *ngIf="!pacienteInconsistencias" class="form-control" name="idEntidad" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+
+              <select *ngIf="pacienteInconsistencias && pacienteInconsistencias.idEntidad" class="form-control" name="idEntidad" [(ngModel)]="pacienteInconsistencias.idEntidad">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

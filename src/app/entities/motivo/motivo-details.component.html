@@ -1,0 +1,40 @@
+<div *ngIf="motivo" class="container-fluid">
+  <h3 class="m-top-and-bottom-2">Motivo</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ motivo._id }}</dd>
+
+  
+    <dt>Motivo</dt>
+    <dd>{{ motivo.motivo }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ motivo.descripcion }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ motivo.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ motivo.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ motivo.observaciones }}</dd>
+
+    <dt>TipoMotivo</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'tipoMotivo', motivo.tipoMotivo._id]">{{ motivo.tipoMotivo._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+  <app-admision-observaciones-list [admisionObservacioness]="motivo.admisionObservacioness"></app-admision-observaciones-list>
+  <app-censo-traslado-list [censoTraslados]="motivo.censoTraslados"></app-censo-traslado-list>
+  <app-detalle-cargos-pendientes-list [detalleCargosPendientess]="motivo.detalleCargosPendientess"></app-detalle-cargos-pendientes-list>
+  <app-trazabilidad-admision-list [trazabilidadAdmisions]="motivo.trazabilidadAdmisions"></app-trazabilidad-admision-list>
+  <app-trazabilidad-admision-list [trazabilidadAdmisions]="motivo.trazabilidadAdmisions"></app-trazabilidad-admision-list>
+  <app-trazabilidad-admision-list [trazabilidadAdmisions]="motivo.trazabilidadAdmisions"></app-trazabilidad-admision-list>
+  <app-triage-list [triages]="motivo.triages"></app-triage-list>
+  <app-subconcepto-list [subconceptos]="motivo.subconceptos"></app-subconcepto-list>
+  <app-pyp-procedimiento-programa-list [pypProcedimientoProgramas]="motivo.pypProcedimientoProgramas"></app-pyp-procedimiento-programa-list>
+</div>

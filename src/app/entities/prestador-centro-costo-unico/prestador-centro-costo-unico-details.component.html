@@ -1,0 +1,31 @@
+<div *ngIf="prestadorCentroCostoUnico" class="container">
+  <h3 class="m-top-and-bottom-2">Prestador Centro Costo Unico</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ prestadorCentroCostoUnico._id }}</dd>
+
+  
+    <dt>Centro Costo</dt>
+    <dd>{{ prestadorCentroCostoUnico.centroCosto }}</dd>
+
+    <dt>Item Lista Tipo Centro Costo Unico</dt>
+    <dd>{{ prestadorCentroCostoUnico.itemListaTipoCentroCostoUnico }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ prestadorCentroCostoUnico.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ prestadorCentroCostoUnico.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ prestadorCentroCostoUnico.observaciones }}</dd>
+
+    <dt>Prestador</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'prestador', prestadorCentroCostoUnico.prestador._id]">{{ prestadorCentroCostoUnico.prestador._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

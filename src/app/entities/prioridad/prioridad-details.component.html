@@ -1,0 +1,32 @@
+<div *ngIf="prioridad" class="container-fluid">
+  <h3 class="m-top-and-bottom-2">Prioridad</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ prioridad._id }}</dd>
+
+  
+    <dt>Descripcion</dt>
+    <dd>{{ prioridad.descripcion }}</dd>
+
+    <dt>Val Priorida</dt>
+    <dd>{{ prioridad.valPriorida }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ prioridad.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ prioridad.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ prioridad.observaciones }}</dd>
+
+    <dt>Prioridad</dt>
+    <dd>{{ prioridad.prioridad }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+  <app-cargos-pendientes-list [cargosPendientess]="prioridad.cargosPendientess"></app-cargos-pendientes-list>
+  <app-pedidos-list [pedidoss]="prioridad.pedidoss"></app-pedidos-list>
+</div>

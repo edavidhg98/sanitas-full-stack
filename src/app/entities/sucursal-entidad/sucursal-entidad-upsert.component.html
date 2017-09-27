@@ -1,0 +1,263 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Sucursal Entidad</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="sucursalEntidad && sucursalEntidad._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="sucursalEntidad" type="text" class="form-control" name="id" [(ngModel)]="sucursalEntidad._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_porcentajeMinAnticipo">Porcentaje Min Anticipo</label>
+  <input type="number" id="field_porcentajeMinAnticipo" *ngIf="sucursalEntidad" class="form-control" name="porcentajeMinAnticipo" [(ngModel)]="sucursalEntidad.porcentajeMinAnticipo"  />
+  <input type="number" id="field_porcentajeMinAnticipo" *ngIf="!sucursalEntidad" class="form-control" name="porcentajeMinAnticipo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_email">Email</label>
+  <input type="text" id="field_email" *ngIf="sucursalEntidad" class="form-control" name="email" [(ngModel)]="sucursalEntidad.email"  />
+  <input type="text" id="field_email" *ngIf="!sucursalEntidad" class="form-control" name="email" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idItemListaEstadocyfCatalogo">Id Item Lista Estadocyf Catalogo</label>
+  <input type="number" id="field_idItemListaEstadocyfCatalogo" *ngIf="sucursalEntidad" class="form-control" name="idItemListaEstadocyfCatalogo" [(ngModel)]="sucursalEntidad.idItemListaEstadocyfCatalogo"  />
+  <input type="number" id="field_idItemListaEstadocyfCatalogo" *ngIf="!sucursalEntidad" class="form-control" name="idItemListaEstadocyfCatalogo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_cantidadMinutosObservacion">Cantidad Minutos Observacion</label>
+  <input type="number" id="field_cantidadMinutosObservacion" *ngIf="sucursalEntidad" class="form-control" name="cantidadMinutosObservacion" [(ngModel)]="sucursalEntidad.cantidadMinutosObservacion"  />
+  <input type="number" id="field_cantidadMinutosObservacion" *ngIf="!sucursalEntidad" class="form-control" name="cantidadMinutosObservacion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manejaPenalizaInasistencia">Maneja Penaliza Inasistencia</label>
+  <input type="text" id="field_manejaPenalizaInasistencia" *ngIf="sucursalEntidad" class="form-control" name="manejaPenalizaInasistencia" [(ngModel)]="sucursalEntidad.manejaPenalizaInasistencia"  />
+  <input type="text" id="field_manejaPenalizaInasistencia" *ngIf="!sucursalEntidad" class="form-control" name="manejaPenalizaInasistencia" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idItemListaEstadocyf">Id Item Lista Estadocyf</label>
+  <input type="number" id="field_idItemListaEstadocyf" *ngIf="sucursalEntidad" class="form-control" name="idItemListaEstadocyf" [(ngModel)]="sucursalEntidad.idItemListaEstadocyf"  />
+  <input type="number" id="field_idItemListaEstadocyf" *ngIf="!sucursalEntidad" class="form-control" name="idItemListaEstadocyf" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_restringeAdmision">Restringe Admision</label>
+  <input type="text" id="field_restringeAdmision" *ngIf="sucursalEntidad" class="form-control" name="restringeAdmision" [(ngModel)]="sucursalEntidad.restringeAdmision"  />
+  <input type="text" id="field_restringeAdmision" *ngIf="!sucursalEntidad" class="form-control" name="restringeAdmision" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="sucursalEntidad" class="form-control" name="fechaRegistro" [(ngModel)]="sucursalEntidad.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!sucursalEntidad" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_usaAfirma">Usa Afirma</label>
+  <input type="text" id="field_usaAfirma" *ngIf="sucursalEntidad" class="form-control" name="usaAfirma" [(ngModel)]="sucursalEntidad.usaAfirma"  />
+  <input type="text" id="field_usaAfirma" *ngIf="!sucursalEntidad" class="form-control" name="usaAfirma" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_verificaFoto">Verifica Foto</label>
+  <input type="text" id="field_verificaFoto" *ngIf="sucursalEntidad" class="form-control" name="verificaFoto" [(ngModel)]="sucursalEntidad.verificaFoto"  />
+  <input type="text" id="field_verificaFoto" *ngIf="!sucursalEntidad" class="form-control" name="verificaFoto" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="sucursalEntidad" class="form-control" name="loginRegistro" [(ngModel)]="sucursalEntidad.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!sucursalEntidad" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_minejaTiempoCancelaCita">Mineja Tiempo Cancela Cita</label>
+  <input type="number" id="field_minejaTiempoCancelaCita" *ngIf="sucursalEntidad" class="form-control" name="minejaTiempoCancelaCita" [(ngModel)]="sucursalEntidad.minejaTiempoCancelaCita"  />
+  <input type="number" id="field_minejaTiempoCancelaCita" *ngIf="!sucursalEntidad" class="form-control" name="minejaTiempoCancelaCita" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manejaDecimales">Maneja Decimales</label>
+  <input type="text" id="field_manejaDecimales" *ngIf="sucursalEntidad" class="form-control" name="manejaDecimales" [(ngModel)]="sucursalEntidad.manejaDecimales"  />
+  <input type="text" id="field_manejaDecimales" *ngIf="!sucursalEntidad" class="form-control" name="manejaDecimales" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaTipoVale">Item Lista Tipo Vale</label>
+  <input type="number" id="field_itemListaTipoVale" *ngIf="sucursalEntidad" class="form-control" name="itemListaTipoVale" [(ngModel)]="sucursalEntidad.itemListaTipoVale"  />
+  <input type="number" id="field_itemListaTipoVale" *ngIf="!sucursalEntidad" class="form-control" name="itemListaTipoVale" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_valorRedondeo">Valor Redondeo</label>
+  <input type="number" id="field_valorRedondeo" *ngIf="sucursalEntidad" class="form-control" name="valorRedondeo" [(ngModel)]="sucursalEntidad.valorRedondeo"  />
+  <input type="number" id="field_valorRedondeo" *ngIf="!sucursalEntidad" class="form-control" name="valorRedondeo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="sucursalEntidad" class="form-control" name="observaciones" [(ngModel)]="sucursalEntidad.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!sucursalEntidad" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_horaGeneraReporte">Hora Genera Reporte</label>
+  <input type="number" id="field_horaGeneraReporte" *ngIf="sucursalEntidad" class="form-control" name="horaGeneraReporte" [(ngModel)]="sucursalEntidad.horaGeneraReporte"  />
+  <input type="number" id="field_horaGeneraReporte" *ngIf="!sucursalEntidad" class="form-control" name="horaGeneraReporte" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaTipoManejoHoraObs">Item Lista Tipo Manejo Hora Obs</label>
+  <input type="number" id="field_itemListaTipoManejoHoraObs" *ngIf="sucursalEntidad" class="form-control" name="itemListaTipoManejoHoraObs" [(ngModel)]="sucursalEntidad.itemListaTipoManejoHoraObs"  />
+  <input type="number" id="field_itemListaTipoManejoHoraObs" *ngIf="!sucursalEntidad" class="form-control" name="itemListaTipoManejoHoraObs" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_porcentajeAdicionalAnticipo">Porcentaje Adicional Anticipo</label>
+  <input type="number" id="field_porcentajeAdicionalAnticipo" *ngIf="sucursalEntidad" class="form-control" name="porcentajeAdicionalAnticipo" [(ngModel)]="sucursalEntidad.porcentajeAdicionalAnticipo"  />
+  <input type="number" id="field_porcentajeAdicionalAnticipo" *ngIf="!sucursalEntidad" class="form-control" name="porcentajeAdicionalAnticipo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manejaRedondeo">Maneja Redondeo</label>
+  <input type="text" id="field_manejaRedondeo" *ngIf="sucursalEntidad" class="form-control" name="manejaRedondeo" [(ngModel)]="sucursalEntidad.manejaRedondeo"  />
+  <input type="text" id="field_manejaRedondeo" *ngIf="!sucursalEntidad" class="form-control" name="manejaRedondeo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manejaPyp">Maneja Pyp</label>
+  <input type="text" id="field_manejaPyp" *ngIf="sucursalEntidad" class="form-control" name="manejaPyp" [(ngModel)]="sucursalEntidad.manejaPyp"  />
+  <input type="text" id="field_manejaPyp" *ngIf="!sucursalEntidad" class="form-control" name="manejaPyp" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaTipoUsuario">Item Lista Tipo Usuario</label>
+  <input type="number" id="field_itemListaTipoUsuario" *ngIf="sucursalEntidad" class="form-control" name="itemListaTipoUsuario" [(ngModel)]="sucursalEntidad.itemListaTipoUsuario"  />
+  <input type="number" id="field_itemListaTipoUsuario" *ngIf="!sucursalEntidad" class="form-control" name="itemListaTipoUsuario" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_cantidadHorasObservacion">Cantidad Horas Observacion</label>
+  <input type="number" id="field_cantidadHorasObservacion" *ngIf="sucursalEntidad" class="form-control" name="cantidadHorasObservacion" [(ngModel)]="sucursalEntidad.cantidadHorasObservacion"  />
+  <input type="number" id="field_cantidadHorasObservacion" *ngIf="!sucursalEntidad" class="form-control" name="cantidadHorasObservacion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manejaPaqueteUrgencia">Maneja Paquete Urgencia</label>
+  <input type="text" id="field_manejaPaqueteUrgencia" *ngIf="sucursalEntidad" class="form-control" name="manejaPaqueteUrgencia" [(ngModel)]="sucursalEntidad.manejaPaqueteUrgencia"  />
+  <input type="text" id="field_manejaPaqueteUrgencia" *ngIf="!sucursalEntidad" class="form-control" name="manejaPaqueteUrgencia" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manejaPenalizaCancelacion">Maneja Penaliza Cancelacion</label>
+  <input type="text" id="field_manejaPenalizaCancelacion" *ngIf="sucursalEntidad" class="form-control" name="manejaPenalizaCancelacion" [(ngModel)]="sucursalEntidad.manejaPenalizaCancelacion"  />
+  <input type="text" id="field_manejaPenalizaCancelacion" *ngIf="!sucursalEntidad" class="form-control" name="manejaPenalizaCancelacion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_verificaEstadoPac">Verifica Estado Pac</label>
+  <input type="text" id="field_verificaEstadoPac" *ngIf="sucursalEntidad" class="form-control" name="verificaEstadoPac" [(ngModel)]="sucursalEntidad.verificaEstadoPac"  />
+  <input type="text" id="field_verificaEstadoPac" *ngIf="!sucursalEntidad" class="form-control" name="verificaEstadoPac" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="encabezadoCatalogos">
+              <label for="field_encabezadoCatalogo">Encabezado Catalogo</label>
+
+              <select *ngIf="!sucursalEntidad" class="form-control" name="idEncabezadoCatalogo" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="encabezadoCatalogo._id" *ngFor="let encabezadoCatalogo of encabezadoCatalogos">{{ encabezadoCatalogo._id }}</option>
+              </select>
+
+              <select *ngIf="sucursalEntidad && sucursalEntidad.idEncabezadoCatalogo" class="form-control" name="idEncabezadoCatalogo" [(ngModel)]="sucursalEntidad.idEncabezadoCatalogo">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="encabezadoCatalogo._id" *ngFor="let encabezadoCatalogo of encabezadoCatalogos">{{ encabezadoCatalogo._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="monedas">
+              <label for="field_moneda">Moneda</label>
+
+              <select *ngIf="!sucursalEntidad" class="form-control" name="idMoneda" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="moneda._id" *ngFor="let moneda of monedas">{{ moneda._id }}</option>
+              </select>
+
+              <select *ngIf="sucursalEntidad && sucursalEntidad.idMoneda" class="form-control" name="idMoneda" [(ngModel)]="sucursalEntidad.idMoneda">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="moneda._id" *ngFor="let moneda of monedas">{{ moneda._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="sucursals">
+              <label for="field_sucursal">Sucursal</label>
+
+              <select *ngIf="!sucursalEntidad" class="form-control" name="idSucursal" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+
+              <select *ngIf="sucursalEntidad && sucursalEntidad.idSucursal" class="form-control" name="idSucursal" [(ngModel)]="sucursalEntidad.idSucursal">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="entidads">
+              <label for="field_entidad">Entidad</label>
+
+              <select *ngIf="!sucursalEntidad" class="form-control" name="idEntidad" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+
+              <select *ngIf="sucursalEntidad && sucursalEntidad.idEntidad" class="form-control" name="idEntidad" [(ngModel)]="sucursalEntidad.idEntidad">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

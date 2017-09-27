@@ -1,0 +1,71 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Tipo Novedad</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="tipoNovedad && tipoNovedad._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="tipoNovedad" type="text" class="form-control" name="id" [(ngModel)]="tipoNovedad._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_codigoTipoNovedad">Codigo Tipo Novedad</label>
+  <input type="text" id="field_codigoTipoNovedad" *ngIf="tipoNovedad" class="form-control" name="codigoTipoNovedad" [(ngModel)]="tipoNovedad.codigoTipoNovedad"  />
+  <input type="text" id="field_codigoTipoNovedad" *ngIf="!tipoNovedad" class="form-control" name="codigoTipoNovedad" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_descripcion">Descripcion</label>
+  <input type="text" id="field_descripcion" *ngIf="tipoNovedad" class="form-control" name="descripcion" [(ngModel)]="tipoNovedad.descripcion"  />
+  <input type="text" id="field_descripcion" *ngIf="!tipoNovedad" class="form-control" name="descripcion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idConcepto">Id Concepto</label>
+  <input type="number" id="field_idConcepto" *ngIf="tipoNovedad" class="form-control" name="idConcepto" [(ngModel)]="tipoNovedad.idConcepto"  />
+  <input type="number" id="field_idConcepto" *ngIf="!tipoNovedad" class="form-control" name="idConcepto" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="tipoNovedad" class="form-control" name="fechaRegistro" [(ngModel)]="tipoNovedad.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!tipoNovedad" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="tipoNovedad" class="form-control" name="loginRegistro" [(ngModel)]="tipoNovedad.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!tipoNovedad" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="tipoNovedad" class="form-control" name="observaciones" [(ngModel)]="tipoNovedad.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!tipoNovedad" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

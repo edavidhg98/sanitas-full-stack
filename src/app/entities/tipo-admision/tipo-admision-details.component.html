@@ -1,0 +1,41 @@
+<div *ngIf="tipoAdmision" class="container-fluid">
+  <h3 class="m-top-and-bottom-2">Tipo Admision</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ tipoAdmision._id }}</dd>
+
+  
+    <dt>Tip Admision</dt>
+    <dd>{{ tipoAdmision.tipAdmision }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ tipoAdmision.descripcion }}</dd>
+
+    <dt>Man Responsa</dt>
+    <dd>{{ tipoAdmision.manResponsa }}</dd>
+
+    <dt>Man Lisespe</dt>
+    <dd>{{ tipoAdmision.manLisespe }}</dd>
+
+    <dt>Man Cargo</dt>
+    <dd>{{ tipoAdmision.manCargo }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ tipoAdmision.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ tipoAdmision.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ tipoAdmision.observaciones }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+  <app-excepcion-regargo-list [excepcionRegargos]="tipoAdmision.excepcionRegargos"></app-excepcion-regargo-list>
+  <app-nivel-cargo-list [nivelCargos]="tipoAdmision.nivelCargos"></app-nivel-cargo-list>
+  <app-procedimiento-convenio-capitado-list [procedimientoConvenioCapitados]="tipoAdmision.procedimientoConvenioCapitados"></app-procedimiento-convenio-capitado-list>
+  <app-trazabilidad-admision-list [trazabilidadAdmisions]="tipoAdmision.trazabilidadAdmisions"></app-trazabilidad-admision-list>
+  <app-subconcepto-list [subconceptos]="tipoAdmision.subconceptos"></app-subconcepto-list>
+</div>

@@ -1,0 +1,77 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Localidad</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="localidad && localidad._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="localidad" type="text" class="form-control" name="id" [(ngModel)]="localidad._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_codigo">Codigo</label>
+  <input type="text" id="field_codigo" *ngIf="localidad" class="form-control" name="codigo" [(ngModel)]="localidad.codigo"  />
+  <input type="text" id="field_codigo" *ngIf="!localidad" class="form-control" name="codigo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_nombreLocalidad">Nombre Localidad</label>
+  <input type="text" id="field_nombreLocalidad" *ngIf="localidad" class="form-control" name="nombreLocalidad" [(ngModel)]="localidad.nombreLocalidad"  />
+  <input type="text" id="field_nombreLocalidad" *ngIf="!localidad" class="form-control" name="nombreLocalidad" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="localidad" class="form-control" name="fechaRegistro" [(ngModel)]="localidad.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!localidad" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="localidad" class="form-control" name="loginRegistro" [(ngModel)]="localidad.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!localidad" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="localidad" class="form-control" name="observaciones" [(ngModel)]="localidad.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!localidad" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="ciudads">
+              <label for="field_ciudad">Ciudad</label>
+
+              <select *ngIf="!localidad" class="form-control" name="idCiudad" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="ciudad._id" *ngFor="let ciudad of ciudads">{{ ciudad._id }}</option>
+              </select>
+
+              <select *ngIf="localidad && localidad.idCiudad" class="form-control" name="idCiudad" [(ngModel)]="localidad.idCiudad">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="ciudad._id" *ngFor="let ciudad of ciudads">{{ ciudad._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

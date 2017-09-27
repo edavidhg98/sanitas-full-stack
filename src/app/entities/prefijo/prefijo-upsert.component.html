@@ -1,0 +1,71 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Prefijo</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="prefijo && prefijo._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="prefijo" type="text" class="form-control" name="id" [(ngModel)]="prefijo._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_prefijo">Prefijo</label>
+  <input type="text" id="field_prefijo" *ngIf="prefijo" class="form-control" name="prefijo" [(ngModel)]="prefijo.prefijo"  />
+  <input type="text" id="field_prefijo" *ngIf="!prefijo" class="form-control" name="prefijo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_descripcion">Descripcion</label>
+  <input type="text" id="field_descripcion" *ngIf="prefijo" class="form-control" name="descripcion" [(ngModel)]="prefijo.descripcion"  />
+  <input type="text" id="field_descripcion" *ngIf="!prefijo" class="form-control" name="descripcion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="prefijo" class="form-control" name="fechaRegistro" [(ngModel)]="prefijo.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!prefijo" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="prefijo" class="form-control" name="loginRegistro" [(ngModel)]="prefijo.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!prefijo" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="prefijo" class="form-control" name="observaciones" [(ngModel)]="prefijo.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!prefijo" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_piePrefijo">Pie Prefijo</label>
+  <input type="text" id="field_piePrefijo" *ngIf="prefijo" class="form-control" name="piePrefijo" [(ngModel)]="prefijo.piePrefijo"  />
+  <input type="text" id="field_piePrefijo" *ngIf="!prefijo" class="form-control" name="piePrefijo" ngModel />
+  </div>
+
+          
+
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

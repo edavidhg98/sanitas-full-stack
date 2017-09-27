@@ -1,0 +1,117 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Centro Costo Valido</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="centroCostoValido && centroCostoValido._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="centroCostoValido" type="text" class="form-control" name="id" [(ngModel)]="centroCostoValido._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_idCentroCostoGenera">Id Centro Costo Genera</label>
+  <input type="number" id="field_idCentroCostoGenera" *ngIf="centroCostoValido" class="form-control" name="idCentroCostoGenera" [(ngModel)]="centroCostoValido.idCentroCostoGenera"  />
+  <input type="number" id="field_idCentroCostoGenera" *ngIf="!centroCostoValido" class="form-control" name="idCentroCostoGenera" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idCentroCostoValido">Id Centro Costo Valido</label>
+  <input type="number" id="field_idCentroCostoValido" *ngIf="centroCostoValido" class="form-control" name="idCentroCostoValido" [(ngModel)]="centroCostoValido.idCentroCostoValido"  />
+  <input type="number" id="field_idCentroCostoValido" *ngIf="!centroCostoValido" class="form-control" name="idCentroCostoValido" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="centroCostoValido" class="form-control" name="fechaRegistro" [(ngModel)]="centroCostoValido.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!centroCostoValido" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="centroCostoValido" class="form-control" name="loginRegistro" [(ngModel)]="centroCostoValido.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!centroCostoValido" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="centroCostoValido" class="form-control" name="observaciones" [(ngModel)]="centroCostoValido.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!centroCostoValido" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_farmacia">Farmacia</label>
+  <input type="text" id="field_farmacia" *ngIf="centroCostoValido" class="form-control" name="farmacia" [(ngModel)]="centroCostoValido.farmacia"  />
+  <input type="text" id="field_farmacia" *ngIf="!centroCostoValido" class="form-control" name="farmacia" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_estadoItemLista">Estado Item Lista</label>
+  <input type="number" id="field_estadoItemLista" *ngIf="centroCostoValido" class="form-control" name="estadoItemLista" [(ngModel)]="centroCostoValido.estadoItemLista"  />
+  <input type="number" id="field_estadoItemLista" *ngIf="!centroCostoValido" class="form-control" name="estadoItemLista" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="centroCostoValidos">
+              <label for="field_centroCostoValido">Centro Costo Valido</label>
+
+              <select *ngIf="!centroCostoValido" class="form-control" name="idCentroCostoValido1" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="centroCostoValido._id" *ngFor="let centroCostoValido of centroCostoValidos">{{ centroCostoValido._id }}</option>
+              </select>
+
+              <select *ngIf="centroCostoValido && centroCostoValido.idCentroCostoValido1" class="form-control" name="idCentroCostoValido1" [(ngModel)]="centroCostoValido.idCentroCostoValido1">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="centroCostoValido._id" *ngFor="let centroCostoValido of centroCostoValidos">{{ centroCostoValido._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="centroCostoValidos">
+              <label for="field_centroCostoValido">Centro Costo Valido</label>
+
+              <select *ngIf="!centroCostoValido" class="form-control" name="idCentroCostoValido2" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="centroCostoValido._id" *ngFor="let centroCostoValido of centroCostoValidos">{{ centroCostoValido._id }}</option>
+              </select>
+
+              <select *ngIf="centroCostoValido && centroCostoValido.idCentroCostoValido2" class="form-control" name="idCentroCostoValido2" [(ngModel)]="centroCostoValido.idCentroCostoValido2">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="centroCostoValido._id" *ngFor="let centroCostoValido of centroCostoValidos">{{ centroCostoValido._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="prestadors">
+              <label for="field_prestador">Prestador</label>
+
+              <select *ngIf="!centroCostoValido" class="form-control" name="idPrestador" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="prestador._id" *ngFor="let prestador of prestadors">{{ prestador._id }}</option>
+              </select>
+
+              <select *ngIf="centroCostoValido && centroCostoValido.idPrestador" class="form-control" name="idPrestador" [(ngModel)]="centroCostoValido.idPrestador">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="prestador._id" *ngFor="let prestador of prestadors">{{ prestador._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

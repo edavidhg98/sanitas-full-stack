@@ -1,0 +1,28 @@
+<div *ngIf="vacunas" class="container-fluid">
+  <h3 class="m-top-and-bottom-2">Vacunas</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ vacunas._id }}</dd>
+
+  
+    <dt>Vacuna</dt>
+    <dd>{{ vacunas.vacuna }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ vacunas.descripcion }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ vacunas.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ vacunas.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ vacunas.observaciones }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+  <app-tarifa-vacunacion-list [tarifaVacunacions]="vacunas.tarifaVacunacions"></app-tarifa-vacunacion-list>
+</div>

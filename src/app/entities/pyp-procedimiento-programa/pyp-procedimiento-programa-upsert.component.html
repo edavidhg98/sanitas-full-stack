@@ -1,0 +1,138 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Pyp Procedimiento Programa</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="pypProcedimientoPrograma && pypProcedimientoPrograma._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="pypProcedimientoPrograma" type="text" class="form-control" name="id" [(ngModel)]="pypProcedimientoPrograma._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_idAdmision">Id Admision</label>
+  <input type="number" id="field_idAdmision" *ngIf="pypProcedimientoPrograma" class="form-control" name="idAdmision" [(ngModel)]="pypProcedimientoPrograma.idAdmision"  />
+  <input type="number" id="field_idAdmision" *ngIf="!pypProcedimientoPrograma" class="form-control" name="idAdmision" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_edadini">Edadini</label>
+  <input type="number" id="field_edadini" *ngIf="pypProcedimientoPrograma" class="form-control" name="edadini" [(ngModel)]="pypProcedimientoPrograma.edadini"  />
+  <input type="number" id="field_edadini" *ngIf="!pypProcedimientoPrograma" class="form-control" name="edadini" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_edadfin">Edadfin</label>
+  <input type="number" id="field_edadfin" *ngIf="pypProcedimientoPrograma" class="form-control" name="edadfin" [(ngModel)]="pypProcedimientoPrograma.edadfin"  />
+  <input type="number" id="field_edadfin" *ngIf="!pypProcedimientoPrograma" class="form-control" name="edadfin" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_uniMedEdad">Uni Med Edad</label>
+  <input type="text" id="field_uniMedEdad" *ngIf="pypProcedimientoPrograma" class="form-control" name="uniMedEdad" [(ngModel)]="pypProcedimientoPrograma.uniMedEdad"  />
+  <input type="text" id="field_uniMedEdad" *ngIf="!pypProcedimientoPrograma" class="form-control" name="uniMedEdad" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaSexo">Item Lista Sexo</label>
+  <input type="number" id="field_itemListaSexo" *ngIf="pypProcedimientoPrograma" class="form-control" name="itemListaSexo" [(ngModel)]="pypProcedimientoPrograma.itemListaSexo"  />
+  <input type="number" id="field_itemListaSexo" *ngIf="!pypProcedimientoPrograma" class="form-control" name="itemListaSexo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_frecuencia">Frecuencia</label>
+  <input type="number" id="field_frecuencia" *ngIf="pypProcedimientoPrograma" class="form-control" name="frecuencia" [(ngModel)]="pypProcedimientoPrograma.frecuencia"  />
+  <input type="number" id="field_frecuencia" *ngIf="!pypProcedimientoPrograma" class="form-control" name="frecuencia" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_cantidad">Cantidad</label>
+  <input type="number" id="field_cantidad" *ngIf="pypProcedimientoPrograma" class="form-control" name="cantidad" [(ngModel)]="pypProcedimientoPrograma.cantidad"  />
+  <input type="number" id="field_cantidad" *ngIf="!pypProcedimientoPrograma" class="form-control" name="cantidad" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="pypProcedimientoPrograma" class="form-control" name="fechaRegistro" [(ngModel)]="pypProcedimientoPrograma.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!pypProcedimientoPrograma" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="pypProcedimientoPrograma" class="form-control" name="loginRegistro" [(ngModel)]="pypProcedimientoPrograma.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!pypProcedimientoPrograma" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="pypProcedimientoPrograma" class="form-control" name="observaciones" [(ngModel)]="pypProcedimientoPrograma.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!pypProcedimientoPrograma" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="motivos">
+              <label for="field_motivo">Motivo</label>
+
+              <select *ngIf="!pypProcedimientoPrograma" class="form-control" name="idMotivo" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="motivo._id" *ngFor="let motivo of motivos">{{ motivo._id }}</option>
+              </select>
+
+              <select *ngIf="pypProcedimientoPrograma && pypProcedimientoPrograma.idMotivo" class="form-control" name="idMotivo" [(ngModel)]="pypProcedimientoPrograma.idMotivo">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="motivo._id" *ngFor="let motivo of motivos">{{ motivo._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="procedimientos">
+              <label for="field_procedimiento">Procedimiento</label>
+
+              <select *ngIf="!pypProcedimientoPrograma" class="form-control" name="idProcedimiento" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="procedimiento._id" *ngFor="let procedimiento of procedimientos">{{ procedimiento._id }}</option>
+              </select>
+
+              <select *ngIf="pypProcedimientoPrograma && pypProcedimientoPrograma.idProcedimiento" class="form-control" name="idProcedimiento" [(ngModel)]="pypProcedimientoPrograma.idProcedimiento">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="procedimiento._id" *ngFor="let procedimiento of procedimientos">{{ procedimiento._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="pypProgramass">
+              <label for="field_pypProgramas">Pyp Programas</label>
+
+              <select *ngIf="!pypProcedimientoPrograma" class="form-control" name="idPypProgramas" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="pypProgramas._id" *ngFor="let pypProgramas of pypProgramass">{{ pypProgramas._id }}</option>
+              </select>
+
+              <select *ngIf="pypProcedimientoPrograma && pypProcedimientoPrograma.idPypProgramas" class="form-control" name="idPypProgramas" [(ngModel)]="pypProcedimientoPrograma.idPypProgramas">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="pypProgramas._id" *ngFor="let pypProgramas of pypProgramass">{{ pypProgramas._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

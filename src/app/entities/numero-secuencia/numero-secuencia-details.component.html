@@ -1,0 +1,43 @@
+<div *ngIf="numeroSecuencia" class="container">
+  <h3 class="m-top-and-bottom-2">Numero Secuencia</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ numeroSecuencia._id }}</dd>
+
+  
+    <dt>Type</dt>
+    <dd>{{ numeroSecuencia.type }}</dd>
+
+    <dt>Prefix</dt>
+    <dd>{{ numeroSecuencia.prefix }}</dd>
+
+    <dt>Lastnumber</dt>
+    <dd>{{ numeroSecuencia.lastnumber }}</dd>
+
+    <dt>Length</dt>
+    <dd>{{ numeroSecuencia.length }}</dd>
+
+    <dt>Year</dt>
+    <dd>{{ numeroSecuencia.year }}</dd>
+
+    <dt>Month</dt>
+    <dd>{{ numeroSecuencia.month }}</dd>
+
+    <dt>Lastyear</dt>
+    <dd>{{ numeroSecuencia.lastyear }}</dd>
+
+    <dt>Lastmonth</dt>
+    <dd>{{ numeroSecuencia.lastmonth }}</dd>
+
+    <dt>Tablename</dt>
+    <dd>{{ numeroSecuencia.tablename }}</dd>
+
+    <dt>Sucursal</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursal', numeroSecuencia.sucursal._id]">{{ numeroSecuencia.sucursal._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

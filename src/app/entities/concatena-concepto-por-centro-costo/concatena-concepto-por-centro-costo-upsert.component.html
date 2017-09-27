@@ -1,0 +1,91 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Concatena Concepto Por Centro Costo</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="concatenaConceptoPorCentroCosto && concatenaConceptoPorCentroCosto._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="concatenaConceptoPorCentroCosto" type="text" class="form-control" name="id" [(ngModel)]="concatenaConceptoPorCentroCosto._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_idPrestador">Id Prestador</label>
+  <input type="number" id="field_idPrestador" *ngIf="concatenaConceptoPorCentroCosto" class="form-control" name="idPrestador" [(ngModel)]="concatenaConceptoPorCentroCosto.idPrestador"  />
+  <input type="number" id="field_idPrestador" *ngIf="!concatenaConceptoPorCentroCosto" class="form-control" name="idPrestador" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idCentroCosto">Id Centro Costo</label>
+  <input type="number" id="field_idCentroCosto" *ngIf="concatenaConceptoPorCentroCosto" class="form-control" name="idCentroCosto" [(ngModel)]="concatenaConceptoPorCentroCosto.idCentroCosto"  />
+  <input type="number" id="field_idCentroCosto" *ngIf="!concatenaConceptoPorCentroCosto" class="form-control" name="idCentroCosto" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idConcepto">Id Concepto</label>
+  <input type="number" id="field_idConcepto" *ngIf="concatenaConceptoPorCentroCosto" class="form-control" name="idConcepto" [(ngModel)]="concatenaConceptoPorCentroCosto.idConcepto"  />
+  <input type="number" id="field_idConcepto" *ngIf="!concatenaConceptoPorCentroCosto" class="form-control" name="idConcepto" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaEstadoConCptoCentroCosto">Item Lista Estado Con Cpto Centro Costo</label>
+  <input type="number" id="field_itemListaEstadoConCptoCentroCosto" *ngIf="concatenaConceptoPorCentroCosto" class="form-control" name="itemListaEstadoConCptoCentroCosto" [(ngModel)]="concatenaConceptoPorCentroCosto.itemListaEstadoConCptoCentroCosto"  />
+  <input type="number" id="field_itemListaEstadoConCptoCentroCosto" *ngIf="!concatenaConceptoPorCentroCosto" class="form-control" name="itemListaEstadoConCptoCentroCosto" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="concatenaConceptoPorCentroCosto" class="form-control" name="fechaRegistro" [(ngModel)]="concatenaConceptoPorCentroCosto.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!concatenaConceptoPorCentroCosto" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="concatenaConceptoPorCentroCosto" class="form-control" name="loginRegistro" [(ngModel)]="concatenaConceptoPorCentroCosto.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!concatenaConceptoPorCentroCosto" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="concatenaConceptoPorCentroCosto" class="form-control" name="observaciones" [(ngModel)]="concatenaConceptoPorCentroCosto.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!concatenaConceptoPorCentroCosto" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="sucursals">
+              <label for="field_sucursal">Sucursal</label>
+
+              <select *ngIf="!concatenaConceptoPorCentroCosto" class="form-control" name="idSucursal" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+
+              <select *ngIf="concatenaConceptoPorCentroCosto && concatenaConceptoPorCentroCosto.idSucursal" class="form-control" name="idSucursal" [(ngModel)]="concatenaConceptoPorCentroCosto.idSucursal">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

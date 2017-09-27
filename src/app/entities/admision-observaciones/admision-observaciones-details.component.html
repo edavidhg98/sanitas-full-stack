@@ -1,0 +1,62 @@
+<div *ngIf="admisionObservaciones" class="container">
+  <h3 class="m-top-and-bottom-2">Admision Observaciones</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ admisionObservaciones._id }}</dd>
+
+  
+    <dt>Id Admision</dt>
+    <dd>{{ admisionObservaciones.idAdmision }}</dd>
+
+    <dt>Minuto Egreso</dt>
+    <dd>{{ admisionObservaciones.minutoEgreso }}</dd>
+
+    <dt>Minuto Ingreso</dt>
+    <dd>{{ admisionObservaciones.minutoIngreso }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ admisionObservaciones.fechaRegistro }}</dd>
+
+    <dt>Hora Definicion</dt>
+    <dd>{{ admisionObservaciones.horaDefinicion }}</dd>
+
+    <dt>Fecha Ingreso</dt>
+    <dd>{{ admisionObservaciones.fechaIngreso }}</dd>
+
+    <dt>Hora Ingreso</dt>
+    <dd>{{ admisionObservaciones.horaIngreso }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ admisionObservaciones.loginRegistro }}</dd>
+
+    <dt>Fecha Definicion</dt>
+    <dd>{{ admisionObservaciones.fechaDefinicion }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ admisionObservaciones.observaciones }}</dd>
+
+    <dt>Minuto Definicion</dt>
+    <dd>{{ admisionObservaciones.minutoDefinicion }}</dd>
+
+    <dt>Fecha Egreso</dt>
+    <dd>{{ admisionObservaciones.fechaEgreso }}</dd>
+
+    <dt>Hora Egreso</dt>
+    <dd>{{ admisionObservaciones.horaEgreso }}</dd>
+
+    <dt>Destino</dt>
+    <dd>{{ admisionObservaciones.destino }}</dd>
+
+    <dt>Cama</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'cama', admisionObservaciones.cama._id]">{{ admisionObservaciones.cama._id }}</a>
+    </dd>
+    <dt>Motivo</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'motivo', admisionObservaciones.motivo._id]">{{ admisionObservaciones.motivo._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

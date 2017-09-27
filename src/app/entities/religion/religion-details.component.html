@@ -1,0 +1,30 @@
+<div *ngIf="religion" class="container">
+  <h3 class="m-top-and-bottom-2">Religion</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ religion._id }}</dd>
+
+  
+    <dt>Religion</dt>
+    <dd>{{ religion.religion }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ religion.descripcion }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ religion.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ religion.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ religion.observaciones }}</dd>
+
+    <dt>Orden</dt>
+    <dd>{{ religion.orden }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

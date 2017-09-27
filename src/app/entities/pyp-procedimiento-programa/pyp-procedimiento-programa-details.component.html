@@ -1,0 +1,54 @@
+<div *ngIf="pypProcedimientoPrograma" class="container">
+  <h3 class="m-top-and-bottom-2">Pyp Procedimiento Programa</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ pypProcedimientoPrograma._id }}</dd>
+
+  
+    <dt>Id Admision</dt>
+    <dd>{{ pypProcedimientoPrograma.idAdmision }}</dd>
+
+    <dt>Edadini</dt>
+    <dd>{{ pypProcedimientoPrograma.edadini }}</dd>
+
+    <dt>Edadfin</dt>
+    <dd>{{ pypProcedimientoPrograma.edadfin }}</dd>
+
+    <dt>Uni Med Edad</dt>
+    <dd>{{ pypProcedimientoPrograma.uniMedEdad }}</dd>
+
+    <dt>Item Lista Sexo</dt>
+    <dd>{{ pypProcedimientoPrograma.itemListaSexo }}</dd>
+
+    <dt>Frecuencia</dt>
+    <dd>{{ pypProcedimientoPrograma.frecuencia }}</dd>
+
+    <dt>Cantidad</dt>
+    <dd>{{ pypProcedimientoPrograma.cantidad }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ pypProcedimientoPrograma.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ pypProcedimientoPrograma.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ pypProcedimientoPrograma.observaciones }}</dd>
+
+    <dt>Motivo</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'motivo', pypProcedimientoPrograma.motivo._id]">{{ pypProcedimientoPrograma.motivo._id }}</a>
+    </dd>
+    <dt>Procedimiento</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'procedimiento', pypProcedimientoPrograma.procedimiento._id]">{{ pypProcedimientoPrograma.procedimiento._id }}</a>
+    </dd>
+    <dt>PypProgramas</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'pypProgramas', pypProcedimientoPrograma.pypProgramas._id]">{{ pypProcedimientoPrograma.pypProgramas._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

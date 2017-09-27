@@ -1,0 +1,34 @@
+<div *ngIf="pypProgramas" class="container-fluid">
+  <h3 class="m-top-and-bottom-2">Pyp Programas</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ pypProgramas._id }}</dd>
+
+  
+    <dt>Cod Programa</dt>
+    <dd>{{ pypProgramas.codPrograma }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ pypProgramas.descripcion }}</dd>
+
+    <dt>Id Admision</dt>
+    <dd>{{ pypProgramas.idAdmision }}</dd>
+
+    <dt>Item Lista Estadoscyf</dt>
+    <dd>{{ pypProgramas.itemListaEstadoscyf }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ pypProgramas.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ pypProgramas.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ pypProgramas.observaciones }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+  <app-pyp-procedimiento-programa-list [pypProcedimientoProgramas]="pypProgramas.pypProcedimientoProgramas"></app-pyp-procedimiento-programa-list>
+</div>

@@ -1,0 +1,139 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/">Sanitas Full Stack</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">Inicio</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="" class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Entidades</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" [routerLink]="['/entities/admision-observaciones']">ADMISION OBSERVACIONES</a>
+          <a class="dropdown-item" [routerLink]="['/entities/alias-tipo-documento']">ALIAS TIPO DOCUMENTO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/anticipo']">ANTICIPO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/auditoria']">AUDITORIA</a>
+          <a class="dropdown-item" [routerLink]="['/entities/auditoria-contrato']">AUDITORIA CONTRATO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/auditoria-estado-admision']">AUDITORIA ESTADO ADMISION</a>
+          <a class="dropdown-item" [routerLink]="['/entities/auditoria-solicitud']">AUDITORIA SOLICITUD</a>
+          <a class="dropdown-item" [routerLink]="['/entities/autorizacion-bh']">AUTORIZACION BH</a>
+          <a class="dropdown-item" [routerLink]="['/entities/calendario']">CALENDARIO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/cama']">CAMA</a>
+          <a class="dropdown-item" [routerLink]="['/entities/cama-plan']">CAMA PLAN</a>
+          <a class="dropdown-item" [routerLink]="['/entities/cargo-automatico']">CARGO AUTOMATICO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/cargos-pendientes']">CARGOS PENDIENTES</a>
+          <a class="dropdown-item" [routerLink]="['/entities/carnet']">CARNET</a>
+          <a class="dropdown-item" [routerLink]="['/entities/catalogo-medicamentos']">CATALOGO MEDICAMENTOS</a>
+          <a class="dropdown-item" [routerLink]="['/entities/catalogo-medicamentos-detalle']">CATALOGO MEDICAMENTOS DETALLE</a>
+          <a class="dropdown-item" [routerLink]="['/entities/censo-historico']">CENSO HISTORICO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/censo-servicio']">CENSO SERVICIO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/censo-traslado']">CENSO TRASLADO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/centro-costo-valido']">CENTRO COSTO VALIDO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/cita-retraso']">CITA RETRASO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/ciudad']">CIUDAD</a>
+          <a class="dropdown-item" [routerLink]="['/entities/codigo-dia']">CODIGO DIA</a>
+          <a class="dropdown-item" [routerLink]="['/entities/codigo-postal']">CODIGO POSTAL</a>
+          <a class="dropdown-item" [routerLink]="['/entities/concatena-concepto-por-centro-costo']">CONCATENA CONCEPTO POR CENTRO COSTO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/consulta-externa-pyp']">CONSULTA EXTERNA PYP</a>
+          <a class="dropdown-item" [routerLink]="['/entities/consultorio']">CONSULTORIO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/consumo-soat-otra-ips']">CONSUMO SOAT OTRA IPS</a>
+          <a class="dropdown-item" [routerLink]="['/entities/detalle-cargos-pendientes']">DETALLE CARGOS PENDIENTES</a>
+          <a class="dropdown-item" [routerLink]="['/entities/diagnostico']">DIAGNOSTICO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/encabezado-catalogo']">ENCABEZADO CATALOGO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/encabezado-resultado']">ENCABEZADO RESULTADO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/entidad']">ENTIDAD</a>
+          <a class="dropdown-item" [routerLink]="['/entities/entidad-admision']">ENTIDAD ADMISION</a>
+          <a class="dropdown-item" [routerLink]="['/entities/entidad-uvr']">ENTIDAD UVR</a>
+          <a class="dropdown-item" [routerLink]="['/entities/eps-recobrable']">EPS RECOBRABLE</a>
+          <a class="dropdown-item" [routerLink]="['/entities/estado-salida-paciente']">ESTADO SALIDA PACIENTE</a>
+          <a class="dropdown-item" [routerLink]="['/entities/excepcion-producto']">EXCEPCION PRODUCTO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/excepcion-regargo']">EXCEPCION REGARGO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/foto-estado-cama']">FOTO ESTADO CAMA</a>
+          <a class="dropdown-item" [routerLink]="['/entities/grupo-etareo']">GRUPO ETAREO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/grupo-procedimiento']">GRUPO PROCEDIMIENTO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/homologacion-entidad']">HOMOLOGACION ENTIDAD</a>
+          <a class="dropdown-item" [routerLink]="['/entities/homologacion-servicios-agfa']">HOMOLOGACION SERVICIOS AGFA</a>
+          <a class="dropdown-item" [routerLink]="['/entities/institucion']">INSTITUCION</a>
+          <a class="dropdown-item" [routerLink]="['/entities/localidad']">LOCALIDAD</a>
+          <a class="dropdown-item" [routerLink]="['/entities/login']">LOGIN</a>
+          <a class="dropdown-item" [routerLink]="['/entities/login-sucursal']">LOGIN SUCURSAL</a>
+          <a class="dropdown-item" [routerLink]="['/entities/medicamento-alto-costo']">MEDICAMENTO ALTO COSTO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/medico-grupo-procedimiento']">MEDICO GRUPO PROCEDIMIENTO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/medico-sucursal']">MEDICO SUCURSAL</a>
+          <a class="dropdown-item" [routerLink]="['/entities/medico-sucursal-entidad']">MEDICO SUCURSAL ENTIDAD</a>
+          <a class="dropdown-item" [routerLink]="['/entities/moneda']">MONEDA</a>
+          <a class="dropdown-item" [routerLink]="['/entities/motivo']">MOTIVO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/nivel-cargo']">NIVEL CARGO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/numero-secuencia']">NUMERO SECUENCIA</a>
+          <a class="dropdown-item" [routerLink]="['/entities/ocupacion']">OCUPACION</a>
+          <a class="dropdown-item" [routerLink]="['/entities/opcion']">OPCION</a>
+          <a class="dropdown-item" [routerLink]="['/entities/paciente-inconsistencias']">PACIENTE INCONSISTENCIAS</a>
+          <a class="dropdown-item" [routerLink]="['/entities/pais']">PAIS</a>
+          <a class="dropdown-item" [routerLink]="['/entities/par-aliascolumnas']">PAR ALIASCOLUMNAS</a>
+          <a class="dropdown-item" [routerLink]="['/entities/par-dependencia-campo']">PAR DEPENDENCIA CAMPO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/par-formato-campo']">PAR FORMATO CAMPO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/par-formulario']">PAR FORMULARIO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/par-origen-informacion']">PAR ORIGEN INFORMACION</a>
+          <a class="dropdown-item" [routerLink]="['/entities/par-tipo-campo']">PAR TIPO CAMPO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/pedidos']">PEDIDOS</a>
+          <a class="dropdown-item" [routerLink]="['/entities/planes']">PLANES</a>
+          <a class="dropdown-item" [routerLink]="['/entities/porcentaje-medico']">PORCENTAJE MEDICO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/prefijo']">PREFIJO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/prestador']">PRESTADOR</a>
+          <a class="dropdown-item" [routerLink]="['/entities/prestador-centro-costo-unico']">PRESTADOR CENTRO COSTO UNICO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/prioridad']">PRIORIDAD</a>
+          <a class="dropdown-item" [routerLink]="['/entities/procedimiento']">PROCEDIMIENTO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/procedimiento-centro-costo']">PROCEDIMIENTO CENTRO COSTO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/procedimiento-convenio-capitado']">PROCEDIMIENTO CONVENIO CAPITADO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/procedimiento-entidad']">PROCEDIMIENTO ENTIDAD</a>
+          <a class="dropdown-item" [routerLink]="['/entities/procedimiento-finalidad']">PROCEDIMIENTO FINALIDAD</a>
+          <a class="dropdown-item" [routerLink]="['/entities/procedimiento-nivel']">PROCEDIMIENTO NIVEL</a>
+          <a class="dropdown-item" [routerLink]="['/entities/procedimientos-ris']">PROCEDIMIENTOS RIS</a>
+          <a class="dropdown-item" [routerLink]="['/entities/producto']">PRODUCTO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/pyp-procedimiento-programa']">PYP PROCEDIMIENTO PROGRAMA</a>
+          <a class="dropdown-item" [routerLink]="['/entities/pyp-programas']">PYP PROGRAMAS</a>
+          <a class="dropdown-item" [routerLink]="['/entities/recalculo-automatico']">RECALCULO AUTOMATICO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/recargo']">RECARGO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/recargo-automatico']">RECARGO AUTOMATICO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/religion']">RELIGION</a>
+          <a class="dropdown-item" [routerLink]="['/entities/ruta-liquidacion']">RUTA LIQUIDACION</a>
+          <a class="dropdown-item" [routerLink]="['/entities/salario']">SALARIO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/salas']">SALAS</a>
+          <a class="dropdown-item" [routerLink]="['/entities/seccion']">SECCION</a>
+          <a class="dropdown-item" [routerLink]="['/entities/sub-grupo-procedimiento']">SUB GRUPO PROCEDIMIENTO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/subconcepto']">SUBCONCEPTO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/sucursal']">SUCURSAL</a>
+          <a class="dropdown-item" [routerLink]="['/entities/sucursal-centro-costo']">SUCURSAL CENTRO COSTO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/sucursal-entidad']">SUCURSAL ENTIDAD</a>
+          <a class="dropdown-item" [routerLink]="['/entities/sustitutos']">SUSTITUTOS</a>
+          <a class="dropdown-item" [routerLink]="['/entities/tarifa-vacunacion']">TARIFA VACUNACION</a>
+          <a class="dropdown-item" [routerLink]="['/entities/tiempo-recargo']">TIEMPO RECARGO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/tipo-admision']">TIPO ADMISION</a>
+          <a class="dropdown-item" [routerLink]="['/entities/tipo-afiliado']">TIPO AFILIADO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/tipo-anestesia']">TIPO ANESTESIA</a>
+          <a class="dropdown-item" [routerLink]="['/entities/tipo-cama']">TIPO CAMA</a>
+          <a class="dropdown-item" [routerLink]="['/entities/tipo-cirugia']">TIPO CIRUGIA</a>
+          <a class="dropdown-item" [routerLink]="['/entities/tipo-entidad-laboratorio']">TIPO ENTIDAD LABORATORIO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/tipo-motivo']">TIPO MOTIVO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/tipo-novedad']">TIPO NOVEDAD</a>
+          <a class="dropdown-item" [routerLink]="['/entities/tipo-plan']">TIPO PLAN</a>
+          <a class="dropdown-item" [routerLink]="['/entities/tipo-tarifa-vacunacion']">TIPO TARIFA VACUNACION</a>
+          <a class="dropdown-item" [routerLink]="['/entities/tipos-documento-entidad']">TIPOS DOCUMENTO ENTIDAD</a>
+          <a class="dropdown-item" [routerLink]="['/entities/tipos-valores']">TIPOS VALORES</a>
+          <a class="dropdown-item" [routerLink]="['/entities/trazabilidad-admision']">TRAZABILIDAD ADMISION</a>
+          <a class="dropdown-item" [routerLink]="['/entities/trazabilidad-admision-cargos']">TRAZABILIDAD ADMISION CARGOS</a>
+          <a class="dropdown-item" [routerLink]="['/entities/trazabilidad-admision-lista-espera-historia-clinica']">TRAZABILIDAD ADMISION LISTA ESPERA HISTORIA CLINICA</a>
+          <a class="dropdown-item" [routerLink]="['/entities/triage']">TRIAGE</a>
+          <a class="dropdown-item" [routerLink]="['/entities/unidad-medida-pedido']">UNIDAD MEDIDA PEDIDO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/vacunas']">VACUNAS</a>
+          <a class="dropdown-item" [routerLink]="['/entities/vale-electronico']">VALE ELECTRONICO</a>
+          <a class="dropdown-item" [routerLink]="['/entities/zona-horaria']">ZONA HORARIA</a>
+          <a class="dropdown-item" [routerLink]="['/entities/zona-horaria-verano']">ZONA HORARIA VERANO</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

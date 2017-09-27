@@ -1,0 +1,27 @@
+<div *ngIf="auditoriaEstadoAdmision" class="container">
+  <h3 class="m-top-and-bottom-2">Auditoria Estado Admision</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ auditoriaEstadoAdmision._id }}</dd>
+
+  
+    <dt>Id Admision</dt>
+    <dd>{{ auditoriaEstadoAdmision.idAdmision }}</dd>
+
+    <dt>Item Lista Estado Anterior</dt>
+    <dd>{{ auditoriaEstadoAdmision.itemListaEstadoAnterior }}</dd>
+
+    <dt>Item Lista Estado Nuevo</dt>
+    <dd>{{ auditoriaEstadoAdmision.itemListaEstadoNuevo }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ auditoriaEstadoAdmision.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ auditoriaEstadoAdmision.loginRegistro }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

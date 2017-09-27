@@ -1,0 +1,64 @@
+<div *ngIf="procedimientosRis" class="container">
+  <h3 class="m-top-and-bottom-2">Procedimientos Ris</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ procedimientosRis._id }}</dd>
+
+  
+    <dt>Id Sucursal</dt>
+    <dd>{{ procedimientosRis.idSucursal }}</dd>
+
+    <dt>Codigo His</dt>
+    <dd>{{ procedimientosRis.codigoHis }}</dd>
+
+    <dt>Pet Automatica</dt>
+    <dd>{{ procedimientosRis.petAutomatica }}</dd>
+
+    <dt>Pet Aotomatica Si Es Urgente</dt>
+    <dd>{{ procedimientosRis.petAotomaticaSiEsUrgente }}</dd>
+
+    <dt>Rownum</dt>
+    <dd>{{ procedimientosRis.rownum }}</dd>
+
+    <dt>Item Lista Id Estado</dt>
+    <dd>{{ procedimientosRis.itemListaIdEstado }}</dd>
+
+    <dt>Qpqd Qp Examkey</dt>
+    <dd>{{ procedimientosRis.qpqdQpExamkey }}</dd>
+
+    <dt>Qpqd Qp Exsdkey</dt>
+    <dd>{{ procedimientosRis.qpqdQpExsdkey }}</dd>
+
+    <dt>Ex Service</dt>
+    <dd>{{ procedimientosRis.exService }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ procedimientosRis.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ procedimientosRis.loginRegistro }}</dd>
+
+    <dt>Nombre Examen</dt>
+    <dd>{{ procedimientosRis.nombreExamen }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ procedimientosRis.observaciones }}</dd>
+
+    <dt>Codigo Ris</dt>
+    <dd>{{ procedimientosRis.codigoRis }}</dd>
+
+    <dt>Activo</dt>
+    <dd>{{ procedimientosRis.activo }}</dd>
+
+    <dt>Ex Key</dt>
+    <dd>{{ procedimientosRis.exKey }}</dd>
+
+    <dt>Procedimiento</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'procedimiento', procedimientosRis.procedimiento._id]">{{ procedimientosRis.procedimiento._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

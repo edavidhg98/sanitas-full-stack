@@ -1,0 +1,316 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Medico Sucursal</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="medicoSucursal && medicoSucursal._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="medicoSucursal" type="text" class="form-control" name="id" [(ngModel)]="medicoSucursal._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_idSucursal">Id Sucursal</label>
+  <input type="number" id="field_idSucursal" *ngIf="medicoSucursal" class="form-control" name="idSucursal" [(ngModel)]="medicoSucursal.idSucursal"  />
+  <input type="number" id="field_idSucursal" *ngIf="!medicoSucursal" class="form-control" name="idSucursal" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_irpf">Irpf</label>
+  <input type="number" id="field_irpf" *ngIf="medicoSucursal" class="form-control" name="irpf" [(ngModel)]="medicoSucursal.irpf"  />
+  <input type="number" id="field_irpf" *ngIf="!medicoSucursal" class="form-control" name="irpf" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaEstadoMedicoSucursal">Item Lista Estado Medico Sucursal</label>
+  <input type="number" id="field_itemListaEstadoMedicoSucursal" *ngIf="medicoSucursal" class="form-control" name="itemListaEstadoMedicoSucursal" [(ngModel)]="medicoSucursal.itemListaEstadoMedicoSucursal"  />
+  <input type="number" id="field_itemListaEstadoMedicoSucursal" *ngIf="!medicoSucursal" class="form-control" name="itemListaEstadoMedicoSucursal" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="medicoSucursal" class="form-control" name="observaciones" [(ngModel)]="medicoSucursal.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!medicoSucursal" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaAlquiler">Item Lista Alquiler</label>
+  <input type="number" id="field_itemListaAlquiler" *ngIf="medicoSucursal" class="form-control" name="itemListaAlquiler" [(ngModel)]="medicoSucursal.itemListaAlquiler"  />
+  <input type="number" id="field_itemListaAlquiler" *ngIf="!medicoSucursal" class="form-control" name="itemListaAlquiler" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idConceptoMinimoMensual">Id Concepto Minimo Mensual</label>
+  <input type="number" id="field_idConceptoMinimoMensual" *ngIf="medicoSucursal" class="form-control" name="idConceptoMinimoMensual" [(ngModel)]="medicoSucursal.idConceptoMinimoMensual"  />
+  <input type="number" id="field_idConceptoMinimoMensual" *ngIf="!medicoSucursal" class="form-control" name="idConceptoMinimoMensual" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="medicoSucursal" class="form-control" name="loginRegistro" [(ngModel)]="medicoSucursal.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!medicoSucursal" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_alquilerAnual">Alquiler Anual</label>
+  <input type="number" id="field_alquilerAnual" *ngIf="medicoSucursal" class="form-control" name="alquilerAnual" [(ngModel)]="medicoSucursal.alquilerAnual"  />
+  <input type="number" id="field_alquilerAnual" *ngIf="!medicoSucursal" class="form-control" name="alquilerAnual" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaMinimoAnual">Item Lista Minimo Anual</label>
+  <input type="number" id="field_itemListaMinimoAnual" *ngIf="medicoSucursal" class="form-control" name="itemListaMinimoAnual" [(ngModel)]="medicoSucursal.itemListaMinimoAnual"  />
+  <input type="number" id="field_itemListaMinimoAnual" *ngIf="!medicoSucursal" class="form-control" name="itemListaMinimoAnual" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_valorPorcentaje">Valor Porcentaje</label>
+  <input type="number" id="field_valorPorcentaje" *ngIf="medicoSucursal" class="form-control" name="valorPorcentaje" [(ngModel)]="medicoSucursal.valorPorcentaje"  />
+  <input type="number" id="field_valorPorcentaje" *ngIf="!medicoSucursal" class="form-control" name="valorPorcentaje" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_ivaArriendo">Iva Arriendo</label>
+  <input type="number" id="field_ivaArriendo" *ngIf="medicoSucursal" class="form-control" name="ivaArriendo" [(ngModel)]="medicoSucursal.ivaArriendo"  />
+  <input type="number" id="field_ivaArriendo" *ngIf="!medicoSucursal" class="form-control" name="ivaArriendo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idMedicoReemplazo">Id Medico Reemplazo</label>
+  <input type="number" id="field_idMedicoReemplazo" *ngIf="medicoSucursal" class="form-control" name="idMedicoReemplazo" [(ngModel)]="medicoSucursal.idMedicoReemplazo"  />
+  <input type="number" id="field_idMedicoReemplazo" *ngIf="!medicoSucursal" class="form-control" name="idMedicoReemplazo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaMinimoMensual">Item Lista Minimo Mensual</label>
+  <input type="number" id="field_itemListaMinimoMensual" *ngIf="medicoSucursal" class="form-control" name="itemListaMinimoMensual" [(ngModel)]="medicoSucursal.itemListaMinimoMensual"  />
+  <input type="number" id="field_itemListaMinimoMensual" *ngIf="!medicoSucursal" class="form-control" name="itemListaMinimoMensual" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_asociacion">Asociacion</label>
+  <input type="text" id="field_asociacion" *ngIf="medicoSucursal" class="form-control" name="asociacion" [(ngModel)]="medicoSucursal.asociacion"  />
+  <input type="text" id="field_asociacion" *ngIf="!medicoSucursal" class="form-control" name="asociacion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_alquilerHora">Alquiler Hora</label>
+  <input type="number" id="field_alquilerHora" *ngIf="medicoSucursal" class="form-control" name="alquilerHora" [(ngModel)]="medicoSucursal.alquilerHora"  />
+  <input type="number" id="field_alquilerHora" *ngIf="!medicoSucursal" class="form-control" name="alquilerHora" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaTipoProveedor">Item Lista Tipo Proveedor</label>
+  <input type="number" id="field_itemListaTipoProveedor" *ngIf="medicoSucursal" class="form-control" name="itemListaTipoProveedor" [(ngModel)]="medicoSucursal.itemListaTipoProveedor"  />
+  <input type="number" id="field_itemListaTipoProveedor" *ngIf="!medicoSucursal" class="form-control" name="itemListaTipoProveedor" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_telefonoCasaMedico">Telefono Casa Medico</label>
+  <input type="text" id="field_telefonoCasaMedico" *ngIf="medicoSucursal" class="form-control" name="telefonoCasaMedico" [(ngModel)]="medicoSucursal.telefonoCasaMedico"  />
+  <input type="text" id="field_telefonoCasaMedico" *ngIf="!medicoSucursal" class="form-control" name="telefonoCasaMedico" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idMedico">Id Medico</label>
+  <input type="number" id="field_idMedico" *ngIf="medicoSucursal" class="form-control" name="idMedico" [(ngModel)]="medicoSucursal.idMedico"  />
+  <input type="number" id="field_idMedico" *ngIf="!medicoSucursal" class="form-control" name="idMedico" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaInicialRemision">Fecha Inicial Remision</label>
+  <input type="date" id="field_fechaInicialRemision" *ngIf="medicoSucursal" class="form-control" name="fechaInicialRemision" [(ngModel)]="medicoSucursal.fechaInicialRemision"  />
+  <input type="date" id="field_fechaInicialRemision" *ngIf="!medicoSucursal" class="form-control" name="fechaInicialRemision" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idConceptoMinimoAnual">Id Concepto Minimo Anual</label>
+  <input type="number" id="field_idConceptoMinimoAnual" *ngIf="medicoSucursal" class="form-control" name="idConceptoMinimoAnual" [(ngModel)]="medicoSucursal.idConceptoMinimoAnual"  />
+  <input type="number" id="field_idConceptoMinimoAnual" *ngIf="!medicoSucursal" class="form-control" name="idConceptoMinimoAnual" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaUrgencias">Item Lista Urgencias</label>
+  <input type="number" id="field_itemListaUrgencias" *ngIf="medicoSucursal" class="form-control" name="itemListaUrgencias" [(ngModel)]="medicoSucursal.itemListaUrgencias"  />
+  <input type="number" id="field_itemListaUrgencias" *ngIf="!medicoSucursal" class="form-control" name="itemListaUrgencias" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_alquilerSemanal">Alquiler Semanal</label>
+  <input type="number" id="field_alquilerSemanal" *ngIf="medicoSucursal" class="form-control" name="alquilerSemanal" [(ngModel)]="medicoSucursal.alquilerSemanal"  />
+  <input type="number" id="field_alquilerSemanal" *ngIf="!medicoSucursal" class="form-control" name="alquilerSemanal" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaFinalRemision">Fecha Final Remision</label>
+  <input type="date" id="field_fechaFinalRemision" *ngIf="medicoSucursal" class="form-control" name="fechaFinalRemision" [(ngModel)]="medicoSucursal.fechaFinalRemision"  />
+  <input type="date" id="field_fechaFinalRemision" *ngIf="!medicoSucursal" class="form-control" name="fechaFinalRemision" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaTipoCargo">Item Lista Tipo Cargo</label>
+  <input type="number" id="field_itemListaTipoCargo" *ngIf="medicoSucursal" class="form-control" name="itemListaTipoCargo" [(ngModel)]="medicoSucursal.itemListaTipoCargo"  />
+  <input type="number" id="field_itemListaTipoCargo" *ngIf="!medicoSucursal" class="form-control" name="itemListaTipoCargo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_direccionConsultorioMedico">Direccion Consultorio Medico</label>
+  <input type="text" id="field_direccionConsultorioMedico" *ngIf="medicoSucursal" class="form-control" name="direccionConsultorioMedico" [(ngModel)]="medicoSucursal.direccionConsultorioMedico"  />
+  <input type="text" id="field_direccionConsultorioMedico" *ngIf="!medicoSucursal" class="form-control" name="direccionConsultorioMedico" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_direccionCasaMedico">Direccion Casa Medico</label>
+  <input type="text" id="field_direccionCasaMedico" *ngIf="medicoSucursal" class="form-control" name="direccionCasaMedico" [(ngModel)]="medicoSucursal.direccionCasaMedico"  />
+  <input type="text" id="field_direccionCasaMedico" *ngIf="!medicoSucursal" class="form-control" name="direccionCasaMedico" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaTipoDescuento">Item Lista Tipo Descuento</label>
+  <input type="number" id="field_itemListaTipoDescuento" *ngIf="medicoSucursal" class="form-control" name="itemListaTipoDescuento" [(ngModel)]="medicoSucursal.itemListaTipoDescuento"  />
+  <input type="number" id="field_itemListaTipoDescuento" *ngIf="!medicoSucursal" class="form-control" name="itemListaTipoDescuento" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idEspecialidad">Id Especialidad</label>
+  <input type="number" id="field_idEspecialidad" *ngIf="medicoSucursal" class="form-control" name="idEspecialidad" [(ngModel)]="medicoSucursal.idEspecialidad"  />
+  <input type="number" id="field_idEspecialidad" *ngIf="!medicoSucursal" class="form-control" name="idEspecialidad" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idConceptoSueldo">Id Concepto Sueldo</label>
+  <input type="number" id="field_idConceptoSueldo" *ngIf="medicoSucursal" class="form-control" name="idConceptoSueldo" [(ngModel)]="medicoSucursal.idConceptoSueldo"  />
+  <input type="number" id="field_idConceptoSueldo" *ngIf="!medicoSucursal" class="form-control" name="idConceptoSueldo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaReemplazo">Item Lista Reemplazo</label>
+  <input type="number" id="field_itemListaReemplazo" *ngIf="medicoSucursal" class="form-control" name="itemListaReemplazo" [(ngModel)]="medicoSucursal.itemListaReemplazo"  />
+  <input type="number" id="field_itemListaReemplazo" *ngIf="!medicoSucursal" class="form-control" name="itemListaReemplazo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_telefonoConsultorioMedico">Telefono Consultorio Medico</label>
+  <input type="text" id="field_telefonoConsultorioMedico" *ngIf="medicoSucursal" class="form-control" name="telefonoConsultorioMedico" [(ngModel)]="medicoSucursal.telefonoConsultorioMedico"  />
+  <input type="text" id="field_telefonoConsultorioMedico" *ngIf="!medicoSucursal" class="form-control" name="telefonoConsultorioMedico" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaNivelMedico">Item Lista Nivel Medico</label>
+  <input type="number" id="field_itemListaNivelMedico" *ngIf="medicoSucursal" class="form-control" name="itemListaNivelMedico" [(ngModel)]="medicoSucursal.itemListaNivelMedico"  />
+  <input type="number" id="field_itemListaNivelMedico" *ngIf="!medicoSucursal" class="form-control" name="itemListaNivelMedico" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_valorSueldo">Valor Sueldo</label>
+  <input type="number" id="field_valorSueldo" *ngIf="medicoSucursal" class="form-control" name="valorSueldo" [(ngModel)]="medicoSucursal.valorSueldo"  />
+  <input type="number" id="field_valorSueldo" *ngIf="!medicoSucursal" class="form-control" name="valorSueldo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_valorMinimoMensual">Valor Minimo Mensual</label>
+  <input type="number" id="field_valorMinimoMensual" *ngIf="medicoSucursal" class="form-control" name="valorMinimoMensual" [(ngModel)]="medicoSucursal.valorMinimoMensual"  />
+  <input type="number" id="field_valorMinimoMensual" *ngIf="!medicoSucursal" class="form-control" name="valorMinimoMensual" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaSueldo">Item Lista Sueldo</label>
+  <input type="number" id="field_itemListaSueldo" *ngIf="medicoSucursal" class="form-control" name="itemListaSueldo" [(ngModel)]="medicoSucursal.itemListaSueldo"  />
+  <input type="number" id="field_itemListaSueldo" *ngIf="!medicoSucursal" class="form-control" name="itemListaSueldo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idConceptoPorcentaje">Id Concepto Porcentaje</label>
+  <input type="number" id="field_idConceptoPorcentaje" *ngIf="medicoSucursal" class="form-control" name="idConceptoPorcentaje" [(ngModel)]="medicoSucursal.idConceptoPorcentaje"  />
+  <input type="number" id="field_idConceptoPorcentaje" *ngIf="!medicoSucursal" class="form-control" name="idConceptoPorcentaje" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idConceptoAlquiler">Id Concepto Alquiler</label>
+  <input type="number" id="field_idConceptoAlquiler" *ngIf="medicoSucursal" class="form-control" name="idConceptoAlquiler" [(ngModel)]="medicoSucursal.idConceptoAlquiler"  />
+  <input type="number" id="field_idConceptoAlquiler" *ngIf="!medicoSucursal" class="form-control" name="idConceptoAlquiler" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="medicoSucursal" class="form-control" name="fechaRegistro" [(ngModel)]="medicoSucursal.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!medicoSucursal" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaTipoServicioConcertado">Item Lista Tipo Servicio Concertado</label>
+  <input type="number" id="field_itemListaTipoServicioConcertado" *ngIf="medicoSucursal" class="form-control" name="itemListaTipoServicioConcertado" [(ngModel)]="medicoSucursal.itemListaTipoServicioConcertado"  />
+  <input type="number" id="field_itemListaTipoServicioConcertado" *ngIf="!medicoSucursal" class="form-control" name="itemListaTipoServicioConcertado" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_valorMinimoAnual">Valor Minimo Anual</label>
+  <input type="number" id="field_valorMinimoAnual" *ngIf="medicoSucursal" class="form-control" name="valorMinimoAnual" [(ngModel)]="medicoSucursal.valorMinimoAnual"  />
+  <input type="number" id="field_valorMinimoAnual" *ngIf="!medicoSucursal" class="form-control" name="valorMinimoAnual" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_alquilerMensual">Alquiler Mensual</label>
+  <input type="number" id="field_alquilerMensual" *ngIf="medicoSucursal" class="form-control" name="alquilerMensual" [(ngModel)]="medicoSucursal.alquilerMensual"  />
+  <input type="number" id="field_alquilerMensual" *ngIf="!medicoSucursal" class="form-control" name="alquilerMensual" ngModel />
+  </div>
+
+          
+
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

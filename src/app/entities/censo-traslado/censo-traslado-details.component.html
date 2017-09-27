@@ -1,0 +1,48 @@
+<div *ngIf="censoTraslado" class="container">
+  <h3 class="m-top-and-bottom-2">Censo Traslado</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ censoTraslado._id }}</dd>
+
+  
+    <dt>Id Admision</dt>
+    <dd>{{ censoTraslado.idAdmision }}</dd>
+
+    <dt>Fec Ingreso</dt>
+    <dd>{{ censoTraslado.fecIngreso }}</dd>
+
+    <dt>Hor Ingreso</dt>
+    <dd>{{ censoTraslado.horIngreso }}</dd>
+
+    <dt>Min Ingreso</dt>
+    <dd>{{ censoTraslado.minIngreso }}</dd>
+
+    <dt>Entidad</dt>
+    <dd>{{ censoTraslado.entidad }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ censoTraslado.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ censoTraslado.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ censoTraslado.observaciones }}</dd>
+
+    <dt>Cama</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'cama', censoTraslado.cama._id]">{{ censoTraslado.cama._id }}</a>
+    </dd>
+    <dt>Cama</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'cama', censoTraslado.cama._id]">{{ censoTraslado.cama._id }}</a>
+    </dd>
+    <dt>Motivo</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'motivo', censoTraslado.motivo._id]">{{ censoTraslado.motivo._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

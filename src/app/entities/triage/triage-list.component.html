@@ -1,0 +1,177 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="m-top-and-bottom-2">
+            <span>Triage</span>
+            <a class="btn btn-primary float-right" [routerLink]="[ absolutePath, 'create']" data-dismiss="modal">
+              <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
+              Crear Nuevo Triage
+            </a>
+          </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped table-responsive" *ngIf="triages">
+          <thead>
+            <tr>
+              <th class="cursor-pointer" (click)="sort('idPaciente')">
+                Id Paciente
+                <i class="fa" [ngClass]="{'fa-sort': column != 'idPaciente', 'fa-sort-asc': (column == 'idPaciente' && isDesc), 'fa-sort-desc': (column == 'idPaciente' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('horaIngreso')">
+                Hora Ingreso
+                <i class="fa" [ngClass]="{'fa-sort': column != 'horaIngreso', 'fa-sort-asc': (column == 'horaIngreso' && isDesc), 'fa-sort-desc': (column == 'horaIngreso' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('encabezadoCuestionario')">
+                Encabezado Cuestionario
+                <i class="fa" [ngClass]="{'fa-sort': column != 'encabezadoCuestionario', 'fa-sort-asc': (column == 'encabezadoCuestionario' && isDesc), 'fa-sort-desc': (column == 'encabezadoCuestionario' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('muertos')">
+                Muertos
+                <i class="fa" [ngClass]="{'fa-sort': column != 'muertos', 'fa-sort-asc': (column == 'muertos' && isDesc), 'fa-sort-desc': (column == 'muertos' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('loginRegistro')">
+                Login Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'loginRegistro', 'fa-sort-asc': (column == 'loginRegistro' && isDesc), 'fa-sort-desc': (column == 'loginRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaEstadoTriage')">
+                Item Lista Estado Triage
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaEstadoTriage', 'fa-sort-asc': (column == 'itemListaEstadoTriage' && isDesc), 'fa-sort-desc': (column == 'itemListaEstadoTriage' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('tiempoaprox')">
+                Tiempoaprox
+                <i class="fa" [ngClass]="{'fa-sort': column != 'tiempoaprox', 'fa-sort-asc': (column == 'tiempoaprox' && isDesc), 'fa-sort-desc': (column == 'tiempoaprox' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('cesarias')">
+                Cesarias
+                <i class="fa" [ngClass]="{'fa-sort': column != 'cesarias', 'fa-sort-asc': (column == 'cesarias' && isDesc), 'fa-sort-desc': (column == 'cesarias' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('observaciones')">
+                Observaciones
+                <i class="fa" [ngClass]="{'fa-sort': column != 'observaciones', 'fa-sort-asc': (column == 'observaciones' && isDesc), 'fa-sort-desc': (column == 'observaciones' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('descripcionMotivoConsulta')">
+                Descripcion Motivo Consulta
+                <i class="fa" [ngClass]="{'fa-sort': column != 'descripcionMotivoConsulta', 'fa-sort-asc': (column == 'descripcionMotivoConsulta' && isDesc), 'fa-sort-desc': (column == 'descripcionMotivoConsulta' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('partos')">
+                Partos
+                <i class="fa" [ngClass]="{'fa-sort': column != 'partos', 'fa-sort-asc': (column == 'partos' && isDesc), 'fa-sort-desc': (column == 'partos' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('vivos')">
+                Vivos
+                <i class="fa" [ngClass]="{'fa-sort': column != 'vivos', 'fa-sort-asc': (column == 'vivos' && isDesc), 'fa-sort-desc': (column == 'vivos' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('alerta')">
+                Alerta
+                <i class="fa" [ngClass]="{'fa-sort': column != 'alerta', 'fa-sort-asc': (column == 'alerta' && isDesc), 'fa-sort-desc': (column == 'alerta' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('remitidoa')">
+                Remitidoa
+                <i class="fa" [ngClass]="{'fa-sort': column != 'remitidoa', 'fa-sort-asc': (column == 'remitidoa' && isDesc), 'fa-sort-desc': (column == 'remitidoa' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaIngreso')">
+                Fecha Ingreso
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaIngreso', 'fa-sort-asc': (column == 'fechaIngreso' && isDesc), 'fa-sort-desc': (column == 'fechaIngreso' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fup')">
+                Fup
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fup', 'fa-sort-asc': (column == 'fup' && isDesc), 'fa-sort-desc': (column == 'fup' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('clasificacionManual')">
+                Clasificacion Manual
+                <i class="fa" [ngClass]="{'fa-sort': column != 'clasificacionManual', 'fa-sort-asc': (column == 'clasificacionManual' && isDesc), 'fa-sort-desc': (column == 'clasificacionManual' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('idAdmision')">
+                Id Admision
+                <i class="fa" [ngClass]="{'fa-sort': column != 'idAdmision', 'fa-sort-asc': (column == 'idAdmision' && isDesc), 'fa-sort-desc': (column == 'idAdmision' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('gestacion')">
+                Gestacion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'gestacion', 'fa-sort-asc': (column == 'gestacion' && isDesc), 'fa-sort-desc': (column == 'gestacion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('especialidad')">
+                Especialidad
+                <i class="fa" [ngClass]="{'fa-sort': column != 'especialidad', 'fa-sort-asc': (column == 'especialidad' && isDesc), 'fa-sort-desc': (column == 'especialidad' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('escDolor')">
+                Esc Dolor
+                <i class="fa" [ngClass]="{'fa-sort': column != 'escDolor', 'fa-sort-asc': (column == 'escDolor' && isDesc), 'fa-sort-desc': (column == 'escDolor' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaRegistro')">
+                Fecha Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaRegistro', 'fa-sort-asc': (column == 'fechaRegistro' && isDesc), 'fa-sort-desc': (column == 'fechaRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('estadoAlarma')">
+                Estado Alarma
+                <i class="fa" [ngClass]="{'fa-sort': column != 'estadoAlarma', 'fa-sort-asc': (column == 'estadoAlarma' && isDesc), 'fa-sort-desc': (column == 'estadoAlarma' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('minutoIngreso')">
+                Minuto Ingreso
+                <i class="fa" [ngClass]="{'fa-sort': column != 'minutoIngreso', 'fa-sort-asc': (column == 'minutoIngreso' && isDesc), 'fa-sort-desc': (column == 'minutoIngreso' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('clasificacionCalculada')">
+                Clasificacion Calculada
+                <i class="fa" [ngClass]="{'fa-sort': column != 'clasificacionCalculada', 'fa-sort-asc': (column == 'clasificacionCalculada' && isDesc), 'fa-sort-desc': (column == 'clasificacionCalculada' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('abortos')">
+                Abortos
+                <i class="fa" [ngClass]="{'fa-sort': column != 'abortos', 'fa-sort-asc': (column == 'abortos' && isDesc), 'fa-sort-desc': (column == 'abortos' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fur')">
+                Fur
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fur', 'fa-sort-asc': (column == 'fur' && isDesc), 'fa-sort-desc': (column == 'fur' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let triage of triages | orderBy: { property: column, direction: direction }">
+              <td>{{ triage.idPaciente }}</td>
+              <td>{{ triage.horaIngreso }}</td>
+              <td>{{ triage.encabezadoCuestionario }}</td>
+              <td>{{ triage.muertos }}</td>
+              <td>{{ triage.loginRegistro }}</td>
+              <td>{{ triage.itemListaEstadoTriage }}</td>
+              <td>{{ triage.tiempoaprox }}</td>
+              <td>{{ triage.cesarias }}</td>
+              <td>{{ triage.observaciones }}</td>
+              <td>{{ triage.descripcionMotivoConsulta }}</td>
+              <td>{{ triage.partos }}</td>
+              <td>{{ triage.vivos }}</td>
+              <td>{{ triage.alerta }}</td>
+              <td>{{ triage.remitidoa }}</td>
+              <td>{{ triage.fechaIngreso }}</td>
+              <td>{{ triage.fup }}</td>
+              <td>{{ triage.clasificacionManual }}</td>
+              <td>{{ triage.idAdmision }}</td>
+              <td>{{ triage.gestacion }}</td>
+              <td>{{ triage.especialidad }}</td>
+              <td>{{ triage.escDolor }}</td>
+              <td>{{ triage.fechaRegistro }}</td>
+              <td>{{ triage.estadoAlarma }}</td>
+              <td>{{ triage.minutoIngreso }}</td>
+              <td>{{ triage.clasificacionCalculada }}</td>
+              <td>{{ triage.abortos }}</td>
+              <td>{{ triage.fur }}</td>
+              <td>
+                <a class="btn btn-info btn-sm" [routerLink]="[ absolutePath, triage._id]"><span class="fa fa-eye fa-fw"></span>Ver</a>
+                <a class="btn btn-primary btn-sm" [routerLink]="[ absolutePath, triage._id, 'update']"><span class="fa fa-pencil fa-fw"></span>Editar</a>
+                <a class="btn btn-danger btn-sm text-white cursor-pointer" (click)="openDeleteModal(content, triage._id)"><span class="fa fa-trash fa-fw"></span>Eliminar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h5 class="modal-title"><i class="fa fa-exclamation-triangle fa-lg fa-fw" aria-hidden="true"></i>¿Esta seguro de eliminar?</h5>
+    <button type="button" class="close cursor-pointer" aria-label="Close" (click)="d(deleteModalOpts.cancel)">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary cursor-pointer" (click)="c(deleteModalOpts.ok)"><i class="fa fa-check fa-fw"></i>Aceptar</button>
+    <button type="button" class="btn btn-secondary cursor-pointer" (click)="c(deleteModalOpts.cancel)"><i class="fa fa-ban fa-fw"></i>Cancelar</button>
+  </div>
+</ng-template>

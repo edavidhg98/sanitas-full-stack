@@ -1,0 +1,41 @@
+<div *ngIf="grupoEtareo" class="container">
+  <h3 class="m-top-and-bottom-2">Grupo Etareo</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ grupoEtareo._id }}</dd>
+
+  
+    <dt>Codigo</dt>
+    <dd>{{ grupoEtareo.codigo }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ grupoEtareo.descripcion }}</dd>
+
+    <dt>Edad Desde</dt>
+    <dd>{{ grupoEtareo.edadDesde }}</dd>
+
+    <dt>Edad Hasta</dt>
+    <dd>{{ grupoEtareo.edadHasta }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ grupoEtareo.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ grupoEtareo.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ grupoEtareo.observaciones }}</dd>
+
+    <dt>Entidad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'entidad', grupoEtareo.entidad._id]">{{ grupoEtareo.entidad._id }}</a>
+    </dd>
+    <dt>Sucursal</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursal', grupoEtareo.sucursal._id]">{{ grupoEtareo.sucursal._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

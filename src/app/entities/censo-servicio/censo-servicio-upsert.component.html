@@ -1,0 +1,84 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Censo Servicio</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="censoServicio && censoServicio._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="censoServicio" type="text" class="form-control" name="id" [(ngModel)]="censoServicio._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_idAdmision">Id Admision</label>
+  <input type="number" id="field_idAdmision" *ngIf="censoServicio" class="form-control" name="idAdmision" [(ngModel)]="censoServicio.idAdmision"  />
+  <input type="number" id="field_idAdmision" *ngIf="!censoServicio" class="form-control" name="idAdmision" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_codigoError">Codigo Error</label>
+  <input type="number" id="field_codigoError" *ngIf="censoServicio" class="form-control" name="codigoError" [(ngModel)]="censoServicio.codigoError"  />
+  <input type="number" id="field_codigoError" *ngIf="!censoServicio" class="form-control" name="codigoError" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_mensajeError">Mensaje Error</label>
+  <input type="text" id="field_mensajeError" *ngIf="censoServicio" class="form-control" name="mensajeError" [(ngModel)]="censoServicio.mensajeError"  />
+  <input type="text" id="field_mensajeError" *ngIf="!censoServicio" class="form-control" name="mensajeError" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="censoServicio" class="form-control" name="fechaRegistro" [(ngModel)]="censoServicio.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!censoServicio" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaEstadoRegistro">Item Lista Estado Registro</label>
+  <input type="number" id="field_itemListaEstadoRegistro" *ngIf="censoServicio" class="form-control" name="itemListaEstadoRegistro" [(ngModel)]="censoServicio.itemListaEstadoRegistro"  />
+  <input type="number" id="field_itemListaEstadoRegistro" *ngIf="!censoServicio" class="form-control" name="itemListaEstadoRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idTrazabilidadAdmision">Id Trazabilidad Admision</label>
+  <input type="number" id="field_idTrazabilidadAdmision" *ngIf="censoServicio" class="form-control" name="idTrazabilidadAdmision" [(ngModel)]="censoServicio.idTrazabilidadAdmision"  />
+  <input type="number" id="field_idTrazabilidadAdmision" *ngIf="!censoServicio" class="form-control" name="idTrazabilidadAdmision" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="sucursals">
+              <label for="field_sucursal">Sucursal</label>
+
+              <select *ngIf="!censoServicio" class="form-control" name="idSucursal" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+
+              <select *ngIf="censoServicio && censoServicio.idSucursal" class="form-control" name="idSucursal" [(ngModel)]="censoServicio.idSucursal">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

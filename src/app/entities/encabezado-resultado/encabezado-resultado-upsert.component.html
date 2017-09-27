@@ -1,0 +1,153 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Encabezado Resultado</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="encabezadoResultado && encabezadoResultado._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="encabezadoResultado" type="text" class="form-control" name="id" [(ngModel)]="encabezadoResultado._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_idAdmision">Id Admision</label>
+  <input type="number" id="field_idAdmision" *ngIf="encabezadoResultado" class="form-control" name="idAdmision" [(ngModel)]="encabezadoResultado.idAdmision"  />
+  <input type="number" id="field_idAdmision" *ngIf="!encabezadoResultado" class="form-control" name="idAdmision" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_numMuestras">Num Muestras</label>
+  <input type="number" id="field_numMuestras" *ngIf="encabezadoResultado" class="form-control" name="numMuestras" [(ngModel)]="encabezadoResultado.numMuestras"  />
+  <input type="number" id="field_numMuestras" *ngIf="!encabezadoResultado" class="form-control" name="numMuestras" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idCentroCostoSolicita">Id Centro Costo Solicita</label>
+  <input type="number" id="field_idCentroCostoSolicita" *ngIf="encabezadoResultado" class="form-control" name="idCentroCostoSolicita" [(ngModel)]="encabezadoResultado.idCentroCostoSolicita"  />
+  <input type="number" id="field_idCentroCostoSolicita" *ngIf="!encabezadoResultado" class="form-control" name="idCentroCostoSolicita" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="encabezadoResultado" class="form-control" name="fechaRegistro" [(ngModel)]="encabezadoResultado.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!encabezadoResultado" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idCentroCosto">Id Centro Costo</label>
+  <input type="number" id="field_idCentroCosto" *ngIf="encabezadoResultado" class="form-control" name="idCentroCosto" [(ngModel)]="encabezadoResultado.idCentroCosto"  />
+  <input type="number" id="field_idCentroCosto" *ngIf="!encabezadoResultado" class="form-control" name="idCentroCosto" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="encabezadoResultado" class="form-control" name="observaciones" [(ngModel)]="encabezadoResultado.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!encabezadoResultado" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_secuencia">Secuencia</label>
+  <input type="number" id="field_secuencia" *ngIf="encabezadoResultado" class="form-control" name="secuencia" [(ngModel)]="encabezadoResultado.secuencia"  />
+  <input type="number" id="field_secuencia" *ngIf="!encabezadoResultado" class="form-control" name="secuencia" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="encabezadoResultado" class="form-control" name="loginRegistro" [(ngModel)]="encabezadoResultado.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!encabezadoResultado" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idMedicoOrdena">Id Medico Ordena</label>
+  <input type="number" id="field_idMedicoOrdena" *ngIf="encabezadoResultado" class="form-control" name="idMedicoOrdena" [(ngModel)]="encabezadoResultado.idMedicoOrdena"  />
+  <input type="number" id="field_idMedicoOrdena" *ngIf="!encabezadoResultado" class="form-control" name="idMedicoOrdena" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaEstado">Item Lista Estado</label>
+  <input type="number" id="field_itemListaEstado" *ngIf="encabezadoResultado" class="form-control" name="itemListaEstado" [(ngModel)]="encabezadoResultado.itemListaEstado"  />
+  <input type="number" id="field_itemListaEstado" *ngIf="!encabezadoResultado" class="form-control" name="itemListaEstado" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_consecutivoSolicitud">Consecutivo Solicitud</label>
+  <input type="number" id="field_consecutivoSolicitud" *ngIf="encabezadoResultado" class="form-control" name="consecutivoSolicitud" [(ngModel)]="encabezadoResultado.consecutivoSolicitud"  />
+  <input type="number" id="field_consecutivoSolicitud" *ngIf="!encabezadoResultado" class="form-control" name="consecutivoSolicitud" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaCargo">Fecha Cargo</label>
+  <input type="date" id="field_fechaCargo" *ngIf="encabezadoResultado" class="form-control" name="fechaCargo" [(ngModel)]="encabezadoResultado.fechaCargo"  />
+  <input type="date" id="field_fechaCargo" *ngIf="!encabezadoResultado" class="form-control" name="fechaCargo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_procedencia">Procedencia</label>
+  <input type="text" id="field_procedencia" *ngIf="encabezadoResultado" class="form-control" name="procedencia" [(ngModel)]="encabezadoResultado.procedencia"  />
+  <input type="text" id="field_procedencia" *ngIf="!encabezadoResultado" class="form-control" name="procedencia" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idMedicoPractica">Id Medico Practica</label>
+  <input type="number" id="field_idMedicoPractica" *ngIf="encabezadoResultado" class="form-control" name="idMedicoPractica" [(ngModel)]="encabezadoResultado.idMedicoPractica"  />
+  <input type="number" id="field_idMedicoPractica" *ngIf="!encabezadoResultado" class="form-control" name="idMedicoPractica" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="sucursals">
+              <label for="field_sucursal">Sucursal</label>
+
+              <select *ngIf="!encabezadoResultado" class="form-control" name="idSucursal" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+
+              <select *ngIf="encabezadoResultado && encabezadoResultado.idSucursal" class="form-control" name="idSucursal" [(ngModel)]="encabezadoResultado.idSucursal">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="procedimientos">
+              <label for="field_procedimiento">Procedimiento</label>
+
+              <select *ngIf="!encabezadoResultado" class="form-control" name="idProcedimiento" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="procedimiento._id" *ngFor="let procedimiento of procedimientos">{{ procedimiento._id }}</option>
+              </select>
+
+              <select *ngIf="encabezadoResultado && encabezadoResultado.idProcedimiento" class="form-control" name="idProcedimiento" [(ngModel)]="encabezadoResultado.idProcedimiento">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="procedimiento._id" *ngFor="let procedimiento of procedimientos">{{ procedimiento._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

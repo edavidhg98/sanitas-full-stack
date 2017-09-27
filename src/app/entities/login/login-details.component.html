@@ -1,0 +1,81 @@
+<div *ngIf="login" class="container-fluid">
+  <h3 class="m-top-and-bottom-2">Login</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ login._id }}</dd>
+
+  
+    <dt>Login</dt>
+    <dd>{{ login.login }}</dd>
+
+    <dt>Call Center</dt>
+    <dd>{{ login.callCenter }}</dd>
+
+    <dt>Usuario Ldap</dt>
+    <dd>{{ login.usuarioLdap }}</dd>
+
+    <dt>Item Lista Estado Login</dt>
+    <dd>{{ login.itemListaEstadoLogin }}</dd>
+
+    <dt>Nombre</dt>
+    <dd>{{ login.nombre }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ login.fechaRegistro }}</dd>
+
+    <dt>Numero Documento</dt>
+    <dd>{{ login.numeroDocumento }}</dd>
+
+    <dt>Consulta Historia</dt>
+    <dd>{{ login.consultaHistoria }}</dd>
+
+    <dt>Id Centro Costo</dt>
+    <dd>{{ login.idCentroCosto }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ login.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ login.observaciones }}</dd>
+
+    <dt>Fecha Ultimo Cambio</dt>
+    <dd>{{ login.fechaUltimoCambio }}</dd>
+
+    <dt>Fecha Ultimo Acceso</dt>
+    <dd>{{ login.fechaUltimoAcceso }}</dd>
+
+    <dt>Password</dt>
+    <dd>{{ login.password }}</dd>
+
+    <dt>Clave Agfa</dt>
+    <dd>{{ login.claveAgfa }}</dd>
+
+    <dt>Item Lista Cargo</dt>
+    <dd>{{ login.itemListaCargo }}</dd>
+
+    <dt>Usuario Agfa</dt>
+    <dd>{{ login.usuarioAgfa }}</dd>
+
+    <dt>Item Lista Tipo Usuario Login</dt>
+    <dd>{{ login.itemListaTipoUsuarioLogin }}</dd>
+
+    <dt>Item Lista Tipo Documento</dt>
+    <dd>{{ login.itemListaTipoDocumento }}</dd>
+
+    <dt>Apellido</dt>
+    <dd>{{ login.apellido }}</dd>
+
+    <dt>Ciudad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'ciudad', login.ciudad._id]">{{ login.ciudad._id }}</a>
+    </dd>
+    <dt>Sucursal</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursal', login.sucursal._id]">{{ login.sucursal._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+  <app-login-sucursal-list [loginSucursals]="login.loginSucursals"></app-login-sucursal-list>
+</div>

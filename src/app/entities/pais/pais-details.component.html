@@ -1,0 +1,30 @@
+<div *ngIf="pais" class="container">
+  <h3 class="m-top-and-bottom-2">Pais</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ pais._id }}</dd>
+
+  
+    <dt>Nombre Pais</dt>
+    <dd>{{ pais.nombrePais }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ pais.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ pais.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ pais.observaciones }}</dd>
+
+    <dt>Codigo</dt>
+    <dd>{{ pais.codigo }}</dd>
+
+    <dt>Gentilicio</dt>
+    <dd>{{ pais.gentilicio }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

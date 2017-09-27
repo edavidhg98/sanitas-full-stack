@@ -1,0 +1,152 @@
+<div *ngIf="procedimiento" class="container-fluid">
+  <h3 class="m-top-and-bottom-2">Procedimiento</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ procedimiento._id }}</dd>
+
+  
+    <dt>Procedim</dt>
+    <dd>{{ procedimiento.procedim }}</dd>
+
+    <dt>Obs Sis</dt>
+    <dd>{{ procedimiento.obsSis }}</dd>
+
+    <dt>Flag Pos</dt>
+    <dd>{{ procedimiento.flagPos }}</dd>
+
+    <dt>Bilateral</dt>
+    <dd>{{ procedimiento.bilateral }}</dd>
+
+    <dt>Tie Limpieza</dt>
+    <dd>{{ procedimiento.tieLimpieza }}</dd>
+
+    <dt>Patologia</dt>
+    <dd>{{ procedimiento.patologia }}</dd>
+
+    <dt>Finalidad</dt>
+    <dd>{{ procedimiento.finalidad }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ procedimiento.descripcion }}</dd>
+
+    <dt>Id Especialidad Interconsulta</dt>
+    <dd>{{ procedimiento.idEspecialidadInterconsulta }}</dd>
+
+    <dt>Ordenahc</dt>
+    <dd>{{ procedimiento.ordenahc }}</dd>
+
+    <dt>Des Sispro</dt>
+    <dd>{{ procedimiento.desSispro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ procedimiento.observaciones }}</dd>
+
+    <dt>Item Lista Sexo</dt>
+    <dd>{{ procedimiento.itemListaSexo }}</dd>
+
+    <dt>Tie Duracion</dt>
+    <dd>{{ procedimiento.tieDuracion }}</dd>
+
+    <dt>Injertos</dt>
+    <dd>{{ procedimiento.injertos }}</dd>
+
+    <dt>Alias Cups</dt>
+    <dd>{{ procedimiento.aliasCups }}</dd>
+
+    <dt>Por Copago</dt>
+    <dd>{{ procedimiento.porCopago }}</dd>
+
+    <dt>Factores</dt>
+    <dd>{{ procedimiento.factores }}</dd>
+
+    <dt>Osi</dt>
+    <dd>{{ procedimiento.osi }}</dd>
+
+    <dt>Item Lista Tipo Procedimiento</dt>
+    <dd>{{ procedimiento.itemListaTipoProcedimiento }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ procedimiento.fechaRegistro }}</dd>
+
+    <dt>Cod Sispro</dt>
+    <dd>{{ procedimiento.codSispro }}</dd>
+
+    <dt>Tie Adecuacion</dt>
+    <dd>{{ procedimiento.tieAdecuacion }}</dd>
+
+    <dt>Man Copago</dt>
+    <dd>{{ procedimiento.manCopago }}</dd>
+
+    <dt>Biopsia</dt>
+    <dd>{{ procedimiento.biopsia }}</dd>
+
+    <dt>Codigo Osi</dt>
+    <dd>{{ procedimiento.codigoOsi }}</dd>
+
+    <dt>Alias Iss</dt>
+    <dd>{{ procedimiento.aliasIss }}</dd>
+
+    <dt>Uvr</dt>
+    <dd>{{ procedimiento.uvr }}</dd>
+
+    <dt>Item Lista Tipo Bilateralidad</dt>
+    <dd>{{ procedimiento.itemListaTipoBilateralidad }}</dd>
+
+    <dt>Aut Paciente</dt>
+    <dd>{{ procedimiento.autPaciente }}</dd>
+
+    <dt>Edad Ini</dt>
+    <dd>{{ procedimiento.edadIni }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ procedimiento.loginRegistro }}</dd>
+
+    <dt>Edad Fin</dt>
+    <dd>{{ procedimiento.edadFin }}</dd>
+
+    <dt>Categoria</dt>
+    <dd>{{ procedimiento.categoria }}</dd>
+
+    <dt>For Consent</dt>
+    <dd>{{ procedimiento.forConsent }}</dd>
+
+    <dt>Alias</dt>
+    <dd>{{ procedimiento.alias }}</dd>
+
+    <dt>Clase</dt>
+    <dd>{{ procedimiento.clase }}</dd>
+
+    <dt>Obs Consent</dt>
+    <dd>{{ procedimiento.obsConsent }}</dd>
+
+    <dt>Niv Proced</dt>
+    <dd>{{ procedimiento.nivProced }}</dd>
+
+    <dt>SubGrupoProcedimiento</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'subGrupoProcedimiento', procedimiento.subGrupoProcedimiento._id]">{{ procedimiento.subGrupoProcedimiento._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+  <app-anticipo-list [anticipos]="procedimiento.anticipos"></app-anticipo-list>
+  <app-auditoria-solicitud-list [auditoriaSolicituds]="procedimiento.auditoriaSolicituds"></app-auditoria-solicitud-list>
+  <app-autorizacion-bh-list [autorizacionBhs]="procedimiento.autorizacionBhs"></app-autorizacion-bh-list>
+  <app-cama-list [camas]="procedimiento.camas"></app-cama-list>
+  <app-cama-list [camas]="procedimiento.camas"></app-cama-list>
+  <app-cargo-automatico-list [cargoAutomaticos]="procedimiento.cargoAutomaticos"></app-cargo-automatico-list>
+  <app-consulta-externa-pyp-list [consultaExternaPyps]="procedimiento.consultaExternaPyps"></app-consulta-externa-pyp-list>
+  <app-detalle-cargos-pendientes-list [detalleCargosPendientess]="procedimiento.detalleCargosPendientess"></app-detalle-cargos-pendientes-list>
+  <app-encabezado-resultado-list [encabezadoResultados]="procedimiento.encabezadoResultados"></app-encabezado-resultado-list>
+  <app-excepcion-regargo-list [excepcionRegargos]="procedimiento.excepcionRegargos"></app-excepcion-regargo-list>
+  <app-procedimiento-convenio-capitado-list [procedimientoConvenioCapitados]="procedimiento.procedimientoConvenioCapitados"></app-procedimiento-convenio-capitado-list>
+  <app-procedimiento-entidad-list [procedimientoEntidads]="procedimiento.procedimientoEntidads"></app-procedimiento-entidad-list>
+  <app-tipo-anestesia-list [tipoAnestesias]="procedimiento.tipoAnestesias"></app-tipo-anestesia-list>
+  <app-procedimiento-centro-costo-list [procedimientoCentroCostos]="procedimiento.procedimientoCentroCostos"></app-procedimiento-centro-costo-list>
+  <app-procedimiento-nivel-list [procedimientoNivels]="procedimiento.procedimientoNivels"></app-procedimiento-nivel-list>
+  <app-procedimiento-nivel-list [procedimientoNivels]="procedimiento.procedimientoNivels"></app-procedimiento-nivel-list>
+  <app-procedimientos-ris-list [procedimientosRiss]="procedimiento.procedimientosRiss"></app-procedimientos-ris-list>
+  <app-pyp-procedimiento-programa-list [pypProcedimientoProgramas]="procedimiento.pypProcedimientoProgramas"></app-pyp-procedimiento-programa-list>
+  <app-procedimiento-finalidad-list [procedimientoFinalidads]="procedimiento.procedimientoFinalidads"></app-procedimiento-finalidad-list>
+</div>

@@ -1,0 +1,264 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Producto</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="producto && producto._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="producto" type="text" class="form-control" name="id" [(ngModel)]="producto._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_codCorto">Cod Corto</label>
+  <input type="text" id="field_codCorto" *ngIf="producto" class="form-control" name="codCorto" [(ngModel)]="producto.codCorto"  />
+  <input type="text" id="field_codCorto" *ngIf="!producto" class="form-control" name="codCorto" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_codInteligente">Cod Inteligente</label>
+  <input type="text" id="field_codInteligente" *ngIf="producto" class="form-control" name="codInteligente" [(ngModel)]="producto.codInteligente"  />
+  <input type="text" id="field_codInteligente" *ngIf="!producto" class="form-control" name="codInteligente" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_contenido">Contenido</label>
+  <input type="number" id="field_contenido" *ngIf="producto" class="form-control" name="contenido" [(ngModel)]="producto.contenido"  />
+  <input type="number" id="field_contenido" *ngIf="!producto" class="form-control" name="contenido" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaModoDespacho">Item Lista Modo Despacho</label>
+  <input type="number" id="field_itemListaModoDespacho" *ngIf="producto" class="form-control" name="itemListaModoDespacho" [(ngModel)]="producto.itemListaModoDespacho"  />
+  <input type="number" id="field_itemListaModoDespacho" *ngIf="!producto" class="form-control" name="itemListaModoDespacho" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_descripcion">Descripcion</label>
+  <input type="text" id="field_descripcion" *ngIf="producto" class="form-control" name="descripcion" [(ngModel)]="producto.descripcion"  />
+  <input type="text" id="field_descripcion" *ngIf="!producto" class="form-control" name="descripcion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idPresentacionProducto">Id Presentacion Producto</label>
+  <input type="number" id="field_idPresentacionProducto" *ngIf="producto" class="form-control" name="idPresentacionProducto" [(ngModel)]="producto.idPresentacionProducto"  />
+  <input type="number" id="field_idPresentacionProducto" *ngIf="!producto" class="form-control" name="idPresentacionProducto" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="producto" class="form-control" name="fechaRegistro" [(ngModel)]="producto.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!producto" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaEstado">Item Lista Estado</label>
+  <input type="number" id="field_itemListaEstado" *ngIf="producto" class="form-control" name="itemListaEstado" [(ngModel)]="producto.itemListaEstado"  />
+  <input type="number" id="field_itemListaEstado" *ngIf="!producto" class="form-control" name="itemListaEstado" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="producto" class="form-control" name="observaciones" [(ngModel)]="producto.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!producto" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_codPos">Cod Pos</label>
+  <input type="text" id="field_codPos" *ngIf="producto" class="form-control" name="codPos" [(ngModel)]="producto.codPos"  />
+  <input type="text" id="field_codPos" *ngIf="!producto" class="form-control" name="codPos" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaReutilizable">Item Lista Reutilizable</label>
+  <input type="number" id="field_itemListaReutilizable" *ngIf="producto" class="form-control" name="itemListaReutilizable" [(ngModel)]="producto.itemListaReutilizable"  />
+  <input type="number" id="field_itemListaReutilizable" *ngIf="!producto" class="form-control" name="itemListaReutilizable" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaMedicamentoControlado">Item Lista Medicamento Controlado</label>
+  <input type="number" id="field_itemListaMedicamentoControlado" *ngIf="producto" class="form-control" name="itemListaMedicamentoControlado" [(ngModel)]="producto.itemListaMedicamentoControlado"  />
+  <input type="number" id="field_itemListaMedicamentoControlado" *ngIf="!producto" class="form-control" name="itemListaMedicamentoControlado" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_desGenerico">Des Generico</label>
+  <input type="text" id="field_desGenerico" *ngIf="producto" class="form-control" name="desGenerico" [(ngModel)]="producto.desGenerico"  />
+  <input type="text" id="field_desGenerico" *ngIf="!producto" class="form-control" name="desGenerico" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idConcepto">Id Concepto</label>
+  <input type="number" id="field_idConcepto" *ngIf="producto" class="form-control" name="idConcepto" [(ngModel)]="producto.idConcepto"  />
+  <input type="number" id="field_idConcepto" *ngIf="!producto" class="form-control" name="idConcepto" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_concentracion">Concentracion</label>
+  <input type="text" id="field_concentracion" *ngIf="producto" class="form-control" name="concentracion" [(ngModel)]="producto.concentracion"  />
+  <input type="text" id="field_concentracion" *ngIf="!producto" class="form-control" name="concentracion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_nivelMedicam">Nivel Medicam</label>
+  <input type="text" id="field_nivelMedicam" *ngIf="producto" class="form-control" name="nivelMedicam" [(ngModel)]="producto.nivelMedicam"  />
+  <input type="text" id="field_nivelMedicam" *ngIf="!producto" class="form-control" name="nivelMedicam" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="producto" class="form-control" name="loginRegistro" [(ngModel)]="producto.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!producto" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaFlagGenerico">Item Lista Flag Generico</label>
+  <input type="number" id="field_itemListaFlagGenerico" *ngIf="producto" class="form-control" name="itemListaFlagGenerico" [(ngModel)]="producto.itemListaFlagGenerico"  />
+  <input type="number" id="field_itemListaFlagGenerico" *ngIf="!producto" class="form-control" name="itemListaFlagGenerico" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_codHijo">Cod Hijo</label>
+  <input type="text" id="field_codHijo" *ngIf="producto" class="form-control" name="codHijo" [(ngModel)]="producto.codHijo"  />
+  <input type="text" id="field_codHijo" *ngIf="!producto" class="form-control" name="codHijo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaFlagPos">Item Lista Flag Pos</label>
+  <input type="number" id="field_itemListaFlagPos" *ngIf="producto" class="form-control" name="itemListaFlagPos" [(ngModel)]="producto.itemListaFlagPos"  />
+  <input type="number" id="field_itemListaFlagPos" *ngIf="!producto" class="form-control" name="itemListaFlagPos" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_desCorta">Des Corta</label>
+  <input type="text" id="field_desCorta" *ngIf="producto" class="form-control" name="desCorta" [(ngModel)]="producto.desCorta"  />
+  <input type="text" id="field_desCorta" *ngIf="!producto" class="form-control" name="desCorta" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_codAlea">Cod Alea</label>
+  <input type="text" id="field_codAlea" *ngIf="producto" class="form-control" name="codAlea" [(ngModel)]="producto.codAlea"  />
+  <input type="text" id="field_codAlea" *ngIf="!producto" class="form-control" name="codAlea" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaFormaFarmaceutica">Item Lista Forma Farmaceutica</label>
+  <input type="number" id="field_itemListaFormaFarmaceutica" *ngIf="producto" class="form-control" name="itemListaFormaFarmaceutica" [(ngModel)]="producto.itemListaFormaFarmaceutica"  />
+  <input type="number" id="field_itemListaFormaFarmaceutica" *ngIf="!producto" class="form-control" name="itemListaFormaFarmaceutica" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_codBarras">Cod Barras</label>
+  <input type="text" id="field_codBarras" *ngIf="producto" class="form-control" name="codBarras" [(ngModel)]="producto.codBarras"  />
+  <input type="text" id="field_codBarras" *ngIf="!producto" class="form-control" name="codBarras" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_codCums">Cod Cums</label>
+  <input type="text" id="field_codCums" *ngIf="producto" class="form-control" name="codCums" [(ngModel)]="producto.codCums"  />
+  <input type="text" id="field_codCums" *ngIf="!producto" class="form-control" name="codCums" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_descripcionPa">Descripcion Pa</label>
+  <input type="text" id="field_descripcionPa" *ngIf="producto" class="form-control" name="descripcionPa" [(ngModel)]="producto.descripcionPa"  />
+  <input type="text" id="field_descripcionPa" *ngIf="!producto" class="form-control" name="descripcionPa" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idConceptoNoPos">Id Concepto No Pos</label>
+  <input type="number" id="field_idConceptoNoPos" *ngIf="producto" class="form-control" name="idConceptoNoPos" [(ngModel)]="producto.idConceptoNoPos"  />
+  <input type="number" id="field_idConceptoNoPos" *ngIf="!producto" class="form-control" name="idConceptoNoPos" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaMedicamentoMater">Item Lista Medicamento Mater</label>
+  <input type="number" id="field_itemListaMedicamentoMater" *ngIf="producto" class="form-control" name="itemListaMedicamentoMater" [(ngModel)]="producto.itemListaMedicamentoMater"  />
+  <input type="number" id="field_itemListaMedicamentoMater" *ngIf="!producto" class="form-control" name="itemListaMedicamentoMater" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="unidadMedidaPedidos">
+              <label for="field_unidadMedidaPedido">Unidad Medida Pedido</label>
+
+              <select *ngIf="!producto" class="form-control" name="idUnidadMedidaPedido" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="unidadMedidaPedido._id" *ngFor="let unidadMedidaPedido of unidadMedidaPedidos">{{ unidadMedidaPedido._id }}</option>
+              </select>
+
+              <select *ngIf="producto && producto.idUnidadMedidaPedido" class="form-control" name="idUnidadMedidaPedido" [(ngModel)]="producto.idUnidadMedidaPedido">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="unidadMedidaPedido._id" *ngFor="let unidadMedidaPedido of unidadMedidaPedidos">{{ unidadMedidaPedido._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="unidadMedidaPedidos">
+              <label for="field_unidadMedidaPedido">Unidad Medida Pedido</label>
+
+              <select *ngIf="!producto" class="form-control" name="idUnidadMedidaPedido1" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="unidadMedidaPedido._id" *ngFor="let unidadMedidaPedido of unidadMedidaPedidos">{{ unidadMedidaPedido._id }}</option>
+              </select>
+
+              <select *ngIf="producto && producto.idUnidadMedidaPedido1" class="form-control" name="idUnidadMedidaPedido1" [(ngModel)]="producto.idUnidadMedidaPedido1">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="unidadMedidaPedido._id" *ngFor="let unidadMedidaPedido of unidadMedidaPedidos">{{ unidadMedidaPedido._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="unidadMedidaPedidos">
+              <label for="field_unidadMedidaPedido">Unidad Medida Pedido</label>
+
+              <select *ngIf="!producto" class="form-control" name="idUnidadMedidaPedido2" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="unidadMedidaPedido._id" *ngFor="let unidadMedidaPedido of unidadMedidaPedidos">{{ unidadMedidaPedido._id }}</option>
+              </select>
+
+              <select *ngIf="producto && producto.idUnidadMedidaPedido2" class="form-control" name="idUnidadMedidaPedido2" [(ngModel)]="producto.idUnidadMedidaPedido2">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="unidadMedidaPedido._id" *ngFor="let unidadMedidaPedido of unidadMedidaPedidos">{{ unidadMedidaPedido._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

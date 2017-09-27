@@ -1,0 +1,64 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Salario</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="salario && salario._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="salario" type="text" class="form-control" name="id" [(ngModel)]="salario._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_anno">Anno</label>
+  <input type="number" id="field_anno" *ngIf="salario" class="form-control" name="anno" [(ngModel)]="salario.anno"  />
+  <input type="number" id="field_anno" *ngIf="!salario" class="form-control" name="anno" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_salarioMinimoLegal">Salario Minimo Legal</label>
+  <input type="number" id="field_salarioMinimoLegal" *ngIf="salario" class="form-control" name="salarioMinimoLegal" [(ngModel)]="salario.salarioMinimoLegal"  />
+  <input type="number" id="field_salarioMinimoLegal" *ngIf="!salario" class="form-control" name="salarioMinimoLegal" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="salario" class="form-control" name="fechaRegistro" [(ngModel)]="salario.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!salario" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="salario" class="form-control" name="loginRegistro" [(ngModel)]="salario.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!salario" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="salario" class="form-control" name="observaciones" [(ngModel)]="salario.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!salario" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

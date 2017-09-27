@@ -1,0 +1,31 @@
+<div *ngIf="auditoriaContrato" class="container">
+  <h3 class="m-top-and-bottom-2">Auditoria Contrato</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ auditoriaContrato._id }}</dd>
+
+  
+    <dt>Id Admision</dt>
+    <dd>{{ auditoriaContrato.idAdmision }}</dd>
+
+    <dt>Carnet</dt>
+    <dd>{{ auditoriaContrato.carnet }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ auditoriaContrato.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ auditoriaContrato.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ auditoriaContrato.observaciones }}</dd>
+
+    <dt>Entidad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'entidad', auditoriaContrato.entidad._id]">{{ auditoriaContrato.entidad._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

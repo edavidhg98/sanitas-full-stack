@@ -1,0 +1,37 @@
+<div *ngIf="grupoProcedimiento" class="container-fluid">
+  <h3 class="m-top-and-bottom-2">Grupo Procedimiento</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ grupoProcedimiento._id }}</dd>
+
+  
+    <dt>Item Lista Tipo Procedimiento</dt>
+    <dd>{{ grupoProcedimiento.itemListaTipoProcedimiento }}</dd>
+
+    <dt>Gru Proced</dt>
+    <dd>{{ grupoProcedimiento.gruProced }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ grupoProcedimiento.descripcion }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ grupoProcedimiento.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ grupoProcedimiento.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ grupoProcedimiento.observaciones }}</dd>
+
+    <dt>Id Prestador</dt>
+    <dd>{{ grupoProcedimiento.idPrestador }}</dd>
+
+    <dt>Item Lista Estado Entidad Uvr</dt>
+    <dd>{{ grupoProcedimiento.itemListaEstadoEntidadUvr }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+  <app-sub-grupo-procedimiento-list [subGrupoProcedimientos]="grupoProcedimiento.subGrupoProcedimientos"></app-sub-grupo-procedimiento-list>
+</div>

@@ -1,0 +1,37 @@
+<div *ngIf="concatenaConceptoPorCentroCosto" class="container">
+  <h3 class="m-top-and-bottom-2">Concatena Concepto Por Centro Costo</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ concatenaConceptoPorCentroCosto._id }}</dd>
+
+  
+    <dt>Id Prestador</dt>
+    <dd>{{ concatenaConceptoPorCentroCosto.idPrestador }}</dd>
+
+    <dt>Id Centro Costo</dt>
+    <dd>{{ concatenaConceptoPorCentroCosto.idCentroCosto }}</dd>
+
+    <dt>Id Concepto</dt>
+    <dd>{{ concatenaConceptoPorCentroCosto.idConcepto }}</dd>
+
+    <dt>Item Lista Estado Con Cpto Centro Costo</dt>
+    <dd>{{ concatenaConceptoPorCentroCosto.itemListaEstadoConCptoCentroCosto }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ concatenaConceptoPorCentroCosto.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ concatenaConceptoPorCentroCosto.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ concatenaConceptoPorCentroCosto.observaciones }}</dd>
+
+    <dt>Sucursal</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursal', concatenaConceptoPorCentroCosto.sucursal._id]">{{ concatenaConceptoPorCentroCosto.sucursal._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

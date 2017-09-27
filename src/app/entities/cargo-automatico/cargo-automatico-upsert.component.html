@@ -1,0 +1,110 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Cargo Automatico</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="cargoAutomatico && cargoAutomatico._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="cargoAutomatico" type="text" class="form-control" name="id" [(ngModel)]="cargoAutomatico._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_codigoInteligente">Codigo Inteligente</label>
+  <input type="text" id="field_codigoInteligente" *ngIf="cargoAutomatico" class="form-control" name="codigoInteligente" [(ngModel)]="cargoAutomatico.codigoInteligente"  />
+  <input type="text" id="field_codigoInteligente" *ngIf="!cargoAutomatico" class="form-control" name="codigoInteligente" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="cargoAutomatico" class="form-control" name="fechaRegistro" [(ngModel)]="cargoAutomatico.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!cargoAutomatico" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="cargoAutomatico" class="form-control" name="loginRegistro" [(ngModel)]="cargoAutomatico.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!cargoAutomatico" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="cargoAutomatico" class="form-control" name="observaciones" [(ngModel)]="cargoAutomatico.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!cargoAutomatico" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaEstadoCargo">Item Lista Estado Cargo</label>
+  <input type="number" id="field_itemListaEstadoCargo" *ngIf="cargoAutomatico" class="form-control" name="itemListaEstadoCargo" [(ngModel)]="cargoAutomatico.itemListaEstadoCargo"  />
+  <input type="number" id="field_itemListaEstadoCargo" *ngIf="!cargoAutomatico" class="form-control" name="itemListaEstadoCargo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idPrestador">Id Prestador</label>
+  <input type="number" id="field_idPrestador" *ngIf="cargoAutomatico" class="form-control" name="idPrestador" [(ngModel)]="cargoAutomatico.idPrestador"  />
+  <input type="number" id="field_idPrestador" *ngIf="!cargoAutomatico" class="form-control" name="idPrestador" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="sucursals">
+              <label for="field_sucursal">Sucursal</label>
+
+              <select *ngIf="!cargoAutomatico" class="form-control" name="idSucursal" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+
+              <select *ngIf="cargoAutomatico && cargoAutomatico.idSucursal" class="form-control" name="idSucursal" [(ngModel)]="cargoAutomatico.idSucursal">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="entidads">
+              <label for="field_entidad">Entidad</label>
+
+              <select *ngIf="!cargoAutomatico" class="form-control" name="idEntidad" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+
+              <select *ngIf="cargoAutomatico && cargoAutomatico.idEntidad" class="form-control" name="idEntidad" [(ngModel)]="cargoAutomatico.idEntidad">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="procedimientos">
+              <label for="field_procedimiento">Procedimiento</label>
+
+              <select *ngIf="!cargoAutomatico" class="form-control" name="idProcedimiento" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="procedimiento._id" *ngFor="let procedimiento of procedimientos">{{ procedimiento._id }}</option>
+              </select>
+
+              <select *ngIf="cargoAutomatico && cargoAutomatico.idProcedimiento" class="form-control" name="idProcedimiento" [(ngModel)]="cargoAutomatico.idProcedimiento">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="procedimiento._id" *ngFor="let procedimiento of procedimientos">{{ procedimiento._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

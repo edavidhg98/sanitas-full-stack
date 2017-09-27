@@ -1,0 +1,38 @@
+<div *ngIf="homologacionServiciosAgfa" class="container">
+  <h3 class="m-top-and-bottom-2">Homologacion Servicios Agfa</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ homologacionServiciosAgfa._id }}</dd>
+
+  
+    <dt>Codigo Sophia</dt>
+    <dd>{{ homologacionServiciosAgfa.codigoSophia }}</dd>
+
+    <dt>Codigo Grabacion Agfa</dt>
+    <dd>{{ homologacionServiciosAgfa.codigoGrabacionAgfa }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ homologacionServiciosAgfa.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ homologacionServiciosAgfa.loginRegistro }}</dd>
+
+    <dt>Item Lista Estado Homologa Servicio Agfa</dt>
+    <dd>{{ homologacionServiciosAgfa.itemListaEstadoHomologaServicioAgfa }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ homologacionServiciosAgfa.observaciones }}</dd>
+
+    <dt>Sucursal</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursal', homologacionServiciosAgfa.sucursal._id]">{{ homologacionServiciosAgfa.sucursal._id }}</a>
+    </dd>
+    <dt>Entidad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'entidad', homologacionServiciosAgfa.entidad._id]">{{ homologacionServiciosAgfa.entidad._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

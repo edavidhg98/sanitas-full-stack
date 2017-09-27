@@ -1,0 +1,188 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Pedidos</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="pedidos && pedidos._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="pedidos" type="text" class="form-control" name="id" [(ngModel)]="pedidos._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_idAdmision">Id Admision</label>
+  <input type="number" id="field_idAdmision" *ngIf="pedidos" class="form-control" name="idAdmision" [(ngModel)]="pedidos.idAdmision"  />
+  <input type="number" id="field_idAdmision" *ngIf="!pedidos" class="form-control" name="idAdmision" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_horaPedido">Hora Pedido</label>
+  <input type="number" id="field_horaPedido" *ngIf="pedidos" class="form-control" name="horaPedido" [(ngModel)]="pedidos.horaPedido"  />
+  <input type="number" id="field_horaPedido" *ngIf="!pedidos" class="form-control" name="horaPedido" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_minutoDespacho">Minuto Despacho</label>
+  <input type="number" id="field_minutoDespacho" *ngIf="pedidos" class="form-control" name="minutoDespacho" [(ngModel)]="pedidos.minutoDespacho"  />
+  <input type="number" id="field_minutoDespacho" *ngIf="!pedidos" class="form-control" name="minutoDespacho" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="pedidos" class="form-control" name="fechaRegistro" [(ngModel)]="pedidos.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!pedidos" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idMedicoAtiende">Id Medico Atiende</label>
+  <input type="number" id="field_idMedicoAtiende" *ngIf="pedidos" class="form-control" name="idMedicoAtiende" [(ngModel)]="pedidos.idMedicoAtiende"  />
+  <input type="number" id="field_idMedicoAtiende" *ngIf="!pedidos" class="form-control" name="idMedicoAtiende" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaEstadoPedido">Item Lista Estado Pedido</label>
+  <input type="number" id="field_itemListaEstadoPedido" *ngIf="pedidos" class="form-control" name="itemListaEstadoPedido" [(ngModel)]="pedidos.itemListaEstadoPedido"  />
+  <input type="number" id="field_itemListaEstadoPedido" *ngIf="!pedidos" class="form-control" name="itemListaEstadoPedido" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_pedidoManual">Pedido Manual</label>
+  <input type="text" id="field_pedidoManual" *ngIf="pedidos" class="form-control" name="pedidoManual" [(ngModel)]="pedidos.pedidoManual"  />
+  <input type="text" id="field_pedidoManual" *ngIf="!pedidos" class="form-control" name="pedidoManual" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginDespacho">Login Despacho</label>
+  <input type="text" id="field_loginDespacho" *ngIf="pedidos" class="form-control" name="loginDespacho" [(ngModel)]="pedidos.loginDespacho"  />
+  <input type="text" id="field_loginDespacho" *ngIf="!pedidos" class="form-control" name="loginDespacho" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaDespacho">Fecha Despacho</label>
+  <input type="date" id="field_fechaDespacho" *ngIf="pedidos" class="form-control" name="fechaDespacho" [(ngModel)]="pedidos.fechaDespacho"  />
+  <input type="date" id="field_fechaDespacho" *ngIf="!pedidos" class="form-control" name="fechaDespacho" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idCentroCosto">Id Centro Costo</label>
+  <input type="number" id="field_idCentroCosto" *ngIf="pedidos" class="form-control" name="idCentroCosto" [(ngModel)]="pedidos.idCentroCosto"  />
+  <input type="number" id="field_idCentroCosto" *ngIf="!pedidos" class="form-control" name="idCentroCosto" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_horaDespacho">Hora Despacho</label>
+  <input type="number" id="field_horaDespacho" *ngIf="pedidos" class="form-control" name="horaDespacho" [(ngModel)]="pedidos.horaDespacho"  />
+  <input type="number" id="field_horaDespacho" *ngIf="!pedidos" class="form-control" name="horaDespacho" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_consecutivoSolicitud">Consecutivo Solicitud</label>
+  <input type="number" id="field_consecutivoSolicitud" *ngIf="pedidos" class="form-control" name="consecutivoSolicitud" [(ngModel)]="pedidos.consecutivoSolicitud"  />
+  <input type="number" id="field_consecutivoSolicitud" *ngIf="!pedidos" class="form-control" name="consecutivoSolicitud" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaTipoPedido">Item Lista Tipo Pedido</label>
+  <input type="number" id="field_itemListaTipoPedido" *ngIf="pedidos" class="form-control" name="itemListaTipoPedido" [(ngModel)]="pedidos.itemListaTipoPedido"  />
+  <input type="number" id="field_itemListaTipoPedido" *ngIf="!pedidos" class="form-control" name="itemListaTipoPedido" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginPedido">Login Pedido</label>
+  <input type="text" id="field_loginPedido" *ngIf="pedidos" class="form-control" name="loginPedido" [(ngModel)]="pedidos.loginPedido"  />
+  <input type="text" id="field_loginPedido" *ngIf="!pedidos" class="form-control" name="loginPedido" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaPedido">Fecha Pedido</label>
+  <input type="date" id="field_fechaPedido" *ngIf="pedidos" class="form-control" name="fechaPedido" [(ngModel)]="pedidos.fechaPedido"  />
+  <input type="date" id="field_fechaPedido" *ngIf="!pedidos" class="form-control" name="fechaPedido" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_minutoPedido">Minuto Pedido</label>
+  <input type="number" id="field_minutoPedido" *ngIf="pedidos" class="form-control" name="minutoPedido" [(ngModel)]="pedidos.minutoPedido"  />
+  <input type="number" id="field_minutoPedido" *ngIf="!pedidos" class="form-control" name="minutoPedido" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idCentroCostoDestino">Id Centro Costo Destino</label>
+  <input type="number" id="field_idCentroCostoDestino" *ngIf="pedidos" class="form-control" name="idCentroCostoDestino" [(ngModel)]="pedidos.idCentroCostoDestino"  />
+  <input type="number" id="field_idCentroCostoDestino" *ngIf="!pedidos" class="form-control" name="idCentroCostoDestino" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_consecutivoManual">Consecutivo Manual</label>
+  <input type="number" id="field_consecutivoManual" *ngIf="pedidos" class="form-control" name="consecutivoManual" [(ngModel)]="pedidos.consecutivoManual"  />
+  <input type="number" id="field_consecutivoManual" *ngIf="!pedidos" class="form-control" name="consecutivoManual" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="pedidos" class="form-control" name="observaciones" [(ngModel)]="pedidos.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!pedidos" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="prioridads">
+              <label for="field_prioridad">Prioridad</label>
+
+              <select *ngIf="!pedidos" class="form-control" name="idPrioridad" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="prioridad._id" *ngFor="let prioridad of prioridads">{{ prioridad._id }}</option>
+              </select>
+
+              <select *ngIf="pedidos && pedidos.idPrioridad" class="form-control" name="idPrioridad" [(ngModel)]="pedidos.idPrioridad">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="prioridad._id" *ngFor="let prioridad of prioridads">{{ prioridad._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="sucursals">
+              <label for="field_sucursal">Sucursal</label>
+
+              <select *ngIf="!pedidos" class="form-control" name="idSucursal" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+
+              <select *ngIf="pedidos && pedidos.idSucursal" class="form-control" name="idSucursal" [(ngModel)]="pedidos.idSucursal">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

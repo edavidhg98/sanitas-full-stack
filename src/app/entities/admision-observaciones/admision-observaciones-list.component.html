@@ -1,0 +1,112 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="m-top-and-bottom-2">
+            <span>Admision Observaciones</span>
+            <a class="btn btn-primary float-right" [routerLink]="[ absolutePath, 'create']" data-dismiss="modal">
+              <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
+              Crear Nuevo Admision Observaciones
+            </a>
+          </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped table-responsive" *ngIf="admisionObservacioness">
+          <thead>
+            <tr>
+              <th class="cursor-pointer" (click)="sort('idAdmision')">
+                Id Admision
+                <i class="fa" [ngClass]="{'fa-sort': column != 'idAdmision', 'fa-sort-asc': (column == 'idAdmision' && isDesc), 'fa-sort-desc': (column == 'idAdmision' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('minutoDefinicion')">
+                Minuto Definicion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'minutoDefinicion', 'fa-sort-asc': (column == 'minutoDefinicion' && isDesc), 'fa-sort-desc': (column == 'minutoDefinicion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('loginRegistro')">
+                Login Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'loginRegistro', 'fa-sort-asc': (column == 'loginRegistro' && isDesc), 'fa-sort-desc': (column == 'loginRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('horaEgreso')">
+                Hora Egreso
+                <i class="fa" [ngClass]="{'fa-sort': column != 'horaEgreso', 'fa-sort-asc': (column == 'horaEgreso' && isDesc), 'fa-sort-desc': (column == 'horaEgreso' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('observaciones')">
+                Observaciones
+                <i class="fa" [ngClass]="{'fa-sort': column != 'observaciones', 'fa-sort-asc': (column == 'observaciones' && isDesc), 'fa-sort-desc': (column == 'observaciones' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('destino')">
+                Destino
+                <i class="fa" [ngClass]="{'fa-sort': column != 'destino', 'fa-sort-asc': (column == 'destino' && isDesc), 'fa-sort-desc': (column == 'destino' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaEgreso')">
+                Fecha Egreso
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaEgreso', 'fa-sort-asc': (column == 'fechaEgreso' && isDesc), 'fa-sort-desc': (column == 'fechaEgreso' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('horaDefinicion')">
+                Hora Definicion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'horaDefinicion', 'fa-sort-asc': (column == 'horaDefinicion' && isDesc), 'fa-sort-desc': (column == 'horaDefinicion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('minutoEgreso')">
+                Minuto Egreso
+                <i class="fa" [ngClass]="{'fa-sort': column != 'minutoEgreso', 'fa-sort-asc': (column == 'minutoEgreso' && isDesc), 'fa-sort-desc': (column == 'minutoEgreso' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('horaIngreso')">
+                Hora Ingreso
+                <i class="fa" [ngClass]="{'fa-sort': column != 'horaIngreso', 'fa-sort-asc': (column == 'horaIngreso' && isDesc), 'fa-sort-desc': (column == 'horaIngreso' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaRegistro')">
+                Fecha Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaRegistro', 'fa-sort-asc': (column == 'fechaRegistro' && isDesc), 'fa-sort-desc': (column == 'fechaRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaDefinicion')">
+                Fecha Definicion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaDefinicion', 'fa-sort-asc': (column == 'fechaDefinicion' && isDesc), 'fa-sort-desc': (column == 'fechaDefinicion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaIngreso')">
+                Fecha Ingreso
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaIngreso', 'fa-sort-asc': (column == 'fechaIngreso' && isDesc), 'fa-sort-desc': (column == 'fechaIngreso' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('minutoIngreso')">
+                Minuto Ingreso
+                <i class="fa" [ngClass]="{'fa-sort': column != 'minutoIngreso', 'fa-sort-asc': (column == 'minutoIngreso' && isDesc), 'fa-sort-desc': (column == 'minutoIngreso' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let admisionObservaciones of admisionObservacioness | orderBy: { property: column, direction: direction }">
+              <td>{{ admisionObservaciones.idAdmision }}</td>
+              <td>{{ admisionObservaciones.minutoDefinicion }}</td>
+              <td>{{ admisionObservaciones.loginRegistro }}</td>
+              <td>{{ admisionObservaciones.horaEgreso }}</td>
+              <td>{{ admisionObservaciones.observaciones }}</td>
+              <td>{{ admisionObservaciones.destino }}</td>
+              <td>{{ admisionObservaciones.fechaEgreso }}</td>
+              <td>{{ admisionObservaciones.horaDefinicion }}</td>
+              <td>{{ admisionObservaciones.minutoEgreso }}</td>
+              <td>{{ admisionObservaciones.horaIngreso }}</td>
+              <td>{{ admisionObservaciones.fechaRegistro }}</td>
+              <td>{{ admisionObservaciones.fechaDefinicion }}</td>
+              <td>{{ admisionObservaciones.fechaIngreso }}</td>
+              <td>{{ admisionObservaciones.minutoIngreso }}</td>
+              <td>
+                <a class="btn btn-info btn-sm" [routerLink]="[ absolutePath, admisionObservaciones._id]"><span class="fa fa-eye fa-fw"></span>Ver</a>
+                <a class="btn btn-primary btn-sm" [routerLink]="[ absolutePath, admisionObservaciones._id, 'update']"><span class="fa fa-pencil fa-fw"></span>Editar</a>
+                <a class="btn btn-danger btn-sm text-white cursor-pointer" (click)="openDeleteModal(content, admisionObservaciones._id)"><span class="fa fa-trash fa-fw"></span>Eliminar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h5 class="modal-title"><i class="fa fa-exclamation-triangle fa-lg fa-fw" aria-hidden="true"></i>¿Esta seguro de eliminar?</h5>
+    <button type="button" class="close cursor-pointer" aria-label="Close" (click)="d(deleteModalOpts.cancel)">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary cursor-pointer" (click)="c(deleteModalOpts.ok)"><i class="fa fa-check fa-fw"></i>Aceptar</button>
+    <button type="button" class="btn btn-secondary cursor-pointer" (click)="c(deleteModalOpts.cancel)"><i class="fa fa-ban fa-fw"></i>Cancelar</button>
+  </div>
+</ng-template>

@@ -1,0 +1,109 @@
+<div *ngIf="triage" class="container">
+  <h3 class="m-top-and-bottom-2">Triage</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ triage._id }}</dd>
+
+  
+    <dt>Id Paciente</dt>
+    <dd>{{ triage.idPaciente }}</dd>
+
+    <dt>Vivos</dt>
+    <dd>{{ triage.vivos }}</dd>
+
+    <dt>Remitidoa</dt>
+    <dd>{{ triage.remitidoa }}</dd>
+
+    <dt>Tiempoaprox</dt>
+    <dd>{{ triage.tiempoaprox }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ triage.loginRegistro }}</dd>
+
+    <dt>Hora Ingreso</dt>
+    <dd>{{ triage.horaIngreso }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ triage.observaciones }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ triage.fechaRegistro }}</dd>
+
+    <dt>Minuto Ingreso</dt>
+    <dd>{{ triage.minutoIngreso }}</dd>
+
+    <dt>Descripcion Motivo Consulta</dt>
+    <dd>{{ triage.descripcionMotivoConsulta }}</dd>
+
+    <dt>Especialidad</dt>
+    <dd>{{ triage.especialidad }}</dd>
+
+    <dt>Esc Dolor</dt>
+    <dd>{{ triage.escDolor }}</dd>
+
+    <dt>Fup</dt>
+    <dd>{{ triage.fup }}</dd>
+
+    <dt>Item Lista Estado Triage</dt>
+    <dd>{{ triage.itemListaEstadoTriage }}</dd>
+
+    <dt>Partos</dt>
+    <dd>{{ triage.partos }}</dd>
+
+    <dt>Id Admision</dt>
+    <dd>{{ triage.idAdmision }}</dd>
+
+    <dt>Clasificacion Calculada</dt>
+    <dd>{{ triage.clasificacionCalculada }}</dd>
+
+    <dt>Abortos</dt>
+    <dd>{{ triage.abortos }}</dd>
+
+    <dt>Gestacion</dt>
+    <dd>{{ triage.gestacion }}</dd>
+
+    <dt>Muertos</dt>
+    <dd>{{ triage.muertos }}</dd>
+
+    <dt>Fecha Ingreso</dt>
+    <dd>{{ triage.fechaIngreso }}</dd>
+
+    <dt>Estado Alarma</dt>
+    <dd>{{ triage.estadoAlarma }}</dd>
+
+    <dt>Fur</dt>
+    <dd>{{ triage.fur }}</dd>
+
+    <dt>Alerta</dt>
+    <dd>{{ triage.alerta }}</dd>
+
+    <dt>Encabezado Cuestionario</dt>
+    <dd>{{ triage.encabezadoCuestionario }}</dd>
+
+    <dt>Cesarias</dt>
+    <dd>{{ triage.cesarias }}</dd>
+
+    <dt>Clasificacion Manual</dt>
+    <dd>{{ triage.clasificacionManual }}</dd>
+
+    <dt>Consultorio</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'consultorio', triage.consultorio._id]">{{ triage.consultorio._id }}</a>
+    </dd>
+    <dt>Entidad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'entidad', triage.entidad._id]">{{ triage.entidad._id }}</a>
+    </dd>
+    <dt>Motivo</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'motivo', triage.motivo._id]">{{ triage.motivo._id }}</a>
+    </dd>
+    <dt>Sucursal</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursal', triage.sucursal._id]">{{ triage.sucursal._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

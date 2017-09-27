@@ -1,0 +1,42 @@
+<div *ngIf="valeElectronico" class="container">
+  <h3 class="m-top-and-bottom-2">Vale Electronico</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ valeElectronico._id }}</dd>
+
+  
+    <dt>Servicio</dt>
+    <dd>{{ valeElectronico.servicio }}</dd>
+
+    <dt>Codigo Error</dt>
+    <dd>{{ valeElectronico.codigoError }}</dd>
+
+    <dt>Descripcion Error</dt>
+    <dd>{{ valeElectronico.descripcionError }}</dd>
+
+    <dt>Item Lista Estado</dt>
+    <dd>{{ valeElectronico.itemListaEstado }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ valeElectronico.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ valeElectronico.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ valeElectronico.observaciones }}</dd>
+
+    <dt>Pin</dt>
+    <dd>{{ valeElectronico.pin }}</dd>
+
+    <dt>Id Admision</dt>
+    <dd>{{ valeElectronico.idAdmision }}</dd>
+
+    <dt>Contrato</dt>
+    <dd>{{ valeElectronico.contrato }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

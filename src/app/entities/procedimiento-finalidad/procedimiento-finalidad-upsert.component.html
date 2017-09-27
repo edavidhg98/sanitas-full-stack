@@ -1,0 +1,49 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Procedimiento Finalidad</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="procedimientoFinalidad && procedimientoFinalidad._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="procedimientoFinalidad" type="text" class="form-control" name="id" [(ngModel)]="procedimientoFinalidad._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_finalidad">Finalidad</label>
+  <input type="text" id="field_finalidad" *ngIf="procedimientoFinalidad" class="form-control" name="finalidad" [(ngModel)]="procedimientoFinalidad.finalidad"  />
+  <input type="text" id="field_finalidad" *ngIf="!procedimientoFinalidad" class="form-control" name="finalidad" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="procedimientos">
+              <label for="field_procedimiento">Procedimiento</label>
+
+              <select *ngIf="!procedimientoFinalidad" class="form-control" name="idProcedimiento" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="procedimiento._id" *ngFor="let procedimiento of procedimientos">{{ procedimiento._id }}</option>
+              </select>
+
+              <select *ngIf="procedimientoFinalidad && procedimientoFinalidad.idProcedimiento" class="form-control" name="idProcedimiento" [(ngModel)]="procedimientoFinalidad.idProcedimiento">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="procedimiento._id" *ngFor="let procedimiento of procedimientos">{{ procedimiento._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

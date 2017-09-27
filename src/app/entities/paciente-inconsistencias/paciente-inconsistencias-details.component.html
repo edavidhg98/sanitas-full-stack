@@ -1,0 +1,118 @@
+<div *ngIf="pacienteInconsistencias" class="container">
+  <h3 class="m-top-and-bottom-2">Paciente Inconsistencias</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ pacienteInconsistencias._id }}</dd>
+
+  
+    <dt>Num Doc</dt>
+    <dd>{{ pacienteInconsistencias.numDoc }}</dd>
+
+    <dt>Tipo Apel 1</dt>
+    <dd>{{ pacienteInconsistencias.tipoApel1 }}</dd>
+
+    <dt>Tipo Nom 1</dt>
+    <dd>{{ pacienteInconsistencias.tipoNom1 }}</dd>
+
+    <dt>Sexo</dt>
+    <dd>{{ pacienteInconsistencias.sexo }}</dd>
+
+    <dt>Id Sucursal</dt>
+    <dd>{{ pacienteInconsistencias.idSucursal }}</dd>
+
+    <dt>Apel 2 Externo</dt>
+    <dd>{{ pacienteInconsistencias.apel2Externo }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ pacienteInconsistencias.observaciones }}</dd>
+
+    <dt>Apel 2</dt>
+    <dd>{{ pacienteInconsistencias.apel2 }}</dd>
+
+    <dt>Tipo Apel 2</dt>
+    <dd>{{ pacienteInconsistencias.tipoApel2 }}</dd>
+
+    <dt>Tipo Tipdoc</dt>
+    <dd>{{ pacienteInconsistencias.tipoTipdoc }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ pacienteInconsistencias.fechaRegistro }}</dd>
+
+    <dt>App Interna</dt>
+    <dd>{{ pacienteInconsistencias.appInterna }}</dd>
+
+    <dt>Nombre Externo</dt>
+    <dd>{{ pacienteInconsistencias.nombreExterno }}</dd>
+
+    <dt>Num Doc Externo</dt>
+    <dd>{{ pacienteInconsistencias.numDocExterno }}</dd>
+
+    <dt>Tip Doc</dt>
+    <dd>{{ pacienteInconsistencias.tipDoc }}</dd>
+
+    <dt>Nom 1 Externo</dt>
+    <dd>{{ pacienteInconsistencias.nom1Externo }}</dd>
+
+    <dt>Nombre</dt>
+    <dd>{{ pacienteInconsistencias.nombre }}</dd>
+
+    <dt>Tipo Nom</dt>
+    <dd>{{ pacienteInconsistencias.tipoNom }}</dd>
+
+    <dt>Sexo Externo</dt>
+    <dd>{{ pacienteInconsistencias.sexoExterno }}</dd>
+
+    <dt>Fec Nac Externo</dt>
+    <dd>{{ pacienteInconsistencias.fecNacExterno }}</dd>
+
+    <dt>Tipo Fecnac</dt>
+    <dd>{{ pacienteInconsistencias.tipoFecnac }}</dd>
+
+    <dt>Tip Doc Externo</dt>
+    <dd>{{ pacienteInconsistencias.tipDocExterno }}</dd>
+
+    <dt>Contrato</dt>
+    <dd>{{ pacienteInconsistencias.contrato }}</dd>
+
+    <dt>App Externa</dt>
+    <dd>{{ pacienteInconsistencias.appExterna }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ pacienteInconsistencias.loginRegistro }}</dd>
+
+    <dt>Nom 1</dt>
+    <dd>{{ pacienteInconsistencias.nom1 }}</dd>
+
+    <dt>Nom 2 Externo</dt>
+    <dd>{{ pacienteInconsistencias.nom2Externo }}</dd>
+
+    <dt>Nom 2</dt>
+    <dd>{{ pacienteInconsistencias.nom2 }}</dd>
+
+    <dt>Apel 1 Externo</dt>
+    <dd>{{ pacienteInconsistencias.apel1Externo }}</dd>
+
+    <dt>Num Info</dt>
+    <dd>{{ pacienteInconsistencias.numInfo }}</dd>
+
+    <dt>Fec Nac</dt>
+    <dd>{{ pacienteInconsistencias.fecNac }}</dd>
+
+    <dt>Tipo Numdoc</dt>
+    <dd>{{ pacienteInconsistencias.tipoNumdoc }}</dd>
+
+    <dt>Apel 1</dt>
+    <dd>{{ pacienteInconsistencias.apel1 }}</dd>
+
+    <dt>Tipo Inconsistencia</dt>
+    <dd>{{ pacienteInconsistencias.tipoInconsistencia }}</dd>
+
+    <dt>Entidad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'entidad', pacienteInconsistencias.entidad._id]">{{ pacienteInconsistencias.entidad._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

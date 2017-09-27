@@ -1,0 +1,91 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Calendario</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="calendario && calendario._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="calendario" type="text" class="form-control" name="id" [(ngModel)]="calendario._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_fecha">Fecha</label>
+  <input type="date" id="field_fecha" *ngIf="calendario" class="form-control" name="fecha" [(ngModel)]="calendario.fecha"  />
+  <input type="date" id="field_fecha" *ngIf="!calendario" class="form-control" name="fecha" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_nombreDia">Nombre Dia</label>
+  <input type="text" id="field_nombreDia" *ngIf="calendario" class="form-control" name="nombreDia" [(ngModel)]="calendario.nombreDia"  />
+  <input type="text" id="field_nombreDia" *ngIf="!calendario" class="form-control" name="nombreDia" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-check">
+  <label class="custom-control custom-checkbox">
+    <input *ngIf="calendario" type="checkbox" class="custom-control-input" name="festivo"  [(ngModel)]="calendario.festivo" />
+    <input *ngIf="!calendario" type="checkbox" class="custom-control-input" name="festivo" ngModel />
+    <span class="custom-control-indicator"></span>
+    <span class="custom-control-description">Festivo</span>
+      </label>
+</div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="calendario" class="form-control" name="fechaRegistro" [(ngModel)]="calendario.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!calendario" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="calendario" class="form-control" name="loginRegistro" [(ngModel)]="calendario.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!calendario" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="calendario" class="form-control" name="observaciones" [(ngModel)]="calendario.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!calendario" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_pruebaRango">Prueba Rango</label>
+  <input type="number" id="field_pruebaRango" *ngIf="calendario" class="form-control" name="pruebaRango" [(ngModel)]="calendario.pruebaRango"  />
+  <input type="number" id="field_pruebaRango" *ngIf="!calendario" class="form-control" name="pruebaRango" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-check">
+  <label class="custom-control custom-checkbox">
+    <input *ngIf="calendario" type="checkbox" class="custom-control-input" name="activo"  [(ngModel)]="calendario.activo" />
+    <input *ngIf="!calendario" type="checkbox" class="custom-control-input" name="activo" ngModel />
+    <span class="custom-control-indicator"></span>
+    <span class="custom-control-description">Activo</span>
+      </label>
+</div>
+
+          
+
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

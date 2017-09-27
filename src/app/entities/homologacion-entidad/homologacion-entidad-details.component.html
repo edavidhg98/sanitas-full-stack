@@ -1,0 +1,32 @@
+<div *ngIf="homologacionEntidad" class="container">
+  <h3 class="m-top-and-bottom-2">Homologacion Entidad</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ homologacionEntidad._id }}</dd>
+
+  
+    <dt>Fecha Registro</dt>
+    <dd>{{ homologacionEntidad.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ homologacionEntidad.loginRegistro }}</dd>
+
+    <dt>Estado</dt>
+    <dd>{{ homologacionEntidad.estado }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ homologacionEntidad.observaciones }}</dd>
+
+    <dt>Entidad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'entidad', homologacionEntidad.entidad._id]">{{ homologacionEntidad.entidad._id }}</a>
+    </dd>
+    <dt>Entidad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'entidad', homologacionEntidad.entidad._id]">{{ homologacionEntidad.entidad._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

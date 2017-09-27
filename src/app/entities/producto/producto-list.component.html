@@ -1,0 +1,182 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="m-top-and-bottom-2">
+            <span>Producto</span>
+            <a class="btn btn-primary float-right" [routerLink]="[ absolutePath, 'create']" data-dismiss="modal">
+              <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
+              Crear Nuevo Producto
+            </a>
+          </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped table-responsive" *ngIf="productos">
+          <thead>
+            <tr>
+              <th class="cursor-pointer" (click)="sort('codCorto')">
+                Cod Corto
+                <i class="fa" [ngClass]="{'fa-sort': column != 'codCorto', 'fa-sort-asc': (column == 'codCorto' && isDesc), 'fa-sort-desc': (column == 'codCorto' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaEstado')">
+                Item Lista Estado
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaEstado', 'fa-sort-asc': (column == 'itemListaEstado' && isDesc), 'fa-sort-desc': (column == 'itemListaEstado' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('idPresentacionProducto')">
+                Id Presentacion Producto
+                <i class="fa" [ngClass]="{'fa-sort': column != 'idPresentacionProducto', 'fa-sort-asc': (column == 'idPresentacionProducto' && isDesc), 'fa-sort-desc': (column == 'idPresentacionProducto' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('idConceptoNoPos')">
+                Id Concepto No Pos
+                <i class="fa" [ngClass]="{'fa-sort': column != 'idConceptoNoPos', 'fa-sort-asc': (column == 'idConceptoNoPos' && isDesc), 'fa-sort-desc': (column == 'idConceptoNoPos' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('descripcionPa')">
+                Descripcion Pa
+                <i class="fa" [ngClass]="{'fa-sort': column != 'descripcionPa', 'fa-sort-asc': (column == 'descripcionPa' && isDesc), 'fa-sort-desc': (column == 'descripcionPa' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('contenido')">
+                Contenido
+                <i class="fa" [ngClass]="{'fa-sort': column != 'contenido', 'fa-sort-asc': (column == 'contenido' && isDesc), 'fa-sort-desc': (column == 'contenido' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaRegistro')">
+                Fecha Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaRegistro', 'fa-sort-asc': (column == 'fechaRegistro' && isDesc), 'fa-sort-desc': (column == 'fechaRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaReutilizable')">
+                Item Lista Reutilizable
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaReutilizable', 'fa-sort-asc': (column == 'itemListaReutilizable' && isDesc), 'fa-sort-desc': (column == 'itemListaReutilizable' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('codHijo')">
+                Cod Hijo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'codHijo', 'fa-sort-asc': (column == 'codHijo' && isDesc), 'fa-sort-desc': (column == 'codHijo' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaMedicamentoControlado')">
+                Item Lista Medicamento Controlado
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaMedicamentoControlado', 'fa-sort-asc': (column == 'itemListaMedicamentoControlado' && isDesc), 'fa-sort-desc': (column == 'itemListaMedicamentoControlado' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('loginRegistro')">
+                Login Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'loginRegistro', 'fa-sort-asc': (column == 'loginRegistro' && isDesc), 'fa-sort-desc': (column == 'loginRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('codPos')">
+                Cod Pos
+                <i class="fa" [ngClass]="{'fa-sort': column != 'codPos', 'fa-sort-asc': (column == 'codPos' && isDesc), 'fa-sort-desc': (column == 'codPos' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaMedicamentoMater')">
+                Item Lista Medicamento Mater
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaMedicamentoMater', 'fa-sort-asc': (column == 'itemListaMedicamentoMater' && isDesc), 'fa-sort-desc': (column == 'itemListaMedicamentoMater' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('codInteligente')">
+                Cod Inteligente
+                <i class="fa" [ngClass]="{'fa-sort': column != 'codInteligente', 'fa-sort-asc': (column == 'codInteligente' && isDesc), 'fa-sort-desc': (column == 'codInteligente' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('desCorta')">
+                Des Corta
+                <i class="fa" [ngClass]="{'fa-sort': column != 'desCorta', 'fa-sort-asc': (column == 'desCorta' && isDesc), 'fa-sort-desc': (column == 'desCorta' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('nivelMedicam')">
+                Nivel Medicam
+                <i class="fa" [ngClass]="{'fa-sort': column != 'nivelMedicam', 'fa-sort-asc': (column == 'nivelMedicam' && isDesc), 'fa-sort-desc': (column == 'nivelMedicam' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaFlagPos')">
+                Item Lista Flag Pos
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaFlagPos', 'fa-sort-asc': (column == 'itemListaFlagPos' && isDesc), 'fa-sort-desc': (column == 'itemListaFlagPos' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('codBarras')">
+                Cod Barras
+                <i class="fa" [ngClass]="{'fa-sort': column != 'codBarras', 'fa-sort-asc': (column == 'codBarras' && isDesc), 'fa-sort-desc': (column == 'codBarras' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('observaciones')">
+                Observaciones
+                <i class="fa" [ngClass]="{'fa-sort': column != 'observaciones', 'fa-sort-asc': (column == 'observaciones' && isDesc), 'fa-sort-desc': (column == 'observaciones' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaFormaFarmaceutica')">
+                Item Lista Forma Farmaceutica
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaFormaFarmaceutica', 'fa-sort-asc': (column == 'itemListaFormaFarmaceutica' && isDesc), 'fa-sort-desc': (column == 'itemListaFormaFarmaceutica' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('concentracion')">
+                Concentracion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'concentracion', 'fa-sort-asc': (column == 'concentracion' && isDesc), 'fa-sort-desc': (column == 'concentracion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('codCums')">
+                Cod Cums
+                <i class="fa" [ngClass]="{'fa-sort': column != 'codCums', 'fa-sort-asc': (column == 'codCums' && isDesc), 'fa-sort-desc': (column == 'codCums' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('descripcion')">
+                Descripcion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'descripcion', 'fa-sort-asc': (column == 'descripcion' && isDesc), 'fa-sort-desc': (column == 'descripcion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaFlagGenerico')">
+                Item Lista Flag Generico
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaFlagGenerico', 'fa-sort-asc': (column == 'itemListaFlagGenerico' && isDesc), 'fa-sort-desc': (column == 'itemListaFlagGenerico' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('codAlea')">
+                Cod Alea
+                <i class="fa" [ngClass]="{'fa-sort': column != 'codAlea', 'fa-sort-asc': (column == 'codAlea' && isDesc), 'fa-sort-desc': (column == 'codAlea' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('idConcepto')">
+                Id Concepto
+                <i class="fa" [ngClass]="{'fa-sort': column != 'idConcepto', 'fa-sort-asc': (column == 'idConcepto' && isDesc), 'fa-sort-desc': (column == 'idConcepto' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaModoDespacho')">
+                Item Lista Modo Despacho
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaModoDespacho', 'fa-sort-asc': (column == 'itemListaModoDespacho' && isDesc), 'fa-sort-desc': (column == 'itemListaModoDespacho' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('desGenerico')">
+                Des Generico
+                <i class="fa" [ngClass]="{'fa-sort': column != 'desGenerico', 'fa-sort-asc': (column == 'desGenerico' && isDesc), 'fa-sort-desc': (column == 'desGenerico' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let producto of productos | orderBy: { property: column, direction: direction }">
+              <td>{{ producto.codCorto }}</td>
+              <td>{{ producto.itemListaEstado }}</td>
+              <td>{{ producto.idPresentacionProducto }}</td>
+              <td>{{ producto.idConceptoNoPos }}</td>
+              <td>{{ producto.descripcionPa }}</td>
+              <td>{{ producto.contenido }}</td>
+              <td>{{ producto.fechaRegistro }}</td>
+              <td>{{ producto.itemListaReutilizable }}</td>
+              <td>{{ producto.codHijo }}</td>
+              <td>{{ producto.itemListaMedicamentoControlado }}</td>
+              <td>{{ producto.loginRegistro }}</td>
+              <td>{{ producto.codPos }}</td>
+              <td>{{ producto.itemListaMedicamentoMater }}</td>
+              <td>{{ producto.codInteligente }}</td>
+              <td>{{ producto.desCorta }}</td>
+              <td>{{ producto.nivelMedicam }}</td>
+              <td>{{ producto.itemListaFlagPos }}</td>
+              <td>{{ producto.codBarras }}</td>
+              <td>{{ producto.observaciones }}</td>
+              <td>{{ producto.itemListaFormaFarmaceutica }}</td>
+              <td>{{ producto.concentracion }}</td>
+              <td>{{ producto.codCums }}</td>
+              <td>{{ producto.descripcion }}</td>
+              <td>{{ producto.itemListaFlagGenerico }}</td>
+              <td>{{ producto.codAlea }}</td>
+              <td>{{ producto.idConcepto }}</td>
+              <td>{{ producto.itemListaModoDespacho }}</td>
+              <td>{{ producto.desGenerico }}</td>
+              <td>
+                <a class="btn btn-info btn-sm" [routerLink]="[ absolutePath, producto._id]"><span class="fa fa-eye fa-fw"></span>Ver</a>
+                <a class="btn btn-primary btn-sm" [routerLink]="[ absolutePath, producto._id, 'update']"><span class="fa fa-pencil fa-fw"></span>Editar</a>
+                <a class="btn btn-danger btn-sm text-white cursor-pointer" (click)="openDeleteModal(content, producto._id)"><span class="fa fa-trash fa-fw"></span>Eliminar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h5 class="modal-title"><i class="fa fa-exclamation-triangle fa-lg fa-fw" aria-hidden="true"></i>¿Esta seguro de eliminar?</h5>
+    <button type="button" class="close cursor-pointer" aria-label="Close" (click)="d(deleteModalOpts.cancel)">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary cursor-pointer" (click)="c(deleteModalOpts.ok)"><i class="fa fa-check fa-fw"></i>Aceptar</button>
+    <button type="button" class="btn btn-secondary cursor-pointer" (click)="c(deleteModalOpts.cancel)"><i class="fa fa-ban fa-fw"></i>Cancelar</button>
+  </div>
+</ng-template>

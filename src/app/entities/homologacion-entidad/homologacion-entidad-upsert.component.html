@@ -1,0 +1,86 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Homologacion Entidad</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="homologacionEntidad && homologacionEntidad._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="homologacionEntidad" type="text" class="form-control" name="id" [(ngModel)]="homologacionEntidad._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="homologacionEntidad" class="form-control" name="fechaRegistro" [(ngModel)]="homologacionEntidad.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!homologacionEntidad" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="homologacionEntidad" class="form-control" name="loginRegistro" [(ngModel)]="homologacionEntidad.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!homologacionEntidad" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-check">
+  <label class="custom-control custom-checkbox">
+    <input *ngIf="homologacionEntidad" type="checkbox" class="custom-control-input" name="estado"  [(ngModel)]="homologacionEntidad.estado" />
+    <input *ngIf="!homologacionEntidad" type="checkbox" class="custom-control-input" name="estado" ngModel />
+    <span class="custom-control-indicator"></span>
+    <span class="custom-control-description">Estado</span>
+      </label>
+</div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="homologacionEntidad" class="form-control" name="observaciones" [(ngModel)]="homologacionEntidad.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!homologacionEntidad" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="entidads">
+              <label for="field_entidad">Entidad</label>
+
+              <select *ngIf="!homologacionEntidad" class="form-control" name="idEntidad" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+
+              <select *ngIf="homologacionEntidad && homologacionEntidad.idEntidad" class="form-control" name="idEntidad" [(ngModel)]="homologacionEntidad.idEntidad">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="entidads">
+              <label for="field_entidad">Entidad</label>
+
+              <select *ngIf="!homologacionEntidad" class="form-control" name="idEntidad1" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+
+              <select *ngIf="homologacionEntidad && homologacionEntidad.idEntidad1" class="form-control" name="idEntidad1" [(ngModel)]="homologacionEntidad.idEntidad1">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

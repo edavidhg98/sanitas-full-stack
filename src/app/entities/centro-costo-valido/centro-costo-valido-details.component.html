@@ -1,0 +1,45 @@
+<div *ngIf="centroCostoValido" class="container">
+  <h3 class="m-top-and-bottom-2">Centro Costo Valido</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ centroCostoValido._id }}</dd>
+
+  
+    <dt>Id Centro Costo Genera</dt>
+    <dd>{{ centroCostoValido.idCentroCostoGenera }}</dd>
+
+    <dt>Id Centro Costo Valido</dt>
+    <dd>{{ centroCostoValido.idCentroCostoValido }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ centroCostoValido.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ centroCostoValido.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ centroCostoValido.observaciones }}</dd>
+
+    <dt>Farmacia</dt>
+    <dd>{{ centroCostoValido.farmacia }}</dd>
+
+    <dt>Estado Item Lista</dt>
+    <dd>{{ centroCostoValido.estadoItemLista }}</dd>
+
+    <dt>CentroCostoValido</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'centroCostoValido', centroCostoValido.centroCostoValido._id]">{{ centroCostoValido.centroCostoValido._id }}</a>
+    </dd>
+    <dt>CentroCostoValido</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'centroCostoValido', centroCostoValido.centroCostoValido._id]">{{ centroCostoValido.centroCostoValido._id }}</a>
+    </dd>
+    <dt>Prestador</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'prestador', centroCostoValido.prestador._id]">{{ centroCostoValido.prestador._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

@@ -1,0 +1,77 @@
+<div *ngIf="pedidos" class="container">
+  <h3 class="m-top-and-bottom-2">Pedidos</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ pedidos._id }}</dd>
+
+  
+    <dt>Id Admision</dt>
+    <dd>{{ pedidos.idAdmision }}</dd>
+
+    <dt>Consecutivo Solicitud</dt>
+    <dd>{{ pedidos.consecutivoSolicitud }}</dd>
+
+    <dt>Item Lista Tipo Pedido</dt>
+    <dd>{{ pedidos.itemListaTipoPedido }}</dd>
+
+    <dt>Login Pedido</dt>
+    <dd>{{ pedidos.loginPedido }}</dd>
+
+    <dt>Hora Despacho</dt>
+    <dd>{{ pedidos.horaDespacho }}</dd>
+
+    <dt>Id Medico Atiende</dt>
+    <dd>{{ pedidos.idMedicoAtiende }}</dd>
+
+    <dt>Minuto Pedido</dt>
+    <dd>{{ pedidos.minutoPedido }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ pedidos.fechaRegistro }}</dd>
+
+    <dt>Id Centro Costo Destino</dt>
+    <dd>{{ pedidos.idCentroCostoDestino }}</dd>
+
+    <dt>Minuto Despacho</dt>
+    <dd>{{ pedidos.minutoDespacho }}</dd>
+
+    <dt>Item Lista Estado Pedido</dt>
+    <dd>{{ pedidos.itemListaEstadoPedido }}</dd>
+
+    <dt>Consecutivo Manual</dt>
+    <dd>{{ pedidos.consecutivoManual }}</dd>
+
+    <dt>Fecha Despacho</dt>
+    <dd>{{ pedidos.fechaDespacho }}</dd>
+
+    <dt>Hora Pedido</dt>
+    <dd>{{ pedidos.horaPedido }}</dd>
+
+    <dt>Login Despacho</dt>
+    <dd>{{ pedidos.loginDespacho }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ pedidos.observaciones }}</dd>
+
+    <dt>Pedido Manual</dt>
+    <dd>{{ pedidos.pedidoManual }}</dd>
+
+    <dt>Id Centro Costo</dt>
+    <dd>{{ pedidos.idCentroCosto }}</dd>
+
+    <dt>Fecha Pedido</dt>
+    <dd>{{ pedidos.fechaPedido }}</dd>
+
+    <dt>Prioridad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'prioridad', pedidos.prioridad._id]">{{ pedidos.prioridad._id }}</a>
+    </dd>
+    <dt>Sucursal</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursal', pedidos.sucursal._id]">{{ pedidos.sucursal._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

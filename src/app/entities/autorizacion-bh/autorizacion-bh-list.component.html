@@ -1,0 +1,97 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="m-top-and-bottom-2">
+            <span>Autorizacion Bh</span>
+            <a class="btn btn-primary float-right" [routerLink]="[ absolutePath, 'create']" data-dismiss="modal">
+              <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
+              Crear Nuevo Autorizacion Bh
+            </a>
+          </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped table-responsive" *ngIf="autorizacionBhs">
+          <thead>
+            <tr>
+              <th class="cursor-pointer" (click)="sort('idAdmision')">
+                Id Admision
+                <i class="fa" [ngClass]="{'fa-sort': column != 'idAdmision', 'fa-sort-asc': (column == 'idAdmision' && isDesc), 'fa-sort-desc': (column == 'idAdmision' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('codigoInternoEntidad')">
+                Codigo Interno Entidad
+                <i class="fa" [ngClass]="{'fa-sort': column != 'codigoInternoEntidad', 'fa-sort-asc': (column == 'codigoInternoEntidad' && isDesc), 'fa-sort-desc': (column == 'codigoInternoEntidad' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('codigoPlan')">
+                Codigo Plan
+                <i class="fa" [ngClass]="{'fa-sort': column != 'codigoPlan', 'fa-sort-asc': (column == 'codigoPlan' && isDesc), 'fa-sort-desc': (column == 'codigoPlan' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('codigoContrato')">
+                Codigo Contrato
+                <i class="fa" [ngClass]="{'fa-sort': column != 'codigoContrato', 'fa-sort-asc': (column == 'codigoContrato' && isDesc), 'fa-sort-desc': (column == 'codigoContrato' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('numeroAutorizacion')">
+                Numero Autorizacion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'numeroAutorizacion', 'fa-sort-asc': (column == 'numeroAutorizacion' && isDesc), 'fa-sort-desc': (column == 'numeroAutorizacion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('procedimientoServicio')">
+                Procedimiento Servicio
+                <i class="fa" [ngClass]="{'fa-sort': column != 'procedimientoServicio', 'fa-sort-asc': (column == 'procedimientoServicio' && isDesc), 'fa-sort-desc': (column == 'procedimientoServicio' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('codigoFamilia')">
+                Codigo Familia
+                <i class="fa" [ngClass]="{'fa-sort': column != 'codigoFamilia', 'fa-sort-asc': (column == 'codigoFamilia' && isDesc), 'fa-sort-desc': (column == 'codigoFamilia' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('codigoUsuario')">
+                Codigo Usuario
+                <i class="fa" [ngClass]="{'fa-sort': column != 'codigoUsuario', 'fa-sort-asc': (column == 'codigoUsuario' && isDesc), 'fa-sort-desc': (column == 'codigoUsuario' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaRegistro')">
+                Fecha Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaRegistro', 'fa-sort-asc': (column == 'fechaRegistro' && isDesc), 'fa-sort-desc': (column == 'fechaRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('loginRegistro')">
+                Login Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'loginRegistro', 'fa-sort-asc': (column == 'loginRegistro' && isDesc), 'fa-sort-desc': (column == 'loginRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('observaciones')">
+                Observaciones
+                <i class="fa" [ngClass]="{'fa-sort': column != 'observaciones', 'fa-sort-asc': (column == 'observaciones' && isDesc), 'fa-sort-desc': (column == 'observaciones' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let autorizacionBh of autorizacionBhs | orderBy: { property: column, direction: direction }">
+              <td>{{ autorizacionBh.idAdmision }}</td>
+              <td>{{ autorizacionBh.codigoInternoEntidad }}</td>
+              <td>{{ autorizacionBh.codigoPlan }}</td>
+              <td>{{ autorizacionBh.codigoContrato }}</td>
+              <td>{{ autorizacionBh.numeroAutorizacion }}</td>
+              <td>{{ autorizacionBh.procedimientoServicio }}</td>
+              <td>{{ autorizacionBh.codigoFamilia }}</td>
+              <td>{{ autorizacionBh.codigoUsuario }}</td>
+              <td>{{ autorizacionBh.fechaRegistro }}</td>
+              <td>{{ autorizacionBh.loginRegistro }}</td>
+              <td>{{ autorizacionBh.observaciones }}</td>
+              <td>
+                <a class="btn btn-info btn-sm" [routerLink]="[ absolutePath, autorizacionBh._id]"><span class="fa fa-eye fa-fw"></span>Ver</a>
+                <a class="btn btn-primary btn-sm" [routerLink]="[ absolutePath, autorizacionBh._id, 'update']"><span class="fa fa-pencil fa-fw"></span>Editar</a>
+                <a class="btn btn-danger btn-sm text-white cursor-pointer" (click)="openDeleteModal(content, autorizacionBh._id)"><span class="fa fa-trash fa-fw"></span>Eliminar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h5 class="modal-title"><i class="fa fa-exclamation-triangle fa-lg fa-fw" aria-hidden="true"></i>¿Esta seguro de eliminar?</h5>
+    <button type="button" class="close cursor-pointer" aria-label="Close" (click)="d(deleteModalOpts.cancel)">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary cursor-pointer" (click)="c(deleteModalOpts.ok)"><i class="fa fa-check fa-fw"></i>Aceptar</button>
+    <button type="button" class="btn btn-secondary cursor-pointer" (click)="c(deleteModalOpts.cancel)"><i class="fa fa-ban fa-fw"></i>Cancelar</button>
+  </div>
+</ng-template>

@@ -1,0 +1,106 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Par Formato Campo</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="parFormatoCampo && parFormatoCampo._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="parFormatoCampo" type="text" class="form-control" name="id" [(ngModel)]="parFormatoCampo._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_longitudTexto">Longitud Texto</label>
+  <input type="number" id="field_longitudTexto" *ngIf="parFormatoCampo" class="form-control" name="longitudTexto" [(ngModel)]="parFormatoCampo.longitudTexto"  />
+  <input type="number" id="field_longitudTexto" *ngIf="!parFormatoCampo" class="form-control" name="longitudTexto" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_rangoMinimo">Rango Minimo</label>
+  <input type="number" id="field_rangoMinimo" *ngIf="parFormatoCampo" class="form-control" name="rangoMinimo" [(ngModel)]="parFormatoCampo.rangoMinimo"  />
+  <input type="number" id="field_rangoMinimo" *ngIf="!parFormatoCampo" class="form-control" name="rangoMinimo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_rangoMaximo">Rango Maximo</label>
+  <input type="number" id="field_rangoMaximo" *ngIf="parFormatoCampo" class="form-control" name="rangoMaximo" [(ngModel)]="parFormatoCampo.rangoMaximo"  />
+  <input type="number" id="field_rangoMaximo" *ngIf="!parFormatoCampo" class="form-control" name="rangoMaximo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="parFormatoCampo" class="form-control" name="fechaRegistro" [(ngModel)]="parFormatoCampo.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!parFormatoCampo" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_formatoFecha">Formato Fecha</label>
+  <input type="text" id="field_formatoFecha" *ngIf="parFormatoCampo" class="form-control" name="formatoFecha" [(ngModel)]="parFormatoCampo.formatoFecha"  />
+  <input type="text" id="field_formatoFecha" *ngIf="!parFormatoCampo" class="form-control" name="formatoFecha" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_esDecimal">Es Decimal</label>
+  <input type="text" id="field_esDecimal" *ngIf="parFormatoCampo" class="form-control" name="esDecimal" [(ngModel)]="parFormatoCampo.esDecimal"  />
+  <input type="text" id="field_esDecimal" *ngIf="!parFormatoCampo" class="form-control" name="esDecimal" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_esNegativo">Es Negativo</label>
+  <input type="text" id="field_esNegativo" *ngIf="parFormatoCampo" class="form-control" name="esNegativo" [(ngModel)]="parFormatoCampo.esNegativo"  />
+  <input type="text" id="field_esNegativo" *ngIf="!parFormatoCampo" class="form-control" name="esNegativo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_descripcion">Descripcion</label>
+  <input type="text" id="field_descripcion" *ngIf="parFormatoCampo" class="form-control" name="descripcion" [(ngModel)]="parFormatoCampo.descripcion"  />
+  <input type="text" id="field_descripcion" *ngIf="!parFormatoCampo" class="form-control" name="descripcion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="parFormatoCampo" class="form-control" name="loginRegistro" [(ngModel)]="parFormatoCampo.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!parFormatoCampo" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="parFormatoCampo" class="form-control" name="observaciones" [(ngModel)]="parFormatoCampo.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!parFormatoCampo" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_expresionRegular">Expresion Regular</label>
+  <input type="text" id="field_expresionRegular" *ngIf="parFormatoCampo" class="form-control" name="expresionRegular" [(ngModel)]="parFormatoCampo.expresionRegular"  />
+  <input type="text" id="field_expresionRegular" *ngIf="!parFormatoCampo" class="form-control" name="expresionRegular" ngModel />
+  </div>
+
+          
+
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

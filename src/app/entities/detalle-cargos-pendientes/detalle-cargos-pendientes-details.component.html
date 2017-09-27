@@ -1,0 +1,115 @@
+<div *ngIf="detalleCargosPendientes" class="container">
+  <h3 class="m-top-and-bottom-2">Detalle Cargos Pendientes</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ detalleCargosPendientes._id }}</dd>
+
+  
+    <dt>Secuencia</dt>
+    <dd>{{ detalleCargosPendientes.secuencia }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ detalleCargosPendientes.observaciones }}</dd>
+
+    <dt>Num Peddevuelto</dt>
+    <dd>{{ detalleCargosPendientes.numPeddevuelto }}</dd>
+
+    <dt>Item Lista Tipo Cargo</dt>
+    <dd>{{ detalleCargosPendientes.itemListaTipoCargo }}</dd>
+
+    <dt>Val Compra</dt>
+    <dd>{{ detalleCargosPendientes.valCompra }}</dd>
+
+    <dt>Login Cancel</dt>
+    <dd>{{ detalleCargosPendientes.loginCancel }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ detalleCargosPendientes.loginRegistro }}</dd>
+
+    <dt>Med Mollier</dt>
+    <dd>{{ detalleCargosPendientes.medMollier }}</dd>
+
+    <dt>Minuto Despacho</dt>
+    <dd>{{ detalleCargosPendientes.minutoDespacho }}</dd>
+
+    <dt>Hora Despacho</dt>
+    <dd>{{ detalleCargosPendientes.horaDespacho }}</dd>
+
+    <dt>Cantidad Solicita</dt>
+    <dd>{{ detalleCargosPendientes.cantidadSolicita }}</dd>
+
+    <dt>Cantidad Entregada</dt>
+    <dd>{{ detalleCargosPendientes.cantidadEntregada }}</dd>
+
+    <dt>Item Lista Estado Envio</dt>
+    <dd>{{ detalleCargosPendientes.itemListaEstadoEnvio }}</dd>
+
+    <dt>Durante</dt>
+    <dd>{{ detalleCargosPendientes.durante }}</dd>
+
+    <dt>Cantidad Recibida</dt>
+    <dd>{{ detalleCargosPendientes.cantidadRecibida }}</dd>
+
+    <dt>Por Pocentaje</dt>
+    <dd>{{ detalleCargosPendientes.porPocentaje }}</dd>
+
+    <dt>Cantidad Aplicada</dt>
+    <dd>{{ detalleCargosPendientes.cantidadAplicada }}</dd>
+
+    <dt>Id Producto</dt>
+    <dd>{{ detalleCargosPendientes.idProducto }}</dd>
+
+    <dt>Cantidad Suministrada</dt>
+    <dd>{{ detalleCargosPendientes.cantidadSuministrada }}</dd>
+
+    <dt>Atc Solicitado</dt>
+    <dd>{{ detalleCargosPendientes.atcSolicitado }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ detalleCargosPendientes.fechaRegistro }}</dd>
+
+    <dt>Confirmacion Manual</dt>
+    <dd>{{ detalleCargosPendientes.confirmacionManual }}</dd>
+
+    <dt>Por Incremento</dt>
+    <dd>{{ detalleCargosPendientes.porIncremento }}</dd>
+
+    <dt>Fecha Despacho</dt>
+    <dd>{{ detalleCargosPendientes.fechaDespacho }}</dd>
+
+    <dt>Item Lista Estado</dt>
+    <dd>{{ detalleCargosPendientes.itemListaEstado }}</dd>
+
+    <dt>Cantidad Despachada</dt>
+    <dd>{{ detalleCargosPendientes.cantidadDespachada }}</dd>
+
+    <dt>Numero Autorizacion</dt>
+    <dd>{{ detalleCargosPendientes.numeroAutorizacion }}</dd>
+
+    <dt>Presentacion</dt>
+    <dd>{{ detalleCargosPendientes.presentacion }}</dd>
+
+    <dt>Item Lista Medida Medicamento</dt>
+    <dd>{{ detalleCargosPendientes.itemListaMedidaMedicamento }}</dd>
+
+    <dt>CargosPendientes</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'cargosPendientes', detalleCargosPendientes.cargosPendientes._id]">{{ detalleCargosPendientes.cargosPendientes._id }}</a>
+    </dd>
+    <dt>Entidad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'entidad', detalleCargosPendientes.entidad._id]">{{ detalleCargosPendientes.entidad._id }}</a>
+    </dd>
+    <dt>Motivo</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'motivo', detalleCargosPendientes.motivo._id]">{{ detalleCargosPendientes.motivo._id }}</a>
+    </dd>
+    <dt>Procedimiento</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'procedimiento', detalleCargosPendientes.procedimiento._id]">{{ detalleCargosPendientes.procedimiento._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

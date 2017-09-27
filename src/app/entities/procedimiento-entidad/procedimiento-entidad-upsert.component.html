@@ -1,0 +1,167 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Procedimiento Entidad</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="procedimientoEntidad && procedimientoEntidad._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="procedimientoEntidad" type="text" class="form-control" name="id" [(ngModel)]="procedimientoEntidad._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_autoriza">Autoriza</label>
+  <input type="text" id="field_autoriza" *ngIf="procedimientoEntidad" class="form-control" name="autoriza" [(ngModel)]="procedimientoEntidad.autoriza"  />
+  <input type="text" id="field_autoriza" *ngIf="!procedimientoEntidad" class="form-control" name="autoriza" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaEstadoProcxent">Item Lista Estado Procxent</label>
+  <input type="number" id="field_itemListaEstadoProcxent" *ngIf="procedimientoEntidad" class="form-control" name="itemListaEstadoProcxent" [(ngModel)]="procedimientoEntidad.itemListaEstadoProcxent"  />
+  <input type="number" id="field_itemListaEstadoProcxent" *ngIf="!procedimientoEntidad" class="form-control" name="itemListaEstadoProcxent" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_atributoBh">Atributo Bh</label>
+  <input type="number" id="field_atributoBh" *ngIf="procedimientoEntidad" class="form-control" name="atributoBh" [(ngModel)]="procedimientoEntidad.atributoBh"  />
+  <input type="number" id="field_atributoBh" *ngIf="!procedimientoEntidad" class="form-control" name="atributoBh" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_flagEgresa">Flag Egresa</label>
+  <input type="text" id="field_flagEgresa" *ngIf="procedimientoEntidad" class="form-control" name="flagEgresa" [(ngModel)]="procedimientoEntidad.flagEgresa"  />
+  <input type="text" id="field_flagEgresa" *ngIf="!procedimientoEntidad" class="form-control" name="flagEgresa" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_aplicaValorUvr">Aplica Valor Uvr</label>
+  <input type="text" id="field_aplicaValorUvr" *ngIf="procedimientoEntidad" class="form-control" name="aplicaValorUvr" [(ngModel)]="procedimientoEntidad.aplicaValorUvr"  />
+  <input type="text" id="field_aplicaValorUvr" *ngIf="!procedimientoEntidad" class="form-control" name="aplicaValorUvr" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="procedimientoEntidad" class="form-control" name="fechaRegistro" [(ngModel)]="procedimientoEntidad.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!procedimientoEntidad" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="procedimientoEntidad" class="form-control" name="loginRegistro" [(ngModel)]="procedimientoEntidad.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!procedimientoEntidad" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="procedimientoEntidad" class="form-control" name="observaciones" [(ngModel)]="procedimientoEntidad.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!procedimientoEntidad" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaAutorizaProcxent">Item Lista Autoriza Procxent</label>
+  <input type="number" id="field_itemListaAutorizaProcxent" *ngIf="procedimientoEntidad" class="form-control" name="itemListaAutorizaProcxent" [(ngModel)]="procedimientoEntidad.itemListaAutorizaProcxent"  />
+  <input type="number" id="field_itemListaAutorizaProcxent" *ngIf="!procedimientoEntidad" class="form-control" name="itemListaAutorizaProcxent" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_autorizaUrgencias">Autoriza Urgencias</label>
+  <input type="text" id="field_autorizaUrgencias" *ngIf="procedimientoEntidad" class="form-control" name="autorizaUrgencias" [(ngModel)]="procedimientoEntidad.autorizaUrgencias"  />
+  <input type="text" id="field_autorizaUrgencias" *ngIf="!procedimientoEntidad" class="form-control" name="autorizaUrgencias" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_autorizaConsultaexterna">Autoriza Consultaexterna</label>
+  <input type="text" id="field_autorizaConsultaexterna" *ngIf="procedimientoEntidad" class="form-control" name="autorizaConsultaexterna" [(ngModel)]="procedimientoEntidad.autorizaConsultaexterna"  />
+  <input type="text" id="field_autorizaConsultaexterna" *ngIf="!procedimientoEntidad" class="form-control" name="autorizaConsultaexterna" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_autorizaHospitalizacion">Autoriza Hospitalizacion</label>
+  <input type="text" id="field_autorizaHospitalizacion" *ngIf="procedimientoEntidad" class="form-control" name="autorizaHospitalizacion" [(ngModel)]="procedimientoEntidad.autorizaHospitalizacion"  />
+  <input type="text" id="field_autorizaHospitalizacion" *ngIf="!procedimientoEntidad" class="form-control" name="autorizaHospitalizacion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_autorizaCirugia">Autoriza Cirugia</label>
+  <input type="text" id="field_autorizaCirugia" *ngIf="procedimientoEntidad" class="form-control" name="autorizaCirugia" [(ngModel)]="procedimientoEntidad.autorizaCirugia"  />
+  <input type="text" id="field_autorizaCirugia" *ngIf="!procedimientoEntidad" class="form-control" name="autorizaCirugia" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_autorizaProcedimientos">Autoriza Procedimientos</label>
+  <input type="text" id="field_autorizaProcedimientos" *ngIf="procedimientoEntidad" class="form-control" name="autorizaProcedimientos" [(ngModel)]="procedimientoEntidad.autorizaProcedimientos"  />
+  <input type="text" id="field_autorizaProcedimientos" *ngIf="!procedimientoEntidad" class="form-control" name="autorizaProcedimientos" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idPrestador">Id Prestador</label>
+  <input type="number" id="field_idPrestador" *ngIf="procedimientoEntidad" class="form-control" name="idPrestador" [(ngModel)]="procedimientoEntidad.idPrestador"  />
+  <input type="number" id="field_idPrestador" *ngIf="!procedimientoEntidad" class="form-control" name="idPrestador" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_flagUvr">Flag Uvr</label>
+  <input type="text" id="field_flagUvr" *ngIf="procedimientoEntidad" class="form-control" name="flagUvr" [(ngModel)]="procedimientoEntidad.flagUvr"  />
+  <input type="text" id="field_flagUvr" *ngIf="!procedimientoEntidad" class="form-control" name="flagUvr" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="entidads">
+              <label for="field_entidad">Entidad</label>
+
+              <select *ngIf="!procedimientoEntidad" class="form-control" name="idEntidad" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+
+              <select *ngIf="procedimientoEntidad && procedimientoEntidad.idEntidad" class="form-control" name="idEntidad" [(ngModel)]="procedimientoEntidad.idEntidad">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="procedimientos">
+              <label for="field_procedimiento">Procedimiento</label>
+
+              <select *ngIf="!procedimientoEntidad" class="form-control" name="idProcedimiento" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="procedimiento._id" *ngFor="let procedimiento of procedimientos">{{ procedimiento._id }}</option>
+              </select>
+
+              <select *ngIf="procedimientoEntidad && procedimientoEntidad.idProcedimiento" class="form-control" name="idProcedimiento" [(ngModel)]="procedimientoEntidad.idProcedimiento">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="procedimiento._id" *ngFor="let procedimiento of procedimientos">{{ procedimiento._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

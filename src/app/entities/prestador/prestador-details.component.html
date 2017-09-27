@@ -1,0 +1,138 @@
+<div *ngIf="prestador" class="container-fluid">
+  <h3 class="m-top-and-bottom-2">Prestador</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ prestador._id }}</dd>
+
+  
+    <dt>Cod Pre Sgs</dt>
+    <dd>{{ prestador.codPreSgs }}</dd>
+
+    <dt>Comportamiento</dt>
+    <dd>{{ prestador.comportamiento }}</dd>
+
+    <dt>Tie Con Urg</dt>
+    <dd>{{ prestador.tieConUrg }}</dd>
+
+    <dt>Man Con Loc Nn</dt>
+    <dd>{{ prestador.manConLocNn }}</dd>
+
+    <dt>Cod Prog Ifco</dt>
+    <dd>{{ prestador.codProgIfco }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ prestador.descripcion }}</dd>
+
+    <dt>Fax</dt>
+    <dd>{{ prestador.fax }}</dd>
+
+    <dt>Direccion</dt>
+    <dd>{{ prestador.direccion }}</dd>
+
+    <dt>Telefono</dt>
+    <dd>{{ prestador.telefono }}</dd>
+
+    <dt>Man His Cli</dt>
+    <dd>{{ prestador.manHisCli }}</dd>
+
+    <dt>Man Inter Contab</dt>
+    <dd>{{ prestador.manInterContab }}</dd>
+
+    <dt>Moneda</dt>
+    <dd>{{ prestador.moneda }}</dd>
+
+    <dt>Man Rips</dt>
+    <dd>{{ prestador.manRips }}</dd>
+
+    <dt>Man Con Loc Menedad</dt>
+    <dd>{{ prestador.manConLocMenedad }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ prestador.observaciones }}</dd>
+
+    <dt>Man Pines</dt>
+    <dd>{{ prestador.manPines }}</dd>
+
+    <dt>Consecutivo Nn</dt>
+    <dd>{{ prestador.consecutivoNn }}</dd>
+
+    <dt>Man Con Aut Menedad</dt>
+    <dd>{{ prestador.manConAutMenedad }}</dd>
+
+    <dt>Item Lista Tipo Documento</dt>
+    <dd>{{ prestador.itemListaTipoDocumento }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ prestador.loginRegistro }}</dd>
+
+    <dt>Tip Docdefec</dt>
+    <dd>{{ prestador.tipDocdefec }}</dd>
+
+    <dt>Con Anticipo</dt>
+    <dd>{{ prestador.conAnticipo }}</dd>
+
+    <dt>Man Anticipo Manual</dt>
+    <dd>{{ prestador.manAnticipoManual }}</dd>
+
+    <dt>Tag Documento</dt>
+    <dd>{{ prestador.tagDocumento }}</dd>
+
+    <dt>Man Volantes</dt>
+    <dd>{{ prestador.manVolantes }}</dd>
+
+    <dt>Cod Interno</dt>
+    <dd>{{ prestador.codInterno }}</dd>
+
+    <dt>Proceanalitica</dt>
+    <dd>{{ prestador.proceanalitica }}</dd>
+
+    <dt>Auditoria</dt>
+    <dd>{{ prestador.auditoria }}</dd>
+
+    <dt>Director</dt>
+    <dd>{{ prestador.director }}</dd>
+
+    <dt>Concconcepcc</dt>
+    <dd>{{ prestador.concconcepcc }}</dd>
+
+    <dt>Imagen</dt>
+    <dd>{{ prestador.imagen }}</dd>
+
+    <dt>Item Lista Unidad Medida Tiempo</dt>
+    <dd>{{ prestador.itemListaUnidadMedidaTiempo }}</dd>
+
+    <dt>Num Doc</dt>
+    <dd>{{ prestador.numDoc }}</dd>
+
+    <dt>Consecutivo Menor Edad</dt>
+    <dd>{{ prestador.consecutivoMenorEdad }}</dd>
+
+    <dt>Maxintentos Pines</dt>
+    <dd>{{ prestador.maxintentosPines }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ prestador.fechaRegistro }}</dd>
+
+    <dt>Cod Origen</dt>
+    <dd>{{ prestador.codOrigen }}</dd>
+
+    <dt>Controlaversion</dt>
+    <dd>{{ prestador.controlaversion }}</dd>
+
+    <dt>Ciudad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'ciudad', prestador.ciudad._id]">{{ prestador.ciudad._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+  <app-centro-costo-valido-list [centroCostoValidos]="prestador.centroCostoValidos"></app-centro-costo-valido-list>
+  <app-medicamento-alto-costo-list [medicamentoAltoCostos]="prestador.medicamentoAltoCostos"></app-medicamento-alto-costo-list>
+  <app-sucursal-list [sucursals]="prestador.sucursals"></app-sucursal-list>
+  <app-sustitutos-list [sustitutoss]="prestador.sustitutoss"></app-sustitutos-list>
+  <app-procedimiento-centro-costo-list [procedimientoCentroCostos]="prestador.procedimientoCentroCostos"></app-procedimiento-centro-costo-list>
+  <app-excepcion-producto-list [excepcionProductos]="prestador.excepcionProductos"></app-excepcion-producto-list>
+  <app-prestador-centro-costo-unico-list [prestadorCentroCostoUnicos]="prestador.prestadorCentroCostoUnicos"></app-prestador-centro-costo-unico-list>
+  <app-recargo-list [recargos]="prestador.recargos"></app-recargo-list>
+</div>

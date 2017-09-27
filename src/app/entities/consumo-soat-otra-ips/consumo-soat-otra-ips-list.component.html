@@ -1,0 +1,97 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="m-top-and-bottom-2">
+            <span>Consumo Soat Otra Ips</span>
+            <a class="btn btn-primary float-right" [routerLink]="[ absolutePath, 'create']" data-dismiss="modal">
+              <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
+              Crear Nuevo Consumo Soat Otra Ips
+            </a>
+          </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped table-responsive" *ngIf="consumoSoatOtraIpss">
+          <thead>
+            <tr>
+              <th class="cursor-pointer" (click)="sort('idAdmision')">
+                Id Admision
+                <i class="fa" [ngClass]="{'fa-sort': column != 'idAdmision', 'fa-sort-asc': (column == 'idAdmision' && isDesc), 'fa-sort-desc': (column == 'idAdmision' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('poliza')">
+                Poliza
+                <i class="fa" [ngClass]="{'fa-sort': column != 'poliza', 'fa-sort-asc': (column == 'poliza' && isDesc), 'fa-sort-desc': (column == 'poliza' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('idPaciente')">
+                Id Paciente
+                <i class="fa" [ngClass]="{'fa-sort': column != 'idPaciente', 'fa-sort-asc': (column == 'idPaciente' && isDesc), 'fa-sort-desc': (column == 'idPaciente' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaAtencion')">
+                Fecha Atencion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaAtencion', 'fa-sort-asc': (column == 'fechaAtencion' && isDesc), 'fa-sort-desc': (column == 'fechaAtencion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('idEntidad')">
+                Id Entidad
+                <i class="fa" [ngClass]="{'fa-sort': column != 'idEntidad', 'fa-sort-asc': (column == 'idEntidad' && isDesc), 'fa-sort-desc': (column == 'idEntidad' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('observacionesSoporte')">
+                Observaciones Soporte
+                <i class="fa" [ngClass]="{'fa-sort': column != 'observacionesSoporte', 'fa-sort-asc': (column == 'observacionesSoporte' && isDesc), 'fa-sort-desc': (column == 'observacionesSoporte' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('nombreIps')">
+                Nombre Ips
+                <i class="fa" [ngClass]="{'fa-sort': column != 'nombreIps', 'fa-sort-asc': (column == 'nombreIps' && isDesc), 'fa-sort-desc': (column == 'nombreIps' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('monto')">
+                Monto
+                <i class="fa" [ngClass]="{'fa-sort': column != 'monto', 'fa-sort-asc': (column == 'monto' && isDesc), 'fa-sort-desc': (column == 'monto' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaRegistro')">
+                Fecha Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaRegistro', 'fa-sort-asc': (column == 'fechaRegistro' && isDesc), 'fa-sort-desc': (column == 'fechaRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('loginRegistro')">
+                Login Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'loginRegistro', 'fa-sort-asc': (column == 'loginRegistro' && isDesc), 'fa-sort-desc': (column == 'loginRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('observaciones')">
+                Observaciones
+                <i class="fa" [ngClass]="{'fa-sort': column != 'observaciones', 'fa-sort-asc': (column == 'observaciones' && isDesc), 'fa-sort-desc': (column == 'observaciones' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let consumoSoatOtraIps of consumoSoatOtraIpss | orderBy: { property: column, direction: direction }">
+              <td>{{ consumoSoatOtraIps.idAdmision }}</td>
+              <td>{{ consumoSoatOtraIps.poliza }}</td>
+              <td>{{ consumoSoatOtraIps.idPaciente }}</td>
+              <td>{{ consumoSoatOtraIps.fechaAtencion }}</td>
+              <td>{{ consumoSoatOtraIps.idEntidad }}</td>
+              <td>{{ consumoSoatOtraIps.observacionesSoporte }}</td>
+              <td>{{ consumoSoatOtraIps.nombreIps }}</td>
+              <td>{{ consumoSoatOtraIps.monto }}</td>
+              <td>{{ consumoSoatOtraIps.fechaRegistro }}</td>
+              <td>{{ consumoSoatOtraIps.loginRegistro }}</td>
+              <td>{{ consumoSoatOtraIps.observaciones }}</td>
+              <td>
+                <a class="btn btn-info btn-sm" [routerLink]="[ absolutePath, consumoSoatOtraIps._id]"><span class="fa fa-eye fa-fw"></span>Ver</a>
+                <a class="btn btn-primary btn-sm" [routerLink]="[ absolutePath, consumoSoatOtraIps._id, 'update']"><span class="fa fa-pencil fa-fw"></span>Editar</a>
+                <a class="btn btn-danger btn-sm text-white cursor-pointer" (click)="openDeleteModal(content, consumoSoatOtraIps._id)"><span class="fa fa-trash fa-fw"></span>Eliminar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h5 class="modal-title"><i class="fa fa-exclamation-triangle fa-lg fa-fw" aria-hidden="true"></i>¿Esta seguro de eliminar?</h5>
+    <button type="button" class="close cursor-pointer" aria-label="Close" (click)="d(deleteModalOpts.cancel)">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary cursor-pointer" (click)="c(deleteModalOpts.ok)"><i class="fa fa-check fa-fw"></i>Aceptar</button>
+    <button type="button" class="btn btn-secondary cursor-pointer" (click)="c(deleteModalOpts.cancel)"><i class="fa fa-ban fa-fw"></i>Cancelar</button>
+  </div>
+</ng-template>

@@ -1,0 +1,38 @@
+<div *ngIf="seccion" class="container-fluid">
+  <h3 class="m-top-and-bottom-2">Seccion</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ seccion._id }}</dd>
+
+  
+    <dt>Seccion</dt>
+    <dd>{{ seccion.seccion }}</dd>
+
+    <dt>Id Centro Costo</dt>
+    <dd>{{ seccion.idCentroCosto }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ seccion.descripcion }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ seccion.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ seccion.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ seccion.observaciones }}</dd>
+
+    <dt>Maneja Censo</dt>
+    <dd>{{ seccion.manejaCenso }}</dd>
+
+    <dt>Sucursal</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursal', seccion.sucursal._id]">{{ seccion.sucursal._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+  <app-cama-list [camas]="seccion.camas"></app-cama-list>
+</div>

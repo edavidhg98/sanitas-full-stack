@@ -1,0 +1,30 @@
+<div *ngIf="tipoAfiliado" class="container">
+  <h3 class="m-top-and-bottom-2">Tipo Afiliado</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ tipoAfiliado._id }}</dd>
+
+  
+    <dt>Tip Afiliad</dt>
+    <dd>{{ tipoAfiliado.tipAfiliad }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ tipoAfiliado.descripcion }}</dd>
+
+    <dt>Man Copago</dt>
+    <dd>{{ tipoAfiliado.manCopago }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ tipoAfiliado.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ tipoAfiliado.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ tipoAfiliado.observaciones }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

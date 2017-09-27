@@ -1,0 +1,41 @@
+<div *ngIf="tiposDocumentoEntidad" class="container">
+  <h3 class="m-top-and-bottom-2">Tipos Documento Entidad</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ tiposDocumentoEntidad._id }}</dd>
+
+  
+    <dt>Id Tipo Admision</dt>
+    <dd>{{ tiposDocumentoEntidad.idTipoAdmision }}</dd>
+
+    <dt>Item Lista Tipo Afiliado</dt>
+    <dd>{{ tiposDocumentoEntidad.itemListaTipoAfiliado }}</dd>
+
+    <dt>Documento</dt>
+    <dd>{{ tiposDocumentoEntidad.documento }}</dd>
+
+    <dt>Pide Numero Documento</dt>
+    <dd>{{ tiposDocumentoEntidad.pideNumeroDocumento }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ tiposDocumentoEntidad.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ tiposDocumentoEntidad.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ tiposDocumentoEntidad.observaciones }}</dd>
+
+    <dt>Entidad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'entidad', tiposDocumentoEntidad.entidad._id]">{{ tiposDocumentoEntidad.entidad._id }}</a>
+    </dd>
+    <dt>TipoPlan</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'tipoPlan', tiposDocumentoEntidad.tipoPlan._id]">{{ tiposDocumentoEntidad.tipoPlan._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

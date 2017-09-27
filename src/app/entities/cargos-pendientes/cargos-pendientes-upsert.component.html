@@ -1,0 +1,211 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Cargos Pendientes</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="cargosPendientes && cargosPendientes._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="cargosPendientes" type="text" class="form-control" name="id" [(ngModel)]="cargosPendientes._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_idAdmision">Id Admision</label>
+  <input type="number" id="field_idAdmision" *ngIf="cargosPendientes" class="form-control" name="idAdmision" [(ngModel)]="cargosPendientes.idAdmision"  />
+  <input type="number" id="field_idAdmision" *ngIf="!cargosPendientes" class="form-control" name="idAdmision" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaDespacho">Fecha Despacho</label>
+  <input type="date" id="field_fechaDespacho" *ngIf="cargosPendientes" class="form-control" name="fechaDespacho" [(ngModel)]="cargosPendientes.fechaDespacho"  />
+  <input type="date" id="field_fechaDespacho" *ngIf="!cargosPendientes" class="form-control" name="fechaDespacho" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaPedido">Fecha Pedido</label>
+  <input type="date" id="field_fechaPedido" *ngIf="cargosPendientes" class="form-control" name="fechaPedido" [(ngModel)]="cargosPendientes.fechaPedido"  />
+  <input type="date" id="field_fechaPedido" *ngIf="!cargosPendientes" class="form-control" name="fechaPedido" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_conSolicitu">Con Solicitu</label>
+  <input type="number" id="field_conSolicitu" *ngIf="cargosPendientes" class="form-control" name="conSolicitu" [(ngModel)]="cargosPendientes.conSolicitu"  />
+  <input type="number" id="field_conSolicitu" *ngIf="!cargosPendientes" class="form-control" name="conSolicitu" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="cargosPendientes" class="form-control" name="fechaRegistro" [(ngModel)]="cargosPendientes.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!cargosPendientes" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idMedicoTiene">Id Medico Tiene</label>
+  <input type="number" id="field_idMedicoTiene" *ngIf="cargosPendientes" class="form-control" name="idMedicoTiene" [(ngModel)]="cargosPendientes.idMedicoTiene"  />
+  <input type="number" id="field_idMedicoTiene" *ngIf="!cargosPendientes" class="form-control" name="idMedicoTiene" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idMedico">Id Medico</label>
+  <input type="number" id="field_idMedico" *ngIf="cargosPendientes" class="form-control" name="idMedico" [(ngModel)]="cargosPendientes.idMedico"  />
+  <input type="number" id="field_idMedico" *ngIf="!cargosPendientes" class="form-control" name="idMedico" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_horaDespacho">Hora Despacho</label>
+  <input type="number" id="field_horaDespacho" *ngIf="cargosPendientes" class="form-control" name="horaDespacho" [(ngModel)]="cargosPendientes.horaDespacho"  />
+  <input type="number" id="field_horaDespacho" *ngIf="!cargosPendientes" class="form-control" name="horaDespacho" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_horaPedido">Hora Pedido</label>
+  <input type="number" id="field_horaPedido" *ngIf="cargosPendientes" class="form-control" name="horaPedido" [(ngModel)]="cargosPendientes.horaPedido"  />
+  <input type="number" id="field_horaPedido" *ngIf="!cargosPendientes" class="form-control" name="horaPedido" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="cargosPendientes" class="form-control" name="observaciones" [(ngModel)]="cargosPendientes.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!cargosPendientes" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginPedido">Login Pedido</label>
+  <input type="text" id="field_loginPedido" *ngIf="cargosPendientes" class="form-control" name="loginPedido" [(ngModel)]="cargosPendientes.loginPedido"  />
+  <input type="text" id="field_loginPedido" *ngIf="!cargosPendientes" class="form-control" name="loginPedido" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_minutoPedido">Minuto Pedido</label>
+  <input type="number" id="field_minutoPedido" *ngIf="cargosPendientes" class="form-control" name="minutoPedido" [(ngModel)]="cargosPendientes.minutoPedido"  />
+  <input type="number" id="field_minutoPedido" *ngIf="!cargosPendientes" class="form-control" name="minutoPedido" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginDespacho">Login Despacho</label>
+  <input type="text" id="field_loginDespacho" *ngIf="cargosPendientes" class="form-control" name="loginDespacho" [(ngModel)]="cargosPendientes.loginDespacho"  />
+  <input type="text" id="field_loginDespacho" *ngIf="!cargosPendientes" class="form-control" name="loginDespacho" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_minutoDespacho">Minuto Despacho</label>
+  <input type="number" id="field_minutoDespacho" *ngIf="cargosPendientes" class="form-control" name="minutoDespacho" [(ngModel)]="cargosPendientes.minutoDespacho"  />
+  <input type="number" id="field_minutoDespacho" *ngIf="!cargosPendientes" class="form-control" name="minutoDespacho" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idCentroCosto">Id Centro Costo</label>
+  <input type="number" id="field_idCentroCosto" *ngIf="cargosPendientes" class="form-control" name="idCentroCosto" [(ngModel)]="cargosPendientes.idCentroCosto"  />
+  <input type="number" id="field_idCentroCosto" *ngIf="!cargosPendientes" class="form-control" name="idCentroCosto" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idCentroCostoDestino">Id Centro Costo Destino</label>
+  <input type="number" id="field_idCentroCostoDestino" *ngIf="cargosPendientes" class="form-control" name="idCentroCostoDestino" [(ngModel)]="cargosPendientes.idCentroCostoDestino"  />
+  <input type="number" id="field_idCentroCostoDestino" *ngIf="!cargosPendientes" class="form-control" name="idCentroCostoDestino" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-check">
+  <label class="custom-control custom-checkbox">
+    <input *ngIf="cargosPendientes" type="checkbox" class="custom-control-input" name="manual"  [(ngModel)]="cargosPendientes.manual" />
+    <input *ngIf="!cargosPendientes" type="checkbox" class="custom-control-input" name="manual" ngModel />
+    <span class="custom-control-indicator"></span>
+    <span class="custom-control-description">Manual</span>
+      </label>
+</div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaTipoPedido">Item Lista Tipo Pedido</label>
+  <input type="number" id="field_itemListaTipoPedido" *ngIf="cargosPendientes" class="form-control" name="itemListaTipoPedido" [(ngModel)]="cargosPendientes.itemListaTipoPedido"  />
+  <input type="number" id="field_itemListaTipoPedido" *ngIf="!cargosPendientes" class="form-control" name="itemListaTipoPedido" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_consecutivoManual">Consecutivo Manual</label>
+  <input type="number" id="field_consecutivoManual" *ngIf="cargosPendientes" class="form-control" name="consecutivoManual" [(ngModel)]="cargosPendientes.consecutivoManual"  />
+  <input type="number" id="field_consecutivoManual" *ngIf="!cargosPendientes" class="form-control" name="consecutivoManual" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaEstado">Item Lista Estado</label>
+  <input type="number" id="field_itemListaEstado" *ngIf="cargosPendientes" class="form-control" name="itemListaEstado" [(ngModel)]="cargosPendientes.itemListaEstado"  />
+  <input type="number" id="field_itemListaEstado" *ngIf="!cargosPendientes" class="form-control" name="itemListaEstado" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="prioridads">
+              <label for="field_prioridad">Prioridad</label>
+
+              <select *ngIf="!cargosPendientes" class="form-control" name="idPrioridad" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="prioridad._id" *ngFor="let prioridad of prioridads">{{ prioridad._id }}</option>
+              </select>
+
+              <select *ngIf="cargosPendientes && cargosPendientes.idPrioridad" class="form-control" name="idPrioridad" [(ngModel)]="cargosPendientes.idPrioridad">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="prioridad._id" *ngFor="let prioridad of prioridads">{{ prioridad._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="sucursals">
+              <label for="field_sucursal">Sucursal</label>
+
+              <select *ngIf="!cargosPendientes" class="form-control" name="idSucursal" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+
+              <select *ngIf="cargosPendientes && cargosPendientes.idSucursal" class="form-control" name="idSucursal" [(ngModel)]="cargosPendientes.idSucursal">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="entidads">
+              <label for="field_entidad">Entidad</label>
+
+              <select *ngIf="!cargosPendientes" class="form-control" name="idEntidad" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+
+              <select *ngIf="cargosPendientes && cargosPendientes.idEntidad" class="form-control" name="idEntidad" [(ngModel)]="cargosPendientes.idEntidad">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

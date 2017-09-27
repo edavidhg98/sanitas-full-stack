@@ -1,0 +1,92 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="m-top-and-bottom-2">
+            <span>Tiempo Recargo</span>
+            <a class="btn btn-primary float-right" [routerLink]="[ absolutePath, 'create']" data-dismiss="modal">
+              <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
+              Crear Nuevo Tiempo Recargo
+            </a>
+          </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped table-responsive" *ngIf="tiempoRecargos">
+          <thead>
+            <tr>
+              <th class="cursor-pointer" (click)="sort('codigo')">
+                Codigo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'codigo', 'fa-sort-asc': (column == 'codigo' && isDesc), 'fa-sort-desc': (column == 'codigo' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('descripcion')">
+                Descripcion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'descripcion', 'fa-sort-asc': (column == 'descripcion' && isDesc), 'fa-sort-desc': (column == 'descripcion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('horaDesde')">
+                Hora Desde
+                <i class="fa" [ngClass]="{'fa-sort': column != 'horaDesde', 'fa-sort-asc': (column == 'horaDesde' && isDesc), 'fa-sort-desc': (column == 'horaDesde' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('minutoDesde')">
+                Minuto Desde
+                <i class="fa" [ngClass]="{'fa-sort': column != 'minutoDesde', 'fa-sort-asc': (column == 'minutoDesde' && isDesc), 'fa-sort-desc': (column == 'minutoDesde' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('horaFinal')">
+                Hora Final
+                <i class="fa" [ngClass]="{'fa-sort': column != 'horaFinal', 'fa-sort-asc': (column == 'horaFinal' && isDesc), 'fa-sort-desc': (column == 'horaFinal' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('minutoFinal')">
+                Minuto Final
+                <i class="fa" [ngClass]="{'fa-sort': column != 'minutoFinal', 'fa-sort-asc': (column == 'minutoFinal' && isDesc), 'fa-sort-desc': (column == 'minutoFinal' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaRegistro')">
+                Fecha Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaRegistro', 'fa-sort-asc': (column == 'fechaRegistro' && isDesc), 'fa-sort-desc': (column == 'fechaRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('loginRegistro')">
+                Login Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'loginRegistro', 'fa-sort-asc': (column == 'loginRegistro' && isDesc), 'fa-sort-desc': (column == 'loginRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('observaciones')">
+                Observaciones
+                <i class="fa" [ngClass]="{'fa-sort': column != 'observaciones', 'fa-sort-asc': (column == 'observaciones' && isDesc), 'fa-sort-desc': (column == 'observaciones' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaEstadoMttoRecAuto')">
+                Item Lista Estado Mtto Rec Auto
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaEstadoMttoRecAuto', 'fa-sort-asc': (column == 'itemListaEstadoMttoRecAuto' && isDesc), 'fa-sort-desc': (column == 'itemListaEstadoMttoRecAuto' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let tiempoRecargo of tiempoRecargos | orderBy: { property: column, direction: direction }">
+              <td>{{ tiempoRecargo.codigo }}</td>
+              <td>{{ tiempoRecargo.descripcion }}</td>
+              <td>{{ tiempoRecargo.horaDesde }}</td>
+              <td>{{ tiempoRecargo.minutoDesde }}</td>
+              <td>{{ tiempoRecargo.horaFinal }}</td>
+              <td>{{ tiempoRecargo.minutoFinal }}</td>
+              <td>{{ tiempoRecargo.fechaRegistro }}</td>
+              <td>{{ tiempoRecargo.loginRegistro }}</td>
+              <td>{{ tiempoRecargo.observaciones }}</td>
+              <td>{{ tiempoRecargo.itemListaEstadoMttoRecAuto }}</td>
+              <td>
+                <a class="btn btn-info btn-sm" [routerLink]="[ absolutePath, tiempoRecargo._id]"><span class="fa fa-eye fa-fw"></span>Ver</a>
+                <a class="btn btn-primary btn-sm" [routerLink]="[ absolutePath, tiempoRecargo._id, 'update']"><span class="fa fa-pencil fa-fw"></span>Editar</a>
+                <a class="btn btn-danger btn-sm text-white cursor-pointer" (click)="openDeleteModal(content, tiempoRecargo._id)"><span class="fa fa-trash fa-fw"></span>Eliminar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h5 class="modal-title"><i class="fa fa-exclamation-triangle fa-lg fa-fw" aria-hidden="true"></i>¿Esta seguro de eliminar?</h5>
+    <button type="button" class="close cursor-pointer" aria-label="Close" (click)="d(deleteModalOpts.cancel)">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary cursor-pointer" (click)="c(deleteModalOpts.ok)"><i class="fa fa-check fa-fw"></i>Aceptar</button>
+    <button type="button" class="btn btn-secondary cursor-pointer" (click)="c(deleteModalOpts.cancel)"><i class="fa fa-ban fa-fw"></i>Cancelar</button>
+  </div>
+</ng-template>

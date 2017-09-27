@@ -1,0 +1,60 @@
+<div *ngIf="procedimientoCentroCosto" class="container">
+  <h3 class="m-top-and-bottom-2">Procedimiento Centro Costo</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ procedimientoCentroCosto._id }}</dd>
+
+  
+    <dt>Id Centro Costo</dt>
+    <dd>{{ procedimientoCentroCosto.idCentroCosto }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ procedimientoCentroCosto.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ procedimientoCentroCosto.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ procedimientoCentroCosto.observaciones }}</dd>
+
+    <dt>Tiempo Duracion</dt>
+    <dd>{{ procedimientoCentroCosto.tiempoDuracion }}</dd>
+
+    <dt>Id Concepto</dt>
+    <dd>{{ procedimientoCentroCosto.idConcepto }}</dd>
+
+    <dt>Item Lista Tipo Encabezado</dt>
+    <dd>{{ procedimientoCentroCosto.itemListaTipoEncabezado }}</dd>
+
+    <dt>Tiempo Adecuacion</dt>
+    <dd>{{ procedimientoCentroCosto.tiempoAdecuacion }}</dd>
+
+    <dt>Tiempo Limpieza</dt>
+    <dd>{{ procedimientoCentroCosto.tiempoLimpieza }}</dd>
+
+    <dt>Maneja Hcresultado</dt>
+    <dd>{{ procedimientoCentroCosto.manejaHcresultado }}</dd>
+
+    <dt>Honorarios R</dt>
+    <dd>{{ procedimientoCentroCosto.honorariosR }}</dd>
+
+    <dt>Item Lista Tiempo Limpieza</dt>
+    <dd>{{ procedimientoCentroCosto.itemListaTiempoLimpieza }}</dd>
+
+    <dt>Prestador</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'prestador', procedimientoCentroCosto.prestador._id]">{{ procedimientoCentroCosto.prestador._id }}</a>
+    </dd>
+    <dt>Sucursal</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursal', procedimientoCentroCosto.sucursal._id]">{{ procedimientoCentroCosto.sucursal._id }}</a>
+    </dd>
+    <dt>Procedimiento</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'procedimiento', procedimientoCentroCosto.procedimiento._id]">{{ procedimientoCentroCosto.procedimiento._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

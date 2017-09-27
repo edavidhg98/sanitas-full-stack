@@ -1,0 +1,54 @@
+<div *ngIf="procedimientoConvenioCapitado" class="container">
+  <h3 class="m-top-and-bottom-2">Procedimiento Convenio Capitado</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ procedimientoConvenioCapitado._id }}</dd>
+
+  
+    <dt>Fecha Inicial</dt>
+    <dd>{{ procedimientoConvenioCapitado.fechaInicial }}</dd>
+
+    <dt>Fecha Final</dt>
+    <dd>{{ procedimientoConvenioCapitado.fechaFinal }}</dd>
+
+    <dt>Item Lista Tipo Cargo</dt>
+    <dd>{{ procedimientoConvenioCapitado.itemListaTipoCargo }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ procedimientoConvenioCapitado.descripcion }}</dd>
+
+    <dt>Valor</dt>
+    <dd>{{ procedimientoConvenioCapitado.valor }}</dd>
+
+    <dt>Alias</dt>
+    <dd>{{ procedimientoConvenioCapitado.alias }}</dd>
+
+    <dt>Excedente</dt>
+    <dd>{{ procedimientoConvenioCapitado.excedente }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ procedimientoConvenioCapitado.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ procedimientoConvenioCapitado.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ procedimientoConvenioCapitado.observaciones }}</dd>
+
+    <dt>SucursalEntidad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursalEntidad', procedimientoConvenioCapitado.sucursalEntidad._id]">{{ procedimientoConvenioCapitado.sucursalEntidad._id }}</a>
+    </dd>
+    <dt>TipoAdmision</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'tipoAdmision', procedimientoConvenioCapitado.tipoAdmision._id]">{{ procedimientoConvenioCapitado.tipoAdmision._id }}</a>
+    </dd>
+    <dt>Procedimiento</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'procedimiento', procedimientoConvenioCapitado.procedimiento._id]">{{ procedimientoConvenioCapitado.procedimiento._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

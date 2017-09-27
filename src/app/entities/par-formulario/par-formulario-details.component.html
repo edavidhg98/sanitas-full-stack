@@ -1,0 +1,33 @@
+<div *ngIf="parFormulario" class="container">
+  <h3 class="m-top-and-bottom-2">Par Formulario</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ parFormulario._id }}</dd>
+
+  
+    <dt>Nombre</dt>
+    <dd>{{ parFormulario.nombre }}</dd>
+
+    <dt>Titulo</dt>
+    <dd>{{ parFormulario.titulo }}</dd>
+
+    <dt>Nombre Tabla</dt>
+    <dd>{{ parFormulario.nombreTabla }}</dd>
+
+    <dt>Estado Formulario</dt>
+    <dd>{{ parFormulario.estadoFormulario }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ parFormulario.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ parFormulario.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ parFormulario.observaciones }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

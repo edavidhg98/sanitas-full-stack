@@ -1,0 +1,153 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Admision Observaciones</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="admisionObservaciones && admisionObservaciones._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="admisionObservaciones" type="text" class="form-control" name="id" [(ngModel)]="admisionObservaciones._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_idAdmision">Id Admision</label>
+  <input type="number" id="field_idAdmision" *ngIf="admisionObservaciones" class="form-control" name="idAdmision" [(ngModel)]="admisionObservaciones.idAdmision"  />
+  <input type="number" id="field_idAdmision" *ngIf="!admisionObservaciones" class="form-control" name="idAdmision" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="admisionObservaciones" class="form-control" name="observaciones" [(ngModel)]="admisionObservaciones.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!admisionObservaciones" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="admisionObservaciones" class="form-control" name="fechaRegistro" [(ngModel)]="admisionObservaciones.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!admisionObservaciones" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaEgreso">Fecha Egreso</label>
+  <input type="date" id="field_fechaEgreso" *ngIf="admisionObservaciones" class="form-control" name="fechaEgreso" [(ngModel)]="admisionObservaciones.fechaEgreso"  />
+  <input type="date" id="field_fechaEgreso" *ngIf="!admisionObservaciones" class="form-control" name="fechaEgreso" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaIngreso">Fecha Ingreso</label>
+  <input type="date" id="field_fechaIngreso" *ngIf="admisionObservaciones" class="form-control" name="fechaIngreso" [(ngModel)]="admisionObservaciones.fechaIngreso"  />
+  <input type="date" id="field_fechaIngreso" *ngIf="!admisionObservaciones" class="form-control" name="fechaIngreso" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_minutoEgreso">Minuto Egreso</label>
+  <input type="number" id="field_minutoEgreso" *ngIf="admisionObservaciones" class="form-control" name="minutoEgreso" [(ngModel)]="admisionObservaciones.minutoEgreso"  />
+  <input type="number" id="field_minutoEgreso" *ngIf="!admisionObservaciones" class="form-control" name="minutoEgreso" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_minutoIngreso">Minuto Ingreso</label>
+  <input type="number" id="field_minutoIngreso" *ngIf="admisionObservaciones" class="form-control" name="minutoIngreso" [(ngModel)]="admisionObservaciones.minutoIngreso"  />
+  <input type="number" id="field_minutoIngreso" *ngIf="!admisionObservaciones" class="form-control" name="minutoIngreso" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_horaEgreso">Hora Egreso</label>
+  <input type="number" id="field_horaEgreso" *ngIf="admisionObservaciones" class="form-control" name="horaEgreso" [(ngModel)]="admisionObservaciones.horaEgreso"  />
+  <input type="number" id="field_horaEgreso" *ngIf="!admisionObservaciones" class="form-control" name="horaEgreso" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_horaDefinicion">Hora Definicion</label>
+  <input type="number" id="field_horaDefinicion" *ngIf="admisionObservaciones" class="form-control" name="horaDefinicion" [(ngModel)]="admisionObservaciones.horaDefinicion"  />
+  <input type="number" id="field_horaDefinicion" *ngIf="!admisionObservaciones" class="form-control" name="horaDefinicion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_destino">Destino</label>
+  <input type="number" id="field_destino" *ngIf="admisionObservaciones" class="form-control" name="destino" [(ngModel)]="admisionObservaciones.destino"  />
+  <input type="number" id="field_destino" *ngIf="!admisionObservaciones" class="form-control" name="destino" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_horaIngreso">Hora Ingreso</label>
+  <input type="number" id="field_horaIngreso" *ngIf="admisionObservaciones" class="form-control" name="horaIngreso" [(ngModel)]="admisionObservaciones.horaIngreso"  />
+  <input type="number" id="field_horaIngreso" *ngIf="!admisionObservaciones" class="form-control" name="horaIngreso" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="admisionObservaciones" class="form-control" name="loginRegistro" [(ngModel)]="admisionObservaciones.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!admisionObservaciones" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaDefinicion">Fecha Definicion</label>
+  <input type="date" id="field_fechaDefinicion" *ngIf="admisionObservaciones" class="form-control" name="fechaDefinicion" [(ngModel)]="admisionObservaciones.fechaDefinicion"  />
+  <input type="date" id="field_fechaDefinicion" *ngIf="!admisionObservaciones" class="form-control" name="fechaDefinicion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_minutoDefinicion">Minuto Definicion</label>
+  <input type="number" id="field_minutoDefinicion" *ngIf="admisionObservaciones" class="form-control" name="minutoDefinicion" [(ngModel)]="admisionObservaciones.minutoDefinicion"  />
+  <input type="number" id="field_minutoDefinicion" *ngIf="!admisionObservaciones" class="form-control" name="minutoDefinicion" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="camas">
+              <label for="field_cama">Cama</label>
+
+              <select *ngIf="!admisionObservaciones" class="form-control" name="idCama" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="cama._id" *ngFor="let cama of camas">{{ cama._id }}</option>
+              </select>
+
+              <select *ngIf="admisionObservaciones && admisionObservaciones.idCama" class="form-control" name="idCama" [(ngModel)]="admisionObservaciones.idCama">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="cama._id" *ngFor="let cama of camas">{{ cama._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="motivos">
+              <label for="field_motivo">Motivo</label>
+
+              <select *ngIf="!admisionObservaciones" class="form-control" name="idMotivo" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="motivo._id" *ngFor="let motivo of motivos">{{ motivo._id }}</option>
+              </select>
+
+              <select *ngIf="admisionObservaciones && admisionObservaciones.idMotivo" class="form-control" name="idMotivo" [(ngModel)]="admisionObservaciones.idMotivo">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="motivo._id" *ngFor="let motivo of motivos">{{ motivo._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

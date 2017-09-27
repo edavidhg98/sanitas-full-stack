@@ -1,0 +1,77 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Sub Grupo Procedimiento</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="subGrupoProcedimiento && subGrupoProcedimiento._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="subGrupoProcedimiento" type="text" class="form-control" name="id" [(ngModel)]="subGrupoProcedimiento._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_subProced">Sub Proced</label>
+  <input type="text" id="field_subProced" *ngIf="subGrupoProcedimiento" class="form-control" name="subProced" [(ngModel)]="subGrupoProcedimiento.subProced"  />
+  <input type="text" id="field_subProced" *ngIf="!subGrupoProcedimiento" class="form-control" name="subProced" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_descripcion">Descripcion</label>
+  <input type="text" id="field_descripcion" *ngIf="subGrupoProcedimiento" class="form-control" name="descripcion" [(ngModel)]="subGrupoProcedimiento.descripcion"  />
+  <input type="text" id="field_descripcion" *ngIf="!subGrupoProcedimiento" class="form-control" name="descripcion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="subGrupoProcedimiento" class="form-control" name="fechaRegistro" [(ngModel)]="subGrupoProcedimiento.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!subGrupoProcedimiento" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="subGrupoProcedimiento" class="form-control" name="loginRegistro" [(ngModel)]="subGrupoProcedimiento.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!subGrupoProcedimiento" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="subGrupoProcedimiento" class="form-control" name="observaciones" [(ngModel)]="subGrupoProcedimiento.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!subGrupoProcedimiento" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="grupoProcedimientos">
+              <label for="field_grupoProcedimiento">Grupo Procedimiento</label>
+
+              <select *ngIf="!subGrupoProcedimiento" class="form-control" name="idGrupoProcedimiento" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="grupoProcedimiento._id" *ngFor="let grupoProcedimiento of grupoProcedimientos">{{ grupoProcedimiento._id }}</option>
+              </select>
+
+              <select *ngIf="subGrupoProcedimiento && subGrupoProcedimiento.idGrupoProcedimiento" class="form-control" name="idGrupoProcedimiento" [(ngModel)]="subGrupoProcedimiento.idGrupoProcedimiento">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="grupoProcedimiento._id" *ngFor="let grupoProcedimiento of grupoProcedimientos">{{ grupoProcedimiento._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

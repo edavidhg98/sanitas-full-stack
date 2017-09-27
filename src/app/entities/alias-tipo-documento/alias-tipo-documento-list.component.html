@@ -1,0 +1,112 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="m-top-and-bottom-2">
+            <span>Alias Tipo Documento</span>
+            <a class="btn btn-primary float-right" [routerLink]="[ absolutePath, 'create']" data-dismiss="modal">
+              <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
+              Crear Nuevo Alias Tipo Documento
+            </a>
+          </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped table-responsive" *ngIf="aliasTipoDocumentos">
+          <thead>
+            <tr>
+              <th class="cursor-pointer" (click)="sort('itemListaTipoDocumento')">
+                Item Lista Tipo Documento
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaTipoDocumento', 'fa-sort-asc': (column == 'itemListaTipoDocumento' && isDesc), 'fa-sort-desc': (column == 'itemListaTipoDocumento' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('jerarquia')">
+                Jerarquia
+                <i class="fa" [ngClass]="{'fa-sort': column != 'jerarquia', 'fa-sort-asc': (column == 'jerarquia' && isDesc), 'fa-sort-desc': (column == 'jerarquia' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('aliasCliente')">
+                Alias Cliente
+                <i class="fa" [ngClass]="{'fa-sort': column != 'aliasCliente', 'fa-sort-asc': (column == 'aliasCliente' && isDesc), 'fa-sort-desc': (column == 'aliasCliente' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('aliasValidador')">
+                Alias Validador
+                <i class="fa" [ngClass]="{'fa-sort': column != 'aliasValidador', 'fa-sort-asc': (column == 'aliasValidador' && isDesc), 'fa-sort-desc': (column == 'aliasValidador' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('aliasbh')">
+                Aliasbh
+                <i class="fa" [ngClass]="{'fa-sort': column != 'aliasbh', 'fa-sort-asc': (column == 'aliasbh' && isDesc), 'fa-sort-desc': (column == 'aliasbh' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('aliasPines')">
+                Alias Pines
+                <i class="fa" [ngClass]="{'fa-sort': column != 'aliasPines', 'fa-sort-asc': (column == 'aliasPines' && isDesc), 'fa-sort-desc': (column == 'aliasPines' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('aliasDispen')">
+                Alias Dispen
+                <i class="fa" [ngClass]="{'fa-sort': column != 'aliasDispen', 'fa-sort-asc': (column == 'aliasDispen' && isDesc), 'fa-sort-desc': (column == 'aliasDispen' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('aliasContabilidad')">
+                Alias Contabilidad
+                <i class="fa" [ngClass]="{'fa-sort': column != 'aliasContabilidad', 'fa-sort-asc': (column == 'aliasContabilidad' && isDesc), 'fa-sort-desc': (column == 'aliasContabilidad' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('nuevo')">
+                Nuevo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'nuevo', 'fa-sort-asc': (column == 'nuevo' && isDesc), 'fa-sort-desc': (column == 'nuevo' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('loginRegistro')">
+                Login Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'loginRegistro', 'fa-sort-asc': (column == 'loginRegistro' && isDesc), 'fa-sort-desc': (column == 'loginRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('aliasBukeala')">
+                Alias Bukeala
+                <i class="fa" [ngClass]="{'fa-sort': column != 'aliasBukeala', 'fa-sort-asc': (column == 'aliasBukeala' && isDesc), 'fa-sort-desc': (column == 'aliasBukeala' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('aliasCe')">
+                Alias Ce
+                <i class="fa" [ngClass]="{'fa-sort': column != 'aliasCe', 'fa-sort-asc': (column == 'aliasCe' && isDesc), 'fa-sort-desc': (column == 'aliasCe' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaRegistro')">
+                Fecha Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaRegistro', 'fa-sort-asc': (column == 'fechaRegistro' && isDesc), 'fa-sort-desc': (column == 'fechaRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('observaciones')">
+                Observaciones
+                <i class="fa" [ngClass]="{'fa-sort': column != 'observaciones', 'fa-sort-asc': (column == 'observaciones' && isDesc), 'fa-sort-desc': (column == 'observaciones' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let aliasTipoDocumento of aliasTipoDocumentos | orderBy: { property: column, direction: direction }">
+              <td>{{ aliasTipoDocumento.itemListaTipoDocumento }}</td>
+              <td>{{ aliasTipoDocumento.jerarquia }}</td>
+              <td>{{ aliasTipoDocumento.aliasCliente }}</td>
+              <td>{{ aliasTipoDocumento.aliasValidador }}</td>
+              <td>{{ aliasTipoDocumento.aliasbh }}</td>
+              <td>{{ aliasTipoDocumento.aliasPines }}</td>
+              <td>{{ aliasTipoDocumento.aliasDispen }}</td>
+              <td>{{ aliasTipoDocumento.aliasContabilidad }}</td>
+              <td>{{ aliasTipoDocumento.nuevo }}</td>
+              <td>{{ aliasTipoDocumento.loginRegistro }}</td>
+              <td>{{ aliasTipoDocumento.aliasBukeala }}</td>
+              <td>{{ aliasTipoDocumento.aliasCe }}</td>
+              <td>{{ aliasTipoDocumento.fechaRegistro }}</td>
+              <td>{{ aliasTipoDocumento.observaciones }}</td>
+              <td>
+                <a class="btn btn-info btn-sm" [routerLink]="[ absolutePath, aliasTipoDocumento._id]"><span class="fa fa-eye fa-fw"></span>Ver</a>
+                <a class="btn btn-primary btn-sm" [routerLink]="[ absolutePath, aliasTipoDocumento._id, 'update']"><span class="fa fa-pencil fa-fw"></span>Editar</a>
+                <a class="btn btn-danger btn-sm text-white cursor-pointer" (click)="openDeleteModal(content, aliasTipoDocumento._id)"><span class="fa fa-trash fa-fw"></span>Eliminar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h5 class="modal-title"><i class="fa fa-exclamation-triangle fa-lg fa-fw" aria-hidden="true"></i>¿Esta seguro de eliminar?</h5>
+    <button type="button" class="close cursor-pointer" aria-label="Close" (click)="d(deleteModalOpts.cancel)">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary cursor-pointer" (click)="c(deleteModalOpts.ok)"><i class="fa fa-check fa-fw"></i>Aceptar</button>
+    <button type="button" class="btn btn-secondary cursor-pointer" (click)="c(deleteModalOpts.cancel)"><i class="fa fa-ban fa-fw"></i>Cancelar</button>
+  </div>
+</ng-template>

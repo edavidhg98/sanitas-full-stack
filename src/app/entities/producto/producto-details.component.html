@@ -1,0 +1,112 @@
+<div *ngIf="producto" class="container-fluid">
+  <h3 class="m-top-and-bottom-2">Producto</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ producto._id }}</dd>
+
+  
+    <dt>Cod Corto</dt>
+    <dd>{{ producto.codCorto }}</dd>
+
+    <dt>Item Lista Flag Pos</dt>
+    <dd>{{ producto.itemListaFlagPos }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ producto.observaciones }}</dd>
+
+    <dt>Des Corta</dt>
+    <dd>{{ producto.desCorta }}</dd>
+
+    <dt>Item Lista Estado</dt>
+    <dd>{{ producto.itemListaEstado }}</dd>
+
+    <dt>Cod Hijo</dt>
+    <dd>{{ producto.codHijo }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ producto.fechaRegistro }}</dd>
+
+    <dt>Item Lista Forma Farmaceutica</dt>
+    <dd>{{ producto.itemListaFormaFarmaceutica }}</dd>
+
+    <dt>Id Presentacion Producto</dt>
+    <dd>{{ producto.idPresentacionProducto }}</dd>
+
+    <dt>Cod Barras</dt>
+    <dd>{{ producto.codBarras }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ producto.descripcion }}</dd>
+
+    <dt>Item Lista Flag Generico</dt>
+    <dd>{{ producto.itemListaFlagGenerico }}</dd>
+
+    <dt>Cod Cums</dt>
+    <dd>{{ producto.codCums }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ producto.loginRegistro }}</dd>
+
+    <dt>Item Lista Modo Despacho</dt>
+    <dd>{{ producto.itemListaModoDespacho }}</dd>
+
+    <dt>Nivel Medicam</dt>
+    <dd>{{ producto.nivelMedicam }}</dd>
+
+    <dt>Descripcion Pa</dt>
+    <dd>{{ producto.descripcionPa }}</dd>
+
+    <dt>Cod Pos</dt>
+    <dd>{{ producto.codPos }}</dd>
+
+    <dt>Contenido</dt>
+    <dd>{{ producto.contenido }}</dd>
+
+    <dt>Id Concepto</dt>
+    <dd>{{ producto.idConcepto }}</dd>
+
+    <dt>Id Concepto No Pos</dt>
+    <dd>{{ producto.idConceptoNoPos }}</dd>
+
+    <dt>Des Generico</dt>
+    <dd>{{ producto.desGenerico }}</dd>
+
+    <dt>Cod Inteligente</dt>
+    <dd>{{ producto.codInteligente }}</dd>
+
+    <dt>Item Lista Medicamento Controlado</dt>
+    <dd>{{ producto.itemListaMedicamentoControlado }}</dd>
+
+    <dt>Item Lista Medicamento Mater</dt>
+    <dd>{{ producto.itemListaMedicamentoMater }}</dd>
+
+    <dt>Item Lista Reutilizable</dt>
+    <dd>{{ producto.itemListaReutilizable }}</dd>
+
+    <dt>Concentracion</dt>
+    <dd>{{ producto.concentracion }}</dd>
+
+    <dt>Cod Alea</dt>
+    <dd>{{ producto.codAlea }}</dd>
+
+    <dt>UnidadMedidaPedido</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'unidadMedidaPedido', producto.unidadMedidaPedido._id]">{{ producto.unidadMedidaPedido._id }}</a>
+    </dd>
+    <dt>UnidadMedidaPedido</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'unidadMedidaPedido', producto.unidadMedidaPedido._id]">{{ producto.unidadMedidaPedido._id }}</a>
+    </dd>
+    <dt>UnidadMedidaPedido</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'unidadMedidaPedido', producto.unidadMedidaPedido._id]">{{ producto.unidadMedidaPedido._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+  <app-medicamento-alto-costo-list [medicamentoAltoCostos]="producto.medicamentoAltoCostos"></app-medicamento-alto-costo-list>
+  <app-sustitutos-list [sustitutoss]="producto.sustitutoss"></app-sustitutos-list>
+  <app-sustitutos-list [sustitutoss]="producto.sustitutoss"></app-sustitutos-list>
+  <app-excepcion-producto-list [excepcionProductos]="producto.excepcionProductos"></app-excepcion-producto-list>
+</div>

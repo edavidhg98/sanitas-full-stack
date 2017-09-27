@@ -1,0 +1,42 @@
+<div *ngIf="medicoSucursalEntidad" class="container">
+  <h3 class="m-top-and-bottom-2">Medico Sucursal Entidad</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ medicoSucursalEntidad._id }}</dd>
+
+  
+    <dt>Id Sucursal</dt>
+    <dd>{{ medicoSucursalEntidad.idSucursal }}</dd>
+
+    <dt>Id Medico</dt>
+    <dd>{{ medicoSucursalEntidad.idMedico }}</dd>
+
+    <dt>Id Especialidad</dt>
+    <dd>{{ medicoSucursalEntidad.idEspecialidad }}</dd>
+
+    <dt>Id Entidad</dt>
+    <dd>{{ medicoSucursalEntidad.idEntidad }}</dd>
+
+    <dt>Id Item Lista Medico Familiar</dt>
+    <dd>{{ medicoSucursalEntidad.idItemListaMedicoFamiliar }}</dd>
+
+    <dt>Id Item Lista Formula Cronicos</dt>
+    <dd>{{ medicoSucursalEntidad.idItemListaFormulaCronicos }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ medicoSucursalEntidad.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ medicoSucursalEntidad.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ medicoSucursalEntidad.observaciones }}</dd>
+
+    <dt>Id Item Lista Medico Citasweb</dt>
+    <dd>{{ medicoSucursalEntidad.idItemListaMedicoCitasweb }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

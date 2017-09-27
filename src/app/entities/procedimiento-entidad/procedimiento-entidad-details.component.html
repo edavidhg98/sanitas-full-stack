@@ -1,0 +1,68 @@
+<div *ngIf="procedimientoEntidad" class="container">
+  <h3 class="m-top-and-bottom-2">Procedimiento Entidad</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ procedimientoEntidad._id }}</dd>
+
+  
+    <dt>Autoriza</dt>
+    <dd>{{ procedimientoEntidad.autoriza }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ procedimientoEntidad.observaciones }}</dd>
+
+    <dt>Flag Egresa</dt>
+    <dd>{{ procedimientoEntidad.flagEgresa }}</dd>
+
+    <dt>Autoriza Urgencias</dt>
+    <dd>{{ procedimientoEntidad.autorizaUrgencias }}</dd>
+
+    <dt>Autoriza Consultaexterna</dt>
+    <dd>{{ procedimientoEntidad.autorizaConsultaexterna }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ procedimientoEntidad.loginRegistro }}</dd>
+
+    <dt>Autoriza Cirugia</dt>
+    <dd>{{ procedimientoEntidad.autorizaCirugia }}</dd>
+
+    <dt>Autoriza Procedimientos</dt>
+    <dd>{{ procedimientoEntidad.autorizaProcedimientos }}</dd>
+
+    <dt>Atributo Bh</dt>
+    <dd>{{ procedimientoEntidad.atributoBh }}</dd>
+
+    <dt>Id Prestador</dt>
+    <dd>{{ procedimientoEntidad.idPrestador }}</dd>
+
+    <dt>Item Lista Estado Procxent</dt>
+    <dd>{{ procedimientoEntidad.itemListaEstadoProcxent }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ procedimientoEntidad.fechaRegistro }}</dd>
+
+    <dt>Flag Uvr</dt>
+    <dd>{{ procedimientoEntidad.flagUvr }}</dd>
+
+    <dt>Aplica Valor Uvr</dt>
+    <dd>{{ procedimientoEntidad.aplicaValorUvr }}</dd>
+
+    <dt>Item Lista Autoriza Procxent</dt>
+    <dd>{{ procedimientoEntidad.itemListaAutorizaProcxent }}</dd>
+
+    <dt>Autoriza Hospitalizacion</dt>
+    <dd>{{ procedimientoEntidad.autorizaHospitalizacion }}</dd>
+
+    <dt>Entidad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'entidad', procedimientoEntidad.entidad._id]">{{ procedimientoEntidad.entidad._id }}</a>
+    </dd>
+    <dt>Procedimiento</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'procedimiento', procedimientoEntidad.procedimiento._id]">{{ procedimientoEntidad.procedimiento._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

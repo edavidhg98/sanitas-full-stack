@@ -1,0 +1,75 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Sustitutos</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="sustitutos && sustitutos._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="sustitutos" type="text" class="form-control" name="id" [(ngModel)]="sustitutos._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="sustitutos" class="form-control" name="observaciones" [(ngModel)]="sustitutos.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!sustitutos" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="prestadors">
+              <label for="field_prestador">Prestador</label>
+
+              <select *ngIf="!sustitutos" class="form-control" name="idPrestador" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="prestador._id" *ngFor="let prestador of prestadors">{{ prestador._id }}</option>
+              </select>
+
+              <select *ngIf="sustitutos && sustitutos.idPrestador" class="form-control" name="idPrestador" [(ngModel)]="sustitutos.idPrestador">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="prestador._id" *ngFor="let prestador of prestadors">{{ prestador._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="productos">
+              <label for="field_producto">Producto</label>
+
+              <select *ngIf="!sustitutos" class="form-control" name="idProducto" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="producto._id" *ngFor="let producto of productos">{{ producto._id }}</option>
+              </select>
+
+              <select *ngIf="sustitutos && sustitutos.idProducto" class="form-control" name="idProducto" [(ngModel)]="sustitutos.idProducto">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="producto._id" *ngFor="let producto of productos">{{ producto._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="productos">
+              <label for="field_producto">Producto</label>
+
+              <select *ngIf="!sustitutos" class="form-control" name="idProducto1" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="producto._id" *ngFor="let producto of productos">{{ producto._id }}</option>
+              </select>
+
+              <select *ngIf="sustitutos && sustitutos.idProducto1" class="form-control" name="idProducto1" [(ngModel)]="sustitutos.idProducto1">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="producto._id" *ngFor="let producto of productos">{{ producto._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

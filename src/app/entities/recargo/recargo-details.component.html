@@ -1,0 +1,37 @@
+<div *ngIf="recargo" class="container">
+  <h3 class="m-top-and-bottom-2">Recargo</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ recargo._id }}</dd>
+
+  
+    <dt>Recargo</dt>
+    <dd>{{ recargo.recargo }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ recargo.descripcion }}</dd>
+
+    <dt>Porcentaje</dt>
+    <dd>{{ recargo.porcentaje }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ recargo.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ recargo.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ recargo.observaciones }}</dd>
+
+    <dt>Item Lista Estado Recargo</dt>
+    <dd>{{ recargo.itemListaEstadoRecargo }}</dd>
+
+    <dt>Prestador</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'prestador', recargo.prestador._id]">{{ recargo.prestador._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

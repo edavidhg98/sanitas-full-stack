@@ -1,0 +1,38 @@
+<div *ngIf="subconcepto" class="container">
+  <h3 class="m-top-and-bottom-2">Subconcepto</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ subconcepto._id }}</dd>
+
+  
+    <dt>Id Concepto</dt>
+    <dd>{{ subconcepto.idConcepto }}</dd>
+
+    <dt>Id Sub Concepto</dt>
+    <dd>{{ subconcepto.idSubConcepto }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ subconcepto.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ subconcepto.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ subconcepto.observaciones }}</dd>
+
+    <dt>Id Prestador</dt>
+    <dd>{{ subconcepto.idPrestador }}</dd>
+
+    <dt>Motivo</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'motivo', subconcepto.motivo._id]">{{ subconcepto.motivo._id }}</a>
+    </dd>
+    <dt>TipoAdmision</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'tipoAdmision', subconcepto.tipoAdmision._id]">{{ subconcepto.tipoAdmision._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

@@ -1,0 +1,39 @@
+<div *ngIf="anticipo" class="container">
+  <h3 class="m-top-and-bottom-2">Anticipo</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ anticipo._id }}</dd>
+
+  
+    <dt>Valor Anticipo</dt>
+    <dd>{{ anticipo.valorAnticipo }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ anticipo.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ anticipo.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ anticipo.observaciones }}</dd>
+
+    <dt>Estado Item Lista</dt>
+    <dd>{{ anticipo.estadoItemLista }}</dd>
+
+    <dt>Sucursal</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursal', anticipo.sucursal._id]">{{ anticipo.sucursal._id }}</a>
+    </dd>
+    <dt>Entidad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'entidad', anticipo.entidad._id]">{{ anticipo.entidad._id }}</a>
+    </dd>
+    <dt>Procedimiento</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'procedimiento', anticipo.procedimiento._id]">{{ anticipo.procedimiento._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

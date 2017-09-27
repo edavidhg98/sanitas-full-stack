@@ -1,0 +1,27 @@
+<div *ngIf="salario" class="container">
+  <h3 class="m-top-and-bottom-2">Salario</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ salario._id }}</dd>
+
+  
+    <dt>Anno</dt>
+    <dd>{{ salario.anno }}</dd>
+
+    <dt>Salario Minimo Legal</dt>
+    <dd>{{ salario.salarioMinimoLegal }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ salario.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ salario.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ salario.observaciones }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

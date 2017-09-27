@@ -1,0 +1,39 @@
+<div *ngIf="parOrigenInformacion" class="container">
+  <h3 class="m-top-and-bottom-2">Par Origen Informacion</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ parOrigenInformacion._id }}</dd>
+
+  
+    <dt>Codigo</dt>
+    <dd>{{ parOrigenInformacion.codigo }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ parOrigenInformacion.descripcion }}</dd>
+
+    <dt>Tabla</dt>
+    <dd>{{ parOrigenInformacion.tabla }}</dd>
+
+    <dt>Filtro</dt>
+    <dd>{{ parOrigenInformacion.filtro }}</dd>
+
+    <dt>Orden</dt>
+    <dd>{{ parOrigenInformacion.orden }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ parOrigenInformacion.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ parOrigenInformacion.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ parOrigenInformacion.observaciones }}</dd>
+
+    <dt>Identificador</dt>
+    <dd>{{ parOrigenInformacion.identificador }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

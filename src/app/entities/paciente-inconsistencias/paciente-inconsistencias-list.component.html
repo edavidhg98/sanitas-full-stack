@@ -1,0 +1,212 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="m-top-and-bottom-2">
+            <span>Paciente Inconsistencias</span>
+            <a class="btn btn-primary float-right" [routerLink]="[ absolutePath, 'create']" data-dismiss="modal">
+              <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
+              Crear Nuevo Paciente Inconsistencias
+            </a>
+          </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped table-responsive" *ngIf="pacienteInconsistenciass">
+          <thead>
+            <tr>
+              <th class="cursor-pointer" (click)="sort('numDoc')">
+                Num Doc
+                <i class="fa" [ngClass]="{'fa-sort': column != 'numDoc', 'fa-sort-asc': (column == 'numDoc' && isDesc), 'fa-sort-desc': (column == 'numDoc' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('tipoApel1')">
+                Tipo Apel 1
+                <i class="fa" [ngClass]="{'fa-sort': column != 'tipoApel1', 'fa-sort-asc': (column == 'tipoApel1' && isDesc), 'fa-sort-desc': (column == 'tipoApel1' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('loginRegistro')">
+                Login Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'loginRegistro', 'fa-sort-asc': (column == 'loginRegistro' && isDesc), 'fa-sort-desc': (column == 'loginRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('apel1')">
+                Apel 1
+                <i class="fa" [ngClass]="{'fa-sort': column != 'apel1', 'fa-sort-asc': (column == 'apel1' && isDesc), 'fa-sort-desc': (column == 'apel1' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('idSucursal')">
+                Id Sucursal
+                <i class="fa" [ngClass]="{'fa-sort': column != 'idSucursal', 'fa-sort-asc': (column == 'idSucursal' && isDesc), 'fa-sort-desc': (column == 'idSucursal' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('apel2Externo')">
+                Apel 2 Externo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'apel2Externo', 'fa-sort-asc': (column == 'apel2Externo' && isDesc), 'fa-sort-desc': (column == 'apel2Externo' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('tipoFecnac')">
+                Tipo Fecnac
+                <i class="fa" [ngClass]="{'fa-sort': column != 'tipoFecnac', 'fa-sort-asc': (column == 'tipoFecnac' && isDesc), 'fa-sort-desc': (column == 'tipoFecnac' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('apel2')">
+                Apel 2
+                <i class="fa" [ngClass]="{'fa-sort': column != 'apel2', 'fa-sort-asc': (column == 'apel2' && isDesc), 'fa-sort-desc': (column == 'apel2' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('sexoExterno')">
+                Sexo Externo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'sexoExterno', 'fa-sort-asc': (column == 'sexoExterno' && isDesc), 'fa-sort-desc': (column == 'sexoExterno' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('tipoNom')">
+                Tipo Nom
+                <i class="fa" [ngClass]="{'fa-sort': column != 'tipoNom', 'fa-sort-asc': (column == 'tipoNom' && isDesc), 'fa-sort-desc': (column == 'tipoNom' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaRegistro')">
+                Fecha Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaRegistro', 'fa-sort-asc': (column == 'fechaRegistro' && isDesc), 'fa-sort-desc': (column == 'fechaRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('appInterna')">
+                App Interna
+                <i class="fa" [ngClass]="{'fa-sort': column != 'appInterna', 'fa-sort-asc': (column == 'appInterna' && isDesc), 'fa-sort-desc': (column == 'appInterna' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('nombreExterno')">
+                Nombre Externo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'nombreExterno', 'fa-sort-asc': (column == 'nombreExterno' && isDesc), 'fa-sort-desc': (column == 'nombreExterno' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('numDocExterno')">
+                Num Doc Externo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'numDocExterno', 'fa-sort-asc': (column == 'numDocExterno' && isDesc), 'fa-sort-desc': (column == 'numDocExterno' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('numInfo')">
+                Num Info
+                <i class="fa" [ngClass]="{'fa-sort': column != 'numInfo', 'fa-sort-asc': (column == 'numInfo' && isDesc), 'fa-sort-desc': (column == 'numInfo' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('tipoInconsistencia')">
+                Tipo Inconsistencia
+                <i class="fa" [ngClass]="{'fa-sort': column != 'tipoInconsistencia', 'fa-sort-asc': (column == 'tipoInconsistencia' && isDesc), 'fa-sort-desc': (column == 'tipoInconsistencia' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('nombre')">
+                Nombre
+                <i class="fa" [ngClass]="{'fa-sort': column != 'nombre', 'fa-sort-asc': (column == 'nombre' && isDesc), 'fa-sort-desc': (column == 'nombre' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('observaciones')">
+                Observaciones
+                <i class="fa" [ngClass]="{'fa-sort': column != 'observaciones', 'fa-sort-asc': (column == 'observaciones' && isDesc), 'fa-sort-desc': (column == 'observaciones' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('nom2')">
+                Nom 2
+                <i class="fa" [ngClass]="{'fa-sort': column != 'nom2', 'fa-sort-asc': (column == 'nom2' && isDesc), 'fa-sort-desc': (column == 'nom2' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fecNacExterno')">
+                Fec Nac Externo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fecNacExterno', 'fa-sort-asc': (column == 'fecNacExterno' && isDesc), 'fa-sort-desc': (column == 'fecNacExterno' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('nom2Externo')">
+                Nom 2 Externo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'nom2Externo', 'fa-sort-asc': (column == 'nom2Externo' && isDesc), 'fa-sort-desc': (column == 'nom2Externo' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('tipoApel2')">
+                Tipo Apel 2
+                <i class="fa" [ngClass]="{'fa-sort': column != 'tipoApel2', 'fa-sort-asc': (column == 'tipoApel2' && isDesc), 'fa-sort-desc': (column == 'tipoApel2' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('contrato')">
+                Contrato
+                <i class="fa" [ngClass]="{'fa-sort': column != 'contrato', 'fa-sort-asc': (column == 'contrato' && isDesc), 'fa-sort-desc': (column == 'contrato' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('appExterna')">
+                App Externa
+                <i class="fa" [ngClass]="{'fa-sort': column != 'appExterna', 'fa-sort-asc': (column == 'appExterna' && isDesc), 'fa-sort-desc': (column == 'appExterna' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('tipoNom1')">
+                Tipo Nom 1
+                <i class="fa" [ngClass]="{'fa-sort': column != 'tipoNom1', 'fa-sort-asc': (column == 'tipoNom1' && isDesc), 'fa-sort-desc': (column == 'tipoNom1' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('nom1')">
+                Nom 1
+                <i class="fa" [ngClass]="{'fa-sort': column != 'nom1', 'fa-sort-asc': (column == 'nom1' && isDesc), 'fa-sort-desc': (column == 'nom1' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('sexo')">
+                Sexo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'sexo', 'fa-sort-asc': (column == 'sexo' && isDesc), 'fa-sort-desc': (column == 'sexo' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fecNac')">
+                Fec Nac
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fecNac', 'fa-sort-asc': (column == 'fecNac' && isDesc), 'fa-sort-desc': (column == 'fecNac' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('apel1Externo')">
+                Apel 1 Externo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'apel1Externo', 'fa-sort-asc': (column == 'apel1Externo' && isDesc), 'fa-sort-desc': (column == 'apel1Externo' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('tipDoc')">
+                Tip Doc
+                <i class="fa" [ngClass]="{'fa-sort': column != 'tipDoc', 'fa-sort-asc': (column == 'tipDoc' && isDesc), 'fa-sort-desc': (column == 'tipDoc' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('nom1Externo')">
+                Nom 1 Externo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'nom1Externo', 'fa-sort-asc': (column == 'nom1Externo' && isDesc), 'fa-sort-desc': (column == 'nom1Externo' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('tipoNumdoc')">
+                Tipo Numdoc
+                <i class="fa" [ngClass]="{'fa-sort': column != 'tipoNumdoc', 'fa-sort-asc': (column == 'tipoNumdoc' && isDesc), 'fa-sort-desc': (column == 'tipoNumdoc' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('tipoTipdoc')">
+                Tipo Tipdoc
+                <i class="fa" [ngClass]="{'fa-sort': column != 'tipoTipdoc', 'fa-sort-asc': (column == 'tipoTipdoc' && isDesc), 'fa-sort-desc': (column == 'tipoTipdoc' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('tipDocExterno')">
+                Tip Doc Externo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'tipDocExterno', 'fa-sort-asc': (column == 'tipDocExterno' && isDesc), 'fa-sort-desc': (column == 'tipDocExterno' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pacienteInconsistencias of pacienteInconsistenciass | orderBy: { property: column, direction: direction }">
+              <td>{{ pacienteInconsistencias.numDoc }}</td>
+              <td>{{ pacienteInconsistencias.tipoApel1 }}</td>
+              <td>{{ pacienteInconsistencias.loginRegistro }}</td>
+              <td>{{ pacienteInconsistencias.apel1 }}</td>
+              <td>{{ pacienteInconsistencias.idSucursal }}</td>
+              <td>{{ pacienteInconsistencias.apel2Externo }}</td>
+              <td>{{ pacienteInconsistencias.tipoFecnac }}</td>
+              <td>{{ pacienteInconsistencias.apel2 }}</td>
+              <td>{{ pacienteInconsistencias.sexoExterno }}</td>
+              <td>{{ pacienteInconsistencias.tipoNom }}</td>
+              <td>{{ pacienteInconsistencias.fechaRegistro }}</td>
+              <td>{{ pacienteInconsistencias.appInterna }}</td>
+              <td>{{ pacienteInconsistencias.nombreExterno }}</td>
+              <td>{{ pacienteInconsistencias.numDocExterno }}</td>
+              <td>{{ pacienteInconsistencias.numInfo }}</td>
+              <td>{{ pacienteInconsistencias.tipoInconsistencia }}</td>
+              <td>{{ pacienteInconsistencias.nombre }}</td>
+              <td>{{ pacienteInconsistencias.observaciones }}</td>
+              <td>{{ pacienteInconsistencias.nom2 }}</td>
+              <td>{{ pacienteInconsistencias.fecNacExterno }}</td>
+              <td>{{ pacienteInconsistencias.nom2Externo }}</td>
+              <td>{{ pacienteInconsistencias.tipoApel2 }}</td>
+              <td>{{ pacienteInconsistencias.contrato }}</td>
+              <td>{{ pacienteInconsistencias.appExterna }}</td>
+              <td>{{ pacienteInconsistencias.tipoNom1 }}</td>
+              <td>{{ pacienteInconsistencias.nom1 }}</td>
+              <td>{{ pacienteInconsistencias.sexo }}</td>
+              <td>{{ pacienteInconsistencias.fecNac }}</td>
+              <td>{{ pacienteInconsistencias.apel1Externo }}</td>
+              <td>{{ pacienteInconsistencias.tipDoc }}</td>
+              <td>{{ pacienteInconsistencias.nom1Externo }}</td>
+              <td>{{ pacienteInconsistencias.tipoNumdoc }}</td>
+              <td>{{ pacienteInconsistencias.tipoTipdoc }}</td>
+              <td>{{ pacienteInconsistencias.tipDocExterno }}</td>
+              <td>
+                <a class="btn btn-info btn-sm" [routerLink]="[ absolutePath, pacienteInconsistencias._id]"><span class="fa fa-eye fa-fw"></span>Ver</a>
+                <a class="btn btn-primary btn-sm" [routerLink]="[ absolutePath, pacienteInconsistencias._id, 'update']"><span class="fa fa-pencil fa-fw"></span>Editar</a>
+                <a class="btn btn-danger btn-sm text-white cursor-pointer" (click)="openDeleteModal(content, pacienteInconsistencias._id)"><span class="fa fa-trash fa-fw"></span>Eliminar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h5 class="modal-title"><i class="fa fa-exclamation-triangle fa-lg fa-fw" aria-hidden="true"></i>¿Esta seguro de eliminar?</h5>
+    <button type="button" class="close cursor-pointer" aria-label="Close" (click)="d(deleteModalOpts.cancel)">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary cursor-pointer" (click)="c(deleteModalOpts.ok)"><i class="fa fa-check fa-fw"></i>Aceptar</button>
+    <button type="button" class="btn btn-secondary cursor-pointer" (click)="c(deleteModalOpts.cancel)"><i class="fa fa-ban fa-fw"></i>Cancelar</button>
+  </div>
+</ng-template>

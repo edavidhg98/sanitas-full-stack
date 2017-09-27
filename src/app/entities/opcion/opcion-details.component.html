@@ -1,0 +1,42 @@
+<div *ngIf="opcion" class="container">
+  <h3 class="m-top-and-bottom-2">Opcion</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ opcion._id }}</dd>
+
+  
+    <dt>Codigo</dt>
+    <dd>{{ opcion.codigo }}</dd>
+
+    <dt>Id Modulo</dt>
+    <dd>{{ opcion.idModulo }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ opcion.descripcion }}</dd>
+
+    <dt>Id Dependencia</dt>
+    <dd>{{ opcion.idDependencia }}</dd>
+
+    <dt>Nombre Forma</dt>
+    <dd>{{ opcion.nombreForma }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ opcion.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ opcion.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ opcion.observaciones }}</dd>
+
+    <dt>Nombre Pagina</dt>
+    <dd>{{ opcion.nombrePagina }}</dd>
+
+    <dt>Nombre Pantalla</dt>
+    <dd>{{ opcion.nombrePantalla }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

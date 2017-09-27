@@ -1,0 +1,104 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Grupo Etareo</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="grupoEtareo && grupoEtareo._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="grupoEtareo" type="text" class="form-control" name="id" [(ngModel)]="grupoEtareo._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_codigo">Codigo</label>
+  <input type="text" id="field_codigo" *ngIf="grupoEtareo" class="form-control" name="codigo" [(ngModel)]="grupoEtareo.codigo"  />
+  <input type="text" id="field_codigo" *ngIf="!grupoEtareo" class="form-control" name="codigo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_descripcion">Descripcion</label>
+  <input type="text" id="field_descripcion" *ngIf="grupoEtareo" class="form-control" name="descripcion" [(ngModel)]="grupoEtareo.descripcion"  />
+  <input type="text" id="field_descripcion" *ngIf="!grupoEtareo" class="form-control" name="descripcion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_edadDesde">Edad Desde</label>
+  <input type="number" id="field_edadDesde" *ngIf="grupoEtareo" class="form-control" name="edadDesde" [(ngModel)]="grupoEtareo.edadDesde"  />
+  <input type="number" id="field_edadDesde" *ngIf="!grupoEtareo" class="form-control" name="edadDesde" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_edadHasta">Edad Hasta</label>
+  <input type="number" id="field_edadHasta" *ngIf="grupoEtareo" class="form-control" name="edadHasta" [(ngModel)]="grupoEtareo.edadHasta"  />
+  <input type="number" id="field_edadHasta" *ngIf="!grupoEtareo" class="form-control" name="edadHasta" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="grupoEtareo" class="form-control" name="fechaRegistro" [(ngModel)]="grupoEtareo.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!grupoEtareo" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="grupoEtareo" class="form-control" name="loginRegistro" [(ngModel)]="grupoEtareo.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!grupoEtareo" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="grupoEtareo" class="form-control" name="observaciones" [(ngModel)]="grupoEtareo.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!grupoEtareo" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="entidads">
+              <label for="field_entidad">Entidad</label>
+
+              <select *ngIf="!grupoEtareo" class="form-control" name="idEntidad" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+
+              <select *ngIf="grupoEtareo && grupoEtareo.idEntidad" class="form-control" name="idEntidad" [(ngModel)]="grupoEtareo.idEntidad">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="sucursals">
+              <label for="field_sucursal">Sucursal</label>
+
+              <select *ngIf="!grupoEtareo" class="form-control" name="idSucursal" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+
+              <select *ngIf="grupoEtareo && grupoEtareo.idSucursal" class="form-control" name="idSucursal" [(ngModel)]="grupoEtareo.idSucursal">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div *ngIf="tiposValores" class="container">
+  <h3 class="m-top-and-bottom-2">Tipos Valores</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ tiposValores._id }}</dd>
+
+  
+    <dt>Id Prestador</dt>
+    <dd>{{ tiposValores.idPrestador }}</dd>
+
+    <dt>Codigo</dt>
+    <dd>{{ tiposValores.codigo }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ tiposValores.descripcion }}</dd>
+
+    <dt>Cantidad</dt>
+    <dd>{{ tiposValores.cantidad }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ tiposValores.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ tiposValores.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ tiposValores.observaciones }}</dd>
+
+    <dt>Id Item Lista Estadocyf</dt>
+    <dd>{{ tiposValores.idItemListaEstadocyf }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

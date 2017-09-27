@@ -1,0 +1,130 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Medicamento Alto Costo</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="medicamentoAltoCosto && medicamentoAltoCosto._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="medicamentoAltoCosto" type="text" class="form-control" name="id" [(ngModel)]="medicamentoAltoCosto._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaTipoAltoCosto">Item Lista Tipo Alto Costo</label>
+  <input type="number" id="field_itemListaTipoAltoCosto" *ngIf="medicamentoAltoCosto" class="form-control" name="itemListaTipoAltoCosto" [(ngModel)]="medicamentoAltoCosto.itemListaTipoAltoCosto"  />
+  <input type="number" id="field_itemListaTipoAltoCosto" *ngIf="!medicamentoAltoCosto" class="form-control" name="itemListaTipoAltoCosto" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaEstadoMedAltoCosto">Item Lista Estado Med Alto Costo</label>
+  <input type="number" id="field_itemListaEstadoMedAltoCosto" *ngIf="medicamentoAltoCosto" class="form-control" name="itemListaEstadoMedAltoCosto" [(ngModel)]="medicamentoAltoCosto.itemListaEstadoMedAltoCosto"  />
+  <input type="number" id="field_itemListaEstadoMedAltoCosto" *ngIf="!medicamentoAltoCosto" class="form-control" name="itemListaEstadoMedAltoCosto" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="medicamentoAltoCosto" class="form-control" name="observaciones" [(ngModel)]="medicamentoAltoCosto.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!medicamentoAltoCosto" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="medicamentoAltoCosto" class="form-control" name="loginRegistro" [(ngModel)]="medicamentoAltoCosto.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!medicamentoAltoCosto" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="medicamentoAltoCosto" class="form-control" name="fechaRegistro" [(ngModel)]="medicamentoAltoCosto.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!medicamentoAltoCosto" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginModificacion">Login Modificacion</label>
+  <input type="text" id="field_loginModificacion" *ngIf="medicamentoAltoCosto" class="form-control" name="loginModificacion" [(ngModel)]="medicamentoAltoCosto.loginModificacion"  />
+  <input type="text" id="field_loginModificacion" *ngIf="!medicamentoAltoCosto" class="form-control" name="loginModificacion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaModificacion">Fecha Modificacion</label>
+  <input type="date" id="field_fechaModificacion" *ngIf="medicamentoAltoCosto" class="form-control" name="fechaModificacion" [(ngModel)]="medicamentoAltoCosto.fechaModificacion"  />
+  <input type="date" id="field_fechaModificacion" *ngIf="!medicamentoAltoCosto" class="form-control" name="fechaModificacion" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="prestadors">
+              <label for="field_prestador">Prestador</label>
+
+              <select *ngIf="!medicamentoAltoCosto" class="form-control" name="idPrestador" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="prestador._id" *ngFor="let prestador of prestadors">{{ prestador._id }}</option>
+              </select>
+
+              <select *ngIf="medicamentoAltoCosto && medicamentoAltoCosto.idPrestador" class="form-control" name="idPrestador" [(ngModel)]="medicamentoAltoCosto.idPrestador">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="prestador._id" *ngFor="let prestador of prestadors">{{ prestador._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="productos">
+              <label for="field_producto">Producto</label>
+
+              <select *ngIf="!medicamentoAltoCosto" class="form-control" name="idProducto" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="producto._id" *ngFor="let producto of productos">{{ producto._id }}</option>
+              </select>
+
+              <select *ngIf="medicamentoAltoCosto && medicamentoAltoCosto.idProducto" class="form-control" name="idProducto" [(ngModel)]="medicamentoAltoCosto.idProducto">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="producto._id" *ngFor="let producto of productos">{{ producto._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="sucursals">
+              <label for="field_sucursal">Sucursal</label>
+
+              <select *ngIf="!medicamentoAltoCosto" class="form-control" name="idSucursal" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+
+              <select *ngIf="medicamentoAltoCosto && medicamentoAltoCosto.idSucursal" class="form-control" name="idSucursal" [(ngModel)]="medicamentoAltoCosto.idSucursal">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="entidads">
+              <label for="field_entidad">Entidad</label>
+
+              <select *ngIf="!medicamentoAltoCosto" class="form-control" name="idEntidad" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+
+              <select *ngIf="medicamentoAltoCosto && medicamentoAltoCosto.idEntidad" class="form-control" name="idEntidad" [(ngModel)]="medicamentoAltoCosto.idEntidad">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

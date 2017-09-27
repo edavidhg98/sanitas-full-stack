@@ -1,0 +1,45 @@
+<div *ngIf="parFormatoCampo" class="container">
+  <h3 class="m-top-and-bottom-2">Par Formato Campo</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ parFormatoCampo._id }}</dd>
+
+  
+    <dt>Longitud Texto</dt>
+    <dd>{{ parFormatoCampo.longitudTexto }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ parFormatoCampo.fechaRegistro }}</dd>
+
+    <dt>Formato Fecha</dt>
+    <dd>{{ parFormatoCampo.formatoFecha }}</dd>
+
+    <dt>Rango Minimo</dt>
+    <dd>{{ parFormatoCampo.rangoMinimo }}</dd>
+
+    <dt>Rango Maximo</dt>
+    <dd>{{ parFormatoCampo.rangoMaximo }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ parFormatoCampo.descripcion }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ parFormatoCampo.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ parFormatoCampo.observaciones }}</dd>
+
+    <dt>Expresion Regular</dt>
+    <dd>{{ parFormatoCampo.expresionRegular }}</dd>
+
+    <dt>Es Decimal</dt>
+    <dd>{{ parFormatoCampo.esDecimal }}</dd>
+
+    <dt>Es Negativo</dt>
+    <dd>{{ parFormatoCampo.esNegativo }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

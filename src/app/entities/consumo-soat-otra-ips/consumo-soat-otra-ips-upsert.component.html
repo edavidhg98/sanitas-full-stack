@@ -1,0 +1,106 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Consumo Soat Otra Ips</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="consumoSoatOtraIps && consumoSoatOtraIps._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="consumoSoatOtraIps" type="text" class="form-control" name="id" [(ngModel)]="consumoSoatOtraIps._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_idAdmision">Id Admision</label>
+  <input type="number" id="field_idAdmision" *ngIf="consumoSoatOtraIps" class="form-control" name="idAdmision" [(ngModel)]="consumoSoatOtraIps.idAdmision"  />
+  <input type="number" id="field_idAdmision" *ngIf="!consumoSoatOtraIps" class="form-control" name="idAdmision" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_poliza">Poliza</label>
+  <input type="text" id="field_poliza" *ngIf="consumoSoatOtraIps" class="form-control" name="poliza" [(ngModel)]="consumoSoatOtraIps.poliza"  />
+  <input type="text" id="field_poliza" *ngIf="!consumoSoatOtraIps" class="form-control" name="poliza" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idPaciente">Id Paciente</label>
+  <input type="number" id="field_idPaciente" *ngIf="consumoSoatOtraIps" class="form-control" name="idPaciente" [(ngModel)]="consumoSoatOtraIps.idPaciente"  />
+  <input type="number" id="field_idPaciente" *ngIf="!consumoSoatOtraIps" class="form-control" name="idPaciente" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaAtencion">Fecha Atencion</label>
+  <input type="date" id="field_fechaAtencion" *ngIf="consumoSoatOtraIps" class="form-control" name="fechaAtencion" [(ngModel)]="consumoSoatOtraIps.fechaAtencion"  />
+  <input type="date" id="field_fechaAtencion" *ngIf="!consumoSoatOtraIps" class="form-control" name="fechaAtencion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idEntidad">Id Entidad</label>
+  <input type="number" id="field_idEntidad" *ngIf="consumoSoatOtraIps" class="form-control" name="idEntidad" [(ngModel)]="consumoSoatOtraIps.idEntidad"  />
+  <input type="number" id="field_idEntidad" *ngIf="!consumoSoatOtraIps" class="form-control" name="idEntidad" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="consumoSoatOtraIps" class="form-control" name="loginRegistro" [(ngModel)]="consumoSoatOtraIps.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!consumoSoatOtraIps" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="consumoSoatOtraIps" class="form-control" name="observaciones" [(ngModel)]="consumoSoatOtraIps.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!consumoSoatOtraIps" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observacionesSoporte">Observaciones Soporte</label>
+  <input type="text" id="field_observacionesSoporte" *ngIf="consumoSoatOtraIps" class="form-control" name="observacionesSoporte" [(ngModel)]="consumoSoatOtraIps.observacionesSoporte"  />
+  <input type="text" id="field_observacionesSoporte" *ngIf="!consumoSoatOtraIps" class="form-control" name="observacionesSoporte" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_nombreIps">Nombre Ips</label>
+  <input type="text" id="field_nombreIps" *ngIf="consumoSoatOtraIps" class="form-control" name="nombreIps" [(ngModel)]="consumoSoatOtraIps.nombreIps"  />
+  <input type="text" id="field_nombreIps" *ngIf="!consumoSoatOtraIps" class="form-control" name="nombreIps" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_monto">Monto</label>
+  <input type="number" id="field_monto" *ngIf="consumoSoatOtraIps" class="form-control" name="monto" [(ngModel)]="consumoSoatOtraIps.monto"  />
+  <input type="number" id="field_monto" *ngIf="!consumoSoatOtraIps" class="form-control" name="monto" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="consumoSoatOtraIps" class="form-control" name="fechaRegistro" [(ngModel)]="consumoSoatOtraIps.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!consumoSoatOtraIps" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

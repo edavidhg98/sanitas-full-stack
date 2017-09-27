@@ -1,0 +1,28 @@
+<div *ngIf="trazabilidadAdmisionListaEsperaHistoriaClinica" class="container">
+  <h3 class="m-top-and-bottom-2">Trazabilidad Admision Lista Espera Historia Clinica</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ trazabilidadAdmisionListaEsperaHistoriaClinica._id }}</dd>
+
+  
+    <dt>Id Lista Espera Historia Clinica</dt>
+    <dd>{{ trazabilidadAdmisionListaEsperaHistoriaClinica.idListaEsperaHistoriaClinica }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ trazabilidadAdmisionListaEsperaHistoriaClinica.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ trazabilidadAdmisionListaEsperaHistoriaClinica.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ trazabilidadAdmisionListaEsperaHistoriaClinica.observaciones }}</dd>
+
+    <dt>TrazabilidadAdmision</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'trazabilidadAdmision', trazabilidadAdmisionListaEsperaHistoriaClinica.trazabilidadAdmision._id]">{{ trazabilidadAdmisionListaEsperaHistoriaClinica.trazabilidadAdmision._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

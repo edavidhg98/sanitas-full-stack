@@ -1,0 +1,62 @@
+<div *ngIf="encabezadoResultado" class="container">
+  <h3 class="m-top-and-bottom-2">Encabezado Resultado</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ encabezadoResultado._id }}</dd>
+
+  
+    <dt>Id Admision</dt>
+    <dd>{{ encabezadoResultado.idAdmision }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ encabezadoResultado.observaciones }}</dd>
+
+    <dt>Secuencia</dt>
+    <dd>{{ encabezadoResultado.secuencia }}</dd>
+
+    <dt>Id Centro Costo Solicita</dt>
+    <dd>{{ encabezadoResultado.idCentroCostoSolicita }}</dd>
+
+    <dt>Id Medico Ordena</dt>
+    <dd>{{ encabezadoResultado.idMedicoOrdena }}</dd>
+
+    <dt>Id Centro Costo</dt>
+    <dd>{{ encabezadoResultado.idCentroCosto }}</dd>
+
+    <dt>Consecutivo Solicitud</dt>
+    <dd>{{ encabezadoResultado.consecutivoSolicitud }}</dd>
+
+    <dt>Fecha Cargo</dt>
+    <dd>{{ encabezadoResultado.fechaCargo }}</dd>
+
+    <dt>Procedencia</dt>
+    <dd>{{ encabezadoResultado.procedencia }}</dd>
+
+    <dt>Num Muestras</dt>
+    <dd>{{ encabezadoResultado.numMuestras }}</dd>
+
+    <dt>Id Medico Practica</dt>
+    <dd>{{ encabezadoResultado.idMedicoPractica }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ encabezadoResultado.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ encabezadoResultado.loginRegistro }}</dd>
+
+    <dt>Item Lista Estado</dt>
+    <dd>{{ encabezadoResultado.itemListaEstado }}</dd>
+
+    <dt>Sucursal</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursal', encabezadoResultado.sucursal._id]">{{ encabezadoResultado.sucursal._id }}</a>
+    </dd>
+    <dt>Procedimiento</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'procedimiento', encabezadoResultado.procedimiento._id]">{{ encabezadoResultado.procedimiento._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

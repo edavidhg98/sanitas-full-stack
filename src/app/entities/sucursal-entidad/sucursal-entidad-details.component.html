@@ -1,0 +1,110 @@
+<div *ngIf="sucursalEntidad" class="container-fluid">
+  <h3 class="m-top-and-bottom-2">Sucursal Entidad</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ sucursalEntidad._id }}</dd>
+
+  
+    <dt>Porcentaje Min Anticipo</dt>
+    <dd>{{ sucursalEntidad.porcentajeMinAnticipo }}</dd>
+
+    <dt>Item Lista Tipo Manejo Hora Obs</dt>
+    <dd>{{ sucursalEntidad.itemListaTipoManejoHoraObs }}</dd>
+
+    <dt>Porcentaje Adicional Anticipo</dt>
+    <dd>{{ sucursalEntidad.porcentajeAdicionalAnticipo }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ sucursalEntidad.fechaRegistro }}</dd>
+
+    <dt>Maneja Redondeo</dt>
+    <dd>{{ sucursalEntidad.manejaRedondeo }}</dd>
+
+    <dt>Hora Genera Reporte</dt>
+    <dd>{{ sucursalEntidad.horaGeneraReporte }}</dd>
+
+    <dt>Maneja Pyp</dt>
+    <dd>{{ sucursalEntidad.manejaPyp }}</dd>
+
+    <dt>Id Item Lista Estadocyf</dt>
+    <dd>{{ sucursalEntidad.idItemListaEstadocyf }}</dd>
+
+    <dt>Item Lista Tipo Usuario</dt>
+    <dd>{{ sucursalEntidad.itemListaTipoUsuario }}</dd>
+
+    <dt>Maneja Penaliza Inasistencia</dt>
+    <dd>{{ sucursalEntidad.manejaPenalizaInasistencia }}</dd>
+
+    <dt>Cantidad Horas Observacion</dt>
+    <dd>{{ sucursalEntidad.cantidadHorasObservacion }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ sucursalEntidad.observaciones }}</dd>
+
+    <dt>Cantidad Minutos Observacion</dt>
+    <dd>{{ sucursalEntidad.cantidadMinutosObservacion }}</dd>
+
+    <dt>Valor Redondeo</dt>
+    <dd>{{ sucursalEntidad.valorRedondeo }}</dd>
+
+    <dt>Maneja Paquete Urgencia</dt>
+    <dd>{{ sucursalEntidad.manejaPaqueteUrgencia }}</dd>
+
+    <dt>Usa Afirma</dt>
+    <dd>{{ sucursalEntidad.usaAfirma }}</dd>
+
+    <dt>Id Item Lista Estadocyf Catalogo</dt>
+    <dd>{{ sucursalEntidad.idItemListaEstadocyfCatalogo }}</dd>
+
+    <dt>Maneja Decimales</dt>
+    <dd>{{ sucursalEntidad.manejaDecimales }}</dd>
+
+    <dt>Maneja Penaliza Cancelacion</dt>
+    <dd>{{ sucursalEntidad.manejaPenalizaCancelacion }}</dd>
+
+    <dt>Mineja Tiempo Cancela Cita</dt>
+    <dd>{{ sucursalEntidad.minejaTiempoCancelaCita }}</dd>
+
+    <dt>Email</dt>
+    <dd>{{ sucursalEntidad.email }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ sucursalEntidad.loginRegistro }}</dd>
+
+    <dt>Verifica Estado Pac</dt>
+    <dd>{{ sucursalEntidad.verificaEstadoPac }}</dd>
+
+    <dt>Verifica Foto</dt>
+    <dd>{{ sucursalEntidad.verificaFoto }}</dd>
+
+    <dt>Item Lista Tipo Vale</dt>
+    <dd>{{ sucursalEntidad.itemListaTipoVale }}</dd>
+
+    <dt>Restringe Admision</dt>
+    <dd>{{ sucursalEntidad.restringeAdmision }}</dd>
+
+    <dt>EncabezadoCatalogo</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'encabezadoCatalogo', sucursalEntidad.encabezadoCatalogo._id]">{{ sucursalEntidad.encabezadoCatalogo._id }}</a>
+    </dd>
+    <dt>Moneda</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'moneda', sucursalEntidad.moneda._id]">{{ sucursalEntidad.moneda._id }}</a>
+    </dd>
+    <dt>Sucursal</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursal', sucursalEntidad.sucursal._id]">{{ sucursalEntidad.sucursal._id }}</a>
+    </dd>
+    <dt>Entidad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'entidad', sucursalEntidad.entidad._id]">{{ sucursalEntidad.entidad._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+  <app-nivel-cargo-list [nivelCargos]="sucursalEntidad.nivelCargos"></app-nivel-cargo-list>
+  <app-procedimiento-convenio-capitado-list [procedimientoConvenioCapitados]="sucursalEntidad.procedimientoConvenioCapitados"></app-procedimiento-convenio-capitado-list>
+  <app-tiempo-recargo-list [tiempoRecargos]="sucursalEntidad.tiempoRecargos"></app-tiempo-recargo-list>
+  <app-tarifa-vacunacion-list [tarifaVacunacions]="sucursalEntidad.tarifaVacunacions"></app-tarifa-vacunacion-list>
+</div>

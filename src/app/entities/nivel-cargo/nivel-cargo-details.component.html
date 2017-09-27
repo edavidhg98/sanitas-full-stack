@@ -1,0 +1,44 @@
+<div *ngIf="nivelCargo" class="container">
+  <h3 class="m-top-and-bottom-2">Nivel Cargo</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ nivelCargo._id }}</dd>
+
+  
+    <dt>Item Lista Nivel 1</dt>
+    <dd>{{ nivelCargo.itemListaNivel1 }}</dd>
+
+    <dt>Item Lista Nivel 2</dt>
+    <dd>{{ nivelCargo.itemListaNivel2 }}</dd>
+
+    <dt>Item Lista Nivel 3</dt>
+    <dd>{{ nivelCargo.itemListaNivel3 }}</dd>
+
+    <dt>Item Lista Nivel 4</dt>
+    <dd>{{ nivelCargo.itemListaNivel4 }}</dd>
+
+    <dt>Item Lista Nivel 5</dt>
+    <dd>{{ nivelCargo.itemListaNivel5 }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ nivelCargo.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ nivelCargo.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ nivelCargo.observaciones }}</dd>
+
+    <dt>SucursalEntidad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursalEntidad', nivelCargo.sucursalEntidad._id]">{{ nivelCargo.sucursalEntidad._id }}</a>
+    </dd>
+    <dt>TipoAdmision</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'tipoAdmision', nivelCargo.tipoAdmision._id]">{{ nivelCargo.tipoAdmision._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

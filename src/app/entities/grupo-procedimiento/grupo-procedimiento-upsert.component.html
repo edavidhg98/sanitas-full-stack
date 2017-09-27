@@ -1,0 +1,85 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Grupo Procedimiento</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="grupoProcedimiento && grupoProcedimiento._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="grupoProcedimiento" type="text" class="form-control" name="id" [(ngModel)]="grupoProcedimiento._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaTipoProcedimiento">Item Lista Tipo Procedimiento</label>
+  <input type="number" id="field_itemListaTipoProcedimiento" *ngIf="grupoProcedimiento" class="form-control" name="itemListaTipoProcedimiento" [(ngModel)]="grupoProcedimiento.itemListaTipoProcedimiento"  />
+  <input type="number" id="field_itemListaTipoProcedimiento" *ngIf="!grupoProcedimiento" class="form-control" name="itemListaTipoProcedimiento" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_gruProced">Gru Proced</label>
+  <input type="text" id="field_gruProced" *ngIf="grupoProcedimiento" class="form-control" name="gruProced" [(ngModel)]="grupoProcedimiento.gruProced"  />
+  <input type="text" id="field_gruProced" *ngIf="!grupoProcedimiento" class="form-control" name="gruProced" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_descripcion">Descripcion</label>
+  <input type="text" id="field_descripcion" *ngIf="grupoProcedimiento" class="form-control" name="descripcion" [(ngModel)]="grupoProcedimiento.descripcion"  />
+  <input type="text" id="field_descripcion" *ngIf="!grupoProcedimiento" class="form-control" name="descripcion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="grupoProcedimiento" class="form-control" name="fechaRegistro" [(ngModel)]="grupoProcedimiento.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!grupoProcedimiento" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="grupoProcedimiento" class="form-control" name="loginRegistro" [(ngModel)]="grupoProcedimiento.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!grupoProcedimiento" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="grupoProcedimiento" class="form-control" name="observaciones" [(ngModel)]="grupoProcedimiento.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!grupoProcedimiento" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idPrestador">Id Prestador</label>
+  <input type="number" id="field_idPrestador" *ngIf="grupoProcedimiento" class="form-control" name="idPrestador" [(ngModel)]="grupoProcedimiento.idPrestador"  />
+  <input type="number" id="field_idPrestador" *ngIf="!grupoProcedimiento" class="form-control" name="idPrestador" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaEstadoEntidadUvr">Item Lista Estado Entidad Uvr</label>
+  <input type="number" id="field_itemListaEstadoEntidadUvr" *ngIf="grupoProcedimiento" class="form-control" name="itemListaEstadoEntidadUvr" [(ngModel)]="grupoProcedimiento.itemListaEstadoEntidadUvr"  />
+  <input type="number" id="field_itemListaEstadoEntidadUvr" *ngIf="!grupoProcedimiento" class="form-control" name="itemListaEstadoEntidadUvr" ngModel />
+  </div>
+
+          
+
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

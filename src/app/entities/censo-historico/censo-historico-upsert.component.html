@@ -1,0 +1,90 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Censo Historico</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="censoHistorico && censoHistorico._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="censoHistorico" type="text" class="form-control" name="id" [(ngModel)]="censoHistorico._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_fecha">Fecha</label>
+  <input type="date" id="field_fecha" *ngIf="censoHistorico" class="form-control" name="fecha" [(ngModel)]="censoHistorico.fecha"  />
+  <input type="date" id="field_fecha" *ngIf="!censoHistorico" class="form-control" name="fecha" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaEstadoCamaCensoHistorico">Item Lista Estado Cama Censo Historico</label>
+  <input type="number" id="field_itemListaEstadoCamaCensoHistorico" *ngIf="censoHistorico" class="form-control" name="itemListaEstadoCamaCensoHistorico" [(ngModel)]="censoHistorico.itemListaEstadoCamaCensoHistorico"  />
+  <input type="number" id="field_itemListaEstadoCamaCensoHistorico" *ngIf="!censoHistorico" class="form-control" name="itemListaEstadoCamaCensoHistorico" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="censoHistorico" class="form-control" name="fechaRegistro" [(ngModel)]="censoHistorico.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!censoHistorico" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="censoHistorico" class="form-control" name="loginRegistro" [(ngModel)]="censoHistorico.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!censoHistorico" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="censoHistorico" class="form-control" name="observaciones" [(ngModel)]="censoHistorico.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!censoHistorico" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="camas">
+              <label for="field_cama">Cama</label>
+
+              <select *ngIf="!censoHistorico" class="form-control" name="idCama" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="cama._id" *ngFor="let cama of camas">{{ cama._id }}</option>
+              </select>
+
+              <select *ngIf="censoHistorico && censoHistorico.idCama" class="form-control" name="idCama" [(ngModel)]="censoHistorico.idCama">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="cama._id" *ngFor="let cama of camas">{{ cama._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="sucursals">
+              <label for="field_sucursal">Sucursal</label>
+
+              <select *ngIf="!censoHistorico" class="form-control" name="idSucursal" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+
+              <select *ngIf="censoHistorico && censoHistorico.idSucursal" class="form-control" name="idSucursal" [(ngModel)]="censoHistorico.idSucursal">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

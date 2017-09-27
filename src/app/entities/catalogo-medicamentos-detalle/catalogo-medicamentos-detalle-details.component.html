@@ -1,0 +1,60 @@
+<div *ngIf="catalogoMedicamentosDetalle" class="container">
+  <h3 class="m-top-and-bottom-2">Catalogo Medicamentos Detalle</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ catalogoMedicamentosDetalle._id }}</dd>
+
+  
+    <dt>Id Encabezado</dt>
+    <dd>{{ catalogoMedicamentosDetalle.idEncabezado }}</dd>
+
+    <dt>Valor Venta Publico</dt>
+    <dd>{{ catalogoMedicamentosDetalle.valorVentaPublico }}</dd>
+
+    <dt>Porcentaje Material</dt>
+    <dd>{{ catalogoMedicamentosDetalle.porcentajeMaterial }}</dd>
+
+    <dt>Porcentaje Regulado</dt>
+    <dd>{{ catalogoMedicamentosDetalle.porcentajeRegulado }}</dd>
+
+    <dt>Fecha Inicial</dt>
+    <dd>{{ catalogoMedicamentosDetalle.fechaInicial }}</dd>
+
+    <dt>Valor Compra</dt>
+    <dd>{{ catalogoMedicamentosDetalle.valorCompra }}</dd>
+
+    <dt>Valor Mn</dt>
+    <dd>{{ catalogoMedicamentosDetalle.valorMn }}</dd>
+
+    <dt>Id Item Lista Estado</dt>
+    <dd>{{ catalogoMedicamentosDetalle.idItemListaEstado }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ catalogoMedicamentosDetalle.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ catalogoMedicamentosDetalle.loginRegistro }}</dd>
+
+    <dt>Login Modificacion</dt>
+    <dd>{{ catalogoMedicamentosDetalle.loginModificacion }}</dd>
+
+    <dt>Id Item Lista Regulado</dt>
+    <dd>{{ catalogoMedicamentosDetalle.idItemListaRegulado }}</dd>
+
+    <dt>Fecha Modificacion</dt>
+    <dd>{{ catalogoMedicamentosDetalle.fechaModificacion }}</dd>
+
+    <dt>Id Producto</dt>
+    <dd>{{ catalogoMedicamentosDetalle.idProducto }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ catalogoMedicamentosDetalle.observaciones }}</dd>
+
+    <dt>Fecha Final</dt>
+    <dd>{{ catalogoMedicamentosDetalle.fechaFinal }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

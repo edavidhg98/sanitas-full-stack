@@ -1,0 +1,539 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Entidad</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="entidad && entidad._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="entidad" type="text" class="form-control" name="id" [(ngModel)]="entidad._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_entidad">Entidad</label>
+  <input type="text" id="field_entidad" *ngIf="entidad" class="form-control" name="entidad" [(ngModel)]="entidad.entidad"  />
+  <input type="text" id="field_entidad" *ngIf="!entidad" class="form-control" name="entidad" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_pedAutMedicame">Ped Aut Medicame</label>
+  <input type="text" id="field_pedAutMedicame" *ngIf="entidad" class="form-control" name="pedAutMedicame" [(ngModel)]="entidad.pedAutMedicame"  />
+  <input type="text" id="field_pedAutMedicame" *ngIf="!entidad" class="form-control" name="pedAutMedicame" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaTipoUsuario">Item Lista Tipo Usuario</label>
+  <input type="number" id="field_itemListaTipoUsuario" *ngIf="entidad" class="form-control" name="itemListaTipoUsuario" [(ngModel)]="entidad.itemListaTipoUsuario"  />
+  <input type="number" id="field_itemListaTipoUsuario" *ngIf="!entidad" class="form-control" name="itemListaTipoUsuario" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_cargos">Cargos</label>
+  <input type="text" id="field_cargos" *ngIf="entidad" class="form-control" name="cargos" [(ngModel)]="entidad.cargos"  />
+  <input type="text" id="field_cargos" *ngIf="!entidad" class="form-control" name="cargos" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_caduForProced">Cadu For Proced</label>
+  <input type="number" id="field_caduForProced" *ngIf="entidad" class="form-control" name="caduForProced" [(ngModel)]="entidad.caduForProced"  />
+  <input type="number" id="field_caduForProced" *ngIf="!entidad" class="form-control" name="caduForProced" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manTopPor">Man Top Por</label>
+  <input type="text" id="field_manTopPor" *ngIf="entidad" class="form-control" name="manTopPor" [(ngModel)]="entidad.manTopPor"  />
+  <input type="text" id="field_manTopPor" *ngIf="!entidad" class="form-control" name="manTopPor" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manNuevaAfiliacion">Man Nueva Afiliacion</label>
+  <input type="text" id="field_manNuevaAfiliacion" *ngIf="entidad" class="form-control" name="manNuevaAfiliacion" [(ngModel)]="entidad.manNuevaAfiliacion"  />
+  <input type="text" id="field_manNuevaAfiliacion" *ngIf="!entidad" class="form-control" name="manNuevaAfiliacion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_montoxproce">Montoxproce</label>
+  <input type="text" id="field_montoxproce" *ngIf="entidad" class="form-control" name="montoxproce" [(ngModel)]="entidad.montoxproce"  />
+  <input type="text" id="field_montoxproce" *ngIf="!entidad" class="form-control" name="montoxproce" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manWebNuevo">Man Web Nuevo</label>
+  <input type="text" id="field_manWebNuevo" *ngIf="entidad" class="form-control" name="manWebNuevo" [(ngModel)]="entidad.manWebNuevo"  />
+  <input type="text" id="field_manWebNuevo" *ngIf="!entidad" class="form-control" name="manWebNuevo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaConvenio">Fecha Convenio</label>
+  <input type="date" id="field_fechaConvenio" *ngIf="entidad" class="form-control" name="fechaConvenio" [(ngModel)]="entidad.fechaConvenio"  />
+  <input type="date" id="field_fechaConvenio" *ngIf="!entidad" class="form-control" name="fechaConvenio" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manConvMed">Man Conv Med</label>
+  <input type="text" id="field_manConvMed" *ngIf="entidad" class="form-control" name="manConvMed" [(ngModel)]="entidad.manConvMed"  />
+  <input type="text" id="field_manConvMed" *ngIf="!entidad" class="form-control" name="manConvMed" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaUnidadMedidaUrgencia">Item Lista Unidad Medida Urgencia</label>
+  <input type="number" id="field_itemListaUnidadMedidaUrgencia" *ngIf="entidad" class="form-control" name="itemListaUnidadMedidaUrgencia" [(ngModel)]="entidad.itemListaUnidadMedidaUrgencia"  />
+  <input type="number" id="field_itemListaUnidadMedidaUrgencia" *ngIf="!entidad" class="form-control" name="itemListaUnidadMedidaUrgencia" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_caduForMedicame">Cadu For Medicame</label>
+  <input type="number" id="field_caduForMedicame" *ngIf="entidad" class="form-control" name="caduForMedicame" [(ngModel)]="entidad.caduForMedicame"  />
+  <input type="number" id="field_caduForMedicame" *ngIf="!entidad" class="form-control" name="caduForMedicame" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_numDoc">Num Doc</label>
+  <input type="text" id="field_numDoc" *ngIf="entidad" class="form-control" name="numDoc" [(ngModel)]="entidad.numDoc"  />
+  <input type="text" id="field_numDoc" *ngIf="!entidad" class="form-control" name="numDoc" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_tiempoObserva">Tiempo Observa</label>
+  <input type="number" id="field_tiempoObserva" *ngIf="entidad" class="form-control" name="tiempoObserva" [(ngModel)]="entidad.tiempoObserva"  />
+  <input type="number" id="field_tiempoObserva" *ngIf="!entidad" class="form-control" name="tiempoObserva" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_valorMinimoLiquidacion">Valor Minimo Liquidacion</label>
+  <input type="number" id="field_valorMinimoLiquidacion" *ngIf="entidad" class="form-control" name="valorMinimoLiquidacion" [(ngModel)]="entidad.valorMinimoLiquidacion"  />
+  <input type="number" id="field_valorMinimoLiquidacion" *ngIf="!entidad" class="form-control" name="valorMinimoLiquidacion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_caduForProcedqx">Cadu For Procedqx</label>
+  <input type="number" id="field_caduForProcedqx" *ngIf="entidad" class="form-control" name="caduForProcedqx" [(ngModel)]="entidad.caduForProcedqx"  />
+  <input type="number" id="field_caduForProcedqx" *ngIf="!entidad" class="form-control" name="caduForProcedqx" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manejaCapitacion">Maneja Capitacion</label>
+  <input type="text" id="field_manejaCapitacion" *ngIf="entidad" class="form-control" name="manejaCapitacion" [(ngModel)]="entidad.manejaCapitacion"  />
+  <input type="text" id="field_manejaCapitacion" *ngIf="!entidad" class="form-control" name="manejaCapitacion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaTipoEntidad">Item Lista Tipo Entidad</label>
+  <input type="number" id="field_itemListaTipoEntidad" *ngIf="entidad" class="form-control" name="itemListaTipoEntidad" [(ngModel)]="entidad.itemListaTipoEntidad"  />
+  <input type="number" id="field_itemListaTipoEntidad" *ngIf="!entidad" class="form-control" name="itemListaTipoEntidad" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manCita">Man Cita</label>
+  <input type="text" id="field_manCita" *ngIf="entidad" class="form-control" name="manCita" [(ngModel)]="entidad.manCita"  />
+  <input type="text" id="field_manCita" *ngIf="!entidad" class="form-control" name="manCita" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_dirIpEntidad">Dir Ip Entidad</label>
+  <input type="text" id="field_dirIpEntidad" *ngIf="entidad" class="form-control" name="dirIpEntidad" [(ngModel)]="entidad.dirIpEntidad"  />
+  <input type="text" id="field_dirIpEntidad" *ngIf="!entidad" class="form-control" name="dirIpEntidad" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="entidad" class="form-control" name="fechaRegistro" [(ngModel)]="entidad.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!entidad" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_tiempoCubVez">Tiempo Cub Vez</label>
+  <input type="number" id="field_tiempoCubVez" *ngIf="entidad" class="form-control" name="tiempoCubVez" [(ngModel)]="entidad.tiempoCubVez"  />
+  <input type="number" id="field_tiempoCubVez" *ngIf="!entidad" class="form-control" name="tiempoCubVez" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaUnidadMedidaOdontologia">Item Lista Unidad Medida Odontologia</label>
+  <input type="number" id="field_itemListaUnidadMedidaOdontologia" *ngIf="entidad" class="form-control" name="itemListaUnidadMedidaOdontologia" [(ngModel)]="entidad.itemListaUnidadMedidaOdontologia"  />
+  <input type="number" id="field_itemListaUnidadMedidaOdontologia" *ngIf="!entidad" class="form-control" name="itemListaUnidadMedidaOdontologia" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manTopes">Man Topes</label>
+  <input type="text" id="field_manTopes" *ngIf="entidad" class="form-control" name="manTopes" [(ngModel)]="entidad.manTopes"  />
+  <input type="text" id="field_manTopes" *ngIf="!entidad" class="form-control" name="manTopes" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="entidad" class="form-control" name="loginRegistro" [(ngModel)]="entidad.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!entidad" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_numCortesMes">Num Cortes Mes</label>
+  <input type="number" id="field_numCortesMes" *ngIf="entidad" class="form-control" name="numCortesMes" [(ngModel)]="entidad.numCortesMes"  />
+  <input type="number" id="field_numCortesMes" *ngIf="!entidad" class="form-control" name="numCortesMes" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_direccion">Direccion</label>
+  <input type="text" id="field_direccion" *ngIf="entidad" class="form-control" name="direccion" [(ngModel)]="entidad.direccion"  />
+  <input type="text" id="field_direccion" *ngIf="!entidad" class="form-control" name="direccion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manejaPorcentajeIncremento">Maneja Porcentaje Incremento</label>
+  <input type="number" id="field_manejaPorcentajeIncremento" *ngIf="entidad" class="form-control" name="manejaPorcentajeIncremento" [(ngModel)]="entidad.manejaPorcentajeIncremento"  />
+  <input type="number" id="field_manejaPorcentajeIncremento" *ngIf="!entidad" class="form-control" name="manejaPorcentajeIncremento" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_codBarrDigCtrl">Cod Barr Dig Ctrl</label>
+  <input type="text" id="field_codBarrDigCtrl" *ngIf="entidad" class="form-control" name="codBarrDigCtrl" [(ngModel)]="entidad.codBarrDigCtrl"  />
+  <input type="text" id="field_codBarrDigCtrl" *ngIf="!entidad" class="form-control" name="codBarrDigCtrl" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manejaCopago">Maneja Copago</label>
+  <input type="text" id="field_manejaCopago" *ngIf="entidad" class="form-control" name="manejaCopago" [(ngModel)]="entidad.manejaCopago"  />
+  <input type="text" id="field_manejaCopago" *ngIf="!entidad" class="form-control" name="manejaCopago" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manejaRecaudo">Maneja Recaudo</label>
+  <input type="text" id="field_manejaRecaudo" *ngIf="entidad" class="form-control" name="manejaRecaudo" [(ngModel)]="entidad.manejaRecaudo"  />
+  <input type="text" id="field_manejaRecaudo" *ngIf="!entidad" class="form-control" name="manejaRecaudo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manCapitacionodo">Man Capitacionodo</label>
+  <input type="text" id="field_manCapitacionodo" *ngIf="entidad" class="form-control" name="manCapitacionodo" [(ngModel)]="entidad.manCapitacionodo"  />
+  <input type="text" id="field_manCapitacionodo" *ngIf="!entidad" class="form-control" name="manCapitacionodo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_nivValPrimeravez">Niv Val Primeravez</label>
+  <input type="text" id="field_nivValPrimeravez" *ngIf="entidad" class="form-control" name="nivValPrimeravez" [(ngModel)]="entidad.nivValPrimeravez"  />
+  <input type="text" id="field_nivValPrimeravez" *ngIf="!entidad" class="form-control" name="nivValPrimeravez" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_convenioInter">Convenio Inter</label>
+  <input type="text" id="field_convenioInter" *ngIf="entidad" class="form-control" name="convenioInter" [(ngModel)]="entidad.convenioInter"  />
+  <input type="text" id="field_convenioInter" *ngIf="!entidad" class="form-control" name="convenioInter" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_numDiascalend">Num Diascalend</label>
+  <input type="number" id="field_numDiascalend" *ngIf="entidad" class="form-control" name="numDiascalend" [(ngModel)]="entidad.numDiascalend"  />
+  <input type="number" id="field_numDiascalend" *ngIf="!entidad" class="form-control" name="numDiascalend" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_telefono">Telefono</label>
+  <input type="text" id="field_telefono" *ngIf="entidad" class="form-control" name="telefono" [(ngModel)]="entidad.telefono"  />
+  <input type="text" id="field_telefono" *ngIf="!entidad" class="form-control" name="telefono" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_verEstadoPac">Ver Estado Pac</label>
+  <input type="text" id="field_verEstadoPac" *ngIf="entidad" class="form-control" name="verEstadoPac" [(ngModel)]="entidad.verEstadoPac"  />
+  <input type="text" id="field_verEstadoPac" *ngIf="!entidad" class="form-control" name="verEstadoPac" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fax">Fax</label>
+  <input type="text" id="field_fax" *ngIf="entidad" class="form-control" name="fax" [(ngModel)]="entidad.fax"  />
+  <input type="text" id="field_fax" *ngIf="!entidad" class="form-control" name="fax" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_confirmacionManual">Confirmacion Manual</label>
+  <input type="text" id="field_confirmacionManual" *ngIf="entidad" class="form-control" name="confirmacionManual" [(ngModel)]="entidad.confirmacionManual"  />
+  <input type="text" id="field_confirmacionManual" *ngIf="!entidad" class="form-control" name="confirmacionManual" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_conSinConv">Con Sin Conv</label>
+  <input type="text" id="field_conSinConv" *ngIf="entidad" class="form-control" name="conSinConv" [(ngModel)]="entidad.conSinConv"  />
+  <input type="text" id="field_conSinConv" *ngIf="!entidad" class="form-control" name="conSinConv" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_bdEstadoExt">Bd Estado Ext</label>
+  <input type="text" id="field_bdEstadoExt" *ngIf="entidad" class="form-control" name="bdEstadoExt" [(ngModel)]="entidad.bdEstadoExt"  />
+  <input type="text" id="field_bdEstadoExt" *ngIf="!entidad" class="form-control" name="bdEstadoExt" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manejaCorteAnual">Maneja Corte Anual</label>
+  <input type="text" id="field_manejaCorteAnual" *ngIf="entidad" class="form-control" name="manejaCorteAnual" [(ngModel)]="entidad.manejaCorteAnual"  />
+  <input type="text" id="field_manejaCorteAnual" *ngIf="!entidad" class="form-control" name="manejaCorteAnual" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_valorMaximoLiquidacion">Valor Maximo Liquidacion</label>
+  <input type="number" id="field_valorMaximoLiquidacion" *ngIf="entidad" class="form-control" name="valorMaximoLiquidacion" [(ngModel)]="entidad.valorMaximoLiquidacion"  />
+  <input type="number" id="field_valorMaximoLiquidacion" *ngIf="!entidad" class="form-control" name="valorMaximoLiquidacion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="entidad" class="form-control" name="observaciones" [(ngModel)]="entidad.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!entidad" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manPaqNoQuirur">Man Paq No Quirur</label>
+  <input type="text" id="field_manPaqNoQuirur" *ngIf="entidad" class="form-control" name="manPaqNoQuirur" [(ngModel)]="entidad.manPaqNoQuirur"  />
+  <input type="text" id="field_manPaqNoQuirur" *ngIf="!entidad" class="form-control" name="manPaqNoQuirur" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_responsable">Responsable</label>
+  <input type="text" id="field_responsable" *ngIf="entidad" class="form-control" name="responsable" [(ngModel)]="entidad.responsable"  />
+  <input type="text" id="field_responsable" *ngIf="!entidad" class="form-control" name="responsable" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaUnidadMedidaExterna">Item Lista Unidad Medida Externa</label>
+  <input type="number" id="field_itemListaUnidadMedidaExterna" *ngIf="entidad" class="form-control" name="itemListaUnidadMedidaExterna" [(ngModel)]="entidad.itemListaUnidadMedidaExterna"  />
+  <input type="number" id="field_itemListaUnidadMedidaExterna" *ngIf="!entidad" class="form-control" name="itemListaUnidadMedidaExterna" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_maxentregasformulacronicos">Maxentregasformulacronicos</label>
+  <input type="number" id="field_maxentregasformulacronicos" *ngIf="entidad" class="form-control" name="maxentregasformulacronicos" [(ngModel)]="entidad.maxentregasformulacronicos"  />
+  <input type="number" id="field_maxentregasformulacronicos" *ngIf="!entidad" class="form-control" name="maxentregasformulacronicos" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manejaMedFamiliar">Maneja Med Familiar</label>
+  <input type="text" id="field_manejaMedFamiliar" *ngIf="entidad" class="form-control" name="manejaMedFamiliar" [(ngModel)]="entidad.manejaMedFamiliar"  />
+  <input type="text" id="field_manejaMedFamiliar" *ngIf="!entidad" class="form-control" name="manejaMedFamiliar" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaUnidadMedidaPrimeraVez">Item Lista Unidad Medida Primera Vez</label>
+  <input type="number" id="field_itemListaUnidadMedidaPrimeraVez" *ngIf="entidad" class="form-control" name="itemListaUnidadMedidaPrimeraVez" [(ngModel)]="entidad.itemListaUnidadMedidaPrimeraVez"  />
+  <input type="number" id="field_itemListaUnidadMedidaPrimeraVez" *ngIf="!entidad" class="form-control" name="itemListaUnidadMedidaPrimeraVez" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_entidadOsi">Entidad Osi</label>
+  <input type="text" id="field_entidadOsi" *ngIf="entidad" class="form-control" name="entidadOsi" [(ngModel)]="entidad.entidadOsi"  />
+  <input type="text" id="field_entidadOsi" *ngIf="!entidad" class="form-control" name="entidadOsi" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_tiempoCubExt">Tiempo Cub Ext</label>
+  <input type="number" id="field_tiempoCubExt" *ngIf="entidad" class="form-control" name="tiempoCubExt" [(ngModel)]="entidad.tiempoCubExt"  />
+  <input type="number" id="field_tiempoCubExt" *ngIf="!entidad" class="form-control" name="tiempoCubExt" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_codInterno">Cod Interno</label>
+  <input type="text" id="field_codInterno" *ngIf="entidad" class="form-control" name="codInterno" [(ngModel)]="entidad.codInterno"  />
+  <input type="text" id="field_codInterno" *ngIf="!entidad" class="form-control" name="codInterno" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_codBarrasDoc">Cod Barras Doc</label>
+  <input type="text" id="field_codBarrasDoc" *ngIf="entidad" class="form-control" name="codBarrasDoc" [(ngModel)]="entidad.codBarrasDoc"  />
+  <input type="text" id="field_codBarrasDoc" *ngIf="!entidad" class="form-control" name="codBarrasDoc" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manejaCorte">Maneja Corte</label>
+  <input type="text" id="field_manejaCorte" *ngIf="entidad" class="form-control" name="manejaCorte" [(ngModel)]="entidad.manejaCorte"  />
+  <input type="text" id="field_manejaCorte" *ngIf="!entidad" class="form-control" name="manejaCorte" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_tiempoCubUrg">Tiempo Cub Urg</label>
+  <input type="number" id="field_tiempoCubUrg" *ngIf="entidad" class="form-control" name="tiempoCubUrg" [(ngModel)]="entidad.tiempoCubUrg"  />
+  <input type="number" id="field_tiempoCubUrg" *ngIf="!entidad" class="form-control" name="tiempoCubUrg" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_vlrTopPor">Vlr Top Por</label>
+  <input type="number" id="field_vlrTopPor" *ngIf="entidad" class="form-control" name="vlrTopPor" [(ngModel)]="entidad.vlrTopPor"  />
+  <input type="number" id="field_vlrTopPor" *ngIf="!entidad" class="form-control" name="vlrTopPor" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_planobh">Planobh</label>
+  <input type="text" id="field_planobh" *ngIf="entidad" class="form-control" name="planobh" [(ngModel)]="entidad.planobh"  />
+  <input type="text" id="field_planobh" *ngIf="!entidad" class="form-control" name="planobh" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_nroMedFor">Nro Med For</label>
+  <input type="number" id="field_nroMedFor" *ngIf="entidad" class="form-control" name="nroMedFor" [(ngModel)]="entidad.nroMedFor"  />
+  <input type="number" id="field_nroMedFor" *ngIf="!entidad" class="form-control" name="nroMedFor" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_pedAutoriza">Ped Autoriza</label>
+  <input type="text" id="field_pedAutoriza" *ngIf="entidad" class="form-control" name="pedAutoriza" [(ngModel)]="entidad.pedAutoriza"  />
+  <input type="text" id="field_pedAutoriza" *ngIf="!entidad" class="form-control" name="pedAutoriza" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_tiempoCubOdontologico">Tiempo Cub Odontologico</label>
+  <input type="number" id="field_tiempoCubOdontologico" *ngIf="entidad" class="form-control" name="tiempoCubOdontologico" [(ngModel)]="entidad.tiempoCubOdontologico"  />
+  <input type="number" id="field_tiempoCubOdontologico" *ngIf="!entidad" class="form-control" name="tiempoCubOdontologico" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_descripcion">Descripcion</label>
+  <input type="text" id="field_descripcion" *ngIf="entidad" class="form-control" name="descripcion" [(ngModel)]="entidad.descripcion"  />
+  <input type="text" id="field_descripcion" *ngIf="!entidad" class="form-control" name="descripcion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_topLiqCirugia">Top Liq Cirugia</label>
+  <input type="number" id="field_topLiqCirugia" *ngIf="entidad" class="form-control" name="topLiqCirugia" [(ngModel)]="entidad.topLiqCirugia"  />
+  <input type="number" id="field_topLiqCirugia" *ngIf="!entidad" class="form-control" name="topLiqCirugia" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manprogcronicos">Manprogcronicos</label>
+  <input type="text" id="field_manprogcronicos" *ngIf="entidad" class="form-control" name="manprogcronicos" [(ngModel)]="entidad.manprogcronicos"  />
+  <input type="text" id="field_manprogcronicos" *ngIf="!entidad" class="form-control" name="manprogcronicos" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_codBarrasCarnet">Cod Barras Carnet</label>
+  <input type="text" id="field_codBarrasCarnet" *ngIf="entidad" class="form-control" name="codBarrasCarnet" [(ngModel)]="entidad.codBarrasCarnet"  />
+  <input type="text" id="field_codBarrasCarnet" *ngIf="!entidad" class="form-control" name="codBarrasCarnet" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_manejaProteccionDatos">Maneja Proteccion Datos</label>
+  <input type="text" id="field_manejaProteccionDatos" *ngIf="entidad" class="form-control" name="manejaProteccionDatos" [(ngModel)]="entidad.manejaProteccionDatos"  />
+  <input type="text" id="field_manejaProteccionDatos" *ngIf="!entidad" class="form-control" name="manejaProteccionDatos" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_email">Email</label>
+  <input type="text" id="field_email" *ngIf="entidad" class="form-control" name="email" [(ngModel)]="entidad.email"  />
+  <input type="text" id="field_email" *ngIf="!entidad" class="form-control" name="email" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaUnidadMedidaObservacion">Item Lista Unidad Medida Observacion</label>
+  <input type="number" id="field_itemListaUnidadMedidaObservacion" *ngIf="entidad" class="form-control" name="itemListaUnidadMedidaObservacion" [(ngModel)]="entidad.itemListaUnidadMedidaObservacion"  />
+  <input type="number" id="field_itemListaUnidadMedidaObservacion" *ngIf="!entidad" class="form-control" name="itemListaUnidadMedidaObservacion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_noCargos">No Cargos</label>
+  <input type="number" id="field_noCargos" *ngIf="entidad" class="form-control" name="noCargos" [(ngModel)]="entidad.noCargos"  />
+  <input type="number" id="field_noCargos" *ngIf="!entidad" class="form-control" name="noCargos" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaTipoDocumento">Item Lista Tipo Documento</label>
+  <input type="number" id="field_itemListaTipoDocumento" *ngIf="entidad" class="form-control" name="itemListaTipoDocumento" [(ngModel)]="entidad.itemListaTipoDocumento"  />
+  <input type="number" id="field_itemListaTipoDocumento" *ngIf="!entidad" class="form-control" name="itemListaTipoDocumento" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="ciudads">
+              <label for="field_ciudad">Ciudad</label>
+
+              <select *ngIf="!entidad" class="form-control" name="idCiudad" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="ciudad._id" *ngFor="let ciudad of ciudads">{{ ciudad._id }}</option>
+              </select>
+
+              <select *ngIf="entidad && entidad.idCiudad" class="form-control" name="idCiudad" [(ngModel)]="entidad.idCiudad">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="ciudad._id" *ngFor="let ciudad of ciudads">{{ ciudad._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div *ngIf="procedimientoFinalidad" class="container">
+  <h3 class="m-top-and-bottom-2">Procedimiento Finalidad</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ procedimientoFinalidad._id }}</dd>
+
+  
+    <dt>Finalidad</dt>
+    <dd>{{ procedimientoFinalidad.finalidad }}</dd>
+
+    <dt>Procedimiento</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'procedimiento', procedimientoFinalidad.procedimiento._id]">{{ procedimientoFinalidad.procedimiento._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

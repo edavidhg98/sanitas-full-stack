@@ -1,0 +1,142 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="m-top-and-bottom-2">
+            <span>Login</span>
+            <a class="btn btn-primary float-right" [routerLink]="[ absolutePath, 'create']" data-dismiss="modal">
+              <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
+              Crear Nuevo Login
+            </a>
+          </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped table-responsive" *ngIf="logins">
+          <thead>
+            <tr>
+              <th class="cursor-pointer" (click)="sort('login')">
+                Login
+                <i class="fa" [ngClass]="{'fa-sort': column != 'login', 'fa-sort-asc': (column == 'login' && isDesc), 'fa-sort-desc': (column == 'login' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('numeroDocumento')">
+                Numero Documento
+                <i class="fa" [ngClass]="{'fa-sort': column != 'numeroDocumento', 'fa-sort-asc': (column == 'numeroDocumento' && isDesc), 'fa-sort-desc': (column == 'numeroDocumento' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaUltimoAcceso')">
+                Fecha Ultimo Acceso
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaUltimoAcceso', 'fa-sort-asc': (column == 'fechaUltimoAcceso' && isDesc), 'fa-sort-desc': (column == 'fechaUltimoAcceso' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaEstadoLogin')">
+                Item Lista Estado Login
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaEstadoLogin', 'fa-sort-asc': (column == 'itemListaEstadoLogin' && isDesc), 'fa-sort-desc': (column == 'itemListaEstadoLogin' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('loginRegistro')">
+                Login Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'loginRegistro', 'fa-sort-asc': (column == 'loginRegistro' && isDesc), 'fa-sort-desc': (column == 'loginRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaRegistro')">
+                Fecha Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaRegistro', 'fa-sort-asc': (column == 'fechaRegistro' && isDesc), 'fa-sort-desc': (column == 'fechaRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaUltimoCambio')">
+                Fecha Ultimo Cambio
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaUltimoCambio', 'fa-sort-asc': (column == 'fechaUltimoCambio' && isDesc), 'fa-sort-desc': (column == 'fechaUltimoCambio' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('usuarioAgfa')">
+                Usuario Agfa
+                <i class="fa" [ngClass]="{'fa-sort': column != 'usuarioAgfa', 'fa-sort-asc': (column == 'usuarioAgfa' && isDesc), 'fa-sort-desc': (column == 'usuarioAgfa' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('idCentroCosto')">
+                Id Centro Costo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'idCentroCosto', 'fa-sort-asc': (column == 'idCentroCosto' && isDesc), 'fa-sort-desc': (column == 'idCentroCosto' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('claveAgfa')">
+                Clave Agfa
+                <i class="fa" [ngClass]="{'fa-sort': column != 'claveAgfa', 'fa-sort-asc': (column == 'claveAgfa' && isDesc), 'fa-sort-desc': (column == 'claveAgfa' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('usuarioLdap')">
+                Usuario Ldap
+                <i class="fa" [ngClass]="{'fa-sort': column != 'usuarioLdap', 'fa-sort-asc': (column == 'usuarioLdap' && isDesc), 'fa-sort-desc': (column == 'usuarioLdap' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('nombre')">
+                Nombre
+                <i class="fa" [ngClass]="{'fa-sort': column != 'nombre', 'fa-sort-asc': (column == 'nombre' && isDesc), 'fa-sort-desc': (column == 'nombre' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaTipoDocumento')">
+                Item Lista Tipo Documento
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaTipoDocumento', 'fa-sort-asc': (column == 'itemListaTipoDocumento' && isDesc), 'fa-sort-desc': (column == 'itemListaTipoDocumento' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('password')">
+                Password
+                <i class="fa" [ngClass]="{'fa-sort': column != 'password', 'fa-sort-asc': (column == 'password' && isDesc), 'fa-sort-desc': (column == 'password' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaTipoUsuarioLogin')">
+                Item Lista Tipo Usuario Login
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaTipoUsuarioLogin', 'fa-sort-asc': (column == 'itemListaTipoUsuarioLogin' && isDesc), 'fa-sort-desc': (column == 'itemListaTipoUsuarioLogin' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('consultaHistoria')">
+                Consulta Historia
+                <i class="fa" [ngClass]="{'fa-sort': column != 'consultaHistoria', 'fa-sort-asc': (column == 'consultaHistoria' && isDesc), 'fa-sort-desc': (column == 'consultaHistoria' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('apellido')">
+                Apellido
+                <i class="fa" [ngClass]="{'fa-sort': column != 'apellido', 'fa-sort-asc': (column == 'apellido' && isDesc), 'fa-sort-desc': (column == 'apellido' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('callCenter')">
+                Call Center
+                <i class="fa" [ngClass]="{'fa-sort': column != 'callCenter', 'fa-sort-asc': (column == 'callCenter' && isDesc), 'fa-sort-desc': (column == 'callCenter' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('observaciones')">
+                Observaciones
+                <i class="fa" [ngClass]="{'fa-sort': column != 'observaciones', 'fa-sort-asc': (column == 'observaciones' && isDesc), 'fa-sort-desc': (column == 'observaciones' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('itemListaCargo')">
+                Item Lista Cargo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'itemListaCargo', 'fa-sort-asc': (column == 'itemListaCargo' && isDesc), 'fa-sort-desc': (column == 'itemListaCargo' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let login of logins | orderBy: { property: column, direction: direction }">
+              <td>{{ login.login }}</td>
+              <td>{{ login.numeroDocumento }}</td>
+              <td>{{ login.fechaUltimoAcceso }}</td>
+              <td>{{ login.itemListaEstadoLogin }}</td>
+              <td>{{ login.loginRegistro }}</td>
+              <td>{{ login.fechaRegistro }}</td>
+              <td>{{ login.fechaUltimoCambio }}</td>
+              <td>{{ login.usuarioAgfa }}</td>
+              <td>{{ login.idCentroCosto }}</td>
+              <td>{{ login.claveAgfa }}</td>
+              <td>{{ login.usuarioLdap }}</td>
+              <td>{{ login.nombre }}</td>
+              <td>{{ login.itemListaTipoDocumento }}</td>
+              <td>{{ login.password }}</td>
+              <td>{{ login.itemListaTipoUsuarioLogin }}</td>
+              <td>{{ login.consultaHistoria }}</td>
+              <td>{{ login.apellido }}</td>
+              <td>{{ login.callCenter }}</td>
+              <td>{{ login.observaciones }}</td>
+              <td>{{ login.itemListaCargo }}</td>
+              <td>
+                <a class="btn btn-info btn-sm" [routerLink]="[ absolutePath, login._id]"><span class="fa fa-eye fa-fw"></span>Ver</a>
+                <a class="btn btn-primary btn-sm" [routerLink]="[ absolutePath, login._id, 'update']"><span class="fa fa-pencil fa-fw"></span>Editar</a>
+                <a class="btn btn-danger btn-sm text-white cursor-pointer" (click)="openDeleteModal(content, login._id)"><span class="fa fa-trash fa-fw"></span>Eliminar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h5 class="modal-title"><i class="fa fa-exclamation-triangle fa-lg fa-fw" aria-hidden="true"></i>¿Esta seguro de eliminar?</h5>
+    <button type="button" class="close cursor-pointer" aria-label="Close" (click)="d(deleteModalOpts.cancel)">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary cursor-pointer" (click)="c(deleteModalOpts.ok)"><i class="fa fa-check fa-fw"></i>Aceptar</button>
+    <button type="button" class="btn btn-secondary cursor-pointer" (click)="c(deleteModalOpts.cancel)"><i class="fa fa-ban fa-fw"></i>Cancelar</button>
+  </div>
+</ng-template>

@@ -1,0 +1,34 @@
+<div *ngIf="zonaHorariaVerano" class="container">
+  <h3 class="m-top-and-bottom-2">Zona Horaria Verano</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ zonaHorariaVerano._id }}</dd>
+
+  
+    <dt>Fecha Inicio</dt>
+    <dd>{{ zonaHorariaVerano.fechaInicio }}</dd>
+
+    <dt>Fecha Fin</dt>
+    <dd>{{ zonaHorariaVerano.fechaFin }}</dd>
+
+    <dt>Utc</dt>
+    <dd>{{ zonaHorariaVerano.utc }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ zonaHorariaVerano.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ zonaHorariaVerano.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ zonaHorariaVerano.observaciones }}</dd>
+
+    <dt>Sucursal</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursal', zonaHorariaVerano.sucursal._id]">{{ zonaHorariaVerano.sucursal._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

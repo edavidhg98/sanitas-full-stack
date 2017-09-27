@@ -1,0 +1,123 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Diagnostico</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="diagnostico && diagnostico._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="diagnostico" type="text" class="form-control" name="id" [(ngModel)]="diagnostico._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_diagnost">Diagnost</label>
+  <input type="text" id="field_diagnost" *ngIf="diagnostico" class="form-control" name="diagnost" [(ngModel)]="diagnostico.diagnost"  />
+  <input type="text" id="field_diagnost" *ngIf="!diagnostico" class="form-control" name="diagnost" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaClasificacion">Item Lista Clasificacion</label>
+  <input type="number" id="field_itemListaClasificacion" *ngIf="diagnostico" class="form-control" name="itemListaClasificacion" [(ngModel)]="diagnostico.itemListaClasificacion"  />
+  <input type="number" id="field_itemListaClasificacion" *ngIf="!diagnostico" class="form-control" name="itemListaClasificacion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_edaIni">Eda Ini</label>
+  <input type="number" id="field_edaIni" *ngIf="diagnostico" class="form-control" name="edaIni" [(ngModel)]="diagnostico.edaIni"  />
+  <input type="number" id="field_edaIni" *ngIf="!diagnostico" class="form-control" name="edaIni" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaGenero">Item Lista Genero</label>
+  <input type="number" id="field_itemListaGenero" *ngIf="diagnostico" class="form-control" name="itemListaGenero" [(ngModel)]="diagnostico.itemListaGenero"  />
+  <input type="number" id="field_itemListaGenero" *ngIf="!diagnostico" class="form-control" name="itemListaGenero" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_descripcion">Descripcion</label>
+  <input type="text" id="field_descripcion" *ngIf="diagnostico" class="form-control" name="descripcion" [(ngModel)]="diagnostico.descripcion"  />
+  <input type="text" id="field_descripcion" *ngIf="!diagnostico" class="form-control" name="descripcion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-check">
+  <label class="custom-control custom-checkbox">
+    <input *ngIf="diagnostico" type="checkbox" class="custom-control-input" name="mortal"  [(ngModel)]="diagnostico.mortal" />
+    <input *ngIf="!diagnostico" type="checkbox" class="custom-control-input" name="mortal" ngModel />
+    <span class="custom-control-indicator"></span>
+    <span class="custom-control-description">Mortal</span>
+      </label>
+</div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_indicetexto">Indicetexto</label>
+  <input type="number" id="field_indicetexto" *ngIf="diagnostico" class="form-control" name="indicetexto" [(ngModel)]="diagnostico.indicetexto"  />
+  <input type="number" id="field_indicetexto" *ngIf="!diagnostico" class="form-control" name="indicetexto" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_edaFin">Eda Fin</label>
+  <input type="number" id="field_edaFin" *ngIf="diagnostico" class="form-control" name="edaFin" [(ngModel)]="diagnostico.edaFin"  />
+  <input type="number" id="field_edaFin" *ngIf="!diagnostico" class="form-control" name="edaFin" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="diagnostico" class="form-control" name="fechaRegistro" [(ngModel)]="diagnostico.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!diagnostico" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="diagnostico" class="form-control" name="loginRegistro" [(ngModel)]="diagnostico.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!diagnostico" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="diagnostico" class="form-control" name="observaciones" [(ngModel)]="diagnostico.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!diagnostico" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaEstadoDiagnostico">Item Lista Estado Diagnostico</label>
+  <input type="number" id="field_itemListaEstadoDiagnostico" *ngIf="diagnostico" class="form-control" name="itemListaEstadoDiagnostico" [(ngModel)]="diagnostico.itemListaEstadoDiagnostico"  />
+  <input type="number" id="field_itemListaEstadoDiagnostico" *ngIf="!diagnostico" class="form-control" name="itemListaEstadoDiagnostico" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_cie10Rips">Cie 10 Rips</label>
+  <input type="text" id="field_cie10Rips" *ngIf="diagnostico" class="form-control" name="cie10Rips" [(ngModel)]="diagnostico.cie10Rips"  />
+  <input type="text" id="field_cie10Rips" *ngIf="!diagnostico" class="form-control" name="cie10Rips" ngModel />
+  </div>
+
+          
+
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

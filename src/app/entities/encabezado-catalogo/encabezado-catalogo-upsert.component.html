@@ -1,0 +1,95 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Encabezado Catalogo</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="encabezadoCatalogo && encabezadoCatalogo._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="encabezadoCatalogo" type="text" class="form-control" name="id" [(ngModel)]="encabezadoCatalogo._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_idEncabezado">Id Encabezado</label>
+  <input type="number" id="field_idEncabezado" *ngIf="encabezadoCatalogo" class="form-control" name="idEncabezado" [(ngModel)]="encabezadoCatalogo.idEncabezado"  />
+  <input type="number" id="field_idEncabezado" *ngIf="!encabezadoCatalogo" class="form-control" name="idEncabezado" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_descripcion">Descripcion</label>
+  <input type="text" id="field_descripcion" *ngIf="encabezadoCatalogo" class="form-control" name="descripcion" [(ngModel)]="encabezadoCatalogo.descripcion"  />
+  <input type="text" id="field_descripcion" *ngIf="!encabezadoCatalogo" class="form-control" name="descripcion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaEstado">Item Lista Estado</label>
+  <input type="number" id="field_itemListaEstado" *ngIf="encabezadoCatalogo" class="form-control" name="itemListaEstado" [(ngModel)]="encabezadoCatalogo.itemListaEstado"  />
+  <input type="number" id="field_itemListaEstado" *ngIf="!encabezadoCatalogo" class="form-control" name="itemListaEstado" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observacion">Observacion</label>
+  <input type="text" id="field_observacion" *ngIf="encabezadoCatalogo" class="form-control" name="observacion" [(ngModel)]="encabezadoCatalogo.observacion"  />
+  <input type="text" id="field_observacion" *ngIf="!encabezadoCatalogo" class="form-control" name="observacion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="encabezadoCatalogo" class="form-control" name="fechaRegistro" [(ngModel)]="encabezadoCatalogo.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!encabezadoCatalogo" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="encabezadoCatalogo" class="form-control" name="loginRegistro" [(ngModel)]="encabezadoCatalogo.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!encabezadoCatalogo" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaModificacion">Fecha Modificacion</label>
+  <input type="date" id="field_fechaModificacion" *ngIf="encabezadoCatalogo" class="form-control" name="fechaModificacion" [(ngModel)]="encabezadoCatalogo.fechaModificacion"  />
+  <input type="date" id="field_fechaModificacion" *ngIf="!encabezadoCatalogo" class="form-control" name="fechaModificacion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginModificacion">Login Modificacion</label>
+  <input type="text" id="field_loginModificacion" *ngIf="encabezadoCatalogo" class="form-control" name="loginModificacion" [(ngModel)]="encabezadoCatalogo.loginModificacion"  />
+  <input type="text" id="field_loginModificacion" *ngIf="!encabezadoCatalogo" class="form-control" name="loginModificacion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-check">
+  <label class="custom-control custom-checkbox">
+    <input *ngIf="encabezadoCatalogo" type="checkbox" class="custom-control-input" name="activo"  [(ngModel)]="encabezadoCatalogo.activo" />
+    <input *ngIf="!encabezadoCatalogo" type="checkbox" class="custom-control-input" name="activo" ngModel />
+    <span class="custom-control-indicator"></span>
+    <span class="custom-control-description">Activo</span>
+      </label>
+</div>
+
+          
+
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

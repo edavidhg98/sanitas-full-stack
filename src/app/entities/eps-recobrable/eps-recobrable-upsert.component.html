@@ -1,0 +1,70 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Eps Recobrable</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="epsRecobrable && epsRecobrable._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="epsRecobrable" type="text" class="form-control" name="id" [(ngModel)]="epsRecobrable._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_epsRecobrable">Eps Recobrable</label>
+  <input type="text" id="field_epsRecobrable" *ngIf="epsRecobrable" class="form-control" name="epsRecobrable" [(ngModel)]="epsRecobrable.epsRecobrable"  />
+  <input type="text" id="field_epsRecobrable" *ngIf="!epsRecobrable" class="form-control" name="epsRecobrable" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="epsRecobrable" class="form-control" name="fechaRegistro" [(ngModel)]="epsRecobrable.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!epsRecobrable" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="epsRecobrable" class="form-control" name="loginRegistro" [(ngModel)]="epsRecobrable.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!epsRecobrable" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="epsRecobrable" class="form-control" name="observaciones" [(ngModel)]="epsRecobrable.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!epsRecobrable" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="entidads">
+              <label for="field_entidad">Entidad</label>
+
+              <select *ngIf="!epsRecobrable" class="form-control" name="idEntidad" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+
+              <select *ngIf="epsRecobrable && epsRecobrable.idEntidad" class="form-control" name="idEntidad" [(ngModel)]="epsRecobrable.idEntidad">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entidad._id" *ngFor="let entidad of entidads">{{ entidad._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

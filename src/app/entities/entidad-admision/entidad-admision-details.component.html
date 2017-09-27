@@ -1,0 +1,38 @@
+<div *ngIf="entidadAdmision" class="container">
+  <h3 class="m-top-and-bottom-2">Entidad Admision</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ entidadAdmision._id }}</dd>
+
+  
+    <dt>Id Tipo Admision</dt>
+    <dd>{{ entidadAdmision.idTipoAdmision }}</dd>
+
+    <dt>Item Lista Abre Admision</dt>
+    <dd>{{ entidadAdmision.itemListaAbreAdmision }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ entidadAdmision.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ entidadAdmision.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ entidadAdmision.observaciones }}</dd>
+
+    <dt>Man Anticipo</dt>
+    <dd>{{ entidadAdmision.manAnticipo }}</dd>
+
+    <dt>Sucursal</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'sucursal', entidadAdmision.sucursal._id]">{{ entidadAdmision.sucursal._id }}</a>
+    </dd>
+    <dt>Entidad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'entidad', entidadAdmision.entidad._id]">{{ entidadAdmision.entidad._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

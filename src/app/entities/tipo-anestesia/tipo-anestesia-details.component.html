@@ -1,0 +1,34 @@
+<div *ngIf="tipoAnestesia" class="container">
+  <h3 class="m-top-and-bottom-2">Tipo Anestesia</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ tipoAnestesia._id }}</dd>
+
+  
+    <dt>Tipo Anestesia</dt>
+    <dd>{{ tipoAnestesia.tipoAnestesia }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ tipoAnestesia.descripcion }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ tipoAnestesia.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ tipoAnestesia.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ tipoAnestesia.observaciones }}</dd>
+
+    <dt>Id Prestador</dt>
+    <dd>{{ tipoAnestesia.idPrestador }}</dd>
+
+    <dt>Procedimiento</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'procedimiento', tipoAnestesia.procedimiento._id]">{{ tipoAnestesia.procedimiento._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

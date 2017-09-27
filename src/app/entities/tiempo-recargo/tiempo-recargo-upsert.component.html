@@ -1,0 +1,112 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Tiempo Recargo</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="tiempoRecargo && tiempoRecargo._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="tiempoRecargo" type="text" class="form-control" name="id" [(ngModel)]="tiempoRecargo._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_codigo">Codigo</label>
+  <input type="text" id="field_codigo" *ngIf="tiempoRecargo" class="form-control" name="codigo" [(ngModel)]="tiempoRecargo.codigo"  />
+  <input type="text" id="field_codigo" *ngIf="!tiempoRecargo" class="form-control" name="codigo" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_descripcion">Descripcion</label>
+  <input type="text" id="field_descripcion" *ngIf="tiempoRecargo" class="form-control" name="descripcion" [(ngModel)]="tiempoRecargo.descripcion"  />
+  <input type="text" id="field_descripcion" *ngIf="!tiempoRecargo" class="form-control" name="descripcion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_horaDesde">Hora Desde</label>
+  <input type="number" id="field_horaDesde" *ngIf="tiempoRecargo" class="form-control" name="horaDesde" [(ngModel)]="tiempoRecargo.horaDesde"  />
+  <input type="number" id="field_horaDesde" *ngIf="!tiempoRecargo" class="form-control" name="horaDesde" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_minutoDesde">Minuto Desde</label>
+  <input type="number" id="field_minutoDesde" *ngIf="tiempoRecargo" class="form-control" name="minutoDesde" [(ngModel)]="tiempoRecargo.minutoDesde"  />
+  <input type="number" id="field_minutoDesde" *ngIf="!tiempoRecargo" class="form-control" name="minutoDesde" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_horaFinal">Hora Final</label>
+  <input type="number" id="field_horaFinal" *ngIf="tiempoRecargo" class="form-control" name="horaFinal" [(ngModel)]="tiempoRecargo.horaFinal"  />
+  <input type="number" id="field_horaFinal" *ngIf="!tiempoRecargo" class="form-control" name="horaFinal" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_minutoFinal">Minuto Final</label>
+  <input type="number" id="field_minutoFinal" *ngIf="tiempoRecargo" class="form-control" name="minutoFinal" [(ngModel)]="tiempoRecargo.minutoFinal"  />
+  <input type="number" id="field_minutoFinal" *ngIf="!tiempoRecargo" class="form-control" name="minutoFinal" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="tiempoRecargo" class="form-control" name="fechaRegistro" [(ngModel)]="tiempoRecargo.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!tiempoRecargo" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="tiempoRecargo" class="form-control" name="loginRegistro" [(ngModel)]="tiempoRecargo.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!tiempoRecargo" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="tiempoRecargo" class="form-control" name="observaciones" [(ngModel)]="tiempoRecargo.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!tiempoRecargo" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaEstadoMttoRecAuto">Item Lista Estado Mtto Rec Auto</label>
+  <input type="number" id="field_itemListaEstadoMttoRecAuto" *ngIf="tiempoRecargo" class="form-control" name="itemListaEstadoMttoRecAuto" [(ngModel)]="tiempoRecargo.itemListaEstadoMttoRecAuto"  />
+  <input type="number" id="field_itemListaEstadoMttoRecAuto" *ngIf="!tiempoRecargo" class="form-control" name="itemListaEstadoMttoRecAuto" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="sucursalEntidads">
+              <label for="field_sucursalEntidad">Sucursal Entidad</label>
+
+              <select *ngIf="!tiempoRecargo" class="form-control" name="idSucursalEntidad" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursalEntidad._id" *ngFor="let sucursalEntidad of sucursalEntidads">{{ sucursalEntidad._id }}</option>
+              </select>
+
+              <select *ngIf="tiempoRecargo && tiempoRecargo.idSucursalEntidad" class="form-control" name="idSucursalEntidad" [(ngModel)]="tiempoRecargo.idSucursalEntidad">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursalEntidad._id" *ngFor="let sucursalEntidad of sucursalEntidads">{{ sucursalEntidad._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

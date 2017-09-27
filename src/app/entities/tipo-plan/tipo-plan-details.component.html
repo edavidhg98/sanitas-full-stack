@@ -1,0 +1,39 @@
+<div *ngIf="tipoPlan" class="container-fluid">
+  <h3 class="m-top-and-bottom-2">Tipo Plan</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ tipoPlan._id }}</dd>
+
+  
+    <dt>Tip Plan</dt>
+    <dd>{{ tipoPlan.tipPlan }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ tipoPlan.descripcion }}</dd>
+
+    <dt>Val Moderado</dt>
+    <dd>{{ tipoPlan.valModerado }}</dd>
+
+    <dt>Val Copago</dt>
+    <dd>{{ tipoPlan.valCopago }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ tipoPlan.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ tipoPlan.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ tipoPlan.observaciones }}</dd>
+
+    <dt>Entidad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'entidad', tipoPlan.entidad._id]">{{ tipoPlan.entidad._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+  <app-cama-plan-list [camaPlans]="tipoPlan.camaPlans"></app-cama-plan-list>
+  <app-tipos-documento-entidad-list [tiposDocumentoEntidads]="tipoPlan.tiposDocumentoEntidads"></app-tipos-documento-entidad-list>
+</div>

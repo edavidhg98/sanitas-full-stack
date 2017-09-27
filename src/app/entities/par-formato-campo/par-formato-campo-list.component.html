@@ -1,0 +1,97 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="m-top-and-bottom-2">
+            <span>Par Formato Campo</span>
+            <a class="btn btn-primary float-right" [routerLink]="[ absolutePath, 'create']" data-dismiss="modal">
+              <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
+              Crear Nuevo Par Formato Campo
+            </a>
+          </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped table-responsive" *ngIf="parFormatoCampos">
+          <thead>
+            <tr>
+              <th class="cursor-pointer" (click)="sort('longitudTexto')">
+                Longitud Texto
+                <i class="fa" [ngClass]="{'fa-sort': column != 'longitudTexto', 'fa-sort-asc': (column == 'longitudTexto' && isDesc), 'fa-sort-desc': (column == 'longitudTexto' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('rangoMinimo')">
+                Rango Minimo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'rangoMinimo', 'fa-sort-asc': (column == 'rangoMinimo' && isDesc), 'fa-sort-desc': (column == 'rangoMinimo' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('rangoMaximo')">
+                Rango Maximo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'rangoMaximo', 'fa-sort-asc': (column == 'rangoMaximo' && isDesc), 'fa-sort-desc': (column == 'rangoMaximo' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('fechaRegistro')">
+                Fecha Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'fechaRegistro', 'fa-sort-asc': (column == 'fechaRegistro' && isDesc), 'fa-sort-desc': (column == 'fechaRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('formatoFecha')">
+                Formato Fecha
+                <i class="fa" [ngClass]="{'fa-sort': column != 'formatoFecha', 'fa-sort-asc': (column == 'formatoFecha' && isDesc), 'fa-sort-desc': (column == 'formatoFecha' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('descripcion')">
+                Descripcion
+                <i class="fa" [ngClass]="{'fa-sort': column != 'descripcion', 'fa-sort-asc': (column == 'descripcion' && isDesc), 'fa-sort-desc': (column == 'descripcion' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('loginRegistro')">
+                Login Registro
+                <i class="fa" [ngClass]="{'fa-sort': column != 'loginRegistro', 'fa-sort-asc': (column == 'loginRegistro' && isDesc), 'fa-sort-desc': (column == 'loginRegistro' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('observaciones')">
+                Observaciones
+                <i class="fa" [ngClass]="{'fa-sort': column != 'observaciones', 'fa-sort-asc': (column == 'observaciones' && isDesc), 'fa-sort-desc': (column == 'observaciones' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('expresionRegular')">
+                Expresion Regular
+                <i class="fa" [ngClass]="{'fa-sort': column != 'expresionRegular', 'fa-sort-asc': (column == 'expresionRegular' && isDesc), 'fa-sort-desc': (column == 'expresionRegular' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('esDecimal')">
+                Es Decimal
+                <i class="fa" [ngClass]="{'fa-sort': column != 'esDecimal', 'fa-sort-asc': (column == 'esDecimal' && isDesc), 'fa-sort-desc': (column == 'esDecimal' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th class="cursor-pointer" (click)="sort('esNegativo')">
+                Es Negativo
+                <i class="fa" [ngClass]="{'fa-sort': column != 'esNegativo', 'fa-sort-asc': (column == 'esNegativo' && isDesc), 'fa-sort-desc': (column == 'esNegativo' && !isDesc) }" aria-hidden="true"> </i>
+              </th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let parFormatoCampo of parFormatoCampos | orderBy: { property: column, direction: direction }">
+              <td>{{ parFormatoCampo.longitudTexto }}</td>
+              <td>{{ parFormatoCampo.rangoMinimo }}</td>
+              <td>{{ parFormatoCampo.rangoMaximo }}</td>
+              <td>{{ parFormatoCampo.fechaRegistro }}</td>
+              <td>{{ parFormatoCampo.formatoFecha }}</td>
+              <td>{{ parFormatoCampo.descripcion }}</td>
+              <td>{{ parFormatoCampo.loginRegistro }}</td>
+              <td>{{ parFormatoCampo.observaciones }}</td>
+              <td>{{ parFormatoCampo.expresionRegular }}</td>
+              <td>{{ parFormatoCampo.esDecimal }}</td>
+              <td>{{ parFormatoCampo.esNegativo }}</td>
+              <td>
+                <a class="btn btn-info btn-sm" [routerLink]="[ absolutePath, parFormatoCampo._id]"><span class="fa fa-eye fa-fw"></span>Ver</a>
+                <a class="btn btn-primary btn-sm" [routerLink]="[ absolutePath, parFormatoCampo._id, 'update']"><span class="fa fa-pencil fa-fw"></span>Editar</a>
+                <a class="btn btn-danger btn-sm text-white cursor-pointer" (click)="openDeleteModal(content, parFormatoCampo._id)"><span class="fa fa-trash fa-fw"></span>Eliminar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h5 class="modal-title"><i class="fa fa-exclamation-triangle fa-lg fa-fw" aria-hidden="true"></i>¿Esta seguro de eliminar?</h5>
+    <button type="button" class="close cursor-pointer" aria-label="Close" (click)="d(deleteModalOpts.cancel)">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary cursor-pointer" (click)="c(deleteModalOpts.ok)"><i class="fa fa-check fa-fw"></i>Aceptar</button>
+    <button type="button" class="btn btn-secondary cursor-pointer" (click)="c(deleteModalOpts.cancel)"><i class="fa fa-ban fa-fw"></i>Cancelar</button>
+  </div>
+</ng-template>

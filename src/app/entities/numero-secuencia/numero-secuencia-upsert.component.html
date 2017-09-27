@@ -1,0 +1,111 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Numero Secuencia</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="numeroSecuencia && numeroSecuencia._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="numeroSecuencia" type="text" class="form-control" name="id" [(ngModel)]="numeroSecuencia._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_type">Type</label>
+  <input type="text" id="field_type" *ngIf="numeroSecuencia" class="form-control" name="type" [(ngModel)]="numeroSecuencia.type"  />
+  <input type="text" id="field_type" *ngIf="!numeroSecuencia" class="form-control" name="type" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_prefix">Prefix</label>
+  <input type="text" id="field_prefix" *ngIf="numeroSecuencia" class="form-control" name="prefix" [(ngModel)]="numeroSecuencia.prefix"  />
+  <input type="text" id="field_prefix" *ngIf="!numeroSecuencia" class="form-control" name="prefix" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_lastnumber">Lastnumber</label>
+  <input type="number" id="field_lastnumber" *ngIf="numeroSecuencia" class="form-control" name="lastnumber" [(ngModel)]="numeroSecuencia.lastnumber"  />
+  <input type="number" id="field_lastnumber" *ngIf="!numeroSecuencia" class="form-control" name="lastnumber" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_length">Length</label>
+  <input type="number" id="field_length" *ngIf="numeroSecuencia" class="form-control" name="length" [(ngModel)]="numeroSecuencia.length"  />
+  <input type="number" id="field_length" *ngIf="!numeroSecuencia" class="form-control" name="length" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-check">
+  <label class="custom-control custom-checkbox">
+    <input *ngIf="numeroSecuencia" type="checkbox" class="custom-control-input" name="year"  [(ngModel)]="numeroSecuencia.year" />
+    <input *ngIf="!numeroSecuencia" type="checkbox" class="custom-control-input" name="year" ngModel />
+    <span class="custom-control-indicator"></span>
+    <span class="custom-control-description">Year</span>
+      </label>
+</div>
+
+          
+          <div class="col-12 form-check">
+  <label class="custom-control custom-checkbox">
+    <input *ngIf="numeroSecuencia" type="checkbox" class="custom-control-input" name="month"  [(ngModel)]="numeroSecuencia.month" />
+    <input *ngIf="!numeroSecuencia" type="checkbox" class="custom-control-input" name="month" ngModel />
+    <span class="custom-control-indicator"></span>
+    <span class="custom-control-description">Month</span>
+      </label>
+</div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_lastyear">Lastyear</label>
+  <input type="number" id="field_lastyear" *ngIf="numeroSecuencia" class="form-control" name="lastyear" [(ngModel)]="numeroSecuencia.lastyear"  />
+  <input type="number" id="field_lastyear" *ngIf="!numeroSecuencia" class="form-control" name="lastyear" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_lastmonth">Lastmonth</label>
+  <input type="number" id="field_lastmonth" *ngIf="numeroSecuencia" class="form-control" name="lastmonth" [(ngModel)]="numeroSecuencia.lastmonth"  />
+  <input type="number" id="field_lastmonth" *ngIf="!numeroSecuencia" class="form-control" name="lastmonth" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_tablename">Tablename</label>
+  <input type="text" id="field_tablename" *ngIf="numeroSecuencia" class="form-control" name="tablename" [(ngModel)]="numeroSecuencia.tablename"  />
+  <input type="text" id="field_tablename" *ngIf="!numeroSecuencia" class="form-control" name="tablename" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="sucursals">
+              <label for="field_sucursal">Sucursal</label>
+
+              <select *ngIf="!numeroSecuencia" class="form-control" name="idSucursal" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+
+              <select *ngIf="numeroSecuencia && numeroSecuencia.idSucursal" class="form-control" name="idSucursal" [(ngModel)]="numeroSecuencia.idSucursal">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

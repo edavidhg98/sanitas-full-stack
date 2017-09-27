@@ -1,0 +1,117 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Procedimiento Nivel</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="procedimientoNivel && procedimientoNivel._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="procedimientoNivel" type="text" class="form-control" name="id" [(ngModel)]="procedimientoNivel._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaInicial">Fecha Inicial</label>
+  <input type="date" id="field_fechaInicial" *ngIf="procedimientoNivel" class="form-control" name="fechaInicial" [(ngModel)]="procedimientoNivel.fechaInicial"  />
+  <input type="date" id="field_fechaInicial" *ngIf="!procedimientoNivel" class="form-control" name="fechaInicial" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaFinal">Fecha Final</label>
+  <input type="date" id="field_fechaFinal" *ngIf="procedimientoNivel" class="form-control" name="fechaFinal" [(ngModel)]="procedimientoNivel.fechaFinal"  />
+  <input type="date" id="field_fechaFinal" *ngIf="!procedimientoNivel" class="form-control" name="fechaFinal" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_nivel">Nivel</label>
+  <input type="text" id="field_nivel" *ngIf="procedimientoNivel" class="form-control" name="nivel" [(ngModel)]="procedimientoNivel.nivel"  />
+  <input type="text" id="field_nivel" *ngIf="!procedimientoNivel" class="form-control" name="nivel" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idCentroCosto">Id Centro Costo</label>
+  <input type="number" id="field_idCentroCosto" *ngIf="procedimientoNivel" class="form-control" name="idCentroCosto" [(ngModel)]="procedimientoNivel.idCentroCosto"  />
+  <input type="number" id="field_idCentroCosto" *ngIf="!procedimientoNivel" class="form-control" name="idCentroCosto" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="procedimientoNivel" class="form-control" name="fechaRegistro" [(ngModel)]="procedimientoNivel.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!procedimientoNivel" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="procedimientoNivel" class="form-control" name="loginRegistro" [(ngModel)]="procedimientoNivel.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!procedimientoNivel" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="procedimientoNivel" class="form-control" name="observaciones" [(ngModel)]="procedimientoNivel.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!procedimientoNivel" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="procedimientos">
+              <label for="field_procedimiento">Procedimiento</label>
+
+              <select *ngIf="!procedimientoNivel" class="form-control" name="idProcedimiento" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="procedimiento._id" *ngFor="let procedimiento of procedimientos">{{ procedimiento._id }}</option>
+              </select>
+
+              <select *ngIf="procedimientoNivel && procedimientoNivel.idProcedimiento" class="form-control" name="idProcedimiento" [(ngModel)]="procedimientoNivel.idProcedimiento">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="procedimiento._id" *ngFor="let procedimiento of procedimientos">{{ procedimiento._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="procedimientos">
+              <label for="field_procedimiento">Procedimiento</label>
+
+              <select *ngIf="!procedimientoNivel" class="form-control" name="idProcedimiento1" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="procedimiento._id" *ngFor="let procedimiento of procedimientos">{{ procedimiento._id }}</option>
+              </select>
+
+              <select *ngIf="procedimientoNivel && procedimientoNivel.idProcedimiento1" class="form-control" name="idProcedimiento1" [(ngModel)]="procedimientoNivel.idProcedimiento1">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="procedimiento._id" *ngFor="let procedimiento of procedimientos">{{ procedimiento._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="sucursals">
+              <label for="field_sucursal">Sucursal</label>
+
+              <select *ngIf="!procedimientoNivel" class="form-control" name="idSucursal" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+
+              <select *ngIf="procedimientoNivel && procedimientoNivel.idSucursal" class="form-control" name="idSucursal" [(ngModel)]="procedimientoNivel.idSucursal">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

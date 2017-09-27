@@ -1,0 +1,338 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Trazabilidad Admision</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="trazabilidadAdmision && trazabilidadAdmision._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="trazabilidadAdmision" type="text" class="form-control" name="id" [(ngModel)]="trazabilidadAdmision._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_idAdmision">Id Admision</label>
+  <input type="number" id="field_idAdmision" *ngIf="trazabilidadAdmision" class="form-control" name="idAdmision" [(ngModel)]="trazabilidadAdmision.idAdmision"  />
+  <input type="number" id="field_idAdmision" *ngIf="!trazabilidadAdmision" class="form-control" name="idAdmision" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_anoAdm">Ano Adm</label>
+  <input type="number" id="field_anoAdm" *ngIf="trazabilidadAdmision" class="form-control" name="anoAdm" [(ngModel)]="trazabilidadAdmision.anoAdm"  />
+  <input type="number" id="field_anoAdm" *ngIf="!trazabilidadAdmision" class="form-control" name="anoAdm" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_codigoCita">Codigo Cita</label>
+  <input type="text" id="field_codigoCita" *ngIf="trazabilidadAdmision" class="form-control" name="codigoCita" [(ngModel)]="trazabilidadAdmision.codigoCita"  />
+  <input type="text" id="field_codigoCita" *ngIf="!trazabilidadAdmision" class="form-control" name="codigoCita" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaViaIngreso">Item Lista Via Ingreso</label>
+  <input type="number" id="field_itemListaViaIngreso" *ngIf="trazabilidadAdmision" class="form-control" name="itemListaViaIngreso" [(ngModel)]="trazabilidadAdmision.itemListaViaIngreso"  />
+  <input type="number" id="field_itemListaViaIngreso" *ngIf="!trazabilidadAdmision" class="form-control" name="itemListaViaIngreso" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_numAdm">Num Adm</label>
+  <input type="number" id="field_numAdm" *ngIf="trazabilidadAdmision" class="form-control" name="numAdm" [(ngModel)]="trazabilidadAdmision.numAdm"  />
+  <input type="number" id="field_numAdm" *ngIf="!trazabilidadAdmision" class="form-control" name="numAdm" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idMedicoEgreso">Id Medico Egreso</label>
+  <input type="number" id="field_idMedicoEgreso" *ngIf="trazabilidadAdmision" class="form-control" name="idMedicoEgreso" [(ngModel)]="trazabilidadAdmision.idMedicoEgreso"  />
+  <input type="number" id="field_idMedicoEgreso" *ngIf="!trazabilidadAdmision" class="form-control" name="idMedicoEgreso" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_horaEgreso">Hora Egreso</label>
+  <input type="number" id="field_horaEgreso" *ngIf="trazabilidadAdmision" class="form-control" name="horaEgreso" [(ngModel)]="trazabilidadAdmision.horaEgreso"  />
+  <input type="number" id="field_horaEgreso" *ngIf="!trazabilidadAdmision" class="form-control" name="horaEgreso" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaEgreso">Fecha Egreso</label>
+  <input type="date" id="field_fechaEgreso" *ngIf="trazabilidadAdmision" class="form-control" name="fechaEgreso" [(ngModel)]="trazabilidadAdmision.fechaEgreso"  />
+  <input type="date" id="field_fechaEgreso" *ngIf="!trazabilidadAdmision" class="form-control" name="fechaEgreso" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_ipRegistro">Ip Registro</label>
+  <input type="text" id="field_ipRegistro" *ngIf="trazabilidadAdmision" class="form-control" name="ipRegistro" [(ngModel)]="trazabilidadAdmision.ipRegistro"  />
+  <input type="text" id="field_ipRegistro" *ngIf="!trazabilidadAdmision" class="form-control" name="ipRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_conPriVez">Con Pri Vez</label>
+  <input type="text" id="field_conPriVez" *ngIf="trazabilidadAdmision" class="form-control" name="conPriVez" [(ngModel)]="trazabilidadAdmision.conPriVez"  />
+  <input type="text" id="field_conPriVez" *ngIf="!trazabilidadAdmision" class="form-control" name="conPriVez" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaEstadoAdmision">Item Lista Estado Admision</label>
+  <input type="number" id="field_itemListaEstadoAdmision" *ngIf="trazabilidadAdmision" class="form-control" name="itemListaEstadoAdmision" [(ngModel)]="trazabilidadAdmision.itemListaEstadoAdmision"  />
+  <input type="number" id="field_itemListaEstadoAdmision" *ngIf="!trazabilidadAdmision" class="form-control" name="itemListaEstadoAdmision" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaIngreso">Fecha Ingreso</label>
+  <input type="date" id="field_fechaIngreso" *ngIf="trazabilidadAdmision" class="form-control" name="fechaIngreso" [(ngModel)]="trazabilidadAdmision.fechaIngreso"  />
+  <input type="date" id="field_fechaIngreso" *ngIf="!trazabilidadAdmision" class="form-control" name="fechaIngreso" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_leyProteccionDatos">Ley Proteccion Datos</label>
+  <input type="text" id="field_leyProteccionDatos" *ngIf="trazabilidadAdmision" class="form-control" name="leyProteccionDatos" [(ngModel)]="trazabilidadAdmision.leyProteccionDatos"  />
+  <input type="text" id="field_leyProteccionDatos" *ngIf="!trazabilidadAdmision" class="form-control" name="leyProteccionDatos" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="trazabilidadAdmision" class="form-control" name="observaciones" [(ngModel)]="trazabilidadAdmision.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!trazabilidadAdmision" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_login">Login</label>
+  <input type="text" id="field_login" *ngIf="trazabilidadAdmision" class="form-control" name="login" [(ngModel)]="trazabilidadAdmision.login"  />
+  <input type="text" id="field_login" *ngIf="!trazabilidadAdmision" class="form-control" name="login" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_flagInconsistencia">Flag Inconsistencia</label>
+  <input type="text" id="field_flagInconsistencia" *ngIf="trazabilidadAdmision" class="form-control" name="flagInconsistencia" [(ngModel)]="trazabilidadAdmision.flagInconsistencia"  />
+  <input type="text" id="field_flagInconsistencia" *ngIf="!trazabilidadAdmision" class="form-control" name="flagInconsistencia" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaFlagFacturado">Item Lista Flag Facturado</label>
+  <input type="number" id="field_itemListaFlagFacturado" *ngIf="trazabilidadAdmision" class="form-control" name="itemListaFlagFacturado" [(ngModel)]="trazabilidadAdmision.itemListaFlagFacturado"  />
+  <input type="number" id="field_itemListaFlagFacturado" *ngIf="!trazabilidadAdmision" class="form-control" name="itemListaFlagFacturado" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginCreacion">Login Creacion</label>
+  <input type="text" id="field_loginCreacion" *ngIf="trazabilidadAdmision" class="form-control" name="loginCreacion" [(ngModel)]="trazabilidadAdmision.loginCreacion"  />
+  <input type="text" id="field_loginCreacion" *ngIf="!trazabilidadAdmision" class="form-control" name="loginCreacion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_minutoIngreso">Minuto Ingreso</label>
+  <input type="number" id="field_minutoIngreso" *ngIf="trazabilidadAdmision" class="form-control" name="minutoIngreso" [(ngModel)]="trazabilidadAdmision.minutoIngreso"  />
+  <input type="number" id="field_minutoIngreso" *ngIf="!trazabilidadAdmision" class="form-control" name="minutoIngreso" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_ingresoconcita">Ingresoconcita</label>
+  <input type="text" id="field_ingresoconcita" *ngIf="trazabilidadAdmision" class="form-control" name="ingresoconcita" [(ngModel)]="trazabilidadAdmision.ingresoconcita"  />
+  <input type="text" id="field_ingresoconcita" *ngIf="!trazabilidadAdmision" class="form-control" name="ingresoconcita" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idEspecialidad">Id Especialidad</label>
+  <input type="number" id="field_idEspecialidad" *ngIf="trazabilidadAdmision" class="form-control" name="idEspecialidad" [(ngModel)]="trazabilidadAdmision.idEspecialidad"  />
+  <input type="number" id="field_idEspecialidad" *ngIf="!trazabilidadAdmision" class="form-control" name="idEspecialidad" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_horaIngreso">Hora Ingreso</label>
+  <input type="number" id="field_horaIngreso" *ngIf="trazabilidadAdmision" class="form-control" name="horaIngreso" [(ngModel)]="trazabilidadAdmision.horaIngreso"  />
+  <input type="number" id="field_horaIngreso" *ngIf="!trazabilidadAdmision" class="form-control" name="horaIngreso" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaDestinoFinal">Item Lista Destino Final</label>
+  <input type="number" id="field_itemListaDestinoFinal" *ngIf="trazabilidadAdmision" class="form-control" name="itemListaDestinoFinal" [(ngModel)]="trazabilidadAdmision.itemListaDestinoFinal"  />
+  <input type="number" id="field_itemListaDestinoFinal" *ngIf="!trazabilidadAdmision" class="form-control" name="itemListaDestinoFinal" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_minutoEgreso">Minuto Egreso</label>
+  <input type="number" id="field_minutoEgreso" *ngIf="trazabilidadAdmision" class="form-control" name="minutoEgreso" [(ngModel)]="trazabilidadAdmision.minutoEgreso"  />
+  <input type="number" id="field_minutoEgreso" *ngIf="!trazabilidadAdmision" class="form-control" name="minutoEgreso" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_consecutivoAtencion">Consecutivo Atencion</label>
+  <input type="number" id="field_consecutivoAtencion" *ngIf="trazabilidadAdmision" class="form-control" name="consecutivoAtencion" [(ngModel)]="trazabilidadAdmision.consecutivoAtencion"  />
+  <input type="number" id="field_consecutivoAtencion" *ngIf="!trazabilidadAdmision" class="form-control" name="consecutivoAtencion" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idMedicoHospitaliza">Id Medico Hospitaliza</label>
+  <input type="number" id="field_idMedicoHospitaliza" *ngIf="trazabilidadAdmision" class="form-control" name="idMedicoHospitaliza" [(ngModel)]="trazabilidadAdmision.idMedicoHospitaliza"  />
+  <input type="number" id="field_idMedicoHospitaliza" *ngIf="!trazabilidadAdmision" class="form-control" name="idMedicoHospitaliza" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_idMedicoTratante">Id Medico Tratante</label>
+  <input type="number" id="field_idMedicoTratante" *ngIf="trazabilidadAdmision" class="form-control" name="idMedicoTratante" [(ngModel)]="trazabilidadAdmision.idMedicoTratante"  />
+  <input type="number" id="field_idMedicoTratante" *ngIf="!trazabilidadAdmision" class="form-control" name="idMedicoTratante" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_diasEstancia">Dias Estancia</label>
+  <input type="number" id="field_diasEstancia" *ngIf="trazabilidadAdmision" class="form-control" name="diasEstancia" [(ngModel)]="trazabilidadAdmision.diasEstancia"  />
+  <input type="number" id="field_diasEstancia" *ngIf="!trazabilidadAdmision" class="form-control" name="diasEstancia" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaDestinoListaEspera">Item Lista Destino Lista Espera</label>
+  <input type="number" id="field_itemListaDestinoListaEspera" *ngIf="trazabilidadAdmision" class="form-control" name="itemListaDestinoListaEspera" [(ngModel)]="trazabilidadAdmision.itemListaDestinoListaEspera"  />
+  <input type="number" id="field_itemListaDestinoListaEspera" *ngIf="!trazabilidadAdmision" class="form-control" name="itemListaDestinoListaEspera" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginEgreso">Login Egreso</label>
+  <input type="text" id="field_loginEgreso" *ngIf="trazabilidadAdmision" class="form-control" name="loginEgreso" [(ngModel)]="trazabilidadAdmision.loginEgreso"  />
+  <input type="text" id="field_loginEgreso" *ngIf="!trazabilidadAdmision" class="form-control" name="loginEgreso" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_consecutivoFur">Consecutivo Fur</label>
+  <input type="number" id="field_consecutivoFur" *ngIf="trazabilidadAdmision" class="form-control" name="consecutivoFur" [(ngModel)]="trazabilidadAdmision.consecutivoFur"  />
+  <input type="number" id="field_consecutivoFur" *ngIf="!trazabilidadAdmision" class="form-control" name="consecutivoFur" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_consultaProgramada">Consulta Programada</label>
+  <input type="text" id="field_consultaProgramada" *ngIf="trazabilidadAdmision" class="form-control" name="consultaProgramada" [(ngModel)]="trazabilidadAdmision.consultaProgramada"  />
+  <input type="text" id="field_consultaProgramada" *ngIf="!trazabilidadAdmision" class="form-control" name="consultaProgramada" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="trazabilidadAdmision" class="form-control" name="fechaRegistro" [(ngModel)]="trazabilidadAdmision.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!trazabilidadAdmision" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="sucursals">
+              <label for="field_sucursal">Sucursal</label>
+
+              <select *ngIf="!trazabilidadAdmision" class="form-control" name="idSucursal" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+
+              <select *ngIf="trazabilidadAdmision && trazabilidadAdmision.idSucursal" class="form-control" name="idSucursal" [(ngModel)]="trazabilidadAdmision.idSucursal">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursal._id" *ngFor="let sucursal of sucursals">{{ sucursal._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="tipoAdmisions">
+              <label for="field_tipoAdmision">Tipo Admision</label>
+
+              <select *ngIf="!trazabilidadAdmision" class="form-control" name="idTipoAdmision" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tipoAdmision._id" *ngFor="let tipoAdmision of tipoAdmisions">{{ tipoAdmision._id }}</option>
+              </select>
+
+              <select *ngIf="trazabilidadAdmision && trazabilidadAdmision.idTipoAdmision" class="form-control" name="idTipoAdmision" [(ngModel)]="trazabilidadAdmision.idTipoAdmision">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tipoAdmision._id" *ngFor="let tipoAdmision of tipoAdmisions">{{ tipoAdmision._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="consultorios">
+              <label for="field_consultorio">Consultorio</label>
+
+              <select *ngIf="!trazabilidadAdmision" class="form-control" name="idConsultorio" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="consultorio._id" *ngFor="let consultorio of consultorios">{{ consultorio._id }}</option>
+              </select>
+
+              <select *ngIf="trazabilidadAdmision && trazabilidadAdmision.idConsultorio" class="form-control" name="idConsultorio" [(ngModel)]="trazabilidadAdmision.idConsultorio">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="consultorio._id" *ngFor="let consultorio of consultorios">{{ consultorio._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="motivos">
+              <label for="field_motivo">Motivo</label>
+
+              <select *ngIf="!trazabilidadAdmision" class="form-control" name="idMotivo" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="motivo._id" *ngFor="let motivo of motivos">{{ motivo._id }}</option>
+              </select>
+
+              <select *ngIf="trazabilidadAdmision && trazabilidadAdmision.idMotivo" class="form-control" name="idMotivo" [(ngModel)]="trazabilidadAdmision.idMotivo">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="motivo._id" *ngFor="let motivo of motivos">{{ motivo._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="motivos">
+              <label for="field_motivo">Motivo</label>
+
+              <select *ngIf="!trazabilidadAdmision" class="form-control" name="idMotivo1" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="motivo._id" *ngFor="let motivo of motivos">{{ motivo._id }}</option>
+              </select>
+
+              <select *ngIf="trazabilidadAdmision && trazabilidadAdmision.idMotivo1" class="form-control" name="idMotivo1" [(ngModel)]="trazabilidadAdmision.idMotivo1">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="motivo._id" *ngFor="let motivo of motivos">{{ motivo._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="motivos">
+              <label for="field_motivo">Motivo</label>
+
+              <select *ngIf="!trazabilidadAdmision" class="form-control" name="idMotivo2" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="motivo._id" *ngFor="let motivo of motivos">{{ motivo._id }}</option>
+              </select>
+
+              <select *ngIf="trazabilidadAdmision && trazabilidadAdmision.idMotivo2" class="form-control" name="idMotivo2" [(ngModel)]="trazabilidadAdmision.idMotivo2">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="motivo._id" *ngFor="let motivo of motivos">{{ motivo._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

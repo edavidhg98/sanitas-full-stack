@@ -1,0 +1,111 @@
+<div class="container m-top-and-bottom">
+  <div class="card">
+    <div class="card-header text-white text-center bg-dark">
+      <h4>{{ crudOperationTitle }} Nivel Cargo</h4>
+    </div>
+    <div class="card-body">
+      <form #myForm="ngForm">
+        <div class="row">
+          <div *ngIf="nivelCargo && nivelCargo._id" class="col-md-12 form-group">
+            <label for="field_id">ID</label>
+            <input id="fiel_id" *ngIf="nivelCargo" type="text" class="form-control" name="id" [(ngModel)]="nivelCargo._id" disabled required>
+          </div>
+          
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaNivel1">Item Lista Nivel 1</label>
+  <input type="number" id="field_itemListaNivel1" *ngIf="nivelCargo" class="form-control" name="itemListaNivel1" [(ngModel)]="nivelCargo.itemListaNivel1"  />
+  <input type="number" id="field_itemListaNivel1" *ngIf="!nivelCargo" class="form-control" name="itemListaNivel1" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaNivel2">Item Lista Nivel 2</label>
+  <input type="number" id="field_itemListaNivel2" *ngIf="nivelCargo" class="form-control" name="itemListaNivel2" [(ngModel)]="nivelCargo.itemListaNivel2"  />
+  <input type="number" id="field_itemListaNivel2" *ngIf="!nivelCargo" class="form-control" name="itemListaNivel2" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaNivel3">Item Lista Nivel 3</label>
+  <input type="number" id="field_itemListaNivel3" *ngIf="nivelCargo" class="form-control" name="itemListaNivel3" [(ngModel)]="nivelCargo.itemListaNivel3"  />
+  <input type="number" id="field_itemListaNivel3" *ngIf="!nivelCargo" class="form-control" name="itemListaNivel3" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaNivel4">Item Lista Nivel 4</label>
+  <input type="number" id="field_itemListaNivel4" *ngIf="nivelCargo" class="form-control" name="itemListaNivel4" [(ngModel)]="nivelCargo.itemListaNivel4"  />
+  <input type="number" id="field_itemListaNivel4" *ngIf="!nivelCargo" class="form-control" name="itemListaNivel4" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_itemListaNivel5">Item Lista Nivel 5</label>
+  <input type="number" id="field_itemListaNivel5" *ngIf="nivelCargo" class="form-control" name="itemListaNivel5" [(ngModel)]="nivelCargo.itemListaNivel5"  />
+  <input type="number" id="field_itemListaNivel5" *ngIf="!nivelCargo" class="form-control" name="itemListaNivel5" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_fechaRegistro">Fecha Registro</label>
+  <input type="date" id="field_fechaRegistro" *ngIf="nivelCargo" class="form-control" name="fechaRegistro" [(ngModel)]="nivelCargo.fechaRegistro"  />
+  <input type="date" id="field_fechaRegistro" *ngIf="!nivelCargo" class="form-control" name="fechaRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_loginRegistro">Login Registro</label>
+  <input type="text" id="field_loginRegistro" *ngIf="nivelCargo" class="form-control" name="loginRegistro" [(ngModel)]="nivelCargo.loginRegistro"  />
+  <input type="text" id="field_loginRegistro" *ngIf="!nivelCargo" class="form-control" name="loginRegistro" ngModel />
+  </div>
+
+          
+          <div class="col-12 form-group">
+  <label for="field_observaciones">Observaciones</label>
+  <input type="text" id="field_observaciones" *ngIf="nivelCargo" class="form-control" name="observaciones" [(ngModel)]="nivelCargo.observaciones"  />
+  <input type="text" id="field_observaciones" *ngIf="!nivelCargo" class="form-control" name="observaciones" ngModel />
+  </div>
+
+          
+
+            <div class="col-12 form-group" *ngIf="sucursalEntidads">
+              <label for="field_sucursalEntidad">Sucursal Entidad</label>
+
+              <select *ngIf="!nivelCargo" class="form-control" name="idSucursalEntidad" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursalEntidad._id" *ngFor="let sucursalEntidad of sucursalEntidads">{{ sucursalEntidad._id }}</option>
+              </select>
+
+              <select *ngIf="nivelCargo && nivelCargo.idSucursalEntidad" class="form-control" name="idSucursalEntidad" [(ngModel)]="nivelCargo.idSucursalEntidad">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sucursalEntidad._id" *ngFor="let sucursalEntidad of sucursalEntidads">{{ sucursalEntidad._id }}</option>
+              </select>
+            </div>
+            <div class="col-12 form-group" *ngIf="tipoAdmisions">
+              <label for="field_tipoAdmision">Tipo Admision</label>
+
+              <select *ngIf="!nivelCargo" class="form-control" name="idTipoAdmision" ngModel>
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tipoAdmision._id" *ngFor="let tipoAdmision of tipoAdmisions">{{ tipoAdmision._id }}</option>
+              </select>
+
+              <select *ngIf="nivelCargo && nivelCargo.idTipoAdmision" class="form-control" name="idTipoAdmision" [(ngModel)]="nivelCargo.idTipoAdmision">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tipoAdmision._id" *ngFor="let tipoAdmision of tipoAdmisions">{{ tipoAdmision._id }}</option>
+              </select>
+            </div>
+
+          <div id="buttonsPanel" class="col-12 form-group">
+            <button class="btn btn-dark cursor-pointer" (click)="save(myForm.value)" *ngIf="isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Registrar
+            </button>
+            <button class="btn btn-dark cursor-pointer" (click)="update()" *ngIf="!isCreate" [disabled]="myForm.form.invalid">
+              <i class="fa fa-floppy-o fa-fw"></i>Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div *ngIf="prefijo" class="container">
+  <h3 class="m-top-and-bottom-2">Prefijo</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ prefijo._id }}</dd>
+
+  
+    <dt>Prefijo</dt>
+    <dd>{{ prefijo.prefijo }}</dd>
+
+    <dt>Descripcion</dt>
+    <dd>{{ prefijo.descripcion }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ prefijo.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ prefijo.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ prefijo.observaciones }}</dd>
+
+    <dt>Pie Prefijo</dt>
+    <dd>{{ prefijo.piePrefijo }}</dd>
+
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>

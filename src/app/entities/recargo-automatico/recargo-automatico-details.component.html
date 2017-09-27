@@ -1,0 +1,40 @@
+<div *ngIf="recargoAutomatico" class="container">
+  <h3 class="m-top-and-bottom-2">Recargo Automatico</h3>
+  <hr />
+  <dl>
+    <dt>ID</dt>
+    <dd>{{ recargoAutomatico._id }}</dd>
+
+  
+    <dt>Id Sucursal</dt>
+    <dd>{{ recargoAutomatico.idSucursal }}</dd>
+
+    <dt>Codigo Inteligente</dt>
+    <dd>{{ recargoAutomatico.codigoInteligente }}</dd>
+
+    <dt>Porcentaje</dt>
+    <dd>{{ recargoAutomatico.porcentaje }}</dd>
+
+    <dt>Valor</dt>
+    <dd>{{ recargoAutomatico.valor }}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{ recargoAutomatico.fechaRegistro }}</dd>
+
+    <dt>Login Registro</dt>
+    <dd>{{ recargoAutomatico.loginRegistro }}</dd>
+
+    <dt>Observaciones</dt>
+    <dd>{{ recargoAutomatico.observaciones }}</dd>
+
+    <dt>Activo</dt>
+    <dd>{{ recargoAutomatico.activo }}</dd>
+
+    <dt>Entidad</dt>
+    <dd>
+      <a [routerLink]="['/entities', 'entidad', recargoAutomatico.entidad._id]">{{ recargoAutomatico.entidad._id }}</a>
+    </dd>
+  </dl>
+  <a routerLink="update" class="btn btn-primary"><i class="fa fa-refresh fa-fw"></i>Actualizar</a>
+
+</div>
